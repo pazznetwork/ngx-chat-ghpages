@@ -584,9 +584,26 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>projects/pazz/ngx-chat/src/lib/components/chat.component.ts</code>
+    <code>projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The main UI component. Should be instantiated near the root of your application.</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;!-- plain usage, no configuration --&gt;
+&lt;ngx-chat&gt;&lt;/ngx-chat&gt;
+
+&lt;!-- if supplied, translations contain an object with the structure of the Translations interface. --&gt;
+&lt;ngx-chat translations=&quot;{&#39;contacts&#39;: &#39;Kontakte&#39;, ...}&quot;&gt;&lt;/ngx-chat&gt;
+
+&lt;!-- if supplied, the contacts input attribute takes an Observable&lt;Contact[]&gt; as source for your roster list --&gt;
+&lt;ngx-chat contacts=&quot;...&quot;&gt;&lt;/ngx-chat&gt;
+
+&lt;!-- if supplied, userAvatar$ contains an Obervable&lt;string&gt;, which is used as the src attribute of the img for the current user. --&gt;
+&lt;ngx-chat userAvatar$=&quot;Observable.of(&#39;http://...&#39;)&quot;&gt;&lt;/ngx-chat&gt;</code></pre></div>
+    </p>
 
 
     <p class="comment">
@@ -725,7 +742,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -773,6 +790,8 @@
                         <code>contacts</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>If supplied, the contacts input attribute takes an [Observable&lt;Contact[]&gt;]<a href="../classes/Contact.html">Contact</a> as source for your roster list.</p>
+</div>
                             <p>
                             <em>Type:</em>    <code><a href="../classes/Contact.html" target="_self" >undefined | Observable&lt;Contact[]&gt;</a></code>
 
@@ -781,7 +800,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:48</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -794,6 +813,8 @@
                         <code>translations</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>If supplied, translations contain an object with the structure of the Translations interface.</p>
+</div>
                             <p>
                             <em>Type:</em>    <code><a href="../interfaces/Translations.html" target="_self" >Translations</a></code>
 
@@ -812,7 +833,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:35</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -825,6 +846,8 @@
                         <code>userAvatar$</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>If supplied, userAvatar$ contains an Obervable<string>, which is used as the src attribute of the img for the current user.</p>
+</div>
                             <p>
                             <em>Type:</em>    <code>undefined | Observable&lt;string&gt;</code>
 
@@ -833,7 +856,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:54</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -869,7 +892,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:74</a></div>
                             </td>
                         </tr>
 
@@ -938,7 +961,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -978,7 +1001,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:80</a></div>
                             </td>
                         </tr>
 
@@ -1047,7 +1070,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:85</a></div>
                             </td>
                         </tr>
 
@@ -1118,7 +1141,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:91</a></div>
                             </td>
                         </tr>
 
@@ -1173,7 +1196,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -1206,7 +1229,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/pazz/ngx-chat/src/lib/components/chat.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -1225,6 +1248,23 @@ import { Observable } from &#x27;rxjs&#x27;;
 import { Contact, Translations } from &#x27;../core&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;../services/chat-service&#x27;;
 
+/**
+ * The main UI component. Should be instantiated near the root of your application.
+ *
+ * &#x60;&#x60;&#x60;html
+ * &lt;!-- plain usage, no configuration --&gt;
+ * &lt;ngx-chat&gt;&lt;/ngx-chat&gt;
+ *
+ * &lt;!-- if supplied, translations contain an object with the structure of the Translations interface. --&gt;
+ * &lt;ngx-chat translations&#x3D;&quot;{&#x27;contacts&#x27;: &#x27;Kontakte&#x27;, ...}&quot;&gt;&lt;/ngx-chat&gt;
+ *
+ * &lt;!-- if supplied, the contacts input attribute takes an Observable&lt;Contact[]&gt; as source for your roster list --&gt;
+ * &lt;ngx-chat contacts&#x3D;&quot;...&quot;&gt;&lt;/ngx-chat&gt;
+ *
+ * &lt;!-- if supplied, userAvatar$ contains an Obervable&lt;string&gt;, which is used as the src attribute of the img for the current user. --&gt;
+ * &lt;ngx-chat userAvatar$&#x3D;&quot;Observable.of(&#x27;http://...&#x27;)&quot;&gt;&lt;/ngx-chat&gt;
+ * &#x60;&#x60;&#x60;
+ */
 @Component({
     selector: &#x27;ngx-chat&#x27;,
     templateUrl: &#x27;./chat.component.html&#x27;,
@@ -1232,6 +1272,9 @@ import { ChatService, ChatServiceToken } from &#x27;../services/chat-service&#x2
 })
 export class ChatComponent implements OnInit, OnChanges {
 
+    /**
+     * If supplied, translations contain an object with the structure of the Translations interface.
+     */
     @Input()
     public translations: Translations &#x3D; {
         &#x27;contacts&#x27;: &#x27;Contacts&#x27;,
@@ -1242,9 +1285,15 @@ export class ChatComponent implements OnInit, OnChanges {
         &#x27;denySubscriptionRequest&#x27;: &#x27;Deny&#x27;
     };
 
+    /**
+     * If supplied, the contacts input attribute takes an [Observable&lt;Contact[]&gt;]{@link Contact} as source for your roster list.
+     */
     @Input()
-    public contacts: undefined | Observable&lt;Contact[]&gt;;
+    public contacts: undefined | Observable&lt;Contact[]&gt;;
 
+    /**
+     * If supplied, userAvatar$ contains an Obervable&lt;string&gt;, which is used as the src attribute of the img for the current user.
+     */
     @Input()
     public userAvatar$: undefined | Observable&lt;string&gt;;
 
@@ -1256,7 +1305,7 @@ export class ChatComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         this.chatService.state$.subscribe($e &#x3D;&gt; this.onChatStateChange($e));
-        const rosterState &#x3D; localStorage.getItem(&#x27;pazzNgxChatRosterState&#x27;) || &#x27;hidden&#x27;;
+        const rosterState &#x3D; localStorage.getItem(&#x27;pazznetworkNgxChatRosterState&#x27;) || &#x27;hidden&#x27;;
         this.onRosterStateChanged(rosterState);
 
         if (this.userAvatar$) {
@@ -1278,7 +1327,7 @@ export class ChatComponent implements OnInit, OnChanges {
     }
 
     onRosterStateChanged(state: string) {
-        localStorage.setItem(&#x27;pazzNgxChatRosterState&#x27;, state);
+        localStorage.setItem(&#x27;pazznetworkNgxChatRosterState&#x27;, state);
         this.rosterState &#x3D; state;
         this.updateBodyClass();
     }
