@@ -630,11 +630,15 @@ Message Archive Management</p>
                                 <a href="#isMamMessageStanza">isMamMessageStanza</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loadAllMessages">loadAllMessages</a>
+                            </li>
+                            <li>
                                 <a href="#onBeforeOnline">onBeforeOnline</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#requestAllArchivedMessages">requestAllArchivedMessages</a>
+                                <a href="#requestNewestMessages">requestNewestMessages</a>
                             </li>
                             <li>
                                 <a href="#afterReceiveMessage">afterReceiveMessage</a>
@@ -742,7 +746,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:72</a></div>
                             </td>
                         </tr>
 
@@ -811,7 +815,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:59</a></div>
                             </td>
                         </tr>
 
@@ -882,7 +886,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -933,6 +937,46 @@ Message Archive Management</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="loadAllMessages"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Async</span>
+                            loadAllMessages
+                            </b>
+                            <a href="#loadAllMessages"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>loadAllMessages()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="onBeforeOnline"></a>
                         <span class="name">
                             <b>
@@ -971,20 +1015,20 @@ Message Archive Management</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="requestAllArchivedMessages"></a>
+                        <a name="requestNewestMessages"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Private</span>
-                            requestAllArchivedMessages
+                            requestNewestMessages
                             </b>
-                            <a href="#requestAllArchivedMessages"><span class="fa fa-link"></span></a>
+                            <a href="#requestNewestMessages"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon fa fa-reset"></span>
-                        <code>requestAllArchivedMessages()</code>
+                        <code>requestNewestMessages()</code>
                     </td>
                 </tr>
 
@@ -1405,20 +1449,43 @@ export class MessageArchivePlugin extends AbstractPlugin {
     }
 
     onBeforeOnline(): PromiseLike&lt;any&gt; {
-        return this.requestAllArchivedMessages();
+        return this.requestNewestMessages();
     }
 
-    private requestAllArchivedMessages() {
+    private requestNewestMessages() {
+        // TODO: load last messages per contact instead globally
         return this.chatService.chatConnectionService.sendIq(
             xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
                 xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;},
                     xml(&#x27;set&#x27;, {xmlns: &#x27;http://jabber.org/protocol/rsm&#x27;},
-                        xml(&#x27;max&#x27;, {}, 20),
+                        xml(&#x27;max&#x27;, {}, 250),
                         xml(&#x27;before&#x27;)
                     )
                 )
             )
         );
+    }
+
+    async loadAllMessages() {
+        let lastMamResponse &#x3D; await this.chatService.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
+                xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;})
+            )
+        );
+
+        while (lastMamResponse.getChild(&#x27;fin&#x27;).attrs.complete !&#x3D;&#x3D; &#x27;true&#x27;) {
+            const lastReceivedMessageId &#x3D; lastMamResponse.getChild(&#x27;fin&#x27;).getChild(&#x27;set&#x27;).getChildText(&#x27;last&#x27;);
+            lastMamResponse &#x3D; await this.chatService.chatConnectionService.sendIq(
+                xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
+                    xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;},
+                        xml(&#x27;set&#x27;, {xmlns: &#x27;http://jabber.org/protocol/rsm&#x27;},
+                            xml(&#x27;max&#x27;, {}, 250),
+                            xml(&#x27;after&#x27;, {}, lastReceivedMessageId)
+                        )
+                    )
+                )
+            );
+        }
     }
 
     handleStanza(stanza: Stanza) {

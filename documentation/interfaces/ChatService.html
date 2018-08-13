@@ -657,6 +657,9 @@
                                     <a href="#getOrCreateContactById">getOrCreateContactById</a>
                                 </li>
                                 <li>
+                                    <a href="#loadCompleteHistory">loadCompleteHistory</a>
+                                </li>
+                                <li>
                                     <a href="#logIn">logIn</a>
                                 </li>
                                 <li>
@@ -911,6 +914,46 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                                     <p>The new contact instance.</p>
 
                                 </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadCompleteHistory"></a>
+                        <span class="name">
+                            <b>
+                            loadCompleteHistory
+                            </b>
+                            <a href="#loadCompleteHistory"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>loadCompleteHistory()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:121</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Requests all archived messages for all contacts from the server.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                            </div>
                     </td>
                 </tr>
             </tbody>
@@ -1682,6 +1725,10 @@ export interface ChatService {
      */
     sendMessage(id: string, body: string): void;
 
+    /**
+     * Requests all archived messages for all contacts from the server.
+     */
+    loadCompleteHistory(): Promise&lt;void&gt;;
 }
 </code></pre>
     </div>

@@ -648,7 +648,7 @@ export class Contact {
      */
     constructor(jidPlain: string,
                 public name: string,
-                private logService: LogService,
+                private logService?: LogService,
                 avatar?: string) {
         this.messages$ &#x3D; new Subject();
         if (avatar) {
@@ -659,10 +659,14 @@ export class Contact {
 
     appendMessage(message: Message) {
         if (message.id &amp;&amp; this.messageIdToMessage[message.id]) {
-            this.logService.debug(&#x60;message with id ${message.id} already exists&#x60;);
+            if (this.logService) {
+                this.logService.debug(&#x60;message with id ${message.id} already exists&#x60;);
+            }
             return false;
         }
         this.messages.push(message);
+        // TODO: insert on correct index via binary search instead of sorting complete list all the time
+        this.messages.sort((a, b) &#x3D;&gt; a.datetime.getTime() - b.datetime.getTime());
         this.messages$.next(message);
         this.messageIdToMessage[message.id] &#x3D; message;
         return true;

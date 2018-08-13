@@ -687,7 +687,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(jidPlain: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, logService: <a href="../injectables/LogService.html">LogService</a>, avatar?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>constructor(jidPlain: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, logService?: <a href="../injectables/LogService.html">LogService</a>, avatar?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -743,7 +743,7 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            yes
                                                     </td>
                                                     
                                                 </tr>
@@ -1268,7 +1268,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -1337,7 +1337,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:63</a></div>
                             </td>
                         </tr>
 
@@ -1397,7 +1397,7 @@ export class Contact {
      */
     constructor(jidPlain: string,
                 public name: string,
-                private logService: LogService,
+                private logService?: LogService,
                 avatar?: string) {
         this.messages$ &#x3D; new Subject();
         if (avatar) {
@@ -1408,10 +1408,14 @@ export class Contact {
 
     appendMessage(message: Message) {
         if (message.id &amp;&amp; this.messageIdToMessage[message.id]) {
-            this.logService.debug(&#x60;message with id ${message.id} already exists&#x60;);
+            if (this.logService) {
+                this.logService.debug(&#x60;message with id ${message.id} already exists&#x60;);
+            }
             return false;
         }
         this.messages.push(message);
+        // TODO: insert on correct index via binary search instead of sorting complete list all the time
+        this.messages.sort((a, b) &#x3D;&gt; a.datetime.getTime() - b.datetime.getTime());
         this.messages$.next(message);
         this.messageIdToMessage[message.id] &#x3D; message;
         return true;
