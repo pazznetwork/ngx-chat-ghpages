@@ -280,7 +280,7 @@
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/MemberlistModification.html" data-type="entity-link">MemberlistModification</a>
+                        <a href="interfaces/MemberlistItem.html" data-type="entity-link">MemberlistItem</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Message.html" data-type="entity-link">Message</a>
@@ -618,7 +618,7 @@
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/MemberlistModification.html" data-type="entity-link">MemberlistModification</a>
+                        <a href="interfaces/MemberlistItem.html" data-type="entity-link">MemberlistItem</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Message.html" data-type="entity-link">Message</a>
@@ -780,6 +780,10 @@
                                 <a href="#createRoom">createRoom</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#destroyRoom">destroyRoom</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Private</span>
                                 <a href="#extractDefaultConfiguration">extractDefaultConfiguration</a>
                             </li>
@@ -829,6 +833,10 @@
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#queryMemberList">queryMemberList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#reverseMapAffiliation">reverseMapAffiliation</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -1034,7 +1042,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="299" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:299</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="343" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:343</a></div>
                             </td>
                         </tr>
 
@@ -1154,6 +1162,77 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="destroyRoom"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Async</span>
+                            destroyRoom
+                            </b>
+                            <a href="#destroyRoom"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>destroyRoom(roomJid: JID)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="233" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:233</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>roomJid</td>
+                                                        <td>
+                                                                    <code>JID</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>{}</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="extractDefaultConfiguration"></a>
                         <span class="name">
                             <b>
@@ -1174,7 +1253,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="312" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:312</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="356" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:356</a></div>
                             </td>
                         </tr>
 
@@ -1245,7 +1324,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="320" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:320</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="364" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:364</a></div>
                             </td>
                         </tr>
 
@@ -1316,7 +1395,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="362" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:362</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="406" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:406</a></div>
                             </td>
                         </tr>
 
@@ -1387,7 +1466,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="333" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:333</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="377" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:377</a></div>
                             </td>
                         </tr>
 
@@ -1598,7 +1677,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="329" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:329</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="373" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:373</a></div>
                             </td>
                         </tr>
 
@@ -1740,7 +1819,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="254" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:254</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="280" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:280</a></div>
                             </td>
                         </tr>
 
@@ -1812,7 +1891,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="233" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:233</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="254" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:254</a></div>
                             </td>
                         </tr>
 
@@ -1883,7 +1962,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:281</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="325" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:325</a></div>
                             </td>
                         </tr>
 
@@ -2028,7 +2107,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="258" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:258</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="284" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:284</a></div>
                             </td>
                         </tr>
 
@@ -2065,7 +2144,78 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/Occupant.html" target="_self" >Promise&lt;Occupant[]&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="../interfaces/MemberlistItem.html" target="_self" >Promise&lt;MemberlistItem[]&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reverseMapAffiliation"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            reverseMapAffiliation
+                            </b>
+                            <a href="#reverseMapAffiliation"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>reverseMapAffiliation(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="307" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:307</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/enumerations.html#Affiliation" target="_self" >Affiliation</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -2099,7 +2249,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="287" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:287</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="331" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:331</a></div>
                             </td>
                         </tr>
 
@@ -2699,7 +2849,7 @@ class QueryMemberListStanzaBuilder extends AbstractStanzaBuilder {
 
 }
 
-export interface MemberlistModification {
+export interface MemberlistItem {
     jid: JID;
     affiliation: Affiliation;
     nick?: string;
@@ -2707,11 +2857,11 @@ export interface MemberlistModification {
 
 class ModifyMemberListStanzaBuilder extends AbstractStanzaBuilder {
 
-    constructor(private roomJid: string, private modifications: MemberlistModification[]) {
+    constructor(private roomJid: string, private modifications: MemberlistItem[]) {
         super();
     }
 
-    static build(roomJid: string, modifications: MemberlistModification[]): Stanza {
+    static build(roomJid: string, modifications: MemberlistItem[]): Stanza {
         return new ModifyMemberListStanzaBuilder(roomJid, modifications).toStanza();
     }
 
@@ -2723,7 +2873,7 @@ class ModifyMemberListStanzaBuilder extends AbstractStanzaBuilder {
         );
     }
 
-    private buildItem(modification: MemberlistModification) {
+    private buildItem(modification: MemberlistItem) {
         const item &#x3D; xml(&#x27;item&#x27;, {jid: modification.jid.toString(), affiliation: Affiliation[modification.affiliation]});
         if (modification.nick) {
             item.attrs.nick &#x3D; modification.nick;
@@ -2825,9 +2975,30 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
         }
     }
 
+    async destroyRoom(roomJid: JID) {
+        const roomDestroyedResponse &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid.toString()},
+                xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#owner&#x27;},
+                    xml(&#x27;destroy&#x27;))));
+
+        const child &#x3D; roomDestroyedResponse.getChild(&#x27;error&#x27;);
+        if (child) {
+            throw new Error(&#x27;error destroying room:&#x27; + child.attrs.type);
+        }
+
+        // TODO: refactor so that we instead listen to the presence destroy stanza
+        const allRoomsWithoutDestroyedRoom &#x3D; this.rooms$.getValue().filter(
+            room &#x3D;&gt; !room.roomJid.equals(roomJid)
+        );
+
+        this.rooms$.next(allRoomsWithoutDestroyedRoom);
+
+        return roomDestroyedResponse;
+    }
+
     private async joinRoomInternal(roomJid: JID) {
         const userJid &#x3D; this.xmppChatAdapter.chatConnectionService.userJid;
-        const occupantJid &#x3D; new JID(roomJid.local, roomJid.domain, roomJid.resource || userJid.local);
+        const occupantJid &#x3D; new JID(roomJid.local, roomJid.domain, roomJid.resource || userJid.local);
         const roomJoinedPromise &#x3D; new Promise&lt;Stanza&gt;(resolve &#x3D;&gt; this.roomJoinPromises[occupantJid.toString()] &#x3D; resolve);
         await this.xmppChatAdapter.chatConnectionService.send(
             xml(&#x27;presence&#x27;, {from: userJid.toString(), to: occupantJid.toString()},
@@ -2840,8 +3011,13 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
             throw new Error(&#x27;error joining room: &#x27; + presenceResponse.toString());
         }
 
-        const room &#x3D; new Room(occupantJid, this.logService);
-        this.rooms$.next([room].concat(this.rooms$.getValue()));
+        let room;
+        try {
+            room &#x3D; this.getRoomByJid(roomJid);
+        } catch {
+            room &#x3D; new Room(occupantJid, this.logService);
+            this.rooms$.next([room].concat(this.rooms$.getValue()));
+        }
 
         return {presenceResponse, room};
     }
@@ -2850,7 +3026,7 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
         return (await this.joinRoomInternal(occupantJid)).room;
     }
 
-    async queryMemberList(room: Room): Promise&lt;Occupant[]&gt; {
+    async queryMemberList(room: Room): Promise&lt;MemberlistItem[]&gt; {
         const responsePromises &#x3D; [
             this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(room.roomJid.toString(), &#x27;admin&#x27;)),
             this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(room.roomJid.toString(), &#x27;member&#x27;)),
@@ -2859,18 +3035,36 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
         ];
 
         const memberQueryResponses &#x3D; await Promise.all(responsePromises);
-        let members &#x3D; [];
+        let members: MemberlistItem[] &#x3D; [];
         for (const memberQueryResponse of memberQueryResponses) {
             const membersFromQueryResponse &#x3D; memberQueryResponse.getChild(&#x27;query&#x27;).getChildren(&#x27;item&#x27;)
                 .map(memberItem &#x3D;&gt; ({
-                    jid: memberItem.attrs.jid,
+                    jid: parseJid(memberItem.attrs.jid),
                     nick: memberItem.attrs.nick,
-                    affiliation: memberItem.attrs.affiliation
+                    affiliation: this.reverseMapAffiliation(memberItem.attrs.affiliation),
                 }));
             members &#x3D; members.concat(membersFromQueryResponse);
         }
 
         return members;
+    }
+
+    private reverseMapAffiliation(value: string): Affiliation {
+        if (!value || value &#x3D;&#x3D;&#x3D; &#x27;none&#x27;) {
+            return Affiliation.none;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;member&#x27;) {
+            return Affiliation.member;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;) {
+            return Affiliation.admin;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;owner&#x27;) {
+            return Affiliation.owner;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;outcast&#x27;) {
+            return Affiliation.outcast;
+        } else {
+            const message &#x3D; &#x27;unexpected affilation: &#x27; + value;
+            this.logService.error(message);
+            throw new Error(message);
+        }
     }
 
     async modifyMemberList(room: Room, jid: JID, affiliation: Affiliation, nick?: string): Promise&lt;IqResponseStanza&gt; {

@@ -280,7 +280,7 @@
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/MemberlistModification.html" data-type="entity-link">MemberlistModification</a>
+                        <a href="interfaces/MemberlistItem.html" data-type="entity-link">MemberlistItem</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Message.html" data-type="entity-link">Message</a>
@@ -618,7 +618,7 @@
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/MemberlistModification.html" data-type="entity-link">MemberlistModification</a>
+                        <a href="interfaces/MemberlistItem.html" data-type="entity-link">MemberlistItem</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Message.html" data-type="entity-link">Message</a>
@@ -771,6 +771,8 @@ export class Contact {
     public avatar &#x3D; dummyAvatar;
     public metadata: ContactMetadata &#x3D; {};
 
+    /** use {@link jidBare}, jid resource is only set for chat room contacts */
+    public jidFull: JID;
     public jidBare: JID;
     public presence$ &#x3D; new BehaviorSubject&lt;Presence&gt;(Presence.unavailable);
     public subscription$ &#x3D; new BehaviorSubject&lt;ContactSubscription&gt;(ContactSubscription.none);
@@ -798,7 +800,9 @@ export class Contact {
         if (avatar) {
             this.avatar &#x3D; avatar;
         }
-        this.jidBare &#x3D; parseJid(jidPlain).bare();
+        const jid &#x3D; parseJid(jidPlain);
+        this.jidFull &#x3D; jid;
+        this.jidBare &#x3D; jid.bare();
         this.messageStore &#x3D; new MessageStore(logService);
     }
 

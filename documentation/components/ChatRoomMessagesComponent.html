@@ -280,7 +280,7 @@
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/MemberlistModification.html" data-type="entity-link">MemberlistModification</a>
+                        <a href="interfaces/MemberlistItem.html" data-type="entity-link">MemberlistItem</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Message.html" data-type="entity-link">Message</a>
@@ -618,7 +618,7 @@
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/MemberlistModification.html" data-type="entity-link">MemberlistModification</a>
+                        <a href="interfaces/MemberlistItem.html" data-type="entity-link">MemberlistItem</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Message.html" data-type="entity-link">Message</a>
@@ -727,12 +727,6 @@
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
 
 
 <section>
@@ -801,7 +795,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#getOrCreateContactWithFullJid">getOrCreateContactWithFullJid</a>
                             </li>
                         </ul>
                     </td>
@@ -835,12 +829,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatService: <a href="../interfaces/Service.html">ChatService</a>)</code>
+<code>constructor(chatService: <a href="../interfaces/Service.html">ChatService</a>, contactFactory: <a href="../injectables/ContactFactoryService.html">ContactFactoryService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -862,6 +856,18 @@
                                                   
                                                         <td>
                                                                     <code><a href="../interfaces/Service.html" target="_self" >ChatService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>contactFactory</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ContactFactoryService.html" target="_self" >ContactFactoryService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -896,7 +902,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:16</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -914,25 +920,25 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="ngOnInit"></a>
+                        <a name="getOrCreateContactWithFullJid"></a>
                         <span class="name">
                             <b>
-                            ngOnInit
+                            getOrCreateContactWithFullJid
                             </b>
-                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                            <a href="#getOrCreateContactWithFullJid"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>getOrCreateContactWithFullJid(fullJid: JID)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -941,9 +947,40 @@
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fullJid</td>
+                                                        <td>
+                                                                    <code>JID</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
 
                             </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -988,7 +1025,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-room-messages/chat-room-messages.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -1001,26 +1038,39 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Input, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Input } from &#x27;@angular/core&#x27;;
+import { JID } from &#x27;@xmpp/jid&#x27;;
+import { Contact } from &#x27;../../core&#x27;;
 import { Room } from &#x27;../../services/adapters/xmpp/plugins&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
+import { ContactFactoryService } from &#x27;../../services/contact-factory.service&#x27;;
 
 @Component({
     selector: &#x27;ngx-chat-room-messages&#x27;,
     templateUrl: &#x27;./chat-room-messages.component.html&#x27;,
     styleUrls: [&#x27;./chat-room-messages.component.less&#x27;]
 })
-export class ChatRoomMessagesComponent implements OnInit {
+export class ChatRoomMessagesComponent {
 
     @Input()
     room: Room;
 
-    constructor(@Inject(ChatServiceToken) public chatService: ChatService) {
+    constructor(@Inject(ChatServiceToken) public chatService: ChatService,
+                private contactFactory: ContactFactoryService) {
     }
 
-    ngOnInit() {
-    }
+    getOrCreateContactWithFullJid(fullJid: JID): Contact {
+        let matchingContact &#x3D; this.chatService.contacts$.getValue().find(
+            contact &#x3D;&gt; contact.jidFull.equals(fullJid)
+        );
 
+        if (!matchingContact) {
+            matchingContact &#x3D; this.contactFactory.createContact(fullJid.toString(), fullJid.resource);
+            this.chatService.contacts$.next([matchingContact].concat(this.chatService.contacts$.getValue()));
+        }
+
+        return matchingContact;
+    }
 }
 </code></pre>
     </div>
@@ -1030,8 +1080,9 @@ export class ChatRoomMessagesComponent implements OnInit {
     &lt;!-- TODO: avatar --&gt;
     &lt;ngx-chat-message *ngFor&#x3D;&quot;let message of room.messages&quot;
                       [message]&#x3D;&quot;message&quot;
+                      [avatar]&#x3D;&quot;getOrCreateContactWithFullJid(message.from).avatar&quot;
                       [showAvatars]&#x3D;&quot;true&quot;
-                      [nick]&#x3D;&quot;chatService.getOrCreateContactById(message.from.toString()).name&quot;&gt;
+                      [nick]&#x3D;&quot;getOrCreateContactWithFullJid(message.from).name&quot;&gt;
     &lt;/ngx-chat-message&gt;
     &lt;div class&#x3D;&quot;chat-messages-empty&quot; *ngIf&#x3D;&quot;room.messages.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
         {{this.chatService.translations.noMessages}}
@@ -1065,7 +1116,7 @@ export class ChatRoomMessagesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <!-- TODO: avatar -->    <ngx-chat-message *ngFor="let message of room.messages"                      [message]="message"                      [showAvatars]="true"                      [nick]="chatService.getOrCreateContactById(message.from.toString()).name">    </ngx-chat-message>    <div class="chat-messages-empty" *ngIf="room.messages.length === 0">        {{this.chatService.translations.noMessages}}    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <!-- TODO: avatar -->    <ngx-chat-message *ngFor="let message of room.messages"                      [message]="message"                      [avatar]="getOrCreateContactWithFullJid(message.from).avatar"                      [showAvatars]="true"                      [nick]="getOrCreateContactWithFullJid(message.from).name">    </ngx-chat-message>    <div class="chat-messages-empty" *ngIf="room.messages.length === 0">        {{this.chatService.translations.noMessages}}    </div></div></div>'
     var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatRoomMessagesComponent'};
