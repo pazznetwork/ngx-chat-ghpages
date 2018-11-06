@@ -48,6 +48,12 @@
                       <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
                     </li>
                     <li class="link">
+                            <a href="changelog.html"
+                        data-type="chapter-link">
+                            <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                        </a>
+                    </li>
+                    <li class="link">
                             <a href="license.html"
                         data-type="chapter-link">
                             <span class="fa fa-fw fa-file-text-o"></span>LICENSE
@@ -80,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#xs-components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="xs-components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -126,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#xs-directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="xs-directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -389,6 +395,12 @@
                       <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
                     </li>
                     <li class="link">
+                            <a href="changelog.html"
+                        data-type="chapter-link">
+                            <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                        </a>
+                    </li>
+                    <li class="link">
                             <a href="license.html"
                         data-type="chapter-link">
                             <span class="fa fa-fw fa-file-text-o"></span>LICENSE
@@ -421,14 +433,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -467,14 +479,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -1057,11 +1069,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
 import { ModuleWithProviders, NgModule } from &#x27;@angular/core&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
-import { Client } from &#x27;@xmpp/client-core&#x27;;
-import bind from &#x27;@xmpp/plugins/bind&#x27;;
-import plain from &#x27;@xmpp/plugins/sasl-plain&#x27;;
-import sessionEstablishment from &#x27;@xmpp/plugins/session-establishment&#x27;;
-import websocket from &#x27;@xmpp/plugins/websocket&#x27;;
 import { ChatMessageInputComponent } from &#x27;./components/chat-message-input/chat-message-input.component&#x27;;
 import { ChatMessageLinkComponent } from &#x27;./components/chat-message-link/chat-message-link.component&#x27;;
 import { ChatMessageListComponent } from &#x27;./components/chat-message-list/chat-message-list.component&#x27;;
@@ -1086,7 +1093,7 @@ import {
 } from &#x27;./services/adapters/xmpp/plugins&#x27;;
 import { MessagePlugin } from &#x27;./services/adapters/xmpp/plugins/message.plugin&#x27;;
 import { XmppChatAdapter } from &#x27;./services/adapters/xmpp/xmpp-chat-adapter.service&#x27;;
-import { XmppChatConnectionService, XmppClientToken } from &#x27;./services/adapters/xmpp/xmpp-chat-connection.service&#x27;;
+import { XmppChatConnectionService } from &#x27;./services/adapters/xmpp/xmpp-chat-connection.service&#x27;;
 import { ChatListStateService } from &#x27;./services/chat-list-state.service&#x27;;
 import { ChatServiceToken } from &#x27;./services/chat-service&#x27;;
 import { ContactFactoryService } from &#x27;./services/contact-factory.service&#x27;;
@@ -1140,12 +1147,8 @@ export class NgxChatModule {
                 },
                 {
                     provide: XmppChatConnectionService,
-                    deps: [XmppClientToken, LogService],
+                    deps: [LogService],
                     useFactory: NgxChatModule.chatConnectionService
-                },
-                {
-                    provide: XmppClientToken,
-                    useFactory: NgxChatModule.client
                 },
             ],
         };
@@ -1170,19 +1173,10 @@ export class NgxChatModule {
         return xmppChatAdapter;
     }
 
-    private static chatConnectionService(client: Client, logService: LogService) {
-        const connectionService &#x3D; new XmppChatConnectionService(client, logService);
+    private static chatConnectionService(logService: LogService) {
+        const connectionService &#x3D; new XmppChatConnectionService(logService);
         connectionService.initialize();
         return connectionService;
-    }
-
-    private static client() {
-        const client &#x3D; new Client();
-        client.plugin(bind);
-        client.plugin(plain);
-        client.plugin(sessionEstablishment);
-        client.plugin(websocket);
-        return client;
     }
 
 }

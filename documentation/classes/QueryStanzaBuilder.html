@@ -48,6 +48,12 @@
                       <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
                     </li>
                     <li class="link">
+                            <a href="changelog.html"
+                        data-type="chapter-link">
+                            <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                        </a>
+                    </li>
+                    <li class="link">
                             <a href="license.html"
                         data-type="chapter-link">
                             <span class="fa fa-fw fa-file-text-o"></span>LICENSE
@@ -80,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#xs-components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="xs-components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -126,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#xs-directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="xs-directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -389,6 +395,12 @@
                       <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
                     </li>
                     <li class="link">
+                            <a href="changelog.html"
+                        data-type="chapter-link">
+                            <span class="fa fa-fw fa-file-text-o"></span>CHANGELOG
+                        </a>
+                    </li>
+                    <li class="link">
                             <a href="license.html"
                         data-type="chapter-link">
                             <span class="fa fa-fw fa-file-text-o"></span>LICENSE
@@ -421,14 +433,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="components-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -467,14 +479,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        data-target="#directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-c561095c52dcea4c325241154b6af734"
+                                        id="directives-links-module-NgxChatModule-5d93d05e0f0b538765610584a6be0e68"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -1020,13 +1032,13 @@ export class ServiceDiscoveryPlugin extends AbstractXmppPlugin {
     }
 
     private async discoverServerFeatures() {
-        this.services.push(await this.discoverServiceInformation(this.chatAdapter.chatConnectionService.client.startOptions.domain));
+        this.services.push(await this.discoverServiceInformation(this.chatAdapter.chatConnectionService.userJid.domain));
     }
 
     private async discoverServices() {
         const serviceListResponsePromise &#x3D; this.chatAdapter.chatConnectionService.sendIq(
             new QueryStanzaBuilder(
-                ServiceDiscoveryPlugin.DISCO_ITEMS, this.chatAdapter.chatConnectionService.client.startOptions.domain).toStanza()
+                ServiceDiscoveryPlugin.DISCO_ITEMS, this.chatAdapter.chatConnectionService.userJid.domain).toStanza()
         );
 
         const serviceDomains &#x3D; (await serviceListResponsePromise)
