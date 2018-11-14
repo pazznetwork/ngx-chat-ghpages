@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        data-target="#xs-components-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        id="xs-components-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        data-target="#xs-directives-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        id="xs-directives-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -442,14 +442,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        data-target="#components-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        id="components-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -488,14 +488,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        data-target="#directives-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-1bfc24ff46df897057ac6663cfedce5f"
+                                        id="directives-links-module-NgxChatModule-da8e73ae8760e672c75fa634f8888545"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -760,9 +760,9 @@ Log in via <code>ngx-chat</code> wherever you want (e.g. in a component or a ser
 <div><pre class="line-numbers"><code class="language-typescript">constructor(&#64;Inject(ChatServiceToken) chatService: ChatService) {
     chatService.logIn({
         domain: &#39;ngx-chat.example&#39;,
-        service: &#39;wss://ngx-chat.example:5280/websocket&#39;,
-        username: &#39;someuser&#39;,
+        uri: &#39;wss://ngx-chat.example:5280/websocket&#39;,
         password: &#39;password&#39;,
+        jid: &#39;someuser&#64;ngx-chat.example&#39;,
     });
 }</code></pre></div><p><em>Optional</em>: body padding when roster list is expanded</p>
 <p>Add css styling like the following to your main styles.css if 
@@ -783,7 +783,13 @@ In the <code>src</code> folder you find the demo application.</p>
 <p><code>npm run build-lib</code></p>
 <h3 id="run-the-plugin-tests">Run the plugin tests</h3>
 <p><code>npm run test:once</code></p>
-
+<h2 id="releasing">Releasing</h2>
+<div><pre class="line-numbers"><code class="language-bash">npm run changelog
+git add .
+git commit -m &quot;docs: release $VERSION&quot;
+git tag v$VERSION
+git push --tags
+./push-release.sh</code></pre></div>
 
 
 
