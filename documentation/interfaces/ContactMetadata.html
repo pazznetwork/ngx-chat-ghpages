@@ -292,6 +292,9 @@
                         <a href="interfaces/IqResponseStanza.html" data-type="entity-link">IqResponseStanza</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/JidToPresence.html" data-type="entity-link">JidToPresence</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
@@ -648,6 +651,9 @@
                         <a href="interfaces/IqResponseStanza.html" data-type="entity-link">IqResponseStanza</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/JidToPresence.html" data-type="entity-link">JidToPresence</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
@@ -802,6 +808,10 @@ export interface ContactMetadata {
     [key: string]: any;
 }
 
+export interface JidToPresence {
+    [jid: string]: Presence;
+}
+
 export class Contact {
 
     public avatar &#x3D; dummyAvatar;
@@ -814,6 +824,7 @@ export class Contact {
     public subscription$ &#x3D; new BehaviorSubject&lt;ContactSubscription&gt;(ContactSubscription.none);
     public pendingOut$ &#x3D; new BehaviorSubject(false);
     public pendingIn$ &#x3D; new BehaviorSubject(false);
+    public resources$ &#x3D; new BehaviorSubject&lt;JidToPresence&gt;({});
 
     private messageStore: MessageStore&lt;Message&gt;;
 
@@ -859,6 +870,29 @@ export class Contact {
     isUnaffiliated() {
         return !this.isSubscribed() &amp;&amp; !this.pendingIn$.getValue() &amp;&amp; !this.pendingOut$.getValue() &amp;&amp; this.messages.length &gt; 0;
     }
+
+    updateResourcePresence(jid: string, presence: Presence) {
+        const resources &#x3D; this.resources$.getValue();
+        resources[jid] &#x3D; presence;
+        this.presence$.next(this.reducePresences(resources));
+        this.resources$.next(resources);
+    }
+
+    private reducePresences(jidToPresence: JidToPresence): Presence {
+        let result &#x3D; Presence.unavailable;
+        for (const jid in jidToPresence) {
+            if (jidToPresence.hasOwnProperty(jid)) {
+                const presence &#x3D; jidToPresence[jid];
+                if (presence &#x3D;&#x3D;&#x3D; Presence.present) {
+                    return presence;
+                } else if (presence &#x3D;&#x3D;&#x3D; Presence.away) {
+                    result &#x3D; Presence.away;
+                }
+            }
+        }
+        return result;
+    }
+
 }
 </code></pre>
     </div>

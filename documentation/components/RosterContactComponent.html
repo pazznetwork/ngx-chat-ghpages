@@ -292,6 +292,9 @@
                         <a href="interfaces/IqResponseStanza.html" data-type="entity-link">IqResponseStanza</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/JidToPresence.html" data-type="entity-link">JidToPresence</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
@@ -646,6 +649,9 @@
                     </li>
                     <li class="link">
                         <a href="interfaces/IqResponseStanza.html" data-type="entity-link">IqResponseStanza</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/JidToPresence.html" data-type="entity-link">JidToPresence</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
@@ -1025,17 +1031,17 @@ export class RosterContactComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;roster-contact&quot; [title]&#x3D;&quot;contact.name&quot;&gt;
+
     &lt;div class&#x3D;&quot;roster-contact-avatar&quot;&gt;
         &lt;img [src]&#x3D;&quot;contact.avatar&quot;/&gt;
     &lt;/div&gt;
+
     &lt;div class&#x3D;&quot;roster-contact-name&quot;&gt;
         {{contact.name}}
     &lt;/div&gt;
-    &lt;!--
-    &lt;div class&#x3D;&quot;roster-presence&quot;&gt;
-        {{(contact.presence$ | async) &#x3D;&#x3D;&#x3D; presence.present}}
-    &lt;/div&gt;
-    --&gt;
+
+    &lt;div class&#x3D;&quot;roster-presence&quot; [ngClass]&#x3D;&quot;&#x27;roster-presence--&#x27; + (contact.presence$ | async)&quot;&gt;●&lt;/div&gt;
+
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -1065,7 +1071,7 @@ export class RosterContactComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="roster-contact" [title]="contact.name">    <div class="roster-contact-avatar">        <img [src]="contact.avatar"/>    </div>    <div class="roster-contact-name">        {{contact.name}}    </div>    <!--    <div class="roster-presence">        {{(contact.presence$ | async) === presence.present}}    </div>    --></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="roster-contact" [title]="contact.name">    <div class="roster-contact-avatar">        <img [src]="contact.avatar"/>    </div>    <div class="roster-contact-name">        {{contact.name}}    </div>    <div class="roster-presence" [ngClass]="\'roster-presence--\' + (contact.presence$ | async)">●</div></div></div>'
     var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'RosterContactComponent'};
