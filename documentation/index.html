@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#xs-components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="xs-components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#xs-directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="xs-directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -442,14 +442,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -488,14 +488,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -734,13 +734,15 @@
 <p>This library provides an out-of-the-box usable XMPP chat component. It is customizable and offers an API to integrate it with your application.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li>connect to XMPP servers via BOSH or websocket</li>
+<li>connect to XMPP servers via websocket</li>
 <li>send and receive messages</li>
 <li>load messages from message history (XEP-0313)</li>
-<li>manage and use the server side buddy list or use your own data source for that </li>
+<li>use the server side buddy list or use your own data source for that, API methods for adding / removing buddies available </li>
+<li>supports multi user chat</li>
 </ul>
 <h2 id="demo">Demo</h2>
-<p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Have a look at our demo (valid XMPP credentials required)</a> </p>
+<p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Have a look at our demo (valid XMPP credentials required)</a> 
+<img src="https://user-images.githubusercontent.com/4292951/49931801-f5c3d880-fec7-11e8-8a74-6600ea2cf9b0.png" alt="screenshot" class="img-responsive"></p>
 <h2 id="documentation">Documentation</h2>
 <p>Below you will find some instructions to getting started. <a href="https://github.com/pazznetwork/ngx-chat/wiki">Have a look at the wiki for FAQ&#39;s and the API documentation.</a></p>
 <h2 id="installation-and-usage">Installation and usage</h2>
@@ -775,8 +777,22 @@ you want to resize your main content when the roster is expanded.</p>
 
 body.has-roster {
     padding-right: 14em;
-}</code></pre></div><h2 id="development">Development</h2>
-<p>If you want to develop on ngx-chat, clone this repository.
+}</code></pre></div><h2 id="faq">FAQ</h2>
+<p><strong>Q: Which browsers are supported?</strong>
+A: It is tested in Chrome, Safari and Firefox.</p>
+<p><strong>Q: Does ngx-chat work with self signed certificates?</strong>
+A: Yes, if the following criteria are met:</p>
+<ul>
+<li>the certificate has to be trusted by the browser you are using. Chrome uses the operating system trust store for certificates while Firefox has a custom implementation.</li>
+<li>the common name (CN) matches the uri of the service you are connecting to </li>
+</ul>
+<p><strong>Q: Can ngx-chat be used without the UI?</strong>
+A: Yes. Inject the chat service via <code>@Inject(ChatServiceToken) public chatService: ChatService</code>, login via <code>logIn</code> and start sending messages via the <code>sendMessage</code> method.</p>
+<p><strong>Q: My question is not answered</strong>
+A: <a href="https://github.com/pazznetwork/ngx-chat/issues/new">No problem, feel free to raise an issue</a>.</p>
+<h2 id="development">Development</h2>
+<p>Pull requests are welcome!
+If you want to develop on ngx-chat, clone this repository.
 The Library can be found in the <code>projects/pazznetwork/ngx-chat</code> folder.
 In the <code>src</code> folder you find the demo application.</p>
 <h3 id="build-the-plugin">Build the plugin</h3>

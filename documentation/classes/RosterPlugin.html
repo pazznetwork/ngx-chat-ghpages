@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#xs-components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="xs-components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#xs-directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="xs-directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -442,14 +442,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -488,14 +488,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -2674,7 +2674,7 @@ export class RosterPlugin extends AbstractXmppPlugin {
 
         const itemChild &#x3D; stanza.getChild(&#x27;query&#x27;).getChild(&#x27;item&#x27;);
         const contact &#x3D; this.chatService.getOrCreateContactById(itemChild.attrs.jid, itemChild.attrs.name || itemChild.attrs.jid);
-        contact.pendingOut &#x3D; itemChild.attrs.ask &#x3D;&#x3D;&#x3D; &#x27;subscribe&#x27;;
+        contact.pendingOut$.next(itemChild.attrs.ask &#x3D;&#x3D;&#x3D; &#x27;subscribe&#x27;);
         const subscriptionStatus &#x3D; itemChild.attrs.subscription || &#x27;none&#x27;;
 
         this.chatService.chatConnectionService.sendIqAckResult(stanza.attrs.id);
@@ -2682,7 +2682,7 @@ export class RosterPlugin extends AbstractXmppPlugin {
         let handled &#x3D; false;
 
         if (subscriptionStatus &#x3D;&#x3D;&#x3D; &#x27;remove&#x27;) {
-            contact.pendingOut &#x3D; false;
+            contact.pendingOut$.next(false);
             contact.subscription$.next(ContactSubscription.none);
             handled &#x3D; true;
         } else if (subscriptionStatus &#x3D;&#x3D;&#x3D; &#x27;none&#x27;) {
@@ -2750,9 +2750,9 @@ export class RosterPlugin extends AbstractXmppPlugin {
                 fromAsContact.presence$.next(Presence.unavailable);
                 return true;
             } else if (stanza.attrs.type &#x3D;&#x3D;&#x3D; &#x27;subscribe&#x27;) {
-                if (fromAsContact.isSubscribed() || fromAsContact.pendingOut) {
+                if (fromAsContact.isSubscribed() || fromAsContact.pendingOut$.getValue()) {
                     // subscriber is already a contact of us, approve subscription
-                    fromAsContact.pendingIn &#x3D; false;
+                    fromAsContact.pendingIn$.next(false);
                     this.sendAcceptPresenceSubscriptionRequest(stanza.attrs.from);
                     fromAsContact.subscription$.next(
                         this.transitionSubscriptionRequestReceivedAccepted(fromAsContact.subscription$.getValue()));
@@ -2760,12 +2760,12 @@ export class RosterPlugin extends AbstractXmppPlugin {
                     return true;
                 } else if (fromAsContact) {
                     // subscriber is known but not subscribed or pending
-                    fromAsContact.pendingIn &#x3D; true;
+                    fromAsContact.pendingIn$.next(true);
                     this.chatService.contacts$.next(this.chatService.contacts$.getValue());
                     return true;
                 }
             } else if (stanza.attrs.type &#x3D;&#x3D;&#x3D; &#x27;subscribed&#x27;) {
-                fromAsContact.pendingOut &#x3D; false;
+                fromAsContact.pendingOut$.next(false);
                 fromAsContact.subscription$.next(this.transitionSubscriptionRequestSentAccepted(fromAsContact.subscription$.getValue()));
                 this.chatService.contacts$.next(this.chatService.contacts$.getValue());
                 return true;
@@ -2802,7 +2802,7 @@ export class RosterPlugin extends AbstractXmppPlugin {
 
     private sendAcceptPresenceSubscriptionRequest(jid: string) {
         const contact &#x3D; this.chatService.getOrCreateContactById(jid);
-        contact.pendingIn &#x3D; false;
+        contact.pendingIn$.next(false);
         this.chatService.chatConnectionService.send(
             xml(&#x27;presence&#x27;, {to: jid, type: &#x27;subscribed&#x27;, id: this.chatService.chatConnectionService.getNextIqId()})
         );
@@ -2834,7 +2834,7 @@ export class RosterPlugin extends AbstractXmppPlugin {
                 const contact &#x3D; this.chatService.getOrCreateContactById(rosterElement.attrs.jid,
                     rosterElement.attrs.name || rosterElement.attrs.jid);
                 contact.subscription$.next(this.parseSubscription(rosterElement.attrs.subscription));
-                contact.pendingOut &#x3D; rosterElement.attrs.ask &#x3D;&#x3D;&#x3D; &#x27;subscribe&#x27;;
+                contact.pendingOut$.next(rosterElement.attrs.ask &#x3D;&#x3D;&#x3D; &#x27;subscribe&#x27;);
                 return contact;
             });
     }
@@ -2876,8 +2876,8 @@ export class RosterPlugin extends AbstractXmppPlugin {
         const contact &#x3D; this.chatService.getContactById(jid);
         if (contact) {
             contact.subscription$.next(ContactSubscription.none);
-            contact.pendingOut &#x3D; false;
-            contact.pendingIn &#x3D; false;
+            contact.pendingOut$.next(false);
+            contact.pendingIn$.next(false);
             this.sendRemoveFromRoster(jid);
             this.sendWithdrawPresenceSubscription(jid);
         }

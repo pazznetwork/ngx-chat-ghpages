@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#xs-components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="xs-components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#xs-directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="xs-directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -442,14 +442,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="components-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -488,14 +488,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        data-target="#directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-d310462f5096184a63ddd419ec13a238"
+                                        id="directives-links-module-NgxChatModule-bb91f8d128cbb017000c7a278e07b413"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -1542,7 +1542,7 @@ export class ChatMessageListComponent implements OnInit, OnDestroy {
     &lt;div class&#x3D;&quot;chat-messages-empty&quot; *ngIf&#x3D;&quot;contact.messages.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
         {{this.chatService.translations.noMessages}}
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;chat-message chat-message--in&quot; *ngIf&#x3D;&quot;contact.pendingIn&quot;&gt;
+    &lt;div class&#x3D;&quot;chat-message chat-message--in&quot; *ngIf&#x3D;&quot;contact.pendingIn$ | async&quot;&gt;
         &lt;span&gt;
             {{this.chatService.translations.subscriptionRequestMessage}}
         &lt;/span&gt;
@@ -1584,7 +1584,7 @@ export class ChatMessageListComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <ngx-chat-message *ngFor="let message of contact.messages"                      [avatar]="contact.avatar"                      [message]="message"                      [showAvatars]="showAvatars">    </ngx-chat-message>    <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">        {{this.chatService.translations.noMessages}}    </div>    <div class="chat-message chat-message--in" *ngIf="contact.pendingIn">        <span>            {{this.chatService.translations.subscriptionRequestMessage}}        </span>        <ul class="chat-presence-subscription-actions">            <li>                <a (click)="acceptSubscriptionRequest($event)" href="#">{{this.chatService.translations.acceptSubscriptionRequest}}</a>            </li>            <li>                <a (click)="denySubscriptionRequest($event)" href="#">{{this.chatService.translations.denySubscriptionRequest}}</a>            </li>        </ul>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <ngx-chat-message *ngFor="let message of contact.messages"                      [avatar]="contact.avatar"                      [message]="message"                      [showAvatars]="showAvatars">    </ngx-chat-message>    <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">        {{this.chatService.translations.noMessages}}    </div>    <div class="chat-message chat-message--in" *ngIf="contact.pendingIn$ | async">        <span>            {{this.chatService.translations.subscriptionRequestMessage}}        </span>        <ul class="chat-presence-subscription-actions">            <li>                <a (click)="acceptSubscriptionRequest($event)" href="#">{{this.chatService.translations.acceptSubscriptionRequest}}</a>            </li>            <li>                <a (click)="denySubscriptionRequest($event)" href="#">{{this.chatService.translations.denySubscriptionRequest}}</a>            </li>        </ul>    </div></div></div>'
     var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageListComponent'};
