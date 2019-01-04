@@ -71,11 +71,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ISC
 ISC
 
-@xmpp/client-core@0.3.0
+@xmpp/events@0.3.0
 ISC
 ISC
 
-@xmpp/events@0.3.0
+@xmpp/client-core@0.3.0
 ISC
 ISC
 
