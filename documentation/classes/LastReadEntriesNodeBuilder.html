@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#xs-components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="xs-components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#xs-directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="xs-directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -183,6 +183,9 @@
                     </li>
                     <li class="link">
                         <a href="classes/MessageArchivePlugin.html" data-type="entity-link">MessageArchivePlugin</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/MessageCarbonsPlugin.html" data-type="entity-link">MessageCarbonsPlugin</a>
                     </li>
                     <li class="link">
                         <a href="classes/MessagePlugin.html" data-type="entity-link">MessagePlugin</a>
@@ -460,14 +463,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -506,14 +509,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -557,6 +560,9 @@
                     </li>
                     <li class="link">
                         <a href="classes/MessageArchivePlugin.html" data-type="entity-link">MessageArchivePlugin</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/MessageCarbonsPlugin.html" data-type="entity-link">MessageCarbonsPlugin</a>
                     </li>
                     <li class="link">
                         <a href="classes/MessagePlugin.html" data-type="entity-link">MessagePlugin</a>
@@ -1083,8 +1089,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { x as xml } from &#x27;@xmpp/xml&#x27;;
 import { Element } from &#x27;ltx&#x27;;
 import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
-import { delay, filter, map, share } from &#x27;rxjs/operators&#x27;;
-import { Contact } from &#x27;../../../../core&#x27;;
+import { debounceTime, delay, distinctUntilChanged, filter, map, share } from &#x27;rxjs/operators&#x27;;
+import { Contact, Direction } from &#x27;../../../../core&#x27;;
 import { findSortedInsertionIndexLast } from &#x27;../../../../core/utils-array&#x27;;
 import { extractValues, sum } from &#x27;../../../../core/utils-object&#x27;;
 import { ChatMessageListRegistryService } from &#x27;../../../chat-message-list-registry.service&#x27;;
@@ -1093,7 +1099,7 @@ import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { PublishSubscribePlugin } from &#x27;./publish-subscribe.plugin&#x27;;
 
-const STORAGE_NGX_CHAT_LAST_CLIENTS &#x3D; &#x27;ngxchat:unreadmessagedate&#x27;;
+const STORAGE_NGX_CHAT_LAST_READ_DATE &#x3D; &#x27;ngxchat:unreadmessagedate&#x27;;
 const wrapperNodeName &#x3D; &#x27;entries&#x27;;
 const nodeName &#x3D; &#x27;last-read&#x27;;
 
@@ -1135,7 +1141,14 @@ class LastReadEntriesNodeBuilder extends AbstractStanzaBuilder {
  */
 export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
 
+    /**
+     * already debounced to prevent the issues described in {@link this.jidToUnreadCount$}.
+     */
     public unreadMessageCountSum$: Observable&lt;number&gt;;
+    /**
+     * emits as soon as the unread message count changes, you might want to debounce it with e.g. half a a second, as
+     * new messages might be acknowledged in another session.
+     */
     public jidToUnreadCount$: BehaviorSubject&lt;JidToNumber&gt; &#x3D; new BehaviorSubject({});
     private jidToLastReadDate: JidToDate &#x3D; {};
 
@@ -1170,8 +1183,13 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
                 this.updateContactUnreadMessageState(contact);
             });
 
+        this.publishSubscribePlugin.publish$
+            .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event));
+
         this.unreadMessageCountSum$ &#x3D; this.jidToUnreadCount$.pipe(
             map(jidToCount &#x3D;&gt; sum(extractValues(jidToCount))),
+            debounceTime(500),
+            distinctUntilChanged(),
             share()
         );
     }
@@ -1185,12 +1203,15 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
     }
 
     private async fetchLastSeenDates(): Promise&lt;JidToDate&gt; {
-        const entries &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_LAST_CLIENTS);
+        const entries &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_LAST_READ_DATE);
+        return this.parseLastSeenDates(entries);
+    }
 
+    private parseLastSeenDates(itemElement: Element[]): JidToDate {
         const result: JidToDate &#x3D; {};
 
-        if (entries.length &#x3D;&#x3D;&#x3D; 1) {
-            for (const lastReadEntry of entries[0].getChild(wrapperNodeName).getChildren(nodeName)) {
+        if (itemElement.length &#x3D;&#x3D;&#x3D; 1) {
+            for (const lastReadEntry of itemElement[0].getChild(wrapperNodeName).getChildren(nodeName)) {
                 const {jid, date} &#x3D; lastReadEntry.attrs;
                 const parsedDate &#x3D; new Date(+date);
                 if (!isNaN(parsedDate.getTime())) {
@@ -1219,7 +1240,10 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
     }
 
     private calculateUnreadMessageCount(contact: Contact, date: Date) {
-        return contact.messages.length - findSortedInsertionIndexLast(date, contact.messages, message &#x3D;&gt; message.datetime);
+        const firstUnreadMessageIndex &#x3D; findSortedInsertionIndexLast(date, contact.messages, message &#x3D;&gt; message.datetime);
+        return contact.messages.slice(firstUnreadMessageIndex)
+            .filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in)
+            .length;
     }
 
     private persistLastSeenDates() {
@@ -1231,9 +1255,27 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
             }
         }
 
-        this.publishSubscribePlugin.publishPrivate(STORAGE_NGX_CHAT_LAST_CLIENTS, &#x27;current&#x27;, lastReadNodeBuilder.toStanza());
+        this.publishSubscribePlugin.publishPrivate(STORAGE_NGX_CHAT_LAST_READ_DATE, &#x27;current&#x27;, lastReadNodeBuilder.toStanza());
     }
 
+    private handlePubSubEvent(event: Element) {
+        const items &#x3D; event.getChild(&#x27;items&#x27;);
+        const itemsNode &#x3D; items &amp;&amp; items.attrs.node;
+        const item &#x3D; items &amp;&amp; items.getChildren(&#x27;item&#x27;);
+        if (itemsNode &#x3D;&#x3D;&#x3D; STORAGE_NGX_CHAT_LAST_READ_DATE &amp;&amp; item) {
+            const publishedLastJidToDate &#x3D; this.parseLastSeenDates(item);
+            this.mergeJidToDates(publishedLastJidToDate);
+        }
+    }
+
+    private mergeJidToDates(newJidToDate: JidToDate) {
+        for (const jid in newJidToDate) {
+            if (!this.jidToLastReadDate[jid] || this.jidToLastReadDate[jid] &lt; newJidToDate[jid]) {
+                this.jidToLastReadDate[jid] &#x3D; newJidToDate[jid];
+                this.updateContactUnreadMessageState(this.chatService.getOrCreateContactById(jid));
+            }
+        }
+    }
 }
 </code></pre>
     </div>

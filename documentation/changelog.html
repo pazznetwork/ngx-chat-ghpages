@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#xs-components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="xs-components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,14 +132,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#xs-directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="xs-directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -183,6 +183,9 @@
                     </li>
                     <li class="link">
                         <a href="classes/MessageArchivePlugin.html" data-type="entity-link">MessageArchivePlugin</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/MessageCarbonsPlugin.html" data-type="entity-link">MessageCarbonsPlugin</a>
                     </li>
                     <li class="link">
                         <a href="classes/MessagePlugin.html" data-type="entity-link">MessagePlugin</a>
@@ -460,14 +463,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="components-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -506,14 +509,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        data-target="#directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-95e5d3b70e0f1784d054afb3a094f9c2"
+                                        id="directives-links-module-NgxChatModule-8bec24d70b95236866ad886222ed2334"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -557,6 +560,9 @@
                     </li>
                     <li class="link">
                         <a href="classes/MessageArchivePlugin.html" data-type="entity-link">MessageArchivePlugin</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/MessageCarbonsPlugin.html" data-type="entity-link">MessageCarbonsPlugin</a>
                     </li>
                     <li class="link">
                         <a href="classes/MessagePlugin.html" data-type="entity-link">MessagePlugin</a>
@@ -766,6 +772,18 @@
                <div class="content getting-started">
                    <div class="content-data">
 
+<h2 id="0-2-7-2019-01-11-"><a href="https://github.com/pazznetwork/ngx-chat/compare/v0.2.6...v0.2.7">0.2.7</a> (2019-01-11)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>do not emit messages$ when sending a message (<a href="https://github.com/pazznetwork/ngx-chat/commit/cb906a5">cb906a5</a>)</li>
+<li>do not open minimized chat window when sending message (<a href="https://github.com/pazznetwork/ngx-chat/commit/fdee840">fdee840</a>)</li>
+<li>unread messages only counts incoming messages, not sent ones (<a href="https://github.com/pazznetwork/ngx-chat/commit/fe89ab8">fe89ab8</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add support for message carbons (XEP-0280) (<a href="https://github.com/pazznetwork/ngx-chat/commit/9762de5">9762de5</a>)</li>
+<li>synchronize &#39;last read date&#39; via pubsub (<a href="https://github.com/pazznetwork/ngx-chat/commit/65a8a67">65a8a67</a>)</li>
+</ul>
 <h2 id="0-2-6-2019-01-04-"><a href="https://github.com/pazznetwork/ngx-chat/compare/v0.2.5...v0.2.6">0.2.6</a> (2019-01-04)</h2>
 <h3 id="bug-fixes">Bug Fixes</h3>
 <ul>
