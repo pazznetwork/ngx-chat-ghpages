@@ -298,6 +298,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -673,6 +676,9 @@
                     </li>
                     <li class="link">
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
@@ -1190,9 +1196,10 @@ export class ChatMessageComponent implements OnInit {
         &lt;img *ngIf&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; &#x27;in&#x27;&quot; [src]&#x3D;&quot;avatar&quot;/&gt;
         &lt;img *ngIf&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; &#x27;out&#x27;&quot; [src]&#x3D;&quot;chatService.userAvatar$ | async&quot;/&gt;
     &lt;/div&gt;
-    &lt;span [ngxChatLinks]&#x3D;&quot;message.body&quot; class&#x3D;&quot;chat-message-body&quot;&gt;&lt;/span&gt;
-    &lt;div class&#x3D;&quot;chat-message-datetime&quot;&gt;
-        &lt;small&gt;{{message.datetime | date:chatService.translations.dateTimeFormat}} {{nick}}&lt;/small&gt;
+    &lt;div [ngxChatLinks]&#x3D;&quot;message.body&quot; class&#x3D;&quot;chat-message-body&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;chat-message-footer&quot;&gt;
+        &lt;small title&#x3D;&quot;{{nick}}&quot; class&#x3D;&quot;chat-message-name&quot;&gt;{{nick}}&lt;/small&gt;
+        &lt;small class&#x3D;&quot;chat-message-datetime&quot;&gt;{{message.datetime | date:chatService.translations.timeFormat}}&lt;/small&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -1223,7 +1230,7 @@ export class ChatMessageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-message"     [ngClass]="{\'chat-message--in\': message.direction === \'in\', \'chat-message--out\': message.direction === \'out\'}">    <div *ngIf="showAvatars" class="chat-message-avatar">        <img *ngIf="message.direction === \'in\'" [src]="avatar"/>        <img *ngIf="message.direction === \'out\'" [src]="chatService.userAvatar$ | async"/>    </div>    <span [ngxChatLinks]="message.body" class="chat-message-body"></span>    <div class="chat-message-datetime">        <small>{{message.datetime | date:chatService.translations.dateTimeFormat}} {{nick}}</small>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="chat-message"     [ngClass]="{\'chat-message--in\': message.direction === \'in\', \'chat-message--out\': message.direction === \'out\'}">    <div *ngIf="showAvatars" class="chat-message-avatar">        <img *ngIf="message.direction === \'in\'" [src]="avatar"/>        <img *ngIf="message.direction === \'out\'" [src]="chatService.userAvatar$ | async"/>    </div>    <div [ngxChatLinks]="message.body" class="chat-message-body"></div>    <div class="chat-message-footer">        <small title="{{nick}}" class="chat-message-name">{{nick}}</small>        <small class="chat-message-datetime">{{message.datetime | date:chatService.translations.timeFormat}}</small>    </div></div></div>'
     var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageComponent'};

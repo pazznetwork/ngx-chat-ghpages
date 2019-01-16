@@ -298,6 +298,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -675,6 +678,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -836,7 +842,7 @@ import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
 import { LogService } from &#x27;../services/log.service&#x27;;
 import { dummyAvatar } from &#x27;./contact-avatar&#x27;;
 import { Message } from &#x27;./message&#x27;;
-import { MessageStore } from &#x27;./message-store&#x27;;
+import { DateMessagesGroup, MessageStore } from &#x27;./message-store&#x27;;
 import { Presence } from &#x27;./presence&#x27;;
 import { ContactSubscription } from &#x27;./subscription&#x27;;
 
@@ -870,6 +876,10 @@ export class Contact {
 
     get messages() {
         return this.messageStore.messages;
+    }
+
+    get dateMessagesGroups(): DateMessagesGroup[] {
+        return this.messageStore.dateMessageGroups;
     }
 
     /**

@@ -298,6 +298,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -675,6 +678,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -834,10 +840,13 @@
                                         <a href="#contactsUnaffiliated">contactsUnaffiliated</a>
                                 </li>
                                 <li>
-                                        <a href="#dateTimeFormat">dateTimeFormat</a>
+                                        <a href="#dateFormat">dateFormat</a>
                                 </li>
                                 <li>
                                         <a href="#denySubscriptionRequest">denySubscriptionRequest</a>
+                                </li>
+                                <li>
+                                        <a href="#locale">locale</a>
                                 </li>
                                 <li>
                                         <a href="#noContacts">noContacts</a>
@@ -850,6 +859,9 @@
                                 </li>
                                 <li>
                                         <a href="#subscriptionRequestMessage">subscriptionRequestMessage</a>
+                                </li>
+                                <li>
+                                        <a href="#timeFormat">timeFormat</a>
                                 </li>
                             </ul>
                         </td>
@@ -1011,13 +1023,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="dateTimeFormat"></a>
-                                        <span class="name"><b>dateTimeFormat</b><a href="#dateTimeFormat"><span class="fa fa-link"></span></a></span>
+                                        <a name="dateFormat"></a>
+                                        <span class="name"><b>dateFormat</b><a href="#dateFormat"><span class="fa fa-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>dateTimeFormat:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>dateFormat:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -1047,6 +1059,35 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <code>denySubscriptionRequest:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="locale"></a>
+                                        <span class="name"><b>locale</b><a href="#locale"><span class="fa fa-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>locale:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -1181,6 +1222,35 @@
 
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="timeFormat"></a>
+                                        <span class="name"><b>timeFormat</b><a href="#timeFormat"><span class="fa fa-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>timeFormat:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
             </section>
     </div>
 
@@ -1197,7 +1267,9 @@
     subscriptionRequestMessage: string;
     acceptSubscriptionRequest: string;
     denySubscriptionRequest: string;
-    dateTimeFormat: string;
+    timeFormat: string;
+    dateFormat: string;
+    locale: string;
 }
 </code></pre>
     </div>

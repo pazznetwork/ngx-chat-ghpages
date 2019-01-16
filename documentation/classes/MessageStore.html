@@ -298,6 +298,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -675,6 +678,9 @@
                         <a href="interfaces/ContactMetadata.html" data-type="entity-link">ContactMetadata</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/DateMessagesGroup.html" data-type="entity-link">DateMessagesGroup</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
                     </li>
                     <li class="link">
@@ -820,6 +826,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dateMessageGroups">dateMessageGroups</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Private</span>
                                 <a href="#messageIdToMessage">messageIdToMessage</a>
                             </li>
@@ -846,6 +856,10 @@
                             <li>
                                 <a href="#addMessage">addMessage</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addToDateMessageGroups">addToDateMessageGroups</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -869,7 +883,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -916,6 +930,46 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="dateMessageGroups"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dateMessageGroups
+                            </b>
+                            <a href="#dateMessageGroups"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>dateMessageGroups:     <code><a href="../interfaces/Message.html" target="_self" >DateMessagesGroup[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Message.html" target="_self" >DateMessagesGroup[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="messageIdToMessage"></a>
                         <span class="name">
                             <b>
@@ -945,7 +999,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -985,7 +1039,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -1020,7 +1074,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -1056,7 +1110,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -1103,6 +1157,77 @@
                 </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addToDateMessageGroups"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            addToDateMessageGroups
+                            </b>
+                            <a href="#addToDateMessageGroups"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>addToDateMessageGroups(message: T)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>message</td>
+                                                        <td>
+                                                                    <code>T</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
 
 
@@ -1117,12 +1242,20 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &#x27;rxjs&#x27;;
 import { LogService } from &#x27;../services/log.service&#x27;;
 import { Message } from &#x27;./message&#x27;;
-import { insertSortedLast } from &#x27;./utils-array&#x27;;
+import { findSortedIndex, findSortedInsertionIndexLast, insertSortedLast } from &#x27;./utils-array&#x27;;
+import { extractDateStringFromDate } from &#x27;./utils-date&#x27;;
+
+export interface DateMessagesGroup {
+    /** is equal to the date where one message on that date was received */
+    date: Date;
+    messages: Message[];
+}
 
 export class MessageStore&lt;T extends Message&gt; {
 
     public messages$: Subject&lt;T&gt;;
     public messages: T[] &#x3D; [];
+    public dateMessageGroups: DateMessagesGroup[] &#x3D; [];
     private messageIdToMessage: { [key: string]: T } &#x3D; {};
 
     constructor(private logService: LogService) {
@@ -1137,9 +1270,26 @@ export class MessageStore&lt;T extends Message&gt; {
             return false;
         }
         insertSortedLast(message, this.messages, m &#x3D;&gt; m.datetime);
+        this.addToDateMessageGroups(message);
         this.messageIdToMessage[message.id] &#x3D; message;
         this.messages$.next(message);
         return true;
+    }
+
+    private addToDateMessageGroups(message: T) {
+        const dateString &#x3D; extractDateStringFromDate(message.datetime);
+        const groupIndex &#x3D; findSortedIndex(dateString, this.dateMessageGroups, group &#x3D;&gt; extractDateStringFromDate(group.date));
+        if (groupIndex !&#x3D;&#x3D; -1) {
+            insertSortedLast(message, this.dateMessageGroups[groupIndex].messages, m &#x3D;&gt; m.datetime);
+        } else {
+            const groupToInsert &#x3D; {
+                date: message.datetime,
+                messages: [message]
+            };
+            const insertIndex &#x3D; findSortedInsertionIndexLast(dateString, this.dateMessageGroups,
+                group &#x3D;&gt; extractDateStringFromDate(group.date));
+            this.dateMessageGroups.splice(insertIndex, 0, groupToInsert);
+        }
     }
 
 }
