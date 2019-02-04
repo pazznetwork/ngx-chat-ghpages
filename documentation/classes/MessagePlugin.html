@@ -967,7 +967,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -1176,7 +1176,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -1680,7 +1680,10 @@ export class MessagePlugin extends AbstractXmppPlugin {
     }
 
     private isMessageStanza(stanza: Stanza): stanza is MessageWithBodyStanza {
-        return stanza.name &#x3D;&#x3D;&#x3D; &#x27;message&#x27; &amp;&amp; stanza.attrs.type !&#x3D;&#x3D; &#x27;groupchat&#x27; &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;);
+        return stanza.name &#x3D;&#x3D;&#x3D; &#x27;message&#x27;
+            &amp;&amp; stanza.attrs.type !&#x3D;&#x3D; &#x27;groupchat&#x27;
+            &amp;&amp; stanza.attrs.type !&#x3D;&#x3D; &#x27;error&#x27;
+            &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;);
     }
 
     private handleMessageStanza(messageStanza: MessageWithBodyStanza) {
