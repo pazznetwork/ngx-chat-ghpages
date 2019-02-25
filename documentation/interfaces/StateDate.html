@@ -1072,9 +1072,9 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
                 const stateDates &#x3D; this.jidToMessageStateDate[jid];
                 wrapperNode.c(nodeName, {
                     jid,
-                    lastRecipientReceived: stateDates.lastRecipientReceived.getTime(),
-                    lastRecipientSeen: stateDates.lastRecipientSeen.getTime(),
-                    lastSent: stateDates.lastSent.getTime(),
+                    lastRecipientReceived: stateDates.lastRecipientReceived &amp;&amp; stateDates.lastRecipientReceived.getTime(),
+                    lastRecipientSeen: stateDates.lastRecipientSeen &amp;&amp; stateDates.lastRecipientSeen.getTime(),
+                    lastSent: stateDates.lastSent &amp;&amp; stateDates.lastSent.getTime(),
                 });
             }
         }
