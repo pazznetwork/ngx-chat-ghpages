@@ -331,6 +331,9 @@
                         <a href="interfaces/JidToPresence.html" data-type="entity-link">JidToPresence</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/LinkOpener.html" data-type="entity-link">LinkOpener</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
@@ -732,6 +735,9 @@
                         <a href="interfaces/JidToPresence.html" data-type="entity-link">JidToPresence</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/LinkOpener.html" data-type="entity-link">LinkOpener</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/LogInRequest.html" data-type="entity-link">LogInRequest</a>
                     </li>
                     <li class="link">
@@ -854,16 +860,19 @@
                             <a href="#identity" title="projects/pazznetwork/ngx-chat/src/lib/core/utils-array.ts"><b>identity</b>&nbsp;&nbsp;&nbsp;(projects/.../utils-array.ts)</a>
                         </li>
                         <li>
+                            <a href="#LinkOpenerToken" title="projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts"><b>LinkOpenerToken</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-message-link.component.ts)</a>
+                        </li>
+                        <li>
                             <a href="#MAX_IMAGE_SIZE" title="projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts"><b>MAX_IMAGE_SIZE</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-message.component.ts)</a>
                         </li>
                         <li>
                             <a href="#NGX_CHAT_MESSAGESENT" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts"><b>NGX_CHAT_MESSAGESENT</b>&nbsp;&nbsp;&nbsp;(projects/.../message-state.plugin.ts)</a>
                         </li>
                         <li>
-                            <a href="#nodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts"><b>nodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../unread-message-count.plugin.ts)</a>
+                            <a href="#nodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts"><b>nodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../message-state.plugin.ts)</a>
                         </li>
                         <li>
-                            <a href="#nodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts"><b>nodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../message-state.plugin.ts)</a>
+                            <a href="#nodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts"><b>nodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../unread-message-count.plugin.ts)</a>
                         </li>
                         <li>
                             <a href="#PUBSUB_EVENT_XMLNS" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/publish-subscribe.plugin.ts"><b>PUBSUB_EVENT_XMLNS</b>&nbsp;&nbsp;&nbsp;(projects/.../publish-subscribe.plugin.ts)</a>
@@ -884,10 +893,10 @@
                             <a href="#urlRegex" title="projects/pazznetwork/ngx-chat/src/lib/core/utils-links.ts"><b>urlRegex</b>&nbsp;&nbsp;&nbsp;(projects/.../utils-links.ts)</a>
                         </li>
                         <li>
-                            <a href="#wrapperNodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts"><b>wrapperNodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../unread-message-count.plugin.ts)</a>
+                            <a href="#wrapperNodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts"><b>wrapperNodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../message-state.plugin.ts)</a>
                         </li>
                         <li>
-                            <a href="#wrapperNodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts"><b>wrapperNodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../message-state.plugin.ts)</a>
+                            <a href="#wrapperNodeName" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts"><b>wrapperNodeName</b>&nbsp;&nbsp;&nbsp;(projects/.../unread-message-count.plugin.ts)</a>
                         </li>
                         <li>
                             <a href="#XmppClientToken" title="projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-connection.service.ts"><b>XmppClientToken</b>&nbsp;&nbsp;&nbsp;(projects/.../xmpp-chat-connection.service.ts)</a>
@@ -1034,6 +1043,43 @@
                         </td>
                     </tr>
 
+
+            </tbody>
+        </table>
+</section>
+    <h3>projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="LinkOpenerToken"></a>
+                        <span class="name">
+                            <b>
+                            LinkOpenerToken
+                            </b>
+                            <a href="#LinkOpenerToken"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>LinkOpenerToken:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new InjectionToken&lt;LinkOpener&gt;(&#x27;pazznetworkNgxChatLinkOpener&#x27;)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>You can provide your own implementation for <a href="interfaces/LinkOpener.html">LinkOpener</a> to override link opening e.g. when using Cordova.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
