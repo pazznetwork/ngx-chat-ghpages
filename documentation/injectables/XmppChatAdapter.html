@@ -1414,7 +1414,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:135</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:136</a></div>
                             </td>
                         </tr>
 
@@ -1491,7 +1491,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:131</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:132</a></div>
                             </td>
                         </tr>
 
@@ -1638,7 +1638,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:144</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:145</a></div>
                             </td>
                         </tr>
 
@@ -1707,7 +1707,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:169</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:170</a></div>
                             </td>
                         </tr>
 
@@ -1745,7 +1745,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:165</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="166" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts:166</a></div>
                             </td>
                         </tr>
 
@@ -2597,6 +2597,7 @@ export class XmppChatAdapter implements ChatService {
 
     sendMessage(jid: string, body: string) {
         this.getPlugin(MessagePlugin).sendMessage(jid, body);
+        this.messageSent$.next(this.getOrCreateContactById(jid));
     }
 
     loadCompleteHistory() {
