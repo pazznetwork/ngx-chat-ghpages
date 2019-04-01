@@ -30,7 +30,7 @@
 </g>
 <g id="clust17" class="cluster">
 <title>cluster_NgxChatModule_exports</title>
-<polygon fill="none" stroke="#000000" points="627,-208 627,-260 1535,-260 1535,-208 627,-208"/>
+<polygon fill="none" stroke="#000000" points="611,-208 611,-260 1640,-260 1640,-208 611,-208"/>
 </g>
 <!-- ChatComponent -->
 <g id="node1" class="node">
@@ -83,8 +83,8 @@
 <!-- ChatMessageLinkComponent&#45;&gt;NgxChatModule -->
 <g id="edge4" class="edge">
 <title>ChatMessageLinkComponent&#45;&gt;NgxChatModule</title>
-<path fill="none" stroke="#000000" d="M1702,-122.0225C1702,-139.3734 1702,-163 1702,-163 1702,-163 1163.2022,-163 1163.2022,-163"/>
-<polygon fill="#000000" stroke="#000000" points="1163.2022,-159.5001 1153.2022,-163 1163.2021,-166.5001 1163.2022,-159.5001"/>
+<path fill="none" stroke="#000000" d="M1621.0198,-122.0225C1621.0198,-139.3734 1621.0198,-163 1621.0198,-163 1621.0198,-163 1163.4771,-163 1163.4771,-163"/>
+<polygon fill="#000000" stroke="#000000" points="1163.4772,-159.5001 1153.4771,-163 1163.4771,-166.5001 1163.4772,-159.5001"/>
 </g>
 <!-- ChatMessageListComponent -->
 <g id="node5" class="node">
@@ -95,8 +95,8 @@
 <!-- ChatMessageListComponent&#45;&gt;NgxChatModule -->
 <g id="edge5" class="edge">
 <title>ChatMessageListComponent&#45;&gt;NgxChatModule</title>
-<path fill="none" stroke="#000000" d="M1452.4543,-122.0091C1452.4543,-138.0494 1452.4543,-159 1452.4543,-159 1452.4543,-159 1163.3835,-159 1163.3835,-159"/>
-<polygon fill="#000000" stroke="#000000" points="1163.3835,-155.5001 1153.3835,-159 1163.3834,-162.5001 1163.3835,-155.5001"/>
+<path fill="none" stroke="#000000" d="M1457.8182,-122.0091C1457.8182,-138.0494 1457.8182,-159 1457.8182,-159 1457.8182,-159 1163.433,-159 1163.433,-159"/>
+<polygon fill="#000000" stroke="#000000" points="1163.4331,-155.5001 1153.433,-159 1163.433,-162.5001 1163.4331,-155.5001"/>
 </g>
 <!-- ChatMessageTextComponent -->
 <g id="node6" class="node">
@@ -107,8 +107,8 @@
 <!-- ChatMessageTextComponent&#45;&gt;NgxChatModule -->
 <g id="edge6" class="edge">
 <title>ChatMessageTextComponent&#45;&gt;NgxChatModule</title>
-<path fill="none" stroke="#000000" d="M1274.5984,-122.1243C1274.5984,-136.7832 1274.5984,-155 1274.5984,-155 1274.5984,-155 1163.3923,-155 1163.3923,-155"/>
-<polygon fill="#000000" stroke="#000000" points="1163.3923,-151.5001 1153.3923,-155 1163.3923,-158.5001 1163.3923,-151.5001"/>
+<path fill="none" stroke="#000000" d="M1253.9052,-122.1243C1253.9052,-136.7832 1253.9052,-155 1253.9052,-155 1253.9052,-155 1163.4053,-155 1163.4053,-155"/>
+<polygon fill="#000000" stroke="#000000" points="1163.4053,-151.5001 1153.4053,-155 1163.4053,-158.5001 1163.4053,-151.5001"/>
 </g>
 <!-- ChatRoomMessagesComponent -->
 <g id="node7" class="node">
@@ -131,8 +131,8 @@
 <!-- ChatWindowComponent&#45;&gt;NgxChatModule -->
 <g id="edge8" class="edge">
 <title>ChatWindowComponent&#45;&gt;NgxChatModule</title>
-<path fill="none" stroke="#000000" d="M929.9977,-122.1243C929.9977,-136.7832 929.9977,-155 929.9977,-155 929.9977,-155 1032.5241,-155 1032.5241,-155"/>
-<polygon fill="#000000" stroke="#000000" points="1032.5242,-158.5001 1042.5241,-155 1032.5241,-151.5001 1032.5242,-158.5001"/>
+<path fill="none" stroke="#000000" d="M938.0156,-122.1243C938.0156,-136.7832 938.0156,-155 938.0156,-155 938.0156,-155 1032.9424,-155 1032.9424,-155"/>
+<polygon fill="#000000" stroke="#000000" points="1032.9425,-158.5001 1042.9424,-155 1032.9424,-151.5001 1032.9425,-158.5001"/>
 </g>
 <!-- ChatWindowListComponent -->
 <g id="node9" class="node">
@@ -143,8 +143,8 @@
 <!-- ChatWindowListComponent&#45;&gt;NgxChatModule -->
 <g id="edge9" class="edge">
 <title>ChatWindowListComponent&#45;&gt;NgxChatModule</title>
-<path fill="none" stroke="#000000" d="M798.4602,-122.0091C798.4602,-138.0494 798.4602,-159 798.4602,-159 798.4602,-159 1032.7107,-159 1032.7107,-159"/>
-<polygon fill="#000000" stroke="#000000" points="1032.7107,-162.5001 1042.7107,-159 1032.7107,-155.5001 1032.7107,-162.5001"/>
+<path fill="none" stroke="#000000" d="M774.0966,-122.0091C774.0966,-138.0494 774.0966,-159 774.0966,-159 774.0966,-159 1032.6871,-159 1032.6871,-159"/>
+<polygon fill="#000000" stroke="#000000" points="1032.6871,-162.5001 1042.6871,-159 1032.687,-155.5001 1032.6871,-162.5001"/>
 </g>
 <!-- FileDropComponent -->
 <g id="node10" class="node">
@@ -197,62 +197,74 @@
 <!-- ChatComponent  -->
 <g id="node15" class="node">
 <title>ChatComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="1526.7745,-252 1415.2255,-252 1415.2255,-216 1526.7745,-216 1526.7745,-252"/>
-<text text-anchor="middle" x="1471" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="1631.7745,-252 1520.2255,-252 1520.2255,-216 1631.7745,-216 1631.7745,-252"/>
+<text text-anchor="middle" x="1576" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatComponent </text>
 </g>
 <!-- NgxChatModule&#45;&gt;ChatComponent  -->
 <g id="edge14" class="edge">
 <title>NgxChatModule&#45;&gt;ChatComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1153.2685,-179C1261.1983,-179 1489.5457,-179 1489.5457,-179 1489.5457,-179 1489.5457,-205.9909 1489.5457,-205.9909"/>
-<polygon fill="#000000" stroke="#000000" points="1486.0458,-205.9909 1489.5457,-215.9909 1493.0458,-205.991 1486.0458,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1153.2834,-179C1275.1809,-179 1556.314,-179 1556.314,-179 1556.314,-179 1556.314,-205.9909 1556.314,-205.9909"/>
+<polygon fill="#000000" stroke="#000000" points="1552.8141,-205.9909 1556.314,-215.9909 1559.8141,-205.991 1552.8141,-205.9909"/>
 </g>
 <!-- ChatMessageInputComponent  -->
 <g id="node16" class="node">
 <title>ChatMessageInputComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="1396.8031,-252 1207.1969,-252 1207.1969,-216 1396.8031,-216 1396.8031,-252"/>
-<text text-anchor="middle" x="1302" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatMessageInputComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="1501.8031,-252 1312.1969,-252 1312.1969,-216 1501.8031,-216 1501.8031,-252"/>
+<text text-anchor="middle" x="1407" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatMessageInputComponent </text>
 </g>
 <!-- NgxChatModule&#45;&gt;ChatMessageInputComponent  -->
 <g id="edge15" class="edge">
 <title>NgxChatModule&#45;&gt;ChatMessageInputComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1153.0614,-183C1223.1923,-183 1335.4016,-183 1335.4016,-183 1335.4016,-183 1335.4016,-205.8757 1335.4016,-205.8757"/>
-<polygon fill="#000000" stroke="#000000" points="1331.9017,-205.8757 1335.4016,-215.8757 1338.9017,-205.8757 1331.9017,-205.8757"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1153.2657,-183C1228.5673,-183 1354.1517,-183 1354.1517,-183 1354.1517,-183 1354.1517,-205.8757 1354.1517,-205.8757"/>
+<polygon fill="#000000" stroke="#000000" points="1350.6517,-205.8757 1354.1517,-215.8757 1357.6517,-205.8757 1350.6517,-205.8757"/>
 </g>
 <!-- ChatMessageListComponent  -->
 <g id="node17" class="node">
 <title>ChatMessageListComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="1189.0302,-252 1006.9698,-252 1006.9698,-216 1189.0302,-216 1189.0302,-252"/>
-<text text-anchor="middle" x="1098" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatMessageListComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="1294.0302,-252 1111.9698,-252 1111.9698,-216 1294.0302,-216 1294.0302,-252"/>
+<text text-anchor="middle" x="1203" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatMessageListComponent </text>
 </g>
 <!-- NgxChatModule&#45;&gt;ChatMessageListComponent  -->
 <g id="edge16" class="edge">
 <title>NgxChatModule&#45;&gt;ChatMessageListComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1098,-187.1061C1098,-187.1061 1098,-205.991 1098,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="1094.5001,-205.9909 1098,-215.991 1101.5001,-205.991 1094.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1132.517,-187.1061C1132.517,-187.1061 1132.517,-205.991 1132.517,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="1129.0171,-205.9909 1132.517,-215.991 1136.0171,-205.991 1129.0171,-205.9909"/>
 </g>
 <!-- ChatRoomMessagesComponent  -->
 <g id="node18" class="node">
 <title>ChatRoomMessagesComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="988.9236,-252 789.0764,-252 789.0764,-216 988.9236,-216 988.9236,-252"/>
-<text text-anchor="middle" x="889" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatRoomMessagesComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="1093.9236,-252 894.0764,-252 894.0764,-216 1093.9236,-216 1093.9236,-252"/>
+<text text-anchor="middle" x="994" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChatRoomMessagesComponent </text>
 </g>
 <!-- NgxChatModule&#45;&gt;ChatRoomMessagesComponent  -->
 <g id="edge17" class="edge">
 <title>NgxChatModule&#45;&gt;ChatRoomMessagesComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1042.7693,-183C977.6017,-183 878.0023,-183 878.0023,-183 878.0023,-183 878.0023,-205.8757 878.0023,-205.8757"/>
-<polygon fill="#000000" stroke="#000000" points="874.5024,-205.8757 878.0023,-215.8757 881.5024,-205.8757 874.5024,-205.8757"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1068.4564,-187.1061C1068.4564,-187.1061 1068.4564,-205.991 1068.4564,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="1064.9564,-205.9909 1068.4564,-215.991 1071.9564,-205.991 1064.9564,-205.9909"/>
 </g>
 <!-- FileDropComponent  -->
 <g id="node19" class="node">
 <title>FileDropComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="770.8785,-252 635.1215,-252 635.1215,-216 770.8785,-216 770.8785,-252"/>
-<text text-anchor="middle" x="703" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileDropComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="875.8785,-252 740.1215,-252 740.1215,-216 875.8785,-216 875.8785,-252"/>
+<text text-anchor="middle" x="808" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileDropComponent </text>
 </g>
 <!-- NgxChatModule&#45;&gt;FileDropComponent  -->
 <g id="edge18" class="edge">
 <title>NgxChatModule&#45;&gt;FileDropComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1042.661,-179C933.9515,-179 703,-179 703,-179 703,-179 703,-205.9909 703,-205.9909"/>
-<polygon fill="#000000" stroke="#000000" points="699.5001,-205.9909 703,-215.9909 706.5001,-205.991 699.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1042.8419,-183C970.0006,-183 850.848,-183 850.848,-183 850.848,-183 850.848,-205.8757 850.848,-205.8757"/>
+<polygon fill="#000000" stroke="#000000" points="847.3481,-205.8757 850.848,-215.8757 854.3481,-205.8757 847.3481,-205.8757"/>
+</g>
+<!-- LinksDirective  -->
+<g id="node20" class="node">
+<title>LinksDirective </title>
+<polygon fill="#fb8072" stroke="#000000" points="722.9717,-252 619.0283,-252 619.0283,-216 722.9717,-216 722.9717,-252"/>
+<text text-anchor="middle" x="671" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">LinksDirective </text>
+</g>
+<!-- NgxChatModule&#45;&gt;LinksDirective  -->
+<g id="edge19" class="edge">
+<title>NgxChatModule&#45;&gt;LinksDirective </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1042.8866,-179C928.6141,-179 676.4266,-179 676.4266,-179 676.4266,-179 676.4266,-205.9909 676.4266,-205.9909"/>
+<polygon fill="#000000" stroke="#000000" points="672.9266,-205.9909 676.4266,-215.9909 679.9266,-205.991 672.9266,-205.9909"/>
 </g>
 </g>
 </svg>
