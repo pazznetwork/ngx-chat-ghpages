@@ -301,6 +301,12 @@
                     id="xs-interfaces-links"
                 >
                     <li class="link">
+                        <a href="interfaces/ChatAction.html" data-type="entity-link">ChatAction</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/ChatActionContext.html" data-type="entity-link">ChatActionContext</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/ChatPlugin.html" data-type="entity-link">ChatPlugin</a>
                     </li>
                     <li class="link">
@@ -362,6 +368,9 @@
                     </li>
                     <li class="link">
                         <a href="interfaces/SavedConference.html" data-type="entity-link">SavedConference</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/SelectFileParameters.html" data-type="entity-link">SelectFileParameters</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Service.html" data-type="entity-link">Service</a>
@@ -705,6 +714,12 @@
                     id="interfaces-links"
 >
                     <li class="link">
+                        <a href="interfaces/ChatAction.html" data-type="entity-link">ChatAction</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/ChatActionContext.html" data-type="entity-link">ChatActionContext</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/ChatPlugin.html" data-type="entity-link">ChatPlugin</a>
                     </li>
                     <li class="link">
@@ -766,6 +781,9 @@
                     </li>
                     <li class="link">
                         <a href="interfaces/SavedConference.html" data-type="entity-link">SavedConference</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/SelectFileParameters.html" data-type="entity-link">SelectFileParameters</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/Service.html" data-type="entity-link">Service</a>
@@ -947,6 +965,9 @@
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
+                                <a href="#onActionClick">onActionClick</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#onClickClose">onClickClose</a>
                             </li>
@@ -955,11 +976,14 @@
                                 <a href="#onClickHeader">onClickHeader</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#onFileUpload">onFileUpload</a>
+                                <a href="#onFocus">onFocus</a>
                             </li>
                             <li>
-                                <a href="#onFocus">onFocus</a>
+                                <a href="#sendMessage">sendMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#uploadFile">uploadFile</a>
                             </li>
                         </ul>
                     </td>
@@ -1160,6 +1184,75 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="onActionClick"></a>
+                        <span class="name">
+                            <b>
+                            onActionClick
+                            </b>
+                            <a href="#onActionClick"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onActionClick(chatAction: <a href="../interfaces/ChatAction.html">ChatAction</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:67</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chatAction</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/ChatAction.html" target="_self" >ChatAction</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="onClickClose"></a>
                         <span class="name">
                             <b>
@@ -1240,20 +1333,56 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="onFileUpload"></a>
+                        <a name="onFocus"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Async</span>
-                            onFileUpload
+                            onFocus
                             </b>
-                            <a href="#onFileUpload"><span class="fa fa-link"></span></a>
+                            <a href="#onFocus"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                            <span class="modifier-icon fa fa-reset"></span>
-                        <code>onFileUpload(file: File)</code>
+<code>onFocus()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sendMessage"></a>
+                        <span class="name">
+                            <b>
+                            sendMessage
+                            </b>
+                            <a href="#sendMessage"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>sendMessage()</code>
                     </td>
                 </tr>
 
@@ -1261,6 +1390,46 @@
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uploadFile"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Async</span>
+                            uploadFile
+                            </b>
+                            <a href="#uploadFile"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>uploadFile(file: File)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -1303,44 +1472,6 @@
                                 <div class="io-description">
                                     
                                 </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onFocus"></a>
-                        <span class="name">
-                            <b>
-                            onFocus
-                            </b>
-                            <a href="#onFocus"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>onFocus()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:59</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
-
-                            </div>
                     </td>
                 </tr>
             </tbody>
@@ -1524,7 +1655,11 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
         this.chatListService.closeChat(this.chatWindowState.contact);
     }
 
-    async onFileUpload(file: File) {
+    sendMessage() {
+        this.messageInput.onSendMessage();
+    }
+
+    async uploadFile(file: File) {
         const url &#x3D; await this.chatService.getPlugin(HttpFileUploadPlugin).upload(file);
         this.chatService.sendMessage(this.chatWindowState.contact.jidBare.toString(), url);
     }
@@ -1532,13 +1667,36 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     onFocus() {
         this.messageInput.focus();
     }
+
+    onActionClick(chatAction: ChatAction) {
+        chatAction.onClick({
+            contact: this.chatWindowState.contact.jidBare.toString(),
+            chatWindow: this,
+        });
+    }
+}
+
+export interface ChatAction {
+    cssClass: { [className: string]: boolean } | string | string[];
+    /**
+     * to identify actions
+     */
+    id: string;
+    html: string;
+
+    onClick(chatActionContext: ChatActionContext): void;
+}
+
+export interface ChatActionContext {
+    contact: string;
+    chatWindow: ChatWindowComponent;
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chat-window&quot;&gt;
-    &lt;ngx-chat-filedrop (fileUpload)&#x3D;&quot;onFileUpload($event)&quot; [dropMessage]&#x3D;&quot;chatService.translations.dropMessage&quot;&gt;
+    &lt;ngx-chat-filedrop (fileUpload)&#x3D;&quot;uploadFile($event)&quot; [dropMessage]&#x3D;&quot;chatService.translations.dropMessage&quot;&gt;
         &lt;div (click)&#x3D;&quot;onClickHeader()&quot; class&#x3D;&quot;chat-contact-header&quot; [title]&#x3D;&quot;chatWindowState.contact.name&quot;&gt;
             &lt;div class&#x3D;&quot;chat-contact-avatar&quot;&gt;
                 &lt;img [src]&#x3D;&quot;chatWindowState.contact.avatar&quot;/&gt;
@@ -1556,6 +1714,12 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
             &lt;div class&#x3D;&quot;chat-input-container&quot; (click)&#x3D;&quot;onFocus()&quot;&gt;
                 &lt;ngx-chat-message-input [contact]&#x3D;&quot;chatWindowState.contact&quot;&gt;&lt;/ngx-chat-message-input&gt;
+                &lt;div *ngFor&#x3D;&quot;let action of chatService.chatActions&quot;
+                     (click)&#x3D;&quot;onActionClick(action)&quot;
+                     class&#x3D;&quot;chat-action&quot;
+                     [ngClass]&#x3D;&quot;action.cssClass&quot;
+                     [innerHTML]&#x3D;&quot;action.html&quot;&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/ngx-chat-filedrop&gt;
@@ -1588,7 +1752,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-window">    <ngx-chat-filedrop (fileUpload)="onFileUpload($event)" [dropMessage]="chatService.translations.dropMessage">        <div (click)="onClickHeader()" class="chat-contact-header" [title]="chatWindowState.contact.name">            <div class="chat-contact-avatar">                <img [src]="chatWindowState.contact.avatar"/>            </div>            <div class="chat-contact-name">                {{chatWindowState.contact.name}}            </div>            <div class="chat-close" (click)="onClickClose()">                &times;            </div>        </div>        <div *ngIf="!chatWindowState.isCollapsed" class="chat-content">            <ngx-chat-message-list [contact]="chatWindowState.contact" [showAvatars]="false"></ngx-chat-message-list>            <div class="chat-input-container" (click)="onFocus()">                <ngx-chat-message-input [contact]="chatWindowState.contact"></ngx-chat-message-input>            </div>        </div>    </ngx-chat-filedrop></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="chat-window">    <ngx-chat-filedrop (fileUpload)="uploadFile($event)" [dropMessage]="chatService.translations.dropMessage">        <div (click)="onClickHeader()" class="chat-contact-header" [title]="chatWindowState.contact.name">            <div class="chat-contact-avatar">                <img [src]="chatWindowState.contact.avatar"/>            </div>            <div class="chat-contact-name">                {{chatWindowState.contact.name}}            </div>            <div class="chat-close" (click)="onClickClose()">                &times;            </div>        </div>        <div *ngIf="!chatWindowState.isCollapsed" class="chat-content">            <ngx-chat-message-list [contact]="chatWindowState.contact" [showAvatars]="false"></ngx-chat-message-list>            <div class="chat-input-container" (click)="onFocus()">                <ngx-chat-message-input [contact]="chatWindowState.contact"></ngx-chat-message-input>                <div *ngFor="let action of chatService.chatActions"                     (click)="onActionClick(action)"                     class="chat-action"                     [ngClass]="action.cssClass"                     [innerHTML]="action.html">                </div>            </div>        </div>    </ngx-chat-filedrop></div></div>'
     var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatWindowComponent'};
