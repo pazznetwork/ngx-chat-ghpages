@@ -873,7 +873,7 @@
 <p>Below you will find some instructions to getting started. <a href="https://github.com/pazznetwork/ngx-chat/wiki">Have a look at the wiki for FAQ&#39;s and the API documentation.</a></p>
 <h2 id="installation-and-usage">Installation and usage</h2>
 <p>First of all, install ngx-chat via npm:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client &#64;angular/cdk</code></pre></div><p>After that, import it in your root module:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.3.0 &#64;angular/cdk</code></pre></div><p>After that, import it in your root module:</p>
 <div><pre class="line-numbers"><code class="language-typescript">&#64;NgModule({
     ...
     imports: [
@@ -927,7 +927,7 @@ In the <code>src</code> folder you find the demo application.</p>
 <p><code>npm run test:once</code></p>
 <h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in package.json
-VERSION=0.3.0 # change accordingly
+VERSION=0.3.1 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

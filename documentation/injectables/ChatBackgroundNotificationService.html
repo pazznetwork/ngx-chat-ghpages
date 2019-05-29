@@ -942,6 +942,10 @@
                                     <span class="modifier">Private</span>
                                 <a href="#shouldDisplayNotification">shouldDisplayNotification</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#supportsNotification">supportsNotification</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -1033,7 +1037,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:58</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -1126,7 +1130,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -1204,7 +1208,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -1276,7 +1280,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:47</a></div>
                             </td>
                         </tr>
 
@@ -1347,7 +1351,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -1387,7 +1391,47 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="supportsNotification"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            supportsNotification
+                            </b>
+                            <a href="#supportsNotification"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>supportsNotification()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-background-notification.service.ts:72</a></div>
                             </td>
                         </tr>
 
@@ -1471,8 +1515,10 @@ export class ChatBackgroundNotificationService {
     }
 
     enable() {
-        this.requestNotificationPermission();
-        this.enabled &#x3D; true;
+        if (this.supportsNotification()) {
+            this.requestNotificationPermission();
+            this.enabled &#x3D; true;
+        }
     }
 
     disable() {
@@ -1513,9 +1559,15 @@ export class ChatBackgroundNotificationService {
 
     private shouldDisplayNotification() {
         const notification &#x3D; Notification as any;
-        return this.enabled &amp;&amp; document.visibilityState &#x3D;&#x3D;&#x3D; &#x27;hidden&#x27; &amp;&amp; &#x27;Notification&#x27; in window &amp;&amp; notification.permission &#x3D;&#x3D;&#x3D; &#x27;granted&#x27;;
+        return this.enabled
+            &amp;&amp; document.visibilityState &#x3D;&#x3D;&#x3D; &#x27;hidden&#x27;
+            &amp;&amp; this.supportsNotification()
+            &amp;&amp; notification.permission &#x3D;&#x3D;&#x3D; &#x27;granted&#x27;;
     }
 
+    private supportsNotification() {
+        return &#x27;Notification&#x27; in window;
+    }
 }
 </code></pre>
     </div>
