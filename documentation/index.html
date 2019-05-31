@@ -866,6 +866,11 @@
 <li>use the server side buddy list or use your own data source for that, API methods for adding / removing buddies available </li>
 <li>supports multi user chat</li>
 </ul>
+<h2 id="compatibility">Compatibility</h2>
+<ul>
+<li>Angular 6, 7 (untested), 8 (untested)</li>
+<li>requires node &gt;= 8 &amp;&amp; npm &gt;= 5 for build</li>
+</ul>
 <h2 id="demo">Demo</h2>
 <p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Have a look at our demo (valid XMPP credentials required)</a> 
 <img src="https://user-images.githubusercontent.com/4292951/49931801-f5c3d880-fec7-11e8-8a74-6600ea2cf9b0.png" alt="screenshot" class="img-responsive"></p>
@@ -927,7 +932,7 @@ In the <code>src</code> folder you find the demo application.</p>
 <p><code>npm run test:once</code></p>
 <h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in package.json
-VERSION=0.3.1 # change accordingly
+VERSION=0.3.2 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

@@ -1430,10 +1430,10 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
     }
 
     private isRoomPresenceStanza(stanza: Stanza) {
-        return stanza.name &#x3D;&#x3D;&#x3D; &#x27;presence&#x27;
-            &amp;&amp; stanza.getChild(&#x27;x&#x27;)
-            &amp;&amp; stanza.getChild(&#x27;x&#x27;).attrs.xmlns
-            &amp;&amp; stanza.getChild(&#x27;x&#x27;).attrs.xmlns.startsWith(&#x27;http://jabber.org/protocol/muc&#x27;);
+        return stanza.name &#x3D;&#x3D;&#x3D; &#x27;presence&#x27; &amp;&amp; (
+            stanza.getChild(&#x27;x&#x27;, &#x27;http://jabber.org/protocol/muc&#x27;)
+            || stanza.getChild(&#x27;x&#x27;, &#x27;http://jabber.org/protocol/muc#user&#x27;)
+        );
     }
 
     private handleRoomPresenceStanza(stanza: Stanza): boolean {
