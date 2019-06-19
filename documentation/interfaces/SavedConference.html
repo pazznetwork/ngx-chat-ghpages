@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#xs-components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="xs-components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -135,14 +135,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#xs-directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="xs-directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -373,9 +373,6 @@
                         <a href="interfaces/RoomMessage.html" data-type="entity-link">RoomMessage</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/RoomSummary.html" data-type="entity-link">RoomSummary</a>
-                    </li>
-                    <li class="link">
                         <a href="interfaces/SavedConference.html" data-type="entity-link">SavedConference</a>
                     </li>
                     <li class="link">
@@ -508,14 +505,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -557,14 +554,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -795,9 +792,6 @@
                         <a href="interfaces/RoomMessage.html" data-type="entity-link">RoomMessage</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/RoomSummary.html" data-type="entity-link">RoomSummary</a>
-                    </li>
-                    <li class="link">
                         <a href="interfaces/SavedConference.html" data-type="entity-link">SavedConference</a>
                     </li>
                     <li class="link">
@@ -1023,6 +1017,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { x as xml } from &#x27;@xmpp/xml&#x27;;
 import { Element } from &#x27;ltx&#x27;;
 import { IqResponseStanza } from &#x27;../../../../core&#x27;;
+import { removeDuplicates } from &#x27;../../../../core/utils-array&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { PublishSubscribePlugin } from &#x27;./publish-subscribe.plugin&#x27;;
 
@@ -1039,17 +1034,27 @@ export const STORAGE_BOOKMARKS &#x3D; &#x27;storage:bookmarks&#x27;;
  */
 export class BookmarkPlugin extends AbstractXmppPlugin {
 
+    private pendingAddConference: Promise&lt;IqResponseStanza&gt;;
+
     constructor(private publishSubscribePlugin: PublishSubscribePlugin) {
         super();
     }
 
-    async retrieveMultiUserChatRooms(): Promise&lt;SavedConference[]&gt; {
-        const itemNodes &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_BOOKMARKS);
-        return itemNodes.map(itemNode &#x3D;&gt; this.convertElementToSavedConference(itemNode));
+    onOffline() {
+        this.pendingAddConference &#x3D; null;
     }
 
-    private convertElementToSavedConference(itemNode: Element): SavedConference {
-        const conferenceNode &#x3D; itemNode.getChild(&#x27;storage&#x27;, STORAGE_BOOKMARKS).getChild(&#x27;conference&#x27;);
+    async retrieveMultiUserChatRooms(): Promise&lt;SavedConference[]&gt; {
+        const itemNode &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_BOOKMARKS);
+        const storageNode &#x3D; itemNode &amp;&amp; itemNode[0] &amp;&amp; itemNode[0].getChild(&#x27;storage&#x27;, STORAGE_BOOKMARKS);
+        const conferenceNodes &#x3D; itemNode &amp;&amp; storageNode.getChildren(&#x27;conference&#x27;);
+        if (!conferenceNodes) {
+            return [];
+        }
+        return conferenceNodes.map(c &#x3D;&gt; this.convertElementToSavedConference(c));
+    }
+
+    private convertElementToSavedConference(conferenceNode: Element): SavedConference {
         return {
             name: conferenceNode.attrs.name,
             jid: conferenceNode.attrs.jid,
@@ -1057,14 +1062,43 @@ export class BookmarkPlugin extends AbstractXmppPlugin {
         };
     }
 
-    saveConference(conferenceToSave: SavedConference): Promise&lt;IqResponseStanza&gt; {
+    saveConferences(conferences: SavedConference[]): Promise&lt;IqResponseStanza&gt; {
+        const deduplicatedConferences &#x3D; removeDuplicates(conferences, (x, y) &#x3D;&gt; x.jid &#x3D;&#x3D;&#x3D; y.jid);
         return this.publishSubscribePlugin.storePrivatePayloadPersistent(
             STORAGE_BOOKMARKS,
-            conferenceToSave.jid,
+            null,
             xml(&#x27;storage&#x27;, {xmlns: STORAGE_BOOKMARKS},
-                this.convertSavedConferenceToElement(conferenceToSave)
+                deduplicatedConferences.map(c &#x3D;&gt; this.convertSavedConferenceToElement(c))
             )
         );
+    }
+
+    async addConference(conferenceToSave: SavedConference): Promise&lt;IqResponseStanza&gt; {
+
+        while (this.pendingAddConference) {
+            try {
+                await this.pendingAddConference; // serialize the writes, so that in case of multiple conference adds all get added
+            } catch {}
+        }
+
+        return this.pendingAddConference &#x3D; new Promise(async (resolve, reject) &#x3D;&gt; {
+            const savedConferences &#x3D; await this.retrieveMultiUserChatRooms();
+            const conferences &#x3D; [...savedConferences, conferenceToSave];
+
+            let response: IqResponseStanza;
+            try {
+                response &#x3D; await this.saveConferences(conferences);
+            } finally {
+                this.pendingAddConference &#x3D; null;
+            }
+
+            if (response) {
+                resolve(response);
+            } else {
+                reject();
+            }
+        });
+
     }
 
     private convertSavedConferenceToElement(savedConference: SavedConference) {

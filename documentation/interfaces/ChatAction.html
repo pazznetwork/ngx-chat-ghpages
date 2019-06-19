@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#xs-components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="xs-components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -135,14 +135,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#xs-directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="xs-directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -373,9 +373,6 @@
                         <a href="interfaces/RoomMessage.html" data-type="entity-link">RoomMessage</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/RoomSummary.html" data-type="entity-link">RoomSummary</a>
-                    </li>
-                    <li class="link">
                         <a href="interfaces/SavedConference.html" data-type="entity-link">SavedConference</a>
                     </li>
                     <li class="link">
@@ -508,14 +505,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="components-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -557,14 +554,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        data-target="#directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-0db601205592c403a04567d1c159b3bd"
+                                        id="directives-links-module-NgxChatModule-194ae3ec7995e7cc7909003799cf9fd4"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -793,9 +790,6 @@
                     </li>
                     <li class="link">
                         <a href="interfaces/RoomMessage.html" data-type="entity-link">RoomMessage</a>
-                    </li>
-                    <li class="link">
-                        <a href="interfaces/RoomSummary.html" data-type="entity-link">RoomSummary</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/SavedConference.html" data-type="entity-link">SavedConference</a>
@@ -1136,7 +1130,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
     private ngDestroy &#x3D; new Subject&lt;void&gt;();
 
-    @ViewChild(ChatMessageInputComponent, {static: false})
+    @ViewChild(ChatMessageInputComponent)
     messageInput: ChatMessageInputComponent;
 
     constructor(
