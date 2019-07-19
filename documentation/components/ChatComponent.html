@@ -1453,7 +1453,7 @@ list.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:119</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:122</a></div>
                             </td>
                         </tr>
 
@@ -1522,7 +1522,7 @@ list.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:124</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:127</a></div>
                             </td>
                         </tr>
 
@@ -1593,7 +1593,7 @@ list.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:129</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:132</a></div>
                             </td>
                         </tr>
 
@@ -1827,6 +1827,9 @@ export class ChatComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {
         this.mergeAndSetTranslations();
+        if (changes.rosterState) {
+            this.onRosterStateChanged(changes.rosterState.currentValue);
+        }
     }
 
     private onChatStateChange(state: string) {
