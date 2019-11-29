@@ -1118,7 +1118,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="181" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-connection.service.ts:181</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-connection.service.ts:183</a></div>
                             </td>
                         </tr>
 
@@ -1480,7 +1480,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-connection.service.ts:185</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="187" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-connection.service.ts:187</a></div>
                             </td>
                         </tr>
 
@@ -2150,13 +2150,15 @@ export class XmppChatConnectionService {
     async logOut(): Promise&lt;void&gt; {
         // TODO: move this to a presence plugin in a handler
         this.logService.debug(&#x27;logging out&#x27;);
-        this.client.reconnect.stop();
-        try {
-            await this.send(xml(&#x27;presence&#x27;, {type: &#x27;unavailable&#x27;}));
-        } catch (e) {
-            this.logService.error(&#x27;error sending presence unavailable&#x27;);
-        } finally {
-            this.client.stop();
+        if (this.client) {
+            this.client.reconnect.stop();
+            try {
+                await this.send(xml(&#x27;presence&#x27;, {type: &#x27;unavailable&#x27;}));
+            } catch (e) {
+                this.logService.error(&#x27;error sending presence unavailable&#x27;);
+            } finally {
+                this.client.stop();
+            }
         }
     }
 
