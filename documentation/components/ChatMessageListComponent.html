@@ -1836,17 +1836,19 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
         {{chatService.translations.noMessages}}
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;chat-message chat-message--in&quot; *ngIf&#x3D;&quot;contact.pendingIn$ | async&quot;&gt;
-        &lt;span&gt;
-            {{chatService.translations.subscriptionRequestMessage}}
-        &lt;/span&gt;
-        &lt;ul class&#x3D;&quot;chat-presence-subscription-actions&quot;&gt;
-            &lt;li&gt;
-                &lt;a (click)&#x3D;&quot;acceptSubscriptionRequest($event)&quot; href&#x3D;&quot;#&quot;&gt;{{chatService.translations.acceptSubscriptionRequest}}&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-                &lt;a (click)&#x3D;&quot;denySubscriptionRequest($event)&quot; href&#x3D;&quot;#&quot;&gt;{{chatService.translations.denySubscriptionRequest}}&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;div class&#x3D;&quot;chat-message-text chat-message-text--no-avatar&quot;&gt;
+            &lt;span&gt;
+                {{chatService.translations.subscriptionRequestMessage}}
+            &lt;/span&gt;
+            &lt;ul class&#x3D;&quot;chat-presence-subscription-actions&quot;&gt;
+                &lt;li&gt;
+                    &lt;a (click)&#x3D;&quot;acceptSubscriptionRequest($event)&quot; href&#x3D;&quot;#&quot;&gt;{{chatService.translations.acceptSubscriptionRequest}}&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a (click)&#x3D;&quot;denySubscriptionRequest($event)&quot; href&#x3D;&quot;#&quot;&gt;{{chatService.translations.denySubscriptionRequest}}&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -1877,7 +1879,7 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <ng-container *ngFor="let dateMessagesGroup of contact.dateMessagesGroups">        <div class="chat-messages-date-group">{{dateMessagesGroup.date | date:chatService.translations.dateFormat:undefined:chatService.translations.locale}}</div>        <ngx-chat-message *ngFor="let message of dateMessagesGroup.messages"                          [nick]="message.direction === Direction.in ? contact.name : \'\'"                          [avatar]="contact.avatar"                          [message]="message"                          [contact]="contact"                          [showAvatars]="showAvatars">        </ngx-chat-message>    </ng-container>    <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">        {{chatService.translations.noMessages}}    </div>    <div class="chat-message chat-message--in" *ngIf="contact.pendingIn$ | async">        <span>            {{chatService.translations.subscriptionRequestMessage}}        </span>        <ul class="chat-presence-subscription-actions">            <li>                <a (click)="acceptSubscriptionRequest($event)" href="#">{{chatService.translations.acceptSubscriptionRequest}}</a>            </li>            <li>                <a (click)="denySubscriptionRequest($event)" href="#">{{chatService.translations.denySubscriptionRequest}}</a>            </li>        </ul>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <ng-container *ngFor="let dateMessagesGroup of contact.dateMessagesGroups">        <div class="chat-messages-date-group">{{dateMessagesGroup.date | date:chatService.translations.dateFormat:undefined:chatService.translations.locale}}</div>        <ngx-chat-message *ngFor="let message of dateMessagesGroup.messages"                          [nick]="message.direction === Direction.in ? contact.name : \'\'"                          [avatar]="contact.avatar"                          [message]="message"                          [contact]="contact"                          [showAvatars]="showAvatars">        </ngx-chat-message>    </ng-container>    <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">        {{chatService.translations.noMessages}}    </div>    <div class="chat-message chat-message--in" *ngIf="contact.pendingIn$ | async">        <div class="chat-message-text chat-message-text--no-avatar">            <span>                {{chatService.translations.subscriptionRequestMessage}}            </span>            <ul class="chat-presence-subscription-actions">                <li>                    <a (click)="acceptSubscriptionRequest($event)" href="#">{{chatService.translations.acceptSubscriptionRequest}}</a>                </li>                <li>                    <a (click)="denySubscriptionRequest($event)" href="#">{{chatService.translations.denySubscriptionRequest}}</a>                </li>            </ul>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageListComponent'};
