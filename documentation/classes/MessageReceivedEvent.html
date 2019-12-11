@@ -254,6 +254,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -682,6 +685,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -988,7 +994,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { x as xml } from &#x27;@xmpp/xml&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
 import { Direction, Message, MessageWithBodyStanza, Stanza } from &#x27;../../../../core&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
@@ -1000,8 +1006,10 @@ export class MessageReceivedEvent {
 
 export class MessagePlugin extends AbstractXmppPlugin {
 
-    constructor(private xmppChatAdapter: XmppChatAdapter,
-                private logService: LogService) {
+    constructor(
+        private xmppChatAdapter: XmppChatAdapter,
+        private logService: LogService,
+    ) {
         super();
     }
 

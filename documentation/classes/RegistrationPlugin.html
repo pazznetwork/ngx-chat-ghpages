@@ -254,6 +254,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -682,6 +685,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -1020,7 +1026,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -1103,7 +1109,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -1138,7 +1144,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -1173,7 +1179,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -1208,7 +1214,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -1249,7 +1255,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -1287,7 +1293,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:74</a></div>
                             </td>
                         </tr>
 
@@ -1395,7 +1401,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/registration.plugin.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -1929,15 +1935,13 @@ rejects if an error happens while registering, e.g. the username is already take
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgZone } from &#x27;@angular/core&#x27;;
-import { Client, client } from &#x27;@xmpp/client&#x27;;
-import { timeout } from &#x27;@xmpp/events&#x27;;
-import { x as xml } from &#x27;@xmpp/xml&#x27;;
+import { Client, client, xml } from &#x27;@xmpp/client&#x27;;
 import { Subject } from &#x27;rxjs&#x27;;
 import { first, takeUntil } from &#x27;rxjs/operators&#x27;;
 import { getDomain } from &#x27;../../../../core/get-domain&#x27;;
+import { timeout } from &#x27;../../../../core/utils-timeout&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
-
 
 /**
  * xep-0077

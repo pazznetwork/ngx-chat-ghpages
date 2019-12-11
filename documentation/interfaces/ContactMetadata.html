@@ -254,6 +254,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -682,6 +685,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -922,7 +928,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -933,7 +939,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { JID, jid as parseJid } from &#x27;@xmpp/jid&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid } from &#x27;@xmpp/client&#x27;;
+import { JID } from &#x27;@xmpp/jid&#x27;;
 import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
 import { LogService } from &#x27;../services/log.service&#x27;;
 import { dummyAvatar } from &#x27;./contact-avatar&#x27;;

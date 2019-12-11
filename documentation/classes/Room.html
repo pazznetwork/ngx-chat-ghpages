@@ -254,6 +254,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -680,6 +683,9 @@
                     </li>
                     <li class="link">
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
                     </li>
                     <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
@@ -1322,8 +1328,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, JID } from &#x27;@xmpp/jid&#x27;;
-import { x as xml } from &#x27;@xmpp/xml&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, xml } from &#x27;@xmpp/client&#x27;;
+import { JID } from &#x27;@xmpp/jid&#x27;;
 import { Element } from &#x27;ltx&#x27;;
 import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
 import { ContactMetadata, Direction, IqResponseStanza, Message, Stanza } from &#x27;../../../../core&#x27;;
@@ -1526,7 +1532,7 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
     async createRoom(request: RoomCreationOptions): Promise&lt;Room&gt; {
         const roomId &#x3D; request.roomId;
         const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
-        const occupantJid &#x3D; new JID(roomId, service.jid, request.nick);
+        const occupantJid &#x3D; parseJid(roomId, service.jid, request.nick);
         const {presenceResponse, room} &#x3D; await this.joinRoomInternal(occupantJid, request.name);
 
         const itemElement &#x3D; presenceResponse.getChild(&#x27;x&#x27;).getChild(&#x27;item&#x27;);
@@ -1592,7 +1598,7 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
 
     private async joinRoomInternal(roomJid: JID, name?: string) {
         const userJid &#x3D; this.xmppChatAdapter.chatConnectionService.userJid;
-        const occupantJid &#x3D; new JID(roomJid.local, roomJid.domain, roomJid.resource || userJid.local);
+        const occupantJid &#x3D; parseJid(roomJid.local, roomJid.domain, roomJid.resource || userJid.local);
         const roomJoinedPromise &#x3D; new Promise&lt;Stanza&gt;(resolve &#x3D;&gt; this.roomJoinPromises[occupantJid.toString()] &#x3D; resolve);
         await this.xmppChatAdapter.chatConnectionService.send(
             xml(&#x27;presence&#x27;, {from: userJid.toString(), to: occupantJid.toString()},

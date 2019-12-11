@@ -254,6 +254,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -682,6 +685,9 @@
                         <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link">ServiceDiscoveryPlugin</a>
                     </li>
                     <li class="link">
+                        <a href="classes/TimeoutError.html" data-type="entity-link">TimeoutError</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/UnreadMessageCountPlugin.html" data-type="entity-link">UnreadMessageCountPlugin</a>
                     </li>
             </ul>
@@ -999,7 +1005,7 @@ Message Archive Management</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -1067,7 +1073,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:72</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:71</a></div>
                             </td>
                         </tr>
 
@@ -1136,7 +1142,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -1207,7 +1213,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:67</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -1278,7 +1284,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -1316,7 +1322,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -1356,7 +1362,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -1819,8 +1825,7 @@ Message Archive Management</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid } from &#x27;@xmpp/jid&#x27;;
-import { x as xml } from &#x27;@xmpp/xml&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, xml } from &#x27;@xmpp/client&#x27;;
 
 import { Direction, Stanza } from &#x27;../../../../core&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
