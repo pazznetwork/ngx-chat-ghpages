@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -135,14 +135,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -517,14 +517,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -566,14 +566,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -892,9 +892,10 @@
 </ul>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
+<li>Angular 9 (ngx-chat 0.9.x)</li>
 <li>Angular 8 (ngx-chat 0.4.x)</li>
 <li>Angular 6 (ngx-chat 0.3.x)</li>
-<li>requires node &gt;= 8 &amp;&amp; npm &gt;= 5 for build</li>
+<li>requires node &gt;= 10.13 &amp;&amp; npm &gt;= 5 for build</li>
 </ul>
 <h2 id="demo">Demo</h2>
 <p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Have a look at our demo (valid XMPP credentials required)</a> 
@@ -902,10 +903,9 @@
 <h2 id="documentation">Documentation</h2>
 <p>Below you will find some instructions to getting started. <a href="https://github.com/pazznetwork/ngx-chat/wiki">Have a look at the wiki for FAQ&#39;s and the API documentation.</a></p>
 <h2 id="installation-and-usage">Installation and usage</h2>
-<p>This instructions require Angular 8.
-<a href="https://github.com/pazznetwork/ngx-chat/wiki/Angular-6-compatibility">If you are using Angular 6, follow this instructions instead</a></p>
-<p>First of all, install ngx-chat via npm:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.3.0 &#64;angular/cdk&#64;~8.0.0</code></pre></div><p>After that, import ngx-chat in your root module:</p>
+<p>This instructions require Angular 9.</p>
+<p>First of all, install ngx-chat and its dependencies via npm:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.9.2 &#64;angular/cdk&#64;~9.0.0</code></pre></div><p>After that, import ngx-chat in your root module:</p>
 <div><pre class="line-numbers"><code class="language-typescript">&#64;NgModule({
     ...
     imports: [
@@ -972,7 +972,7 @@ ng serve</code></pre></div><h3 id="build-the-plugin">Build the plugin</h3>
 <p><code>npm run test:once</code></p>
 <h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in package.json
-VERSION=0.4.7 # change accordingly
+VERSION=0.9.0 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -135,14 +135,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -517,14 +517,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -566,14 +566,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -1297,24 +1297,22 @@ import { ChatComponent } from &#x27;./components/chat.component&#x27;;
 import { RosterContactComponent } from &#x27;./components/roster-contact/roster-contact.component&#x27;;
 import { RosterListComponent } from &#x27;./components/roster-list/roster-list.component&#x27;;
 import { LinksDirective } from &#x27;./directives/links.directive&#x27;;
-import {
-    BookmarkPlugin,
-    HttpFileUploadPlugin,
-    MessageArchivePlugin,
-    MessageCarbonsPlugin,
-    MessagePlugin,
-    MessageStatePlugin,
-    MessageUuidPlugin,
-    MucSubPlugin,
-    MultiUserChatPlugin,
-    PingPlugin,
-    PublishSubscribePlugin,
-    PushPlugin,
-    RegistrationPlugin,
-    RosterPlugin,
-    ServiceDiscoveryPlugin,
-    UnreadMessageCountPlugin
-} from &#x27;./services/adapters/xmpp/plugins&#x27;;
+import { BookmarkPlugin } from &#x27;./services/adapters/xmpp/plugins/bookmark.plugin&#x27;;
+import { HttpFileUploadPlugin } from &#x27;./services/adapters/xmpp/plugins/http-file-upload.plugin&#x27;;
+import { MessageArchivePlugin } from &#x27;./services/adapters/xmpp/plugins/message-archive.plugin&#x27;;
+import { MessageCarbonsPlugin } from &#x27;./services/adapters/xmpp/plugins/message-carbons.plugin&#x27;;
+import { MessageStatePlugin } from &#x27;./services/adapters/xmpp/plugins/message-state.plugin&#x27;;
+import { MessageUuidPlugin } from &#x27;./services/adapters/xmpp/plugins/message-uuid.plugin&#x27;;
+import { MessagePlugin } from &#x27;./services/adapters/xmpp/plugins/message.plugin&#x27;;
+import { MucSubPlugin } from &#x27;./services/adapters/xmpp/plugins/muc-sub.plugin&#x27;;
+import { MultiUserChatPlugin } from &#x27;./services/adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
+import { PingPlugin } from &#x27;./services/adapters/xmpp/plugins/ping.plugin&#x27;;
+import { PublishSubscribePlugin } from &#x27;./services/adapters/xmpp/plugins/publish-subscribe.plugin&#x27;;
+import { PushPlugin } from &#x27;./services/adapters/xmpp/plugins/push.plugin&#x27;;
+import { RegistrationPlugin } from &#x27;./services/adapters/xmpp/plugins/registration.plugin&#x27;;
+import { RosterPlugin } from &#x27;./services/adapters/xmpp/plugins/roster.plugin&#x27;;
+import { ServiceDiscoveryPlugin } from &#x27;./services/adapters/xmpp/plugins/service-discovery.plugin&#x27;;
+import { UnreadMessageCountPlugin } from &#x27;./services/adapters/xmpp/plugins/unread-message-count.plugin&#x27;;
 import { XmppChatAdapter } from &#x27;./services/adapters/xmpp/xmpp-chat-adapter.service&#x27;;
 import { XmppChatConnectionService } from &#x27;./services/adapters/xmpp/xmpp-chat-connection.service&#x27;;
 import { XmppClientFactoryService } from &#x27;./services/adapters/xmpp/xmpp-client-factory.service&#x27;;
@@ -1363,7 +1361,7 @@ import { LogService } from &#x27;./services/log.service&#x27;;
 })
 export class NgxChatModule {
 
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders&lt;NgxChatModule&gt; {
 
         return {
             ngModule: NgxChatModule,
@@ -1410,7 +1408,7 @@ export class NgxChatModule {
 
             xmppChatAdapter.addPlugins([
                 new BookmarkPlugin(publishSubscribePlugin),
-                new MessageArchivePlugin(xmppChatAdapter),
+                new MessageArchivePlugin(xmppChatAdapter, serviceDiscoveryPlugin, logService),
                 new MessagePlugin(xmppChatAdapter, logService),
                 new MessageUuidPlugin(),
                 new MultiUserChatPlugin(xmppChatAdapter, logService, serviceDiscoveryPlugin),
@@ -1422,7 +1420,7 @@ export class NgxChatModule {
                 new RegistrationPlugin(logService, ngZone),
                 new MessageCarbonsPlugin(xmppChatAdapter),
                 unreadMessageCountPlugin,
-                new HttpFileUploadPlugin(injector.get(HttpClient), serviceDiscoveryPlugin, xmppChatAdapter),
+                new HttpFileUploadPlugin(injector.get(HttpClient), serviceDiscoveryPlugin, xmppChatAdapter, logService),
                 new MessageStatePlugin(publishSubscribePlugin, xmppChatAdapter, chatMessageListRegistryService, logService),
                 new MucSubPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
             ]);

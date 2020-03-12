@@ -86,14 +86,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -135,14 +135,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
                                     >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -517,14 +517,14 @@
                         <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                         <li class="link">
                                             <a href="components/ChatComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -566,14 +566,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        data-target="#directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-NgxChatModule-f947707fc77bec9cb70b0789c7e07201"
+                                        id="directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"
 >
                                         <li class="link">
                                             <a href="directives/LinksDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -958,11 +958,13 @@ Message Archive Management</p>
                                 <a href="#loadAllMessages">loadAllMessages</a>
                             </li>
                             <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#requestNewestMessages">requestNewestMessages</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#requestNewestMessages">requestNewestMessages</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#supportsMessageArchiveManagement">supportsMessageArchiveManagement</a>
                             </li>
                             <li>
                                 <a href="#afterReceiveMessage">afterReceiveMessage</a>
@@ -1000,12 +1002,12 @@ Message Archive Management</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>)</code>
+<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, serviceDiscoveryPlugin: <a href="../interfaces/Service.html">ServiceDiscoveryPlugin</a>, logService: <a href="../injectables/LogService.html">LogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -1027,6 +1029,30 @@ Message Archive Management</p>
                                                   
                                                         <td>
                                                                     <code><a href="../injectables/XmppChatAdapter.html" target="_self" >XmppChatAdapter</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>serviceDiscoveryPlugin</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Service.html" target="_self" >ServiceDiscoveryPlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/LogService.html" target="_self" >LogService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -1073,7 +1099,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:93</a></div>
                             </td>
                         </tr>
 
@@ -1142,7 +1168,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:58</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:80</a></div>
                             </td>
                         </tr>
 
@@ -1213,7 +1239,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:88</a></div>
                             </td>
                         </tr>
 
@@ -1284,7 +1310,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -1294,44 +1320,6 @@ Message Archive Management</p>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onBeforeOnline"></a>
-                        <span class="name">
-                            <b>
-                            onBeforeOnline
-                            </b>
-                            <a href="#onBeforeOnline"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>onBeforeOnline()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:18</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code>PromiseLike&lt;any&gt;</code>
 
                             </div>
                     </td>
@@ -1362,7 +1350,7 @@ Message Archive Management</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -1371,7 +1359,48 @@ Message Archive Management</p>
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="supportsMessageArchiveManagement"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                                <span class="modifier">Async</span>
+                            supportsMessageArchiveManagement
+                            </b>
+                            <a href="#supportsMessageArchiveManagement"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>supportsMessageArchiveManagement()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-archive.plugin.ts:71</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>{}</code>
 
                             </div>
                     </td>
@@ -1406,7 +1435,7 @@ Message Archive Management</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in AbstractXmppPlugin:27</div>
+                                    <div class="io-line">Defined in AbstractXmppPlugin:28</div>
                             </td>
                         </tr>
 
@@ -1505,7 +1534,7 @@ Message Archive Management</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in AbstractXmppPlugin:15</div>
+                                    <div class="io-line">Defined in AbstractXmppPlugin:16</div>
                             </td>
                         </tr>
 
@@ -1592,7 +1621,7 @@ Message Archive Management</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in AbstractXmppPlugin:19</div>
+                                    <div class="io-line">Defined in AbstractXmppPlugin:20</div>
                             </td>
                         </tr>
 
@@ -1679,7 +1708,7 @@ Message Archive Management</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in AbstractXmppPlugin:23</div>
+                                    <div class="io-line">Defined in AbstractXmppPlugin:24</div>
                             </td>
                         </tr>
 
@@ -1754,7 +1783,7 @@ Message Archive Management</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in AbstractXmppPlugin:8</div>
+                                    <div class="io-line">Defined in AbstractXmppPlugin:9</div>
                             </td>
                         </tr>
 
@@ -1798,7 +1827,7 @@ Message Archive Management</p>
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in AbstractXmppPlugin:12</div>
+                                    <div class="io-line">Defined in AbstractXmppPlugin:13</div>
                             </td>
                         </tr>
 
@@ -1826,11 +1855,14 @@ Message Archive Management</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, xml } from &#x27;@xmpp/client&#x27;;
-
-import { Direction, Stanza } from &#x27;../../../../core&#x27;;
+import { filter } from &#x27;rxjs/operators&#x27;;
+import { Direction } from &#x27;../../../../core/message&#x27;;
+import { Stanza } from &#x27;../../../../core/stanza&#x27;;
+import { LogService } from &#x27;../../../log.service&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { MessageUuidPlugin } from &#x27;./message-uuid.plugin&#x27;;
+import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
 
 /**
  * https://xmpp.org/extensions/xep-0313.html
@@ -1838,33 +1870,43 @@ import { MessageUuidPlugin } from &#x27;./message-uuid.plugin&#x27;;
  */
 export class MessageArchivePlugin extends AbstractXmppPlugin {
 
-    constructor(private chatService: XmppChatAdapter) {
+    constructor(
+        private chatService: XmppChatAdapter,
+        private serviceDiscoveryPlugin: ServiceDiscoveryPlugin,
+        private logService: LogService,
+    ) {
         super();
-    }
-
-    onBeforeOnline(): PromiseLike&lt;any&gt; {
-        return this.requestNewestMessages();
+        this.chatService.state$
+            .pipe(filter(state &#x3D;&gt; state &#x3D;&#x3D;&#x3D; &#x27;online&#x27;))
+            .subscribe(async () &#x3D;&gt; {
+                if (await this.supportsMessageArchiveManagement()) {
+                    this.requestNewestMessages();
+                }
+            });
     }
 
     private requestNewestMessages() {
-        // TODO: load last messages per contact instead globally
-        return this.chatService.chatConnectionService.sendIq(
-            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
+        this.chatService.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: this.chatService.chatConnectionService.userJid.bare().toString()},
                 xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;},
                     xml(&#x27;set&#x27;, {xmlns: &#x27;http://jabber.org/protocol/rsm&#x27;},
                         xml(&#x27;max&#x27;, {}, 250),
-                        xml(&#x27;before&#x27;)
-                    )
-                )
-            )
+                        xml(&#x27;before&#x27;),
+                    ),
+                ),
+            ),
         );
     }
 
     async loadAllMessages() {
+        if (!(await this.supportsMessageArchiveManagement())) {
+            throw new Error(&#x27;message archive management not suppported&#x27;);
+        }
+
         let lastMamResponse &#x3D; await this.chatService.chatConnectionService.sendIq(
             xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
-                xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;})
-            )
+                xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;}),
+            ),
         );
 
         while (lastMamResponse.getChild(&#x27;fin&#x27;).attrs.complete !&#x3D;&#x3D; &#x27;true&#x27;) {
@@ -1874,12 +1916,21 @@ export class MessageArchivePlugin extends AbstractXmppPlugin {
                     xml(&#x27;query&#x27;, {xmlns: &#x27;urn:xmpp:mam:2&#x27;},
                         xml(&#x27;set&#x27;, {xmlns: &#x27;http://jabber.org/protocol/rsm&#x27;},
                             xml(&#x27;max&#x27;, {}, 250),
-                            xml(&#x27;after&#x27;, {}, lastReceivedMessageId)
-                        )
-                    )
-                )
+                            xml(&#x27;after&#x27;, {}, lastReceivedMessageId),
+                        ),
+                    ),
+                ),
             );
         }
+    }
+
+    private async supportsMessageArchiveManagement() {
+        const supportsMessageArchiveManagement &#x3D; await this.serviceDiscoveryPlugin.supportsFeature(
+            this.chatService.chatConnectionService.userJid.bare().toString(), &#x27;urn:xmpp:mam:2&#x27;);
+        if (!supportsMessageArchiveManagement) {
+            this.logService.info(&#x27;server doesnt support MAM&#x27;);
+        }
+        return supportsMessageArchiveManagement;
     }
 
     handleStanza(stanza: Stanza) {
@@ -1905,7 +1956,7 @@ export class MessageArchivePlugin extends AbstractXmppPlugin {
             const contactJid &#x3D; isAddressedToMe ? messageElement.attrs.from : messageElement.attrs.to;
             const contact &#x3D; this.chatService.getOrCreateContactById(contactJid);
             const datetime &#x3D; new Date(
-                stanza.getChild(&#x27;result&#x27;).getChild(&#x27;forwarded&#x27;).getChild(&#x27;delay&#x27;).attrs.stamp
+                stanza.getChild(&#x27;result&#x27;).getChild(&#x27;forwarded&#x27;).getChild(&#x27;delay&#x27;).attrs.stamp,
             );
             const direction &#x3D; isAddressedToMe ? Direction.in : Direction.out;
 
@@ -1918,7 +1969,6 @@ export class MessageArchivePlugin extends AbstractXmppPlugin {
             });
         }
     }
-
 }
 </code></pre>
     </div>
