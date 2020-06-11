@@ -246,6 +246,10 @@ export class ChatWindowState {
     }
 }
 
+export interface AttachableTrack {
+    attach(elem: HTMLVideoElement): void;
+}
+
 /**
  * Used to open chat windows programmatically.
  */
@@ -253,6 +257,7 @@ export class ChatWindowState {
 export class ChatListStateService {
 
     public openChats$ &#x3D; new BehaviorSubject&lt;ChatWindowState[]&gt;([]);
+    public openTracks$ &#x3D; new BehaviorSubject&lt;AttachableTrack[]&gt;([]);
 
     constructor(@Inject(ChatServiceToken) private chatService: ChatService) {
         this.chatService.state$
@@ -290,6 +295,16 @@ export class ChatListStateService {
             copyWithoutContact.splice(index, 1);
             this.openChats$.next(copyWithoutContact);
         }
+    }
+
+    public openTrack(track: AttachableTrack) {
+        this.openTracks$.next(this.openTracks$.getValue().concat([track]));
+    }
+
+    public closeTrack(track: AttachableTrack) {
+        this.openTracks$.next(
+            this.openTracks$.getValue().filter(s &#x3D;&gt; s !&#x3D;&#x3D; track)
+        );
     }
 
     isChatWithContactOpen(contact: Contact): boolean {

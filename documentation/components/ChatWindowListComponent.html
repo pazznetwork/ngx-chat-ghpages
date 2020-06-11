@@ -305,9 +305,16 @@ export class ChatWindowListComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chat-list&quot; [@rosterVisibility]&#x3D;&quot;rosterState&quot;&gt;
-    &lt;div *ngFor&#x3D;&quot;let chatWindowState of (chatListService.openChats$ | async)&quot;&gt;
-        &lt;ngx-chat-window [chatWindowState]&#x3D;&quot;chatWindowState&quot;&gt;&lt;/ngx-chat-window&gt;
-    &lt;/div&gt;
+
+    &lt;ngx-chat-video-window
+            *ngFor&#x3D;&quot;let track of (chatListService.openTracks$ | async)&quot;
+            [track]&#x3D;&quot;track&quot;&gt;
+    &lt;/ngx-chat-video-window&gt;
+
+    &lt;ngx-chat-window
+            *ngFor&#x3D;&quot;let chatWindowState of (chatListService.openChats$ | async)&quot;
+            [chatWindowState]&#x3D;&quot;chatWindowState&quot;&gt;&lt;/ngx-chat-window&gt;
+
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -364,8 +371,8 @@ export class ChatWindowListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-list" [@rosterVisibility]="rosterState">    <div *ngFor="let chatWindowState of (chatListService.openChats$ | async)">        <ngx-chat-window [chatWindowState]="chatWindowState"></ngx-chat-window>    </div></div></div>'
-    var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
+        var COMPONENT_TEMPLATE = '<div><div class="chat-list" [@rosterVisibility]="rosterState">    <ngx-chat-video-window            *ngFor="let track of (chatListService.openTracks$ | async)"            [track]="track">    </ngx-chat-video-window>    <ngx-chat-window            *ngFor="let chatWindowState of (chatListService.openChats$ | async)"            [chatWindowState]="chatWindowState"></ngx-chat-window></div></div>'
+    var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatWindowListComponent'};
 </script>

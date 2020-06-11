@@ -65,13 +65,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' : 'data-target="#xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' }>
+                                            'data-target="#components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' : 'data-target="#xs-components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' :
-                                            'id="xs-components-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' :
+                                            'id="xs-components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
                                             <li class="link">
                                                 <a href="components/ChatComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -101,8 +101,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatRoomMessagesComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/ChatVideoWindowComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatVideoWindowComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/ChatWindowComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatWindowComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ChatWindowFrameComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatWindowFrameComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ChatWindowListComponent.html"
@@ -124,13 +132,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' : 'data-target="#xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' }>
+                                        'data-target="#directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' : 'data-target="#xs-directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' :
-                                        'id="xs-directives-links-module-NgxChatModule-c7e5b9e66986ba4b48bf8821ea29fc1a"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' :
+                                        'id="xs-directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
                                         <li class="link">
                                             <a href="directives/LinksDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -153,6 +161,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/AbstractXmppPlugin.html" data-type="entity-link">AbstractXmppPlugin</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/BlockPlugin.html" data-type="entity-link">BlockPlugin</a>
                             </li>
                             <li class="link">
                                 <a href="classes/BookmarkPlugin.html" data-type="entity-link">BookmarkPlugin</a>
@@ -286,6 +297,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/AttachableTrack.html" data-type="entity-link">AttachableTrack</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ChatAction.html" data-type="entity-link">ChatAction</a>
                             </li>
                             <li class="link">
@@ -344,6 +358,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/PublishOptions.html" data-type="entity-link">PublishOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ReportUserService.html" data-type="entity-link">ReportUserService</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/RoomCreationOptions.html" data-type="entity-link">RoomCreationOptions</a>

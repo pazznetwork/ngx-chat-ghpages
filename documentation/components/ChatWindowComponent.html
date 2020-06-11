@@ -918,35 +918,29 @@ export interface ChatActionContext {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chat-window&quot;&gt;
-    &lt;ngx-chat-filedrop [enabled]&#x3D;&quot;httpFileUploadPlugin.fileUploadSupported&quot;
-                       (fileUpload)&#x3D;&quot;uploadFile($event)&quot;
-                       [dropMessage]&#x3D;&quot;chatService.translations.dropMessage&quot;&gt;
-        &lt;div (click)&#x3D;&quot;onClickHeader()&quot; class&#x3D;&quot;chat-contact-header&quot; [title]&#x3D;&quot;chatWindowState.contact.name&quot;&gt;
-            &lt;div class&#x3D;&quot;chat-contact-avatar&quot;&gt;
-                &lt;img [src]&#x3D;&quot;chatWindowState.contact.avatar&quot;/&gt;
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;chat-contact-name&quot;&gt;
-                {{chatWindowState.contact.name}}
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;chat-close&quot; (click)&#x3D;&quot;onClickClose()&quot;&gt;
-                &amp;times;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div *ngIf&#x3D;&quot;!chatWindowState.isCollapsed&quot; class&#x3D;&quot;chat-content&quot; (click)&#x3D;&quot;onFocus()&quot;&gt;
-            &lt;ngx-chat-message-list [contact]&#x3D;&quot;chatWindowState.contact&quot; [showAvatars]&#x3D;&quot;false&quot;&gt;&lt;/ngx-chat-message-list&gt;
-            &lt;div class&#x3D;&quot;chat-input-container&quot;&gt;
-                &lt;ngx-chat-message-input [contact]&#x3D;&quot;chatWindowState.contact&quot;&gt;&lt;/ngx-chat-message-input&gt;
-                &lt;div *ngFor&#x3D;&quot;let action of chatService.chatActions&quot;
-                     (click)&#x3D;&quot;onActionClick(action)&quot;
-                     class&#x3D;&quot;chat-action&quot;
-                     [ngClass]&#x3D;&quot;action.cssClass&quot;
-                     [innerHTML]&#x3D;&quot;action.html&quot;&gt;
-                &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ngx-chat-window-frame
+        [windowIcon]&#x3D;&quot;chatWindowState.contact.avatar&quot;
+        [windowTitle]&#x3D;&quot;chatWindowState.contact.name&quot;
+        (headerClick)&#x3D;&quot;onClickHeader()&quot;
+        (closeClick)&#x3D;&quot;onClickClose()&quot;
+        [fileDropEnabled]&#x3D;&quot;httpFileUploadPlugin.fileUploadSupported&quot;
+        (fileDrop)&#x3D;&quot;uploadFile($event)&quot;
+        [fileDropMessageKey]&#x3D;&quot;chatService.translations.dropMessage&quot;&gt;
+
+    &lt;div *ngIf&#x3D;&quot;!chatWindowState.isCollapsed&quot; class&#x3D;&quot;chat-content&quot; (click)&#x3D;&quot;onFocus()&quot;&gt;
+        &lt;ngx-chat-message-list [contact]&#x3D;&quot;chatWindowState.contact&quot; [showAvatars]&#x3D;&quot;false&quot;&gt;&lt;/ngx-chat-message-list&gt;
+        &lt;div class&#x3D;&quot;chat-input-container&quot;&gt;
+            &lt;ngx-chat-message-input [contact]&#x3D;&quot;chatWindowState.contact&quot;&gt;&lt;/ngx-chat-message-input&gt;
+            &lt;div *ngFor&#x3D;&quot;let action of chatService.chatActions&quot;
+                 (click)&#x3D;&quot;onActionClick(action)&quot;
+                 class&#x3D;&quot;chat-action&quot;
+                 [ngClass]&#x3D;&quot;action.cssClass&quot;
+                 [innerHTML]&#x3D;&quot;action.html&quot;&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/ngx-chat-filedrop&gt;
-&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/ngx-chat-window-frame&gt;
 </code></pre>
     </div>
 
@@ -961,49 +955,6 @@ export interface ChatActionContext {
   margin: 0;
   padding: 0;
   font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, serif
-}
-
-.chat-window {
-  border: 1px solid @general-border-color;
-  border-bottom: none;
-  background: @general-background-color;
-  margin-left: 1em;
-  width: 17em;
-  bottom: 0;
-  pointer-events: auto;
-  position: relative;
-}
-
-.chat-contact-header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid @general-border-color;
-  cursor: pointer;
-  line-height: 2em;
-}
-
-.chat-contact-avatar {
-  width: 2em;
-  height: 2em;
-
-  img {
-    width: 2em;
-    height: 2em;
-  }
-}
-
-.chat-contact-name {
-  padding: 0 0.5em;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  flex-grow: 1;
-  overflow: hidden;
-}
-
-.chat-close {
-  flex: 1;
-  padding: 0 0.5em;
-  text-align: right;
 }
 
 .chat-content {
@@ -1072,8 +1023,8 @@ ngx-chat-message-input {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-window">    <ngx-chat-filedrop [enabled]="httpFileUploadPlugin.fileUploadSupported"                       (fileUpload)="uploadFile($event)"                       [dropMessage]="chatService.translations.dropMessage">        <div (click)="onClickHeader()" class="chat-contact-header" [title]="chatWindowState.contact.name">            <div class="chat-contact-avatar">                <img [src]="chatWindowState.contact.avatar"/>            </div>            <div class="chat-contact-name">                {{chatWindowState.contact.name}}            </div>            <div class="chat-close" (click)="onClickClose()">                &times;            </div>        </div>        <div *ngIf="!chatWindowState.isCollapsed" class="chat-content" (click)="onFocus()">            <ngx-chat-message-list [contact]="chatWindowState.contact" [showAvatars]="false"></ngx-chat-message-list>            <div class="chat-input-container">                <ngx-chat-message-input [contact]="chatWindowState.contact"></ngx-chat-message-input>                <div *ngFor="let action of chatService.chatActions"                     (click)="onActionClick(action)"                     class="chat-action"                     [ngClass]="action.cssClass"                     [innerHTML]="action.html">                </div>            </div>        </div>    </ngx-chat-filedrop></div></div>'
-    var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
+        var COMPONENT_TEMPLATE = '<div><ngx-chat-window-frame        [windowIcon]="chatWindowState.contact.avatar"        [windowTitle]="chatWindowState.contact.name"        (headerClick)="onClickHeader()"        (closeClick)="onClickClose()"        [fileDropEnabled]="httpFileUploadPlugin.fileUploadSupported"        (fileDrop)="uploadFile($event)"        [fileDropMessageKey]="chatService.translations.dropMessage">    <div *ngIf="!chatWindowState.isCollapsed" class="chat-content" (click)="onFocus()">        <ngx-chat-message-list [contact]="chatWindowState.contact" [showAvatars]="false"></ngx-chat-message-list>        <div class="chat-input-container">            <ngx-chat-message-input [contact]="chatWindowState.contact"></ngx-chat-message-input>            <div *ngFor="let action of chatService.chatActions"                 (click)="onActionClick(action)"                 class="chat-action"                 [ngClass]="action.cssClass"                 [innerHTML]="action.html">            </div>        </div>    </div></ngx-chat-window-frame></div>'
+    var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatWindowComponent'};
 </script>

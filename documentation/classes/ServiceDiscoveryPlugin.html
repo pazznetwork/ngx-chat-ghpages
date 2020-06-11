@@ -426,8 +426,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="134"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:134</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:132</a></div>
                 </td>
             </tr>
 
@@ -499,8 +499,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="110"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:110</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:108</a></div>
                 </td>
             </tr>
 
@@ -569,8 +569,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="88"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:88</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:86</a></div>
                 </td>
             </tr>
 
@@ -663,7 +663,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -692,8 +692,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:60</a></div>
                 </td>
             </tr>
 
@@ -724,15 +724,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>supportsFeature(jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, feature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>supportsFeature(jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, searchedFeature: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/service-discovery.plugin.ts:66</a></div>
                 </td>
             </tr>
 
@@ -764,7 +764,7 @@
 
                                 </tr>
                                 <tr>
-                                    <td>feature</td>
+                                    <td>searchedFeature</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -1298,9 +1298,8 @@ export class ServiceDiscoveryPlugin extends AbstractXmppPlugin {
     }
 
     async onBeforeOnline() {
-        const services &#x3D; await this.discoverServices(this.chatAdapter.chatConnectionService.userJid.domain);
+        await this.discoverServices(this.chatAdapter.chatConnectionService.userJid.domain);
         this.servicesInitialized$.next(true);
-        return services;
     }
 
     onOffline() {
@@ -1309,7 +1308,7 @@ export class ServiceDiscoveryPlugin extends AbstractXmppPlugin {
         this.resourceCache &#x3D; {};
     }
 
-    supportsFeature(jid: string, feature: string): Promise&lt;boolean&gt; {
+    supportsFeature(jid: string, searchedFeature: string): Promise&lt;boolean&gt; {
 
         return new Promise((resolve, reject) &#x3D;&gt; {
 
@@ -1319,8 +1318,7 @@ export class ServiceDiscoveryPlugin extends AbstractXmppPlugin {
                     if (!service) {
                         reject(new Error(&#x27;no service found for jid &#x27; + jid));
                     }
-                    const results &#x3D; this.resourceCache[jid].features.filter(resource &#x3D;&gt; resource.indexOf(feature) &gt;&#x3D; 0);
-                    resolve(results.length &gt; 0);
+                    resolve(service.features.indexOf(searchedFeature) &gt;&#x3D; 0);
                 } catch (e) {
                     reject(e);
                 }
