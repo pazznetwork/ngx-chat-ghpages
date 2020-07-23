@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-state.plugin.ts:22</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -101,6 +101,7 @@ import { ChatMessageListRegistryService } from &#x27;../../../chat-message-list-
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { EntityTimePlugin } from &#x27;./entity-time.plugin&#x27;;
 import { MessageUuidPlugin } from &#x27;./message-uuid.plugin&#x27;;
 import { MessageReceivedEvent } from &#x27;./message.plugin&#x27;;
 import { PublishSubscribePlugin } from &#x27;./publish-subscribe.plugin&#x27;;
@@ -115,7 +116,6 @@ export interface JidToMessageStateDate {
     [jid: string]: StateDate;
 }
 
-const NGX_CHAT_MESSAGESENT &#x3D; &#x27;ngxchat:messagesent&#x27;;
 const STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES &#x3D; &#x27;ngxchat:contactmessagestates&#x27;;
 const wrapperNodeName &#x3D; &#x27;entries&#x27;;
 const nodeName &#x3D; &#x27;contact-message-state&#x27;;
@@ -132,6 +132,7 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
         private xmppChatAdapter: XmppChatAdapter,
         private chatMessageListRegistry: ChatMessageListRegistryService,
         private logService: LogService,
+        private entityTimePlugin: EntityTimePlugin,
     ) {
         super();
 
@@ -140,9 +141,9 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
                 filter(() &#x3D;&gt; xmppChatAdapter.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;),
             )
             .subscribe(contacts &#x3D;&gt; {
-                contacts.forEach(contact &#x3D;&gt; {
+                contacts.forEach(async contact &#x3D;&gt; {
                     if (contact.mostRecentMessageReceived) {
-                        this.sendMessageStateNotification(
+                        await this.sendMessageStateNotification(
                             contact.jidBare,
                             contact.mostRecentMessageReceived.id,
                             MessageState.RECIPIENT_SEEN);
@@ -164,7 +165,7 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
     }
 
     private processPubSub(itemElement: Element[]) {
-        const results &#x3D; {} as JidToMessageStateDate;
+        const results: JidToMessageStateDate &#x3D; {};
         if (itemElement.length &#x3D;&#x3D;&#x3D; 1) {
             for (const lastReadEntry of itemElement[0].getChild(wrapperNodeName).getChildren(nodeName)) {
                 const {lastRecipientReceived, lastRecipientSeen, lastSent, jid} &#x3D; lastReadEntry.attrs;
@@ -186,9 +187,9 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
                 const stateDates &#x3D; this.jidToMessageStateDate[jid];
                 wrapperNode.c(nodeName, {
                     jid,
-                    lastRecipientReceived: stateDates.lastRecipientReceived &amp;&amp; stateDates.lastRecipientReceived.getTime(),
-                    lastRecipientSeen: stateDates.lastRecipientSeen &amp;&amp; stateDates.lastRecipientSeen.getTime(),
-                    lastSent: stateDates.lastSent &amp;&amp; stateDates.lastSent.getTime(),
+                    lastRecipientReceived: stateDates.lastRecipientReceived.getTime(),
+                    lastRecipientSeen: stateDates.lastRecipientSeen.getTime(),
+                    lastSent: stateDates.lastSent.getTime(),
                 });
             }
         }
@@ -213,8 +214,10 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
     async afterSendMessage(message: Message, messageStanza: Element) {
         const {type, to} &#x3D; messageStanza.attrs;
         if (type &#x3D;&#x3D;&#x3D; &#x27;chat&#x27;) {
-            await this.publishSubscribePlugin.privateNotify(NGX_CHAT_MESSAGESENT);
-            this.updateContactMessageState(parseJid(to).bare().toString(), MessageState.SENT, new Date());
+            this.updateContactMessageState(
+                parseJid(to).bare().toString(),
+                MessageState.SENT,
+                new Date(await this.entityTimePlugin.getNow()));
             delete message.state;
         }
     }
@@ -234,10 +237,10 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
         const isChatWithContactOpen &#x3D; this.chatMessageListRegistry.isChatOpen(this.xmppChatAdapter.getOrCreateContactById(from));
         const state &#x3D; isChatWithContactOpen ? MessageState.RECIPIENT_SEEN : MessageState.RECIPIENT_RECEIVED;
         const messageId &#x3D; MessageUuidPlugin.extractIdFromStanza(stanza);
-        this.sendMessageStateNotification(parseJid(from), messageId, state);
+        this.sendMessageStateNotification(parseJid(from), messageId, state).catch(e &#x3D;&gt; this.logService.error(&#x27;error sending state notification&#x27;, e));
     }
 
-    private sendMessageStateNotification(recipient: JID, messageId: string, state: MessageState) {
+    private async sendMessageStateNotification(recipient: JID, messageId: string, state: MessageState) {
         const messageStateResponse &#x3D; xml(&#x27;message&#x27;, {
                 to: recipient.bare().toString(),
                 from: this.xmppChatAdapter.chatConnectionService.userJid.toString(),
@@ -246,11 +249,11 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
             xml(&#x27;message-state&#x27;, {
                 xmlns: STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES,
                 messageId,
-                date: new Date().toISOString(),
+                date: new Date(await this.entityTimePlugin.getNow()).toISOString(),
                 state
             })
         );
-        this.xmppChatAdapter.chatConnectionService.send(messageStateResponse);
+        await this.xmppChatAdapter.chatConnectionService.send(messageStateResponse);
     }
 
     handleStanza(stanza: Stanza) {
@@ -291,9 +294,9 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
     public getContactMessageState(contactJid: string) {
         if (!this.jidToMessageStateDate[contactJid]) {
             this.jidToMessageStateDate[contactJid] &#x3D; {
-                lastRecipientReceived: null,
-                lastRecipientSeen: null,
-                lastSent: null,
+                lastRecipientReceived: new Date(0),
+                lastRecipientSeen: new Date(0),
+                lastSent: new Date(0),
             };
         }
         return this.jidToMessageStateDate[contactJid];

@@ -158,11 +158,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Input, OnDestroy, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Input, OnDestroy, OnInit, Optional, ViewChild } from &#x27;@angular/core&#x27;;
 import { Subject } from &#x27;rxjs&#x27;;
 import { filter, takeUntil } from &#x27;rxjs/operators&#x27;;
 import { Direction } from &#x27;../../core/message&#x27;;
+import { Presence } from &#x27;../../core/presence&#x27;;
 import { HttpFileUploadPlugin } from &#x27;../../services/adapters/xmpp/plugins/http-file-upload.plugin&#x27;;
+import { ChatContactClickHandler, CONTACT_CLICK_HANDLER_TOKEN } from &#x27;../../services/chat-contact-click-handler&#x27;;
 import { ChatListStateService, ChatWindowState } from &#x27;../../services/chat-list-state.service&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
 import { ChatMessageInputComponent } from &#x27;../chat-message-input/chat-message-input.component&#x27;;
@@ -170,7 +172,7 @@ import { ChatMessageInputComponent } from &#x27;../chat-message-input/chat-messa
 @Component({
     selector: &#x27;ngx-chat-window&#x27;,
     templateUrl: &#x27;./chat-window.component.html&#x27;,
-    styleUrls: [&#x27;./chat-window.component.less&#x27;]
+    styleUrls: [&#x27;./chat-window.component.less&#x27;],
 })
 export class ChatWindowComponent implements OnInit, OnDestroy {
 
@@ -182,11 +184,14 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
     httpFileUploadPlugin: HttpFileUploadPlugin;
 
+    Presence &#x3D; Presence;
+
     private ngDestroy &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         @Inject(ChatServiceToken) public chatService: ChatService,
         private chatListService: ChatListStateService,
+        @Inject(CONTACT_CLICK_HANDLER_TOKEN) @Optional() public contactClickHandler: ChatContactClickHandler,
     ) {
         this.httpFileUploadPlugin &#x3D; this.chatService.getPlugin(HttpFileUploadPlugin);
     }
@@ -195,7 +200,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
         this.chatWindowState.contact.messages$
             .pipe(
                 filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in),
-                takeUntil(this.ngDestroy)
+                takeUntil(this.ngDestroy),
             )
             .subscribe(() &#x3D;&gt; {
                 this.chatWindowState.isCollapsed &#x3D; false;
@@ -233,6 +238,13 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
             contact: this.chatWindowState.contact.jidBare.toString(),
             chatWindow: this,
         });
+    }
+
+    onContactClick($event: MouseEvent) {
+        if (this.contactClickHandler &amp;&amp; !this.chatWindowState.isCollapsed) {
+            $event.stopPropagation();
+            this.contactClickHandler.onClickContact(this.chatWindowState.contact);
+        }
     }
 }
 

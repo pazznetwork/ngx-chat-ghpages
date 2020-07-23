@@ -82,6 +82,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chatOpened$">chatOpened$</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Private</span>
                                 <a href="#contactToOpenMessageListCount">contactToOpenMessageListCount</a>
                             </li>
@@ -137,7 +141,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -172,8 +176,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -244,8 +248,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -326,8 +330,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -396,8 +400,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -454,6 +458,33 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="chatOpened$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            chatOpened$</b>
+                            <a href="#chatOpened$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;Contact&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="contactToOpenMessageListCount"></a>
                         <span class="name">
                             <b>
@@ -470,7 +501,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -511,7 +542,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
 import { Contact } from &#x27;../core/contact&#x27;;
 
 /**
@@ -523,6 +554,7 @@ import { Contact } from &#x27;../core/contact&#x27;;
 export class ChatMessageListRegistryService {
 
     public openChats$ &#x3D; new BehaviorSubject&lt;Set&lt;Contact&gt;&gt;(new Set());
+    public chatOpened$ &#x3D; new Subject&lt;Contact&gt;();
     private contactToOpenMessageListCount &#x3D; new Map&lt;Contact, number&gt;();
 
     constructor() {
@@ -533,10 +565,14 @@ export class ChatMessageListRegistryService {
     }
 
     incrementOpenWindowCount(contact: Contact) {
+        const wasWindowOpen &#x3D; this.isChatOpen(contact);
         this.contactToOpenMessageListCount.set(contact, this.getOrDefault(contact, 0) + 1);
         const openWindowSet &#x3D; this.openChats$.getValue();
         openWindowSet.add(contact);
         this.openChats$.next(openWindowSet);
+        if (!wasWindowOpen) {
+            this.chatOpened$.next(contact);
+        }
     }
 
     decrementOpenWindowCount(contact: Contact) {

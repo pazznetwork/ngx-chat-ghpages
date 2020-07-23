@@ -340,10 +340,7 @@ export class ChatVideoWindowComponent implements AfterViewInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ngx-chat-window-frame
-        [windowIcon]&#x3D;&quot;&quot;
-        [windowTitle]&#x3D;&quot;&quot;
-        [fileDropEnabled]&#x3D;&quot;false&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ngx-chat-window-frame&gt;
     &lt;video #video autoplay&#x3D;&quot;1&quot;&gt;&lt;/video&gt;
 &lt;/ngx-chat-window-frame&gt;
 </code></pre>
@@ -384,8 +381,8 @@ export class ChatVideoWindowComponent implements AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ngx-chat-window-frame        [windowIcon]=""        [windowTitle]=""        [fileDropEnabled]="false">    <video #video autoplay="1"></video></ngx-chat-window-frame></div>'
-    var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
+        var COMPONENT_TEMPLATE = '<div><ngx-chat-window-frame>    <video #video autoplay="1"></video></ngx-chat-window-frame></div>'
+    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatVideoWindowComponent'};
 </script>

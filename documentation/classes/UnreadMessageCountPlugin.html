@@ -131,6 +131,11 @@ The stored elements look like this:
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
+                                <a href="#checkForUnreadCountChange">checkForUnreadCountChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
                                 <a href="#fetchLastSeenDates">fetchLastSeenDates</a>
                             </li>
                             <li>
@@ -195,12 +200,12 @@ The stored elements look like this:
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, chatMessageListRegistry: <a href="../injectables/ChatMessageListRegistryService.html">ChatMessageListRegistryService</a>, publishSubscribePlugin: <a href="../classes/PublishSubscribePlugin.html">PublishSubscribePlugin</a>)</code>
+<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, chatMessageListRegistry: <a href="../injectables/ChatMessageListRegistryService.html">ChatMessageListRegistryService</a>, publishSubscribePlugin: <a href="../classes/PublishSubscribePlugin.html">PublishSubscribePlugin</a>, entityTimePlugin: <a href="../classes/EntityTimePlugin.html">EntityTimePlugin</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:66</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -253,6 +258,18 @@ The stored elements look like this:
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>entityTimePlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/EntityTimePlugin.html" target="_self" >EntityTimePlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -293,7 +310,7 @@ The stored elements look like this:
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -326,7 +343,7 @@ The stored elements look like this:
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -361,7 +378,7 @@ new messages might be acknowledged in another session.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -398,15 +415,15 @@ new messages might be acknowledged in another session.</p>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>calculateUnreadMessageCount(contact: <a href="../classes/Contact.html">Contact</a>, date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                    <code>calculateUnreadMessageCount(contact: <a href="../classes/Contact.html">Contact</a>, lastReadDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:162</a></div>
                 </td>
             </tr>
 
@@ -438,9 +455,82 @@ new messages might be acknowledged in another session.</p>
 
                                 </tr>
                                 <tr>
-                                    <td>date</td>
+                                    <td>lastReadDate</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkForUnreadCountChange"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                            checkForUnreadCountChange
+                        </b>
+                        <a href="#checkForUnreadCountChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkForUnreadCountChange(contact: <a href="../classes/Contact.html">Contact</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>contact</td>
+                                    <td>
+                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
                                     </td>
 
                                     <td>
@@ -490,8 +580,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:128</a></div>
                 </td>
             </tr>
 
@@ -531,8 +621,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="177"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:177</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:184</a></div>
                 </td>
             </tr>
 
@@ -603,8 +693,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="187"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:187</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="194"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:194</a></div>
                 </td>
             </tr>
 
@@ -675,8 +765,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="110"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:110</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:116</a></div>
                 </td>
             </tr>
 
@@ -714,8 +804,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:124</a></div>
                 </td>
             </tr>
 
@@ -748,15 +838,15 @@ new messages might be acknowledged in another session.</p>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>parseLastSeenDates(itemElement: Element[])</code>
+                    <code>parseLastSeenDates(topLevelElements: Element[])</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="123"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:123</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:133</a></div>
                 </td>
             </tr>
 
@@ -776,7 +866,7 @@ new messages might be acknowledged in another session.</p>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>itemElement</td>
+                                    <td>topLevelElements</td>
                                     <td>
                                             <code>Element[]</code>
                                     </td>
@@ -827,8 +917,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="162"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:162</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:169</a></div>
                 </td>
             </tr>
 
@@ -866,8 +956,8 @@ new messages might be acknowledged in another session.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="143"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:143</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:150</a></div>
                 </td>
             </tr>
 
@@ -1369,7 +1459,7 @@ new messages might be acknowledged in another session.</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
 import { Element } from &#x27;ltx&#x27;;
 import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
-import { debounceTime, delay, distinctUntilChanged, filter, map, share } from &#x27;rxjs/operators&#x27;;
+import { debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, share, takeUntil } from &#x27;rxjs/operators&#x27;;
 import { Contact } from &#x27;../../../../core/contact&#x27;;
 import { Direction } from &#x27;../../../../core/message&#x27;;
 import { findSortedInsertionIndexLast } from &#x27;../../../../core/utils-array&#x27;;
@@ -1378,6 +1468,7 @@ import { ChatMessageListRegistryService } from &#x27;../../../chat-message-list-
 import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { EntityTimePlugin } from &#x27;./entity-time.plugin&#x27;;
 import { PublishSubscribePlugin } from &#x27;./publish-subscribe.plugin&#x27;;
 
 const STORAGE_NGX_CHAT_LAST_READ_DATE &#x3D; &#x27;ngxchat:unreadmessagedate&#x27;;
@@ -1398,7 +1489,7 @@ class LastReadEntriesNodeBuilder extends AbstractStanzaBuilder {
 
     addLastReadNode(jid: string, date: string) {
         this.lastReadNodes.push(
-            xml(nodeName, {jid, date})
+            xml(nodeName, {jid, date}),
         );
     }
 
@@ -1433,36 +1524,33 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
     public jidToUnreadCount$: BehaviorSubject&lt;JidToNumber&gt; &#x3D; new BehaviorSubject({});
     private jidToLastReadDate: JidToDate &#x3D; {};
 
-    constructor(private chatService: XmppChatAdapter,
-                private chatMessageListRegistry: ChatMessageListRegistryService,
-                private publishSubscribePlugin: PublishSubscribePlugin,
+    constructor(
+        private chatService: XmppChatAdapter,
+        private chatMessageListRegistry: ChatMessageListRegistryService,
+        private publishSubscribePlugin: PublishSubscribePlugin,
+        private entityTimePlugin: EntityTimePlugin,
     ) {
         super();
 
-        this.chatMessageListRegistry.openChats$
+        this.chatMessageListRegistry.chatOpened$
             .pipe(
-                filter(() &#x3D;&gt; this.chatService.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;),
+                filter(() &#x3D;&gt; this.chatService.state$.getValue() !&#x3D;&#x3D; &#x27;disconnected&#x27;),
                 delay(0), // prevent &#x27;Expression has changed after it was checked&#x27;
             )
-            .subscribe(contacts &#x3D;&gt; {
-                contacts.forEach(contact &#x3D;&gt; {
-                    this.jidToLastReadDate[contact.jidBare.toString()] &#x3D; new Date();
-                    this.updateContactUnreadMessageState(contact);
-                });
-                this.persistLastSeenDates();
-            });
+            .subscribe(contact &#x3D;&gt; this.checkForUnreadCountChange(contact));
 
-        this.chatService.message$
+        this.chatService.contactCreated$
             .pipe(
-                filter(() &#x3D;&gt; this.chatService.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;)
+                filter(() &#x3D;&gt; this.chatService.state$.getValue() !&#x3D;&#x3D; &#x27;disconnected&#x27;),
+                mergeMap(contact &#x3D;&gt;
+                    contact.messages$.pipe(
+                        debounceTime(1000), // performance optimization, ignore lots of message archive loading
+                        map(() &#x3D;&gt; contact),
+                        takeUntil(this.chatService.state$.pipe(first(state &#x3D;&gt; state &#x3D;&#x3D;&#x3D; &#x27;disconnected&#x27;))),
+                    ),
+                ),
             )
-            .subscribe(contact &#x3D;&gt; {
-                if (this.chatMessageListRegistry.isChatOpen(contact)) {
-                    this.jidToLastReadDate[contact.jidBare.toString()] &#x3D; new Date();
-                    this.persistLastSeenDates();
-                }
-                this.updateContactUnreadMessageState(contact);
-            });
+            .subscribe(contact &#x3D;&gt; this.checkForUnreadCountChange(contact));
 
         this.publishSubscribePlugin.publish$
             .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event));
@@ -1471,8 +1559,16 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
             map(jidToCount &#x3D;&gt; sum(extractValues(jidToCount))),
             debounceTime(500),
             distinctUntilChanged(),
-            share()
+            share(),
         );
+    }
+
+    private async checkForUnreadCountChange(contact: Contact) {
+        if (this.chatMessageListRegistry.isChatOpen(contact)) {
+            this.jidToLastReadDate[contact.jidBare.toString()] &#x3D; new Date(await this.entityTimePlugin.getNow());
+            this.persistLastSeenDates();
+        }
+        this.updateContactUnreadMessageState(contact);
     }
 
     async onBeforeOnline(): Promise&lt;any&gt; {
@@ -1483,16 +1579,21 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
         }
     }
 
+    onOffline() {
+        this.jidToUnreadCount$.next({});
+    }
+
     private async fetchLastSeenDates(): Promise&lt;JidToDate&gt; {
         const entries &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_LAST_READ_DATE);
         return this.parseLastSeenDates(entries);
     }
 
-    private parseLastSeenDates(itemElement: Element[]): JidToDate {
+    private parseLastSeenDates(topLevelElements: Element[]): JidToDate {
         const result: JidToDate &#x3D; {};
 
-        if (itemElement.length &#x3D;&#x3D;&#x3D; 1) {
-            for (const lastReadEntry of itemElement[0].getChild(wrapperNodeName).getChildren(nodeName)) {
+        if (topLevelElements.length &#x3D;&#x3D;&#x3D; 1) {
+            const [itemElement] &#x3D; topLevelElements;
+            for (const lastReadEntry of itemElement.getChild(wrapperNodeName).getChildren(nodeName)) {
                 const {jid, date} &#x3D; lastReadEntry.attrs;
                 const parsedDate &#x3D; new Date(+date);
                 if (!isNaN(parsedDate.getTime())) {
@@ -1504,14 +1605,10 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
         return result;
     }
 
-    onOffline() {
-        this.jidToUnreadCount$.next({});
-    }
-
     updateContactUnreadMessageState(contact: Contact) {
         const contactJid &#x3D; contact.jidBare.toString();
-        const date &#x3D; this.jidToLastReadDate[contactJid] || new Date(0);
-        const contactUnreadMessageCount &#x3D; this.calculateUnreadMessageCount(contact, date);
+        const lastReadDate &#x3D; this.jidToLastReadDate[contactJid] || new Date(0);
+        const contactUnreadMessageCount &#x3D; this.calculateUnreadMessageCount(contact, lastReadDate);
         const jidToCount &#x3D; this.jidToUnreadCount$.getValue();
 
         if (jidToCount[contactJid] !&#x3D;&#x3D; contactUnreadMessageCount) {
@@ -1520,8 +1617,8 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
         }
     }
 
-    private calculateUnreadMessageCount(contact: Contact, date: Date) {
-        const firstUnreadMessageIndex &#x3D; findSortedInsertionIndexLast(date, contact.messages, message &#x3D;&gt; message.datetime);
+    private calculateUnreadMessageCount(contact: Contact, lastReadDate: Date) {
+        const firstUnreadMessageIndex &#x3D; findSortedInsertionIndexLast(lastReadDate, contact.messages, message &#x3D;&gt; message.datetime);
         return contact.messages.slice(firstUnreadMessageIndex)
             .filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in)
             .length;

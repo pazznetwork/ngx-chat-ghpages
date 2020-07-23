@@ -127,6 +127,9 @@
                                         <a href="#placeholder">placeholder</a>
                                 </li>
                                 <li>
+                                        <a href="#presence">presence</a>
+                                </li>
+                                <li>
                                         <a href="#subscriptionRequestMessage">subscriptionRequestMessage</a>
                                 </li>
                                 <li>
@@ -611,6 +614,29 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="presence"></a>
+                                        <span class="name"><b>presence</b><a href="#presence"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>presence:     <code></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="subscriptionRequestMessage"></a>
                                         <span class="name"><b>subscriptionRequestMessage</b><a href="#subscriptionRequestMessage"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
@@ -670,7 +696,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Translations {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Presence } from &#x27;./presence&#x27;;
+
+export interface Translations {
     chat: string;
     contacts: string;
     contactRequestIn: string;
@@ -689,6 +717,9 @@
     block: string;
     blockAndReport: string;
     dismiss: string;
+    presence: {
+        [P in Presence]: string;
+    };
 }
 </code></pre>
     </div>

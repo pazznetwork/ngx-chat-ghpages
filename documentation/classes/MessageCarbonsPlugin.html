@@ -877,7 +877,7 @@ export class MessageCarbonsPlugin extends AbstractXmppPlugin {
         const message &#x3D; {
             body: messageElement.getChildText(&#x27;body&#x27;),
             direction,
-            datetime: new Date(),
+            datetime: new Date(), // TODO: replace with entity time plugin
             delayed: false,
         };
 

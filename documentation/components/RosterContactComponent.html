@@ -490,7 +490,7 @@ export class RosterContactComponent implements OnInit, OnDestroy {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;roster-contact&quot; [title]&#x3D;&quot;contact.name&quot;&gt;
 
     &lt;div class&#x3D;&quot;roster-contact-avatar&quot;&gt;
-        &lt;img [src]&#x3D;&quot;contact.avatar&quot;/&gt;
+        &lt;ngx-chat-avatar [imageUrl]&#x3D;&quot;contact.avatar&quot;&gt;&lt;/ngx-chat-avatar&gt;
     &lt;/div&gt;
 
     &lt;div class&#x3D;&quot;roster-contact-name&quot;&gt;
@@ -529,14 +529,10 @@ export class RosterContactComponent implements OnInit, OnDestroy {
 }
 
 .roster-contact-avatar {
+  min-width: 2em;
   width: 2em;
+  min-height: 2em;
   height: 2em;
-
-  img {
-    width: 2em;
-    height: 2em;
-    border-radius: 1em;
-  }
 }
 
 .roster-contact-name {
@@ -610,8 +606,8 @@ export class RosterContactComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="roster-contact" [title]="contact.name">    <div class="roster-contact-avatar">        <img [src]="contact.avatar"/>    </div>    <div class="roster-contact-name">        {{contact.name}}    </div>    <div class="roster-contact-status">        <div *ngIf="unreadCount"             class="unread-message-badge">{{unreadCount}}</div>        <div *ngIf="(contact.presence$ | async) !== presence.unavailable"             class="roster-presence"             [ngClass]="\'roster-presence--\' + (contact.presence$ | async)">●        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
+        var COMPONENT_TEMPLATE = '<div><div class="roster-contact" [title]="contact.name">    <div class="roster-contact-avatar">        <ngx-chat-avatar [imageUrl]="contact.avatar"></ngx-chat-avatar>    </div>    <div class="roster-contact-name">        {{contact.name}}    </div>    <div class="roster-contact-status">        <div *ngIf="unreadCount"             class="unread-message-badge">{{unreadCount}}</div>        <div *ngIf="(contact.presence$ | async) !== presence.unavailable"             class="roster-presence"             [ngClass]="\'roster-presence--\' + (contact.presence$ | async)">●        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'RosterContactComponent'};
 </script>

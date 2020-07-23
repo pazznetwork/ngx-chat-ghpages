@@ -65,13 +65,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' : 'data-target="#xs-components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
+                                            'data-target="#components-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' : 'data-target="#xs-components-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' :
-                                            'id="xs-components-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' :
+                                            'id="xs-components-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' }>
+                                            <li class="link">
+                                                <a href="components/ChatAvatarComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatAvatarComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/ChatComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -132,13 +136,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' : 'data-target="#xs-directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
+                                        'data-target="#directives-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' : 'data-target="#xs-directives-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' :
-                                        'id="xs-directives-links-module-NgxChatModule-815ddad987e7876bd5bef754f38e9826"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' :
+                                        'id="xs-directives-links-module-NgxChatModule-46163da0c79f2f705798082c62a7a4db"' }>
                                         <li class="link">
                                             <a href="directives/LinksDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">LinksDirective</a>
@@ -173,6 +177,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/Contact.html" data-type="entity-link">Contact</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/EntityTimePlugin.html" data-type="entity-link">EntityTimePlugin</a>
                             </li>
                             <li class="link">
                                 <a href="classes/HttpFileUploadPlugin.html" data-type="entity-link">HttpFileUploadPlugin</a>
@@ -306,6 +313,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ChatActionContext.html" data-type="entity-link">ChatActionContext</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ChatContactClickHandler.html" data-type="entity-link">ChatContactClickHandler</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ChatPlugin.html" data-type="entity-link">ChatPlugin</a>
                             </li>
                             <li class="link">
@@ -385,6 +395,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/StateDate.html" data-type="entity-link">StateDate</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/TimeReference.html" data-type="entity-link">TimeReference</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Translations.html" data-type="entity-link">Translations</a>

@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:24</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -94,7 +94,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
 import { Element } from &#x27;ltx&#x27;;
 import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
-import { debounceTime, delay, distinctUntilChanged, filter, map, share } from &#x27;rxjs/operators&#x27;;
+import { debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, share, takeUntil } from &#x27;rxjs/operators&#x27;;
 import { Contact } from &#x27;../../../../core/contact&#x27;;
 import { Direction } from &#x27;../../../../core/message&#x27;;
 import { findSortedInsertionIndexLast } from &#x27;../../../../core/utils-array&#x27;;
@@ -103,6 +103,7 @@ import { ChatMessageListRegistryService } from &#x27;../../../chat-message-list-
 import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { EntityTimePlugin } from &#x27;./entity-time.plugin&#x27;;
 import { PublishSubscribePlugin } from &#x27;./publish-subscribe.plugin&#x27;;
 
 const STORAGE_NGX_CHAT_LAST_READ_DATE &#x3D; &#x27;ngxchat:unreadmessagedate&#x27;;
@@ -123,7 +124,7 @@ class LastReadEntriesNodeBuilder extends AbstractStanzaBuilder {
 
     addLastReadNode(jid: string, date: string) {
         this.lastReadNodes.push(
-            xml(nodeName, {jid, date})
+            xml(nodeName, {jid, date}),
         );
     }
 
@@ -158,36 +159,33 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
     public jidToUnreadCount$: BehaviorSubject&lt;JidToNumber&gt; &#x3D; new BehaviorSubject({});
     private jidToLastReadDate: JidToDate &#x3D; {};
 
-    constructor(private chatService: XmppChatAdapter,
-                private chatMessageListRegistry: ChatMessageListRegistryService,
-                private publishSubscribePlugin: PublishSubscribePlugin,
+    constructor(
+        private chatService: XmppChatAdapter,
+        private chatMessageListRegistry: ChatMessageListRegistryService,
+        private publishSubscribePlugin: PublishSubscribePlugin,
+        private entityTimePlugin: EntityTimePlugin,
     ) {
         super();
 
-        this.chatMessageListRegistry.openChats$
+        this.chatMessageListRegistry.chatOpened$
             .pipe(
-                filter(() &#x3D;&gt; this.chatService.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;),
+                filter(() &#x3D;&gt; this.chatService.state$.getValue() !&#x3D;&#x3D; &#x27;disconnected&#x27;),
                 delay(0), // prevent &#x27;Expression has changed after it was checked&#x27;
             )
-            .subscribe(contacts &#x3D;&gt; {
-                contacts.forEach(contact &#x3D;&gt; {
-                    this.jidToLastReadDate[contact.jidBare.toString()] &#x3D; new Date();
-                    this.updateContactUnreadMessageState(contact);
-                });
-                this.persistLastSeenDates();
-            });
+            .subscribe(contact &#x3D;&gt; this.checkForUnreadCountChange(contact));
 
-        this.chatService.message$
+        this.chatService.contactCreated$
             .pipe(
-                filter(() &#x3D;&gt; this.chatService.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;)
+                filter(() &#x3D;&gt; this.chatService.state$.getValue() !&#x3D;&#x3D; &#x27;disconnected&#x27;),
+                mergeMap(contact &#x3D;&gt;
+                    contact.messages$.pipe(
+                        debounceTime(1000), // performance optimization, ignore lots of message archive loading
+                        map(() &#x3D;&gt; contact),
+                        takeUntil(this.chatService.state$.pipe(first(state &#x3D;&gt; state &#x3D;&#x3D;&#x3D; &#x27;disconnected&#x27;))),
+                    ),
+                ),
             )
-            .subscribe(contact &#x3D;&gt; {
-                if (this.chatMessageListRegistry.isChatOpen(contact)) {
-                    this.jidToLastReadDate[contact.jidBare.toString()] &#x3D; new Date();
-                    this.persistLastSeenDates();
-                }
-                this.updateContactUnreadMessageState(contact);
-            });
+            .subscribe(contact &#x3D;&gt; this.checkForUnreadCountChange(contact));
 
         this.publishSubscribePlugin.publish$
             .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event));
@@ -196,8 +194,16 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
             map(jidToCount &#x3D;&gt; sum(extractValues(jidToCount))),
             debounceTime(500),
             distinctUntilChanged(),
-            share()
+            share(),
         );
+    }
+
+    private async checkForUnreadCountChange(contact: Contact) {
+        if (this.chatMessageListRegistry.isChatOpen(contact)) {
+            this.jidToLastReadDate[contact.jidBare.toString()] &#x3D; new Date(await this.entityTimePlugin.getNow());
+            this.persistLastSeenDates();
+        }
+        this.updateContactUnreadMessageState(contact);
     }
 
     async onBeforeOnline(): Promise&lt;any&gt; {
@@ -208,16 +214,21 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
         }
     }
 
+    onOffline() {
+        this.jidToUnreadCount$.next({});
+    }
+
     private async fetchLastSeenDates(): Promise&lt;JidToDate&gt; {
         const entries &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_LAST_READ_DATE);
         return this.parseLastSeenDates(entries);
     }
 
-    private parseLastSeenDates(itemElement: Element[]): JidToDate {
+    private parseLastSeenDates(topLevelElements: Element[]): JidToDate {
         const result: JidToDate &#x3D; {};
 
-        if (itemElement.length &#x3D;&#x3D;&#x3D; 1) {
-            for (const lastReadEntry of itemElement[0].getChild(wrapperNodeName).getChildren(nodeName)) {
+        if (topLevelElements.length &#x3D;&#x3D;&#x3D; 1) {
+            const [itemElement] &#x3D; topLevelElements;
+            for (const lastReadEntry of itemElement.getChild(wrapperNodeName).getChildren(nodeName)) {
                 const {jid, date} &#x3D; lastReadEntry.attrs;
                 const parsedDate &#x3D; new Date(+date);
                 if (!isNaN(parsedDate.getTime())) {
@@ -229,14 +240,10 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
         return result;
     }
 
-    onOffline() {
-        this.jidToUnreadCount$.next({});
-    }
-
     updateContactUnreadMessageState(contact: Contact) {
         const contactJid &#x3D; contact.jidBare.toString();
-        const date &#x3D; this.jidToLastReadDate[contactJid] || new Date(0);
-        const contactUnreadMessageCount &#x3D; this.calculateUnreadMessageCount(contact, date);
+        const lastReadDate &#x3D; this.jidToLastReadDate[contactJid] || new Date(0);
+        const contactUnreadMessageCount &#x3D; this.calculateUnreadMessageCount(contact, lastReadDate);
         const jidToCount &#x3D; this.jidToUnreadCount$.getValue();
 
         if (jidToCount[contactJid] !&#x3D;&#x3D; contactUnreadMessageCount) {
@@ -245,8 +252,8 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
         }
     }
 
-    private calculateUnreadMessageCount(contact: Contact, date: Date) {
-        const firstUnreadMessageIndex &#x3D; findSortedInsertionIndexLast(date, contact.messages, message &#x3D;&gt; message.datetime);
+    private calculateUnreadMessageCount(contact: Contact, lastReadDate: Date) {
+        const firstUnreadMessageIndex &#x3D; findSortedInsertionIndexLast(lastReadDate, contact.messages, message &#x3D;&gt; message.datetime);
         return contact.messages.slice(firstUnreadMessageIndex)
             .filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in)
             .length;
