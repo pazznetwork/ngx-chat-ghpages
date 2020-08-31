@@ -436,18 +436,6 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>EntryComponents<a href="https://angular.io/api/core/NgModule#entryComponents" target="_blank"
-                            title="Official documentation about module entryComponents"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/ChatMessageLinkComponent.html">ChatMessageLinkComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/ChatMessageTextComponent.html">ChatMessageTextComponent</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
                     <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
@@ -503,8 +491,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/ngx-chat.module.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/ngx-chat.module.ts:87</a></div>
                 </td>
             </tr>
 
@@ -515,79 +503,6 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >ModuleWithProviders&lt;NgxChatModule&gt;</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="initializePlugins"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Static</span>
-                            initializePlugins
-                        </b>
-                        <a href="#initializePlugins"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>initializePlugins(injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/ngx-chat.module.ts:126</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>injector</td>
-                                    <td>
-                                                <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >() &#x3D;&gt; void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -611,15 +526,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>xmppChatAdapter(chatConnectionService: <a href="../injectables/XmppChatConnectionService.html">XmppChatConnectionService</a>, logService: <a href="../injectables/LogService.html">LogService</a>, contactFactory: <a href="../injectables/ContactFactoryService.html">ContactFactoryService</a>)</code>
+                    <code>xmppChatAdapter(chatConnectionService: <a href="../injectables/XmppChatConnectionService.html">XmppChatConnectionService</a>, chatMessageListRegistryService: <a href="../injectables/ChatMessageListRegistryService.html">ChatMessageListRegistryService</a>, contactFactory: <a href="../injectables/ContactFactoryService.html">ContactFactoryService</a>, httpClient: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, logService: <a href="../injectables/LogService.html">LogService</a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/ngx-chat.module.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/ngx-chat.module.ts:116</a></div>
                 </td>
             </tr>
 
@@ -651,9 +566,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>logService</td>
+                                    <td>chatMessageListRegistryService</td>
                                     <td>
-                                                <code><a href="../injectables/LogService.html" target="_self" >LogService</a></code>
+                                                <code><a href="../injectables/ChatMessageListRegistryService.html" target="_self" >ChatMessageListRegistryService</a></code>
                                     </td>
 
                                     <td>
@@ -666,6 +581,42 @@
                                     <td>contactFactory</td>
                                     <td>
                                                 <code><a href="../injectables/ContactFactoryService.html" target="_self" >ContactFactoryService</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>httpClient</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>logService</td>
+                                    <td>
+                                                <code><a href="../injectables/LogService.html" target="_self" >LogService</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>ngZone</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
                                     </td>
 
                                     <td>
@@ -698,7 +649,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { TextFieldModule } from &#x27;@angular/cdk/text-field&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
-import { APP_INITIALIZER, Injector, ModuleWithProviders, NgModule, NgZone } from &#x27;@angular/core&#x27;;
+import { ModuleWithProviders, NgModule, NgZone } from &#x27;@angular/core&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { ChatAvatarComponent } from &#x27;./components/chat-avatar/chat-avatar.component&#x27;;
 import { FileDropComponent } from &#x27;./components/chat-filedrop/file-drop.component&#x27;;
@@ -778,10 +729,6 @@ import { LogService } from &#x27;./services/log.service&#x27;;
         FileDropComponent,
         LinksDirective,
     ],
-    entryComponents: [
-        ChatMessageLinkComponent,
-        ChatMessageTextComponent,
-    ],
 })
 export class NgxChatModule {
 
@@ -790,22 +737,24 @@ export class NgxChatModule {
         return {
             ngModule: NgxChatModule,
             providers: [
-                ChatListStateService,
-                LogService,
-                ContactFactoryService,
                 ChatBackgroundNotificationService,
+                ChatListStateService,
+                ChatMessageListRegistryService,
+                ContactFactoryService,
+                LogService,
                 XmppChatConnectionService,
                 XmppClientFactoryService,
                 {
                     provide: ChatServiceToken,
-                    deps: [XmppChatConnectionService, LogService, ContactFactoryService],
+                    deps: [
+                        XmppChatConnectionService,
+                        ChatMessageListRegistryService,
+                        ContactFactoryService,
+                        HttpClient,
+                        LogService,
+                        NgZone,
+                    ],
                     useFactory: NgxChatModule.xmppChatAdapter,
-                },
-                {
-                    provide: APP_INITIALIZER,
-                    deps: [Injector],
-                    useFactory: NgxChatModule.initializePlugins,
-                    multi: true,
                 },
             ],
         };
@@ -814,48 +763,43 @@ export class NgxChatModule {
 
     private static xmppChatAdapter(
         chatConnectionService: XmppChatConnectionService,
-        logService: LogService,
+        chatMessageListRegistryService: ChatMessageListRegistryService,
         contactFactory: ContactFactoryService,
+        httpClient: HttpClient,
+        logService: LogService,
+        ngZone: NgZone,
     ): XmppChatAdapter {
-        return new XmppChatAdapter(chatConnectionService, logService, contactFactory);
-    }
+        const xmppChatAdapter &#x3D; new XmppChatAdapter(chatConnectionService, logService, contactFactory);
 
-    private static initializePlugins(injector: Injector) {
-        // noinspection UnnecessaryLocalVariableJS
-        const initializer &#x3D; function() { // tslint:disable-line:only-arrow-functions
-            const logService &#x3D; injector.get(LogService);
-            const ngZone &#x3D; injector.get(NgZone);
-            const xmppChatAdapter &#x3D; injector.get(ChatServiceToken) as XmppChatAdapter;
-            const serviceDiscoveryPlugin &#x3D; new ServiceDiscoveryPlugin(xmppChatAdapter);
-            const publishSubscribePlugin &#x3D; new PublishSubscribePlugin(xmppChatAdapter, serviceDiscoveryPlugin);
-            const chatMessageListRegistryService &#x3D; injector.get(ChatMessageListRegistryService);
-            const entityTimePlugin &#x3D; new EntityTimePlugin(xmppChatAdapter, serviceDiscoveryPlugin, logService);
-            const unreadMessageCountPlugin &#x3D; new UnreadMessageCountPlugin(
-                xmppChatAdapter, chatMessageListRegistryService, publishSubscribePlugin, entityTimePlugin);
+        const serviceDiscoveryPlugin &#x3D; new ServiceDiscoveryPlugin(xmppChatAdapter);
+        const publishSubscribePlugin &#x3D; new PublishSubscribePlugin(xmppChatAdapter, serviceDiscoveryPlugin);
+        const entityTimePlugin &#x3D; new EntityTimePlugin(xmppChatAdapter, serviceDiscoveryPlugin, logService);
+        const unreadMessageCountPlugin &#x3D; new UnreadMessageCountPlugin(
+            xmppChatAdapter, chatMessageListRegistryService, publishSubscribePlugin, entityTimePlugin);
 
-            xmppChatAdapter.addPlugins([
-                new BookmarkPlugin(publishSubscribePlugin),
-                new MessageArchivePlugin(xmppChatAdapter, serviceDiscoveryPlugin, logService),
-                new MessagePlugin(xmppChatAdapter, logService),
-                new MessageUuidPlugin(),
-                new MultiUserChatPlugin(xmppChatAdapter, logService, serviceDiscoveryPlugin),
-                publishSubscribePlugin,
-                new RosterPlugin(xmppChatAdapter, logService),
-                serviceDiscoveryPlugin,
-                new PushPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
-                new PingPlugin(xmppChatAdapter, logService, ngZone),
-                new RegistrationPlugin(logService, ngZone),
-                new MessageCarbonsPlugin(xmppChatAdapter),
-                unreadMessageCountPlugin,
-                new HttpFileUploadPlugin(injector.get(HttpClient), serviceDiscoveryPlugin, xmppChatAdapter, logService),
-                new MessageStatePlugin(publishSubscribePlugin, xmppChatAdapter, chatMessageListRegistryService, logService,
-                    entityTimePlugin),
-                new MucSubPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
-                new BlockPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
-                entityTimePlugin,
-            ]);
-        };
-        return initializer;
+        xmppChatAdapter.addPlugins([
+            new BookmarkPlugin(publishSubscribePlugin),
+            new MessageArchivePlugin(xmppChatAdapter, serviceDiscoveryPlugin, logService),
+            new MessagePlugin(xmppChatAdapter, logService),
+            new MessageUuidPlugin(),
+            new MultiUserChatPlugin(xmppChatAdapter, logService, serviceDiscoveryPlugin),
+            publishSubscribePlugin,
+            new RosterPlugin(xmppChatAdapter, logService),
+            serviceDiscoveryPlugin,
+            new PushPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
+            new PingPlugin(xmppChatAdapter, logService, ngZone),
+            new RegistrationPlugin(logService, ngZone),
+            new MessageCarbonsPlugin(xmppChatAdapter),
+            unreadMessageCountPlugin,
+            new HttpFileUploadPlugin(httpClient, serviceDiscoveryPlugin, xmppChatAdapter, logService),
+            new MessageStatePlugin(publishSubscribePlugin, xmppChatAdapter, chatMessageListRegistryService, logService,
+                entityTimePlugin),
+            new MucSubPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
+            new BlockPlugin(xmppChatAdapter, serviceDiscoveryPlugin),
+            entityTimePlugin,
+        ]);
+
+        return xmppChatAdapter;
     }
 
 }
