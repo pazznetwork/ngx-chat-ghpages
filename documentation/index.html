@@ -115,22 +115,19 @@ cd ngx-chat
 # install dependencies
 npm install
 
-# will run the demo application on
-# http://localhost:4200
-ng serve
-
 # build the library continuously
-    ng build &#64;pazznetwork/ngx-chat --watch
+ng build &#64;pazznetwork/ngx-chat --watch
 
 # (in another terminal) build the sample app continuously
-ng serve
-</code></pre></div><h3 id="build-the-plugin">Build the plugin</h3>
+# will run the demo application on
+# http://localhost:4200
+ng serve</code></pre></div><h3 id="build-the-plugin">Build the plugin</h3>
 <p><code>npm run build-lib</code></p>
 <h3 id="run-the-plugin-tests">Run the plugin tests</h3>
 <p><code>npm run test:once</code></p>
 <h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in package.json
-VERSION=0.10.1 # change accordingly
+VERSION=0.10.2 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

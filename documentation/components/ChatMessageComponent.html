@@ -138,13 +138,14 @@
                                 <a href="#contactClickHandler">contactClickHandler</a>
                             </li>
                             <li>
+                                <a href="#Direction">Direction</a>
+                            </li>
+                            <li>
                                 <a href="#imageLink">imageLink</a>
                             </li>
                             <li>
-                                <a href="#MessageState">MessageState</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#messageStatePlugin">messageStatePlugin</a>
                             </li>
                         </ul>
@@ -159,6 +160,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#getAvatar">getAvatar</a>
+                            </li>
                             <li>
                                 <a href="#getMessageState">getMessageState</a>
                             </li>
@@ -404,6 +408,45 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAvatar"></a>
+                    <span class="name">
+                        <b>
+                            getAvatar
+                        </b>
+                        <a href="#getAvatar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAvatar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -731,6 +774,32 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="Direction"></a>
+                        <span class="name">
+                            <b>
+                            Direction</b>
+                            <a href="#Direction"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>Direction</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="imageLink"></a>
                         <span class="name">
                             <b>
@@ -758,36 +827,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="MessageState"></a>
-                        <span class="name">
-                            <b>
-                            MessageState</b>
-                            <a href="#MessageState"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>MessageState</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:37</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="messageStatePlugin"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Private</span>
+                                <span class="modifier">Readonly</span>
                             messageStatePlugin</b>
                             <a href="#messageStatePlugin"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -817,7 +861,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Component, Inject, Input, OnInit, Optional } from &#x27;@angular/core&#x27;;
 import { Contact } from &#x27;../../core/contact&#x27;;
-import { Message, MessageState } from &#x27;../../core/message&#x27;;
+import { Direction, Message, MessageState } from &#x27;../../core/message&#x27;;
 import { extractUrls } from &#x27;../../core/utils-links&#x27;;
 import { MessageStatePlugin, StateDate } from &#x27;../../services/adapters/xmpp/plugins/message-state.plugin&#x27;;
 import { XmppChatAdapter } from &#x27;../../services/adapters/xmpp/xmpp-chat-adapter.service&#x27;;
@@ -850,9 +894,9 @@ export class ChatMessageComponent implements OnInit {
 
     imageLink: string;
 
-    MessageState &#x3D; MessageState;
+    Direction &#x3D; Direction;
 
-    private messageStatePlugin: MessageStatePlugin;
+    private readonly messageStatePlugin: MessageStatePlugin;
 
     constructor(
         @Inject(ChatServiceToken) public chatService: ChatService,
@@ -909,41 +953,31 @@ export class ChatMessageComponent implements OnInit {
             this.contactClickHandler.onClickContact(this.contact);
         }
     }
+
+    getAvatar() {
+        if (this.showAvatars) {
+            if (this.message.direction &#x3D;&#x3D;&#x3D; Direction.in) {
+                return this.avatar;
+            } else {
+                return this.chatService.userAvatar$.getValue();
+            }
+        }
+    }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chat-message&quot;
-     [ngClass]&#x3D;&quot;{&#x27;chat-message--in&#x27;: message.direction &#x3D;&#x3D;&#x3D; &#x27;in&#x27;, &#x27;chat-message--out&#x27;: message.direction &#x3D;&#x3D;&#x3D; &#x27;out&#x27;}&quot;&gt;
-    &lt;div *ngIf&#x3D;&quot;showAvatars&quot; class&#x3D;&quot;chat-message-avatar&quot;&gt;
-
-        &lt;ngx-chat-avatar [ngClass]&#x3D;&quot;{&#x27;has-click-handler&#x27;: !!this.contactClickHandler}&quot; (click)&#x3D;&quot;onContactClick()&quot;
-                         *ngIf&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; &#x27;in&#x27;&quot;
-                         [imageUrl]&#x3D;&quot;avatar&quot;&gt;&lt;/ngx-chat-avatar&gt;
-
-        &lt;ngx-chat-avatar *ngIf&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; &#x27;out&#x27;&quot;
-                         [imageUrl]&#x3D;&quot;chatService.userAvatar$ | async&quot;&gt;&lt;/ngx-chat-avatar&gt;
-
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;chat-message-text&quot; [ngClass]&#x3D;&quot;{&#x27;chat-message-text--no-avatar&#x27;:!showAvatars}&quot;&gt;
-        &lt;span [ngxChatLinks]&#x3D;&quot;message.body&quot;&gt;&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;chat-message-image-wrapper&quot; *ngIf&#x3D;&quot;imageLink&quot;&gt;
-        &lt;img class&#x3D;&quot;chat-message-image&quot; [src]&#x3D;&quot;imageLink&quot;/&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;chat-message-footer&quot;&gt;
-        &lt;small title&#x3D;&quot;{{nick}}&quot; class&#x3D;&quot;chat-message-name&quot;&gt;
-            {{nick}}
-            &lt;ng-container *ngIf&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; &#x27;out&#x27;&quot; [ngSwitch]&#x3D;&quot;getMessageState()&quot;&gt;
-                &lt;ng-container *ngSwitchCase&#x3D;&quot;MessageState.SENT&quot;&gt;✓&lt;/ng-container&gt;
-                &lt;ng-container *ngSwitchCase&#x3D;&quot;MessageState.RECIPIENT_RECEIVED&quot;&gt;✓✓&lt;/ng-container&gt;
-                &lt;ng-container *ngSwitchCase&#x3D;&quot;MessageState.RECIPIENT_SEEN&quot;&gt;&lt;span class&#x3D;&quot;state--seen&quot;&gt;✓✓&lt;/span&gt;&lt;/ng-container&gt;
-            &lt;/ng-container&gt;
-        &lt;/small&gt;
-        &lt;small class&#x3D;&quot;chat-message-datetime&quot;&gt;{{message.datetime | date:chatService.translations.timeFormat}}&lt;/small&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ngx-chat-message-simple [imageLink]&#x3D;&quot;imageLink&quot;
+                         [avatar]&#x3D;&quot;getAvatar()&quot;
+                         [avatarInteractive]&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; Direction.in&quot;
+                         (avatarClickHandler)&#x3D;&quot;onContactClick()&quot;
+                         [direction]&#x3D;&quot;message.direction&quot;
+                         [messageState]&#x3D;&quot;getMessageState()&quot;
+                         [formattedDate]&#x3D;&quot;message.datetime | date:chatService.translations.timeFormat&quot;
+                         [nick]&#x3D;&quot;nick&quot;&gt;
+    &lt;span [ngxChatLinks]&#x3D;&quot;message.body&quot;&gt;&lt;/span&gt;
+&lt;/ngx-chat-message-simple&gt;
 </code></pre>
     </div>
 
@@ -951,94 +985,12 @@ export class ChatMessageComponent implements OnInit {
                 <p class="comment">
                     <code>./chat-message.component.less</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@msg-avatar-size: 2em;
-@msg-full-spacing: 0.5em;
-@msg-half-spacing: calc(@msg-full-spacing /2);
-@msg-side-spacing: 0.5em;
-
-.chat-message-avatar {
-  width: @msg-avatar-size;
-  height: @msg-avatar-size;
-  padding: @msg-full-spacing;
+                <pre class="line-numbers"><code class="language-scss">:host.chat-message--out {
+  align-self: flex-end;
 }
 
-.has-click-handler:hover {
-  cursor: pointer;
-}
-
-.chat-message-text {
-  float: right;
-  width: calc(100% - (@msg-avatar-size + @msg-full-spacing * 4));
-  padding: @msg-full-spacing;
-  &amp;.chat-message-text--no-avatar {
-    width: calc(100% - (@msg-full-spacing * 2));
-  }
-}
-
-.chat-message {
-  max-width: 76%;
-  border-radius: 0.5em;
-  clear: both;
-  margin: @msg-half-spacing;
-
-  &amp;.chat-message--out {
-    background-color: #e6ffd1;
-    float: right;
-    position: relative;
-    margin-right: @msg-side-spacing;
-
-    .chat-message-avatar {
-      float: right;
-    }
-  }
-
-  &amp;.chat-message--in {
-    background-color: #DBEDFF;
-    float: left;
-    position: relative;
-    margin-left: @msg-side-spacing;
-
-    .chat-message-avatar {
-      float: left;
-    }
-  }
-}
-
-.chat-message-image-wrapper {
-  max-width: 100%;
-  height: auto;
-  margin: @msg-full-spacing;
-
-  img {
-    width: 100%;
-  }
-}
-
-.chat-message-footer {
-  font-size: 0.75em;
-  text-align: right;
-  color: #999;
-  padding: 0 @msg-full-spacing @msg-full-spacing @msg-full-spacing;
-  clear: both;
-}
-
-.chat-message-datetime {
-  display: inline-block;
-  vertical-align: bottom;
-}
-
-.chat-message-name {
-  display: inline-block;
-  max-width: 9em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: bottom;
-  margin-right: @msg-full-spacing;
-}
-
-.state--seen {
-  color: #00c5d2;
+:host.chat-message--in {
+  align-self: flex-start;
 }
 </code></pre>
     </div>
@@ -1068,8 +1020,8 @@ export class ChatMessageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-message"     [ngClass]="{\'chat-message--in\': message.direction === \'in\', \'chat-message--out\': message.direction === \'out\'}">    <div *ngIf="showAvatars" class="chat-message-avatar">        <ngx-chat-avatar [ngClass]="{\'has-click-handler\': !!this.contactClickHandler}" (click)="onContactClick()"                         *ngIf="message.direction === \'in\'"                         [imageUrl]="avatar"></ngx-chat-avatar>        <ngx-chat-avatar *ngIf="message.direction === \'out\'"                         [imageUrl]="chatService.userAvatar$ | async"></ngx-chat-avatar>    </div>    <div class="chat-message-text" [ngClass]="{\'chat-message-text--no-avatar\':!showAvatars}">        <span [ngxChatLinks]="message.body"></span>    </div>    <div class="chat-message-image-wrapper" *ngIf="imageLink">        <img class="chat-message-image" [src]="imageLink"/>    </div>    <div class="chat-message-footer">        <small title="{{nick}}" class="chat-message-name">            {{nick}}            <ng-container *ngIf="message.direction === \'out\'" [ngSwitch]="getMessageState()">                <ng-container *ngSwitchCase="MessageState.SENT">✓</ng-container>                <ng-container *ngSwitchCase="MessageState.RECIPIENT_RECEIVED">✓✓</ng-container>                <ng-container *ngSwitchCase="MessageState.RECIPIENT_SEEN"><span class="state--seen">✓✓</span></ng-container>            </ng-container>        </small>        <small class="chat-message-datetime">{{message.datetime | date:chatService.translations.timeFormat}}</small>    </div></div></div>'
-    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
+        var COMPONENT_TEMPLATE = '<div><ngx-chat-message-simple [imageLink]="imageLink"                         [avatar]="getAvatar()"                         [avatarInteractive]="message.direction === Direction.in"                         (avatarClickHandler)="onContactClick()"                         [direction]="message.direction"                         [messageState]="getMessageState()"                         [formattedDate]="message.datetime | date:chatService.translations.timeFormat"                         [nick]="nick">    <span [ngxChatLinks]="message.body"></span></ngx-chat-message-simple></div>'
+    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
     var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageComponent'};
 </script>
