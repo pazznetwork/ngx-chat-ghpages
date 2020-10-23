@@ -73,6 +73,7 @@
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
                     <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
                     <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
     </p>
 
 
@@ -142,6 +143,9 @@
                                 <a href="#chatMessageAreaElement">chatMessageAreaElement</a>
                             </li>
                             <li>
+                                <a href="#chatMessageViewChildrenList">chatMessageViewChildrenList</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#chatService">chatService</a>
                             </li>
@@ -150,7 +154,18 @@
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
+                                <a href="#isAtBottom">isAtBottom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#ngDestroy">ngDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#oldestVisibleMessageBeforeLoading">oldestVisibleMessageBeforeLoading</a>
+                            </li>
+                            <li>
+                                <a href="#onTop$">onTop$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -190,13 +205,34 @@
                                 <a href="#dismissOptions">dismissOptions</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isLoadingHistory">isLoadingHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loadMessages">loadMessages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loadOlderMessagesBeforeViewport">loadOlderMessagesBeforeViewport</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnChanges">ngOnChanges</a>
                             </li>
                             <li>
                                 <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBottom">onBottom</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
@@ -205,6 +241,10 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#scrollToLastMessage">scrollToLastMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#scrollToMessage">scrollToMessage</a>
                             </li>
                             <li>
                                 <a href="#subscriptionActionShown">subscriptionActionShown</a>
@@ -244,12 +284,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatListService: <a href="../injectables/ChatListStateService.html">ChatListStateService</a>, chatService: <a href="../interfaces/ChatService.html">ChatService</a>, chatMessageListRegistry: <a href="../injectables/ChatMessageListRegistryService.html">ChatMessageListRegistryService</a>, reportUserService: <a href="../interfaces/ReportUserService.html">ReportUserService</a>)</code>
+<code>constructor(chatListService: <a href="../injectables/ChatListStateService.html">ChatListStateService</a>, chatService: <a href="../interfaces/ChatService.html">ChatService</a>, chatMessageListRegistry: <a href="../injectables/ChatMessageListRegistryService.html">ChatMessageListRegistryService</a>, reportUserService: <a href="../interfaces/ReportUserService.html">ReportUserService</a>, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -314,6 +354,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>changeDetectorRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -341,7 +393,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:43</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -362,7 +414,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:46</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -398,8 +450,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:132</a></div>
                 </td>
             </tr>
 
@@ -468,8 +520,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="113"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:113</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:169</a></div>
                 </td>
             </tr>
 
@@ -538,8 +590,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="120"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:120</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:176</a></div>
                 </td>
             </tr>
 
@@ -608,8 +660,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:141</a></div>
                 </td>
             </tr>
 
@@ -678,8 +730,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:182</a></div>
                 </td>
             </tr>
 
@@ -730,6 +782,171 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="isLoadingHistory"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            isLoadingHistory
+                        </b>
+                        <a href="#isLoadingHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isLoadingHistory()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="219"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:219</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMessages"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                            loadMessages
+                        </b>
+                        <a href="#loadMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadMessages()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadOlderMessagesBeforeViewport"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            loadOlderMessagesBeforeViewport
+                        </b>
+                        <a href="#loadOlderMessagesBeforeViewport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadOlderMessagesBeforeViewport()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnChanges"></a>
                     <span class="name">
                         <b>
@@ -748,8 +965,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:114</a></div>
                 </td>
             </tr>
 
@@ -818,8 +1035,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:127</a></div>
                 </td>
             </tr>
 
@@ -842,6 +1059,7 @@
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
+                            <span class="modifier">Async</span>
                             ngOnInit
                         </b>
                         <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
@@ -850,15 +1068,16 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -867,8 +1086,78 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBottom"></a>
+                    <span class="name">
+                        <b>
+                            onBottom
+                        </b>
+                        <a href="#onBottom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBottom(event: IntersectionObserverEntry)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>IntersectionObserverEntry</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -898,8 +1187,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:150</a></div>
                 </td>
             </tr>
 
@@ -939,8 +1228,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:154</a></div>
                 </td>
             </tr>
 
@@ -951,6 +1240,78 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollToMessage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            scrollToMessage
+                        </b>
+                        <a href="#scrollToMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>scrollToMessage(message: <a href="../interfaces/Message.html">Message</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -978,8 +1339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="131"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:131</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:187</a></div>
                 </td>
             </tr>
 
@@ -1021,7 +1382,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -1049,7 +1410,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:65</a></div>
                             </td>
                         </tr>
 
@@ -1085,7 +1446,43 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chatMessageViewChildrenList"></a>
+                        <span class="name">
+                            <b>
+                            chatMessageViewChildrenList</b>
+                            <a href="#chatMessageViewChildrenList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >QueryList&lt;ChatMessageComponent&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChildren(ChatMessageComponent)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -1122,7 +1519,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -1148,7 +1545,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAtBottom"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            isAtBottom</b>
+                            <a href="#isAtBottom"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -1175,7 +1599,66 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="oldestVisibleMessageBeforeLoading"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            oldestVisibleMessageBeforeLoading</b>
+                            <a href="#oldestVisibleMessageBeforeLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onTop$"></a>
+                        <span class="name">
+                            <b>
+                            onTop$</b>
+                            <a href="#onTop$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;IntersectionObserverEntry&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -1212,7 +1695,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -1238,7 +1721,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -1264,7 +1747,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-list/chat-message-list.component.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -1277,16 +1760,33 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, Inject, Input, OnChanges, OnDestroy, OnInit, Optional, SimpleChanges, ViewChild } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    Inject,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    Optional,
+    QueryList,
+    SimpleChanges,
+    ViewChild,
+    ViewChildren,
+} from &#x27;@angular/core&#x27;;
 import { Subject } from &#x27;rxjs&#x27;;
-import { filter, takeUntil } from &#x27;rxjs/operators&#x27;;
+import { debounceTime, filter, takeUntil } from &#x27;rxjs/operators&#x27;;
 import { Contact } from &#x27;../../core/contact&#x27;;
-import { Direction } from &#x27;../../core/message&#x27;;
+import { Direction, Message } from &#x27;../../core/message&#x27;;
 import { BlockPlugin } from &#x27;../../services/adapters/xmpp/plugins/block.plugin&#x27;;
+import { MessageArchivePlugin } from &#x27;../../services/adapters/xmpp/plugins/message-archive.plugin&#x27;;
 import { ChatListStateService } from &#x27;../../services/chat-list-state.service&#x27;;
 import { ChatMessageListRegistryService } from &#x27;../../services/chat-message-list-registry.service&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
 import { REPORT_USER_INJECTION_TOKEN, ReportUserService } from &#x27;../../services/report-user-service&#x27;;
+import { ChatMessageComponent } from &#x27;../chat-message/chat-message.component&#x27;;
 
 enum SubscriptionAction {
     PENDING_REQUEST,
@@ -1299,7 +1799,7 @@ enum SubscriptionAction {
     templateUrl: &#x27;./chat-message-list.component.html&#x27;,
     styleUrls: [&#x27;./chat-message-list.component.less&#x27;],
 })
-export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
+export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges, AfterViewInit {
 
     @Input()
     contact: Contact;
@@ -1310,37 +1810,67 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
     @ViewChild(&#x27;messageArea&#x27;)
     chatMessageAreaElement: ElementRef&lt;HTMLElement&gt;;
 
+    @ViewChildren(ChatMessageComponent)
+    chatMessageViewChildrenList: QueryList&lt;ChatMessageComponent&gt;;
+
     Direction &#x3D; Direction;
     SubscriptionAction &#x3D; SubscriptionAction;
     blockPlugin: BlockPlugin;
     subscriptionAction &#x3D; SubscriptionAction.NO_PENDING_REQUEST;
+    onTop$ &#x3D; new Subject&lt;IntersectionObserverEntry&gt;();
 
     private ngDestroy &#x3D; new Subject&lt;void&gt;();
+    private isAtBottom &#x3D; true;
+    private oldestVisibleMessageBeforeLoading: Message &#x3D; null;
 
     constructor(
         public chatListService: ChatListStateService,
         @Inject(ChatServiceToken) public chatService: ChatService,
         private chatMessageListRegistry: ChatMessageListRegistryService,
         @Optional() @Inject(REPORT_USER_INJECTION_TOKEN) public reportUserService: ReportUserService,
+        private changeDetectorRef: ChangeDetectorRef,
     ) {
         this.blockPlugin &#x3D; this.chatService.getPlugin(BlockPlugin);
     }
 
-    ngOnInit() {
-        this.contact.messages$
-            .pipe(takeUntil(this.ngDestroy))
-            .subscribe(() &#x3D;&gt; this.scheduleScrollToLastMessage());
+    async ngOnInit() {
+
+        this.onTop$
+            .pipe(filter(event &#x3D;&gt; event.isIntersecting), debounceTime(1000))
+            .subscribe(() &#x3D;&gt; this.loadOlderMessagesBeforeViewport());
 
         this.contact.pendingIn$
             .pipe(
                 filter(pendingIn &#x3D;&gt; pendingIn &#x3D;&#x3D;&#x3D; true),
                 takeUntil(this.ngDestroy),
             ).subscribe(() &#x3D;&gt; {
-                this.subscriptionAction &#x3D; SubscriptionAction.PENDING_REQUEST;
-                this.scheduleScrollToLastMessage();
-            });
+            this.subscriptionAction &#x3D; SubscriptionAction.PENDING_REQUEST;
+            this.scheduleScrollToLastMessage();
+        });
 
         this.chatMessageListRegistry.incrementOpenWindowCount(this.contact);
+    }
+
+    async ngAfterViewInit() {
+        this.chatMessageViewChildrenList.changes
+            .pipe(filter(() &#x3D;&gt; !!this.oldestVisibleMessageBeforeLoading))
+            .subscribe(() &#x3D;&gt; {
+                this.scrollToMessage(this.oldestVisibleMessageBeforeLoading);
+                this.oldestVisibleMessageBeforeLoading &#x3D; null;
+            });
+
+        this.contact.messages$
+            .pipe(takeUntil(this.ngDestroy), debounceTime(10))
+            .subscribe(() &#x3D;&gt; {
+                if (this.isAtBottom) {
+                    this.scheduleScrollToLastMessage();
+                }
+            });
+
+        if (this.contact.messages.length &lt; 10) {
+            await this.loadMessages(); // in case insufficient old messages are displayed
+        }
+        this.scrollToLastMessage();
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -1386,6 +1916,15 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
     private scrollToLastMessage() {
         if (this.chatMessageAreaElement) {
             this.chatMessageAreaElement.nativeElement.scrollTop &#x3D; this.chatMessageAreaElement.nativeElement.scrollHeight;
+            this.isAtBottom &#x3D; true; // in some browsers the intersection observer does not emit when scrolling programmatically
+        }
+    }
+
+    private scrollToMessage(message: Message) {
+        if (this.chatMessageAreaElement) {
+            const htmlIdAttribute &#x3D; &#x27;message-&#x27; + message.id;
+            const messageElement &#x3D; document.getElementById(htmlIdAttribute);
+            messageElement.scrollIntoView(false);
         }
     }
 
@@ -1411,6 +1950,38 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
         return this.subscriptionAction &#x3D;&#x3D;&#x3D; SubscriptionAction.PENDING_REQUEST
             || (this.blockPlugin.supportsBlock$.getValue() &#x3D;&#x3D;&#x3D; true &amp;&amp; this.subscriptionAction &#x3D;&#x3D;&#x3D; SubscriptionAction.SHOW_BLOCK_ACTIONS);
     }
+
+    async loadOlderMessagesBeforeViewport() {
+        if (this.isLoadingHistory()) {
+            return;
+        }
+
+        try {
+            this.oldestVisibleMessageBeforeLoading &#x3D; this.contact.oldestMessage;
+            await this.loadMessages();
+        } catch (e) {
+            this.oldestVisibleMessageBeforeLoading &#x3D; null;
+        }
+    }
+
+    private async loadMessages() {
+        try {
+            // improve performance when loading lots of old messages
+            this.changeDetectorRef.detach();
+            await this.chatService.getPlugin(MessageArchivePlugin).loadMostRecentUnloadedMessages(this.contact);
+        } finally {
+            this.changeDetectorRef.reattach();
+        }
+    }
+
+    onBottom(event: IntersectionObserverEntry) {
+        this.isAtBottom &#x3D; event.isIntersecting;
+    }
+
+    private isLoadingHistory(): boolean {
+        return !!this.oldestVisibleMessageBeforeLoading;
+    }
+
 }
 </code></pre>
     </div>
@@ -1418,9 +1989,12 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;chat-messages&quot; #messageArea&gt;
 
+    &lt;div class&#x3D;&quot;chat-messages-start&quot; (ngxChatIntersectionObserver)&#x3D;&quot;onTop$.next($event)&quot;&gt;&lt;/div&gt;
+
     &lt;ng-container *ngFor&#x3D;&quot;let dateMessagesGroup of contact.dateMessagesGroups&quot;&gt;
         &lt;div class&#x3D;&quot;chat-messages-date-group&quot;&gt;{{dateMessagesGroup.date | date:chatService.translations.dateFormat:undefined:chatService.translations.locale}}&lt;/div&gt;
         &lt;ngx-chat-message *ngFor&#x3D;&quot;let message of dateMessagesGroup.messages&quot;
+                          [id]&#x3D;&quot;&#x27;message-&#x27; + message.id&quot;
                           [class.chat-message--in]&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; Direction.in&quot;
                           [class.chat-message--out]&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; Direction.out&quot;
                           [avatar]&#x3D;&quot;contact.avatar&quot;
@@ -1478,6 +2052,8 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
         &lt;/ul&gt;
     &lt;/ngx-chat-message-simple&gt;
 
+    &lt;div class&#x3D;&quot;chat-messages-end&quot; (ngxChatIntersectionObserver)&#x3D;&quot;onBottom($event)&quot;&gt;&lt;/div&gt;
+
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -1488,6 +2064,28 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import (reference) &quot;../../style&quot;;
 @import &quot;../chat-message/chat-message.component.less&quot;;
+
+@keyframes message-in {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes message-out {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
 
 .chat-messages {
   display: flex;
@@ -1502,7 +2100,6 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges {
 }
 
 .chat-messages-date-group {
-  clear: both;
   font-size: 0.7em;
   font-style: italic;
   margin: 0.5em 0;
@@ -1513,6 +2110,16 @@ ngx-chat-message,
 ngx-chat-message-simple {
   max-width: 76%;
   align-self: flex-start;
+  animation-duration: 1500ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+  &amp;.chat-message--in {
+    animation-name: message-in;
+  }
+
+  &amp;.chat-message--out {
+    animation-name: message-out;
+  }
 }
 
 .chat-messages-empty {
@@ -1528,6 +2135,7 @@ ngx-chat-message-simple {
   list-style: none;
   padding: 0;
   margin: 1em 0 0 0;
+
   a, a:visited {
     color: @link;
   }
@@ -1539,6 +2147,16 @@ ngx-chat-message-simple {
 
 .action-disabled {
   color: @general-light;
+}
+
+.chat-messages-start {
+  height: 5px;
+  margin-top: 5px;
+}
+
+.chat-messages-end {
+  height: 5px;
+  margin-bottom: 5px;
 }
 </code></pre>
     </div>
@@ -1568,9 +2186,9 @@ ngx-chat-message-simple {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <ng-container *ngFor="let dateMessagesGroup of contact.dateMessagesGroups">        <div class="chat-messages-date-group">{{dateMessagesGroup.date | date:chatService.translations.dateFormat:undefined:chatService.translations.locale}}</div>        <ngx-chat-message *ngFor="let message of dateMessagesGroup.messages"                          [class.chat-message--in]="message.direction === Direction.in"                          [class.chat-message--out]="message.direction === Direction.out"                          [avatar]="contact.avatar"                          [contact]="contact"                          [message]="message"                          [nick]="message.direction === Direction.in ? contact.name : \'\'"                          [showAvatars]="showAvatars">        </ngx-chat-message>    </ng-container>    <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">        {{chatService.translations.noMessages}}    </div>    <ngx-chat-message-simple [direction]="Direction.in"                             [avatar]="showAvatars ? contact.avatar : undefined"                             [footerHidden]="true"                             *ngIf="subscriptionActionShown()">        <span>            {{chatService.translations.subscriptionRequestMessage}}        </span>        <ul class="chat-presence-subscription-actions">            <li>                <span class="action-disabled"                      *ngIf="subscriptionAction === SubscriptionAction.SHOW_BLOCK_ACTIONS"                >{{chatService.translations.acceptSubscriptionRequest}}</span>                <a *ngIf="subscriptionAction === SubscriptionAction.PENDING_REQUEST"                   (click)="acceptSubscriptionRequest($event)"                   href="#"                >{{chatService.translations.acceptSubscriptionRequest}}</a>            </li>            <li>                <span class="action-disabled"                      *ngIf="subscriptionAction === SubscriptionAction.SHOW_BLOCK_ACTIONS"                >{{chatService.translations.denySubscriptionRequest}}</span>                <a *ngIf="subscriptionAction === SubscriptionAction.PENDING_REQUEST"                   (click)="denySubscriptionRequest($event)"                   href="#"                >{{chatService.translations.denySubscriptionRequest}}</a>            </li>        </ul>        <ul class="deny-actions" *ngIf="(blockPlugin.supportsBlock$ | async) === true && subscriptionAction === SubscriptionAction.SHOW_BLOCK_ACTIONS">            <li>                <a (click)="blockContact($event)" href="#">{{chatService.translations.block}}</a>            </li>            <li *ngIf="reportUserService">                <a (click)="blockContactAndReport($event)" href="#">{{chatService.translations.blockAndReport}}</a>            </li>            <li>                <a (click)="dismissOptions($event)" href="#">{{chatService.translations.dismiss}}</a>            </li>        </ul>    </ngx-chat-message-simple></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="chat-messages" #messageArea>    <div class="chat-messages-start" (ngxChatIntersectionObserver)="onTop$.next($event)"></div>    <ng-container *ngFor="let dateMessagesGroup of contact.dateMessagesGroups">        <div class="chat-messages-date-group">{{dateMessagesGroup.date | date:chatService.translations.dateFormat:undefined:chatService.translations.locale}}</div>        <ngx-chat-message *ngFor="let message of dateMessagesGroup.messages"                          [id]="\'message-\' + message.id"                          [class.chat-message--in]="message.direction === Direction.in"                          [class.chat-message--out]="message.direction === Direction.out"                          [avatar]="contact.avatar"                          [contact]="contact"                          [message]="message"                          [nick]="message.direction === Direction.in ? contact.name : \'\'"                          [showAvatars]="showAvatars">        </ngx-chat-message>    </ng-container>    <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">        {{chatService.translations.noMessages}}    </div>    <ngx-chat-message-simple [direction]="Direction.in"                             [avatar]="showAvatars ? contact.avatar : undefined"                             [footerHidden]="true"                             *ngIf="subscriptionActionShown()">        <span>            {{chatService.translations.subscriptionRequestMessage}}        </span>        <ul class="chat-presence-subscription-actions">            <li>                <span class="action-disabled"                      *ngIf="subscriptionAction === SubscriptionAction.SHOW_BLOCK_ACTIONS"                >{{chatService.translations.acceptSubscriptionRequest}}</span>                <a *ngIf="subscriptionAction === SubscriptionAction.PENDING_REQUEST"                   (click)="acceptSubscriptionRequest($event)"                   href="#"                >{{chatService.translations.acceptSubscriptionRequest}}</a>            </li>            <li>                <span class="action-disabled"                      *ngIf="subscriptionAction === SubscriptionAction.SHOW_BLOCK_ACTIONS"                >{{chatService.translations.denySubscriptionRequest}}</span>                <a *ngIf="subscriptionAction === SubscriptionAction.PENDING_REQUEST"                   (click)="denySubscriptionRequest($event)"                   href="#"                >{{chatService.translations.denySubscriptionRequest}}</a>            </li>        </ul>        <ul class="deny-actions" *ngIf="(blockPlugin.supportsBlock$ | async) === true && subscriptionAction === SubscriptionAction.SHOW_BLOCK_ACTIONS">            <li>                <a (click)="blockContact($event)" href="#">{{chatService.translations.block}}</a>            </li>            <li *ngIf="reportUserService">                <a (click)="blockContactAndReport($event)" href="#">{{chatService.translations.blockAndReport}}</a>            </li>            <li>                <a (click)="dismissOptions($event)" href="#">{{chatService.translations.dismiss}}</a>            </li>        </ul>    </ngx-chat-message-simple>    <div class="chat-messages-end" (ngxChatIntersectionObserver)="onBottom($event)"></div></div></div>'
     var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
-    var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
+    var DIRECTIVES = [{'name': 'IntersectionObserverDirective', 'selector': '[ngxChatIntersectionObserver]'},{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageListComponent'};
 </script>
 <script src="../js/tree.js"></script>

@@ -69,7 +69,7 @@
 <div><pre class="line-numbers"><code class="language-html">&lt;ngx-chat&gt;&lt;/ngx-chat&gt;</code></pre></div><p>You are now ready to go. You will not see anything until you log in.
 Log in via <code>ngx-chat</code> wherever you want (e.g. in a component or a service)
  by injecting <code>ChatService</code> and calling <code>login</code>:</p>
-<div><pre class="line-numbers"><code class="language-none">constructor(&#64;Inject(ChatServiceToken) ChatService) {
+<div><pre class="line-numbers"><code class="language-none">constructor(&#64;Inject(ChatServiceToken) chatService: ChatService) {
     chatService.logIn({
         domain: &#39;ngx-chat.example&#39;,
         service: &#39;wss://ngx-chat.example:5280/websocket&#39;,
@@ -127,7 +127,7 @@ ng serve</code></pre></div><h3 id="build-the-plugin">Build the plugin</h3>
 <p><code>npm run test:once</code></p>
 <h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in package.json
-VERSION=0.10.2 # change accordingly
+VERSION=0.10.3 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

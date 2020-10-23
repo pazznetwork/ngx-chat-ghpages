@@ -148,6 +148,9 @@
                                     <span class="modifier">Readonly</span>
                                 <a href="#messageStatePlugin">messageStatePlugin</a>
                             </li>
+                            <li>
+                                <a href="#showImagePlaceholder">showImagePlaceholder</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -179,6 +182,10 @@
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
+                                <a href="#tryFindEmbedImageUrls">tryFindEmbedImageUrls</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#tryFindImageLink">tryFindImageLink</a>
                             </li>
                         </ul>
@@ -430,8 +437,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:112</a></div>
                 </td>
             </tr>
 
@@ -469,8 +476,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:86</a></div>
                 </td>
             </tr>
 
@@ -510,8 +517,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="81"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:81</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:96</a></div>
                 </td>
             </tr>
 
@@ -631,8 +638,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:106</a></div>
                 </td>
             </tr>
 
@@ -652,11 +659,83 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="tryFindImageLink"></a>
+                    <a name="tryFindEmbedImageUrls"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Private</span>
                             <span class="modifier">Async</span>
+                            tryFindEmbedImageUrls
+                        </b>
+                        <a href="#tryFindEmbedImageUrls"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>tryFindEmbedImageUrls(candidateUrls: RegExpMatchArray)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>candidateUrls</td>
+                                    <td>
+                                            <code>RegExpMatchArray</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tryFindImageLink"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
                             tryFindImageLink
                         </b>
                         <a href="#tryFindImageLink"><span class="icon ion-ios-link"></span></a>
@@ -683,7 +762,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
                     </div>
                 </td>
@@ -816,7 +895,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -846,6 +925,32 @@
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showImagePlaceholder"></a>
+                        <span class="name">
+                            <b>
+                            showImagePlaceholder</b>
+                            <a href="#showImagePlaceholder"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -892,8 +997,8 @@ export class ChatMessageComponent implements OnInit {
     @Input()
     contact: Contact;
 
+    showImagePlaceholder &#x3D; true;
     imageLink: string;
-
     Direction &#x3D; Direction;
 
     private readonly messageStatePlugin: MessageStatePlugin;
@@ -910,21 +1015,36 @@ export class ChatMessageComponent implements OnInit {
         this.tryFindImageLink();
     }
 
-    private async tryFindImageLink() {
+    private tryFindImageLink() {
         if (this.chatService instanceof XmppChatAdapter) {
-            for (const url of extractUrls(this.message.body)) {
-                try {
-                    const headRequest &#x3D; await this.httpClient.head(url, {observe: &#x27;response&#x27;}).toPromise();
-                    const contentType &#x3D; headRequest.headers.get(&#x27;Content-Type&#x27;);
-                    const isImage &#x3D; contentType &amp;&amp; contentType.startsWith(&#x27;image&#x27;);
-                    const contentLength &#x3D; headRequest.headers.get(&#x27;Content-Length&#x27;);
-                    if (isImage &amp;&amp; parseInt(contentLength, 10) &lt; MAX_IMAGE_SIZE) {
-                        this.imageLink &#x3D; url;
-                        break;
-                    }
-                } catch (e) {
-                }
+            const candidateUrls &#x3D; extractUrls(this.message.body);
+
+            if (candidateUrls.length &#x3D;&#x3D;&#x3D; 0) {
+                this.showImagePlaceholder &#x3D; false;
+                return;
             }
+
+            this.tryFindEmbedImageUrls(candidateUrls).then();
+        }
+    }
+
+    private async tryFindEmbedImageUrls(candidateUrls: RegExpMatchArray) {
+        for (const url of candidateUrls) {
+            try {
+                const headRequest &#x3D; await this.httpClient.head(url, {observe: &#x27;response&#x27;}).toPromise();
+                const contentType &#x3D; headRequest.headers.get(&#x27;Content-Type&#x27;);
+                const isImage &#x3D; contentType &amp;&amp; contentType.startsWith(&#x27;image&#x27;);
+                const contentLength &#x3D; headRequest.headers.get(&#x27;Content-Length&#x27;);
+                if (isImage &amp;&amp; parseInt(contentLength, 10) &lt; MAX_IMAGE_SIZE) {
+                    this.imageLink &#x3D; url;
+                    break;
+                }
+            } catch (e) {
+            }
+        }
+
+        if (!this.imageLink) {
+            this.showImagePlaceholder &#x3D; false;
         }
     }
 
@@ -969,6 +1089,7 @@ export class ChatMessageComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ngx-chat-message-simple [imageLink]&#x3D;&quot;imageLink&quot;
+                         [showImagePlaceholder]&#x3D;&quot;showImagePlaceholder&quot;
                          [avatar]&#x3D;&quot;getAvatar()&quot;
                          [avatarInteractive]&#x3D;&quot;message.direction &#x3D;&#x3D;&#x3D; Direction.in&quot;
                          (avatarClickHandler)&#x3D;&quot;onContactClick()&quot;
@@ -1020,9 +1141,9 @@ export class ChatMessageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ngx-chat-message-simple [imageLink]="imageLink"                         [avatar]="getAvatar()"                         [avatarInteractive]="message.direction === Direction.in"                         (avatarClickHandler)="onContactClick()"                         [direction]="message.direction"                         [messageState]="getMessageState()"                         [formattedDate]="message.datetime | date:chatService.translations.timeFormat"                         [nick]="nick">    <span [ngxChatLinks]="message.body"></span></ngx-chat-message-simple></div>'
+        var COMPONENT_TEMPLATE = '<div><ngx-chat-message-simple [imageLink]="imageLink"                         [showImagePlaceholder]="showImagePlaceholder"                         [avatar]="getAvatar()"                         [avatarInteractive]="message.direction === Direction.in"                         (avatarClickHandler)="onContactClick()"                         [direction]="message.direction"                         [messageState]="getMessageState()"                         [formattedDate]="message.datetime | date:chatService.translations.timeFormat"                         [nick]="nick">    <span [ngxChatLinks]="message.body"></span></ngx-chat-message-simple></div>'
     var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterContactComponent', 'selector': 'ngx-chat-roster-contact'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'}];
-    var DIRECTIVES = [{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
+    var DIRECTIVES = [{'name': 'IntersectionObserverDirective', 'selector': '[ngxChatIntersectionObserver]'},{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageComponent'};
 </script>
 <script src="../js/tree.js"></script>
