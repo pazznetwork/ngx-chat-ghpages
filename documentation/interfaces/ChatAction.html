@@ -135,8 +135,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="99"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:99</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts:107</a></div>
                 </td>
             </tr>
 
@@ -295,6 +295,7 @@ import { ChatContactClickHandler, CONTACT_CLICK_HANDLER_TOKEN } from &#x27;../..
 import { ChatListStateService, ChatWindowState } from &#x27;../../services/chat-list-state.service&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
 import { ChatMessageInputComponent } from &#x27;../chat-message-input/chat-message-input.component&#x27;;
+import { ChatMessageListComponent } from &#x27;../chat-message-list/chat-message-list.component&#x27;;
 
 @Component({
     selector: &#x27;ngx-chat-window&#x27;,
@@ -308,6 +309,9 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
     @ViewChild(ChatMessageInputComponent)
     messageInput: ChatMessageInputComponent;
+
+    @ViewChild(ChatMessageListComponent)
+    messageList: ChatMessageListComponent;
 
     httpFileUploadPlugin: HttpFileUploadPlugin;
 
@@ -349,6 +353,10 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
     sendMessage() {
         this.messageInput.onSendMessage();
+    }
+
+    afterSendMessage() {
+        this.messageList.scheduleScrollToLastMessage();
     }
 
     async uploadFile(file: File) {
