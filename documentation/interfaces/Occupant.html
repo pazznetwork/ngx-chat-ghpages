@@ -202,7 +202,7 @@ import { Element } from &#x27;ltx&#x27;;
 import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
 import { ContactMetadata } from &#x27;../../../../core/contact&#x27;;
 import { Direction, Message } from &#x27;../../../../core/message&#x27;;
-import { MessageStore } from &#x27;../../../../core/message-store&#x27;;
+import { DateMessagesGroup, MessageStore } from &#x27;../../../../core/message-store&#x27;;
 import { IqResponseStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
@@ -260,6 +260,10 @@ export class Room {
 
     addMessage(message: RoomMessage) {
         this.messageStore.addMessage(message);
+    }
+
+    get dateMessagesGroups(): DateMessagesGroup&lt;RoomMessage&gt;[] {
+        return this.messageStore.dateMessageGroups;
     }
 
 }

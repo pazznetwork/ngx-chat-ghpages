@@ -120,7 +120,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:97</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:101</a></div>
                             </td>
                         </tr>
 
@@ -200,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:107</a></div>
                 </td>
             </tr>
 
@@ -282,8 +282,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:111</a></div>
                 </td>
             </tr>
 
@@ -362,7 +362,7 @@ import { Element } from &#x27;ltx&#x27;;
 import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
 import { ContactMetadata } from &#x27;../../../../core/contact&#x27;;
 import { Direction, Message } from &#x27;../../../../core/message&#x27;;
-import { MessageStore } from &#x27;../../../../core/message-store&#x27;;
+import { DateMessagesGroup, MessageStore } from &#x27;../../../../core/message-store&#x27;;
 import { IqResponseStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
@@ -420,6 +420,10 @@ export class Room {
 
     addMessage(message: RoomMessage) {
         this.messageStore.addMessage(message);
+    }
+
+    get dateMessagesGroups(): DateMessagesGroup&lt;RoomMessage&gt;[] {
+        return this.messageStore.dateMessageGroups;
     }
 
 }

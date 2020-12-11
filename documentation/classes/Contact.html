@@ -1270,7 +1270,7 @@ export class Contact {
         return this.messageStore.messages;
     }
 
-    get dateMessagesGroups(): DateMessagesGroup[] {
+    get dateMessagesGroups(): DateMessagesGroup&lt;Message&gt;[] {
         return this.messageStore.dateMessageGroups;
     }
 
