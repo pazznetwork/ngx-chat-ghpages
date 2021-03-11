@@ -1021,7 +1021,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
 import { BehaviorSubject, of } from &#x27;rxjs&#x27;;
-import { catchError, first, flatMap, map, timeout } from &#x27;rxjs/operators&#x27;;
+import { catchError, first, mergeMap, map, timeout } from &#x27;rxjs/operators&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
@@ -1078,7 +1078,7 @@ export class EntityTimePlugin extends AbstractXmppPlugin {
         return await this.serverSupportsTime$.pipe(
             timeout(5000),
             first(supportsServerTime &#x3D;&gt; supportsServerTime !&#x3D;&#x3D; &#x27;unknown&#x27;),
-            flatMap(supportsServerTime &#x3D;&gt; supportsServerTime ? calculateNowViaServerTime$ : of(Date.now())),
+            mergeMap(supportsServerTime &#x3D;&gt; supportsServerTime ? calculateNowViaServerTime$ : of(Date.now())),
             catchError(() &#x3D;&gt; of(Date.now())),
         ).toPromise();
     }
