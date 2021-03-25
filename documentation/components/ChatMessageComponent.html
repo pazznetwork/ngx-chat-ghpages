@@ -437,8 +437,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="112"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:112</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:114</a></div>
                 </td>
             </tr>
 
@@ -447,7 +447,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>string | undefined</code>
 
                     </div>
                 </td>
@@ -486,7 +486,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/Message.html" target="_self" >MessageState | undefined</a></code>
 
                     </div>
                 </td>
@@ -517,8 +517,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:97</a></div>
                 </td>
             </tr>
 
@@ -567,7 +567,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/Message.html" target="_self" >MessageState | undefined</a></code>
 
                     </div>
                     <div class="io-description">
@@ -638,8 +638,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:106</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts:108</a></div>
                 </td>
             </tr>
 
@@ -1048,7 +1048,7 @@ export class ChatMessageComponent implements OnInit {
         }
     }
 
-    getMessageState() {
+    getMessageState(): MessageState | undefined {
         if (this.message.state) {
             return this.message.state;
         } else if (this.messageStatePlugin &amp;&amp; this.contact) {
@@ -1056,9 +1056,10 @@ export class ChatMessageComponent implements OnInit {
             const states &#x3D; this.messageStatePlugin.getContactMessageState(this.contact.jidBare.toString());
             return this.getStateForDate(date, states);
         }
+        return undefined;
     }
 
-    private getStateForDate(date: Date, states: StateDate) {
+    private getStateForDate(date: Date, states: StateDate): MessageState | undefined {
         if (date &lt;&#x3D; states.lastRecipientSeen) {
             return MessageState.RECIPIENT_SEEN;
         } else if (date &lt;&#x3D; states.lastRecipientReceived) {
@@ -1066,6 +1067,7 @@ export class ChatMessageComponent implements OnInit {
         } else if (date &lt;&#x3D; states.lastSent) {
             return MessageState.SENT;
         }
+        return undefined;
     }
 
     onContactClick() {
@@ -1074,7 +1076,7 @@ export class ChatMessageComponent implements OnInit {
         }
     }
 
-    getAvatar() {
+    getAvatar(): string | undefined {
         if (this.showAvatars) {
             if (this.message.direction &#x3D;&#x3D;&#x3D; Direction.in) {
                 return this.avatar;
@@ -1082,6 +1084,7 @@ export class ChatMessageComponent implements OnInit {
                 return this.chatService.userAvatar$.getValue();
             }
         }
+        return undefined;
     }
 }
 </code></pre>
