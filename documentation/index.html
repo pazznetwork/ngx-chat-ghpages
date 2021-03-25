@@ -42,7 +42,6 @@
 </ul>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
-<li>Angular 11 (ngx-chat 0.11.x)</li>
 <li>Angular 10 (ngx-chat 0.10.x)</li>
 <li>Angular 9 (ngx-chat 0.9.x)</li>
 <li>Angular 8 (ngx-chat 0.4.x)</li>
@@ -55,9 +54,9 @@
 <h2 id="documentation">Documentation</h2>
 <p>Below you will find some instructions to getting started. <a href="https://github.com/pazznetwork/ngx-chat/wiki">Have a look at the wiki for FAQ&#39;s and the API documentation.</a></p>
 <h2 id="installation-and-usage">Installation and usage</h2>
-<p>This instructions require Angular 11.</p>
+<p>This instructions require Angular 10.</p>
 <p>First of all, install ngx-chat and its dependencies via npm:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.9.2 &#64;angular/cdk&#64;~11.0.0</code></pre></div><p>After that, import ngx-chat in your root module:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.9.2 &#64;angular/cdk&#64;~10.0.0</code></pre></div><p>After that, import ngx-chat in your root module:</p>
 <div><pre class="line-numbers"><code class="language-none">&#64;NgModule({
     ...
     imports: [
@@ -128,7 +127,7 @@ ng serve</code></pre></div><h3 id="build-the-plugin">Build the plugin</h3>
 <p><code>npm run test:once</code></p>
 <h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in package.json
-VERSION=0.11.0 # change accordingly
+VERSION=0.10.7 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

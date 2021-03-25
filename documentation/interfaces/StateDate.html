@@ -355,14 +355,13 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
         await this.xmppChatAdapter.chatConnectionService.send(messageStateResponse);
     }
 
-    handleStanza(stanza: Stanza): boolean {
+    handleStanza(stanza: Stanza) {
         const {type, from} &#x3D; stanza.attrs;
         const stateElement &#x3D; stanza.getChild(&#x27;message-state&#x27;, STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES);
         if (type &#x3D;&#x3D;&#x3D; &#x27;chat&#x27; &amp;&amp; stateElement) {
             this.handleStateNotificationStanza(stateElement, from);
             return true;
         }
-        return false;
     }
 
     private handleStateNotificationStanza(stateElement: Element, from: string) {

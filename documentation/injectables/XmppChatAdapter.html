@@ -1807,7 +1807,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new BehaviorSubject&lt;&#x27;disconnected&#x27; | &#x27;connecting&#x27; | &#x27;online&#x27;&gt;(&#x27;disconnected&#x27;)</code>
+                            <i>Default value : </i><code>new BehaviorSubject&lt;ConnectionStates&gt;(&#x27;disconnected&#x27;)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1895,7 +1895,7 @@ import { ChatPlugin } from &#x27;../../../core/plugin&#x27;;
 import { Stanza } from &#x27;../../../core/stanza&#x27;;
 import { Translations } from &#x27;../../../core/translations&#x27;;
 import { defaultTranslations } from &#x27;../../../core/translations-default&#x27;;
-import { ChatService } from &#x27;../../chat-service&#x27;;
+import { ChatService, ConnectionStates } from &#x27;../../chat-service&#x27;;
 import { ContactFactoryService } from &#x27;../../contact-factory.service&#x27;;
 import { LogService } from &#x27;../../log.service&#x27;;
 import { MessageArchivePlugin } from &#x27;./plugins/message-archive.plugin&#x27;;
@@ -1935,7 +1935,7 @@ export class XmppChatAdapter implements ChatService {
         map(contacts &#x3D;&gt; contacts.filter(contact &#x3D;&gt; contact.pendingOut$.getValue())));
     contactsUnaffiliated$: Observable&lt;Contact[]&gt; &#x3D; this.notBlockedContacts$.pipe(
         map(contacts &#x3D;&gt; contacts.filter(contact &#x3D;&gt; contact.isUnaffiliated() &amp;&amp; contact.messages.length &gt; 0)));
-    state$ &#x3D; new BehaviorSubject&lt;&#x27;disconnected&#x27; | &#x27;connecting&#x27; | &#x27;online&#x27;&gt;(&#x27;disconnected&#x27;);
+    state$ &#x3D; new BehaviorSubject&lt;ConnectionStates&gt;(&#x27;disconnected&#x27;);
     plugins: ChatPlugin[] &#x3D; [];
     enableDebugging &#x3D; false;
     userAvatar$ &#x3D; new BehaviorSubject(dummyAvatar);

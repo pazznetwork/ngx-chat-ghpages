@@ -484,7 +484,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1131,7 +1131,7 @@ export class RegistrationPlugin extends AbstractXmppPlugin {
         });
     }
 
-    private connect(username: string, password: string, service: string, domain?: string): Promise&lt;void&gt; {
+    private connect(username: string, password: string, service: string, domain?: string) {
         return new Promise(resolveConnectionEstablished &#x3D;&gt; {
             this.client &#x3D; client({
                 domain: domain || getDomain(service),

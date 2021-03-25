@@ -149,7 +149,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -185,8 +185,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:31</a></div>
                 </td>
             </tr>
 
@@ -267,8 +267,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:37</a></div>
                 </td>
             </tr>
 
@@ -343,12 +343,11 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
 import { Element } from &#x27;ltx&#x27;;
-import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
-import { debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, share, takeUntil } from &#x27;rxjs/operators&#x27;;
+import { BehaviorSubject, combineLatest, Observable, Subscription } from &#x27;rxjs&#x27;;
+import { debounceTime, delay, distinctUntilChanged, map, share } from &#x27;rxjs/operators&#x27;;
 import { Contact } from &#x27;../../../../core/contact&#x27;;
 import { Direction } from &#x27;../../../../core/message&#x27;;
 import { findSortedInsertionIndexLast } from &#x27;../../../../core/utils-array&#x27;;
-import { extractValues, sum } from &#x27;../../../../core/utils-object&#x27;;
 import { ChatMessageListRegistryService } from &#x27;../../../chat-message-list-registry.service&#x27;;
 import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
@@ -408,6 +407,7 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
      */
     public jidToUnreadCount$: BehaviorSubject&lt;JidToNumber&gt; &#x3D; new BehaviorSubject({});
     private jidToLastReadDate: JidToDate &#x3D; {};
+    private contactIdToMessageSubscription &#x3D; new Map&lt;string, Subscription&gt;();
 
     constructor(
         private chatService: XmppChatAdapter,
@@ -419,33 +419,39 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
 
         this.chatMessageListRegistry.chatOpened$
             .pipe(
-                filter(() &#x3D;&gt; this.chatService.state$.getValue() !&#x3D;&#x3D; &#x27;disconnected&#x27;),
                 delay(0), // prevent &#x27;Expression has changed after it was checked&#x27;
             )
             .subscribe(contact &#x3D;&gt; this.checkForUnreadCountChange(contact));
 
         this.chatService.contactCreated$
-            .pipe(
-                filter(() &#x3D;&gt; this.chatService.state$.getValue() !&#x3D;&#x3D; &#x27;disconnected&#x27;),
-                mergeMap(contact &#x3D;&gt;
-                    contact.messages$.pipe(
-                        debounceTime(1000), // performance optimization, ignore lots of message archive loading
-                        map(() &#x3D;&gt; contact),
-                        takeUntil(this.chatService.state$.pipe(first(state &#x3D;&gt; state &#x3D;&#x3D;&#x3D; &#x27;disconnected&#x27;))),
-                    ),
-                ),
-            )
-            .subscribe(contact &#x3D;&gt; this.checkForUnreadCountChange(contact));
+            .subscribe(contact &#x3D;&gt; {
+                const jid &#x3D; contact.jidBare.toString();
+                if (!this.contactIdToMessageSubscription.has(jid)) {
+                    this.contactIdToMessageSubscription.set(jid,
+                        contact.messages$
+                            .pipe(debounceTime(20))
+                            .subscribe(() &#x3D;&gt; this.checkForUnreadCountChange(contact)),
+                    );
+                }
+            });
 
         this.publishSubscribePlugin.publish$
             .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event));
 
-        this.unreadMessageCountSum$ &#x3D; this.jidToUnreadCount$.pipe(
-            map(jidToCount &#x3D;&gt; sum(extractValues(jidToCount))),
-            debounceTime(500),
-            distinctUntilChanged(),
-            share(),
-        );
+        this.unreadMessageCountSum$ &#x3D; combineLatest([this.jidToUnreadCount$, this.chatService.notBlockedContacts$])
+            .pipe(
+                debounceTime(20),
+                map(([jidToUnreadCount, notBlockedContacts]) &#x3D;&gt; {
+                    let sum &#x3D; 0;
+                    for (const contact of notBlockedContacts) {
+                        const unreadMessageCount &#x3D; jidToUnreadCount[contact.jidBare.toString()] ?? 0;
+                        sum +&#x3D; unreadMessageCount;
+                    }
+                    return sum;
+                }),
+                distinctUntilChanged(),
+                share(),
+            );
     }
 
     private async checkForUnreadCountChange(contact: Contact) {
@@ -465,6 +471,10 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
     }
 
     onOffline() {
+        for (const subscription of this.contactIdToMessageSubscription.values()) {
+            subscription.unsubscribe();
+        }
+        this.contactIdToMessageSubscription.clear();
         this.jidToUnreadCount$.next({});
     }
 
