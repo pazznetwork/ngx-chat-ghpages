@@ -120,7 +120,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -140,6 +140,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
+import { Contact } from &#x27;../../../../core/contact&#x27;;
 import { Direction, Message } from &#x27;../../../../core/message&#x27;;
 import { MessageWithBodyStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
@@ -171,17 +172,17 @@ export class MessagePlugin extends AbstractXmppPlugin {
         return stanza.name &#x3D;&#x3D;&#x3D; &#x27;message&#x27;
             &amp;&amp; stanza.attrs.type !&#x3D;&#x3D; &#x27;groupchat&#x27;
             &amp;&amp; stanza.attrs.type !&#x3D;&#x3D; &#x27;error&#x27;
-            &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;);
+            &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;)?.trim();
     }
 
     private handleMessageStanza(messageStanza: MessageWithBodyStanza) {
         this.logService.debug(&#x27;message received &lt;&#x3D;&#x27;, messageStanza.getChildText(&#x27;body&#x27;));
 
         const message &#x3D; {
-            body: messageStanza.getChildText(&#x27;body&#x27;),
+            body: messageStanza.getChildText(&#x27;body&#x27;).trim(),
             direction: Direction.in,
             datetime: new Date(), // TODO: replace with entity time plugin
-            delayed: !!messageStanza.getChild(&#x27;delay&#x27;)
+            delayed: !!messageStanza.getChild(&#x27;delay&#x27;),
         };
 
         const messageReceivedEvent &#x3D; new MessageReceivedEvent();
@@ -193,19 +194,22 @@ export class MessagePlugin extends AbstractXmppPlugin {
         }
     }
 
-    sendMessage(jid: string, body: string) {
-        const messageStanza &#x3D; xml(&#x27;message&#x27;, {to: jid, from: this.xmppChatAdapter.chatConnectionService.userJid.toString(), type: &#x27;chat&#x27;},
-            xml(&#x27;body&#x27;, {}, body)
+    sendMessage(contact: Contact, body: string) {
+        const messageStanza &#x3D; xml(&#x27;message&#x27;, {
+                to: contact.jidBare.toString(),
+                from: this.xmppChatAdapter.chatConnectionService.userJid.toString(),
+                type: &#x27;chat&#x27;,
+            },
+            xml(&#x27;body&#x27;, {}, body),
         );
 
         const message: Message &#x3D; {
             direction: Direction.out,
             body,
             datetime: new Date(), // TODO: replace with entity time plugin
-            delayed: false
+            delayed: false,
         };
         this.xmppChatAdapter.plugins.forEach(plugin &#x3D;&gt; plugin.beforeSendMessage(messageStanza, message));
-        const contact &#x3D; this.xmppChatAdapter.getOrCreateContactById(jid);
         contact.addMessage(message);
         // TODO: on rejection mark message that it was not sent successfully
         this.xmppChatAdapter.chatConnectionService.send(messageStanza).then(() &#x3D;&gt; {

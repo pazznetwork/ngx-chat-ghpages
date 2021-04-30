@@ -130,6 +130,9 @@
                                         <a href="#presence">presence</a>
                                 </li>
                                 <li>
+                                        <a href="#rooms">rooms</a>
+                                </li>
+                                <li>
                                         <a href="#subscriptionRequestMessage">subscriptionRequestMessage</a>
                                 </li>
                                 <li>
@@ -637,6 +640,35 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="rooms"></a>
+                                        <span class="name"><b>rooms</b><a href="#rooms"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>rooms:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="subscriptionRequestMessage"></a>
                                         <span class="name"><b>subscriptionRequestMessage</b><a href="#subscriptionRequestMessage"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
@@ -699,27 +731,26 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Presence } from &#x27;./presence&#x27;;
 
 export interface Translations {
+    acceptSubscriptionRequest: string;
+    block: string;
+    blockAndReport: string;
     chat: string;
-    contacts: string;
     contactRequestIn: string;
     contactRequestOut: string;
+    contacts: string;
     contactsUnaffiliated: string;
+    dateFormat: string;
+    denySubscriptionRequest: string;
+    dismiss: string;
+    dropMessage: string;
+    locale: string;
     noContacts: string;
     noMessages: string;
     placeholder: string;
+    presence: { [P in Presence]: string; };
+    rooms: string;
     subscriptionRequestMessage: string;
-    acceptSubscriptionRequest: string;
-    denySubscriptionRequest: string;
     timeFormat: string;
-    dateFormat: string;
-    locale: string;
-    dropMessage: string;
-    block: string;
-    blockAndReport: string;
-    dismiss: string;
-    presence: {
-        [P in Presence]: string;
-    };
 }
 </code></pre>
     </div>

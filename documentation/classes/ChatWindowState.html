@@ -81,11 +81,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#contact">contact</a>
+                                <a href="#isCollapsed">isCollapsed</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isCollapsed">isCollapsed</a>
+                                <a href="#recipient">recipient</a>
                             </li>
                         </ul>
                     </td>
@@ -106,7 +106,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(contact: <a href="../classes/Contact.html">Contact</a>, isCollapsed: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+<code>constructor(recipient: <a href="../undefineds/Recipient.html">Recipient</a>, isCollapsed: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -129,10 +129,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>contact</td>
+                                                        <td>recipient</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                                                        <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -170,34 +170,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="contact"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            contact</b>
-                            <a href="#contact"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts:8</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="isCollapsed"></a>
                         <span class="name">
                             <b>
@@ -222,6 +194,34 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="recipient"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            recipient</b>
+                            <a href="#recipient"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts:8</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
 
@@ -237,11 +237,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &#x27;@angular/core&#x27;;
 import { BehaviorSubject } from &#x27;rxjs&#x27;;
 import { filter } from &#x27;rxjs/operators&#x27;;
-import { Contact } from &#x27;../core/contact&#x27;;
+import { Recipient } from &#x27;../core/recipient&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;./chat-service&#x27;;
 
 export class ChatWindowState {
-    constructor(public contact: Contact,
+    constructor(public recipient: Recipient,
                 public isCollapsed: boolean) {
     }
 }
@@ -273,23 +273,23 @@ export class ChatListStateService {
         });
     }
 
-    private openChatCollapsed(contact: Contact) {
-        if (!this.isChatWithContactOpen(contact)) {
+    private openChatCollapsed(recipient: Recipient) {
+        if (!this.isChatWithRecipientOpen(recipient)) {
             const openChats &#x3D; this.openChats$.getValue();
-            const chatWindow &#x3D; new ChatWindowState(contact, true);
+            const chatWindow &#x3D; new ChatWindowState(recipient, true);
             const copyWithNewContact &#x3D; [chatWindow].concat(openChats);
             this.openChats$.next(copyWithNewContact);
         }
     }
 
-    public openChat(contact: Contact) {
-        this.openChatCollapsed(contact);
-        this.findChatWindowStateByContact(contact).isCollapsed &#x3D; false;
+    public openChat(recipient: Recipient) {
+        this.openChatCollapsed(recipient);
+        this.findChatWindowStateByRecipient(recipient).isCollapsed &#x3D; false;
     }
 
-    public closeChat(contactToClose: Contact) {
+    public closeChat(recipient: Recipient) {
         const openChats &#x3D; this.openChats$.getValue();
-        const index &#x3D; this.findChatWindowStateIndexByContact(contactToClose);
+        const index &#x3D; this.findChatWindowStateIndexByRecipient(recipient);
         if (index &gt;&#x3D; 0) {
             const copyWithoutContact &#x3D; openChats.slice();
             copyWithoutContact.splice(index, 1);
@@ -307,18 +307,17 @@ export class ChatListStateService {
         );
     }
 
-    isChatWithContactOpen(contact: Contact): boolean {
-        return this.findChatWindowStateIndexByContact(contact) &gt;&#x3D; 0;
+    isChatWithRecipientOpen(recipient: Recipient): boolean {
+        return this.findChatWindowStateByRecipient(recipient) !&#x3D;&#x3D; undefined;
     }
 
-    private findChatWindowStateIndexByContact(contact: Contact): number {
+    private findChatWindowStateIndexByRecipient(recipient: Recipient): number {
         return this.openChats$.getValue()
-            .findIndex((chatWindowState) &#x3D;&gt; chatWindowState.contact.equalsBareJid(contact));
+            .findIndex((chatWindowState) &#x3D;&gt; chatWindowState.recipient.equalsBareJid(recipient));
     }
 
-    private findChatWindowStateByContact(contact: Contact): ChatWindowState {
-        return this.openChats$.getValue()
-            .find((chatWindowState) &#x3D;&gt; chatWindowState.contact.equalsBareJid(contact));
+    private findChatWindowStateByRecipient(recipient: Recipient): ChatWindowState | undefined {
+        return this.openChats$.getValue().find(chat &#x3D;&gt; chat.recipient.equalsBareJid(recipient));
     }
 }
 </code></pre>

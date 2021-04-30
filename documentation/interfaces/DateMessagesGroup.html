@@ -166,8 +166,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &#x27;rxjs&#x27;;
 import { LogService } from &#x27;../services/log.service&#x27;;
-import { Message } from &#x27;./message&#x27;;
-import { findSortedIndex, findSortedInsertionIndexLast, insertSortedLast } from &#x27;./utils-array&#x27;;
+import { Direction, Message } from &#x27;./message&#x27;;
+import { findLast, findSortedIndex, findSortedInsertionIndexLast, insertSortedLast } from &#x27;./utils-array&#x27;;
 import { extractDateStringFromDate } from &#x27;./utils-date&#x27;;
 
 export interface DateMessagesGroup&lt;T extends Message&gt; {
@@ -199,6 +199,22 @@ export class MessageStore&lt;T extends Message&gt; {
         this.messageIdToMessage[message.id] &#x3D; message;
         this.messages$.next(message);
         return true;
+    }
+
+    get oldestMessage() {
+        return this.messages[0];
+    }
+
+    get mostRecentMessage() {
+        return this.messages[this.messages.length - 1];
+    }
+
+    get mostRecentMessageReceived() {
+        return findLast(this.messages, msg &#x3D;&gt; msg.direction &#x3D;&#x3D;&#x3D; Direction.in);
+    }
+
+    get mostRecentMessageSent() {
+        return findLast(this.messages, msg &#x3D;&gt; msg.direction &#x3D;&#x3D;&#x3D; Direction.out);
     }
 
     private addToDateMessageGroups(message: T) {

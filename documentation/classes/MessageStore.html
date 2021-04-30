@@ -122,6 +122,29 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#oldestMessage">oldestMessage</a>
+                                </li>
+                                <li>
+                                    <a href="#mostRecentMessage">mostRecentMessage</a>
+                                </li>
+                                <li>
+                                    <a href="#mostRecentMessageReceived">mostRecentMessageReceived</a>
+                                </li>
+                                <li>
+                                    <a href="#mostRecentMessageSent">mostRecentMessageSent</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -408,8 +431,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:54</a></div>
                 </td>
             </tr>
 
@@ -462,14 +485,107 @@
 
 
 
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="oldestMessage"></a>
+                        <span class="name"><b>oldestMessage</b><a href="#oldestMessage"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>oldestMessage()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:38</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mostRecentMessage"></a>
+                        <span class="name"><b>mostRecentMessage</b><a href="#mostRecentMessage"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>mostRecentMessage()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:42</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mostRecentMessageReceived"></a>
+                        <span class="name"><b>mostRecentMessageReceived</b><a href="#mostRecentMessageReceived"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>mostRecentMessageReceived()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:46</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mostRecentMessageSent"></a>
+                        <span class="name"><b>mostRecentMessageSent</b><a href="#mostRecentMessageSent"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>mostRecentMessageSent()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/message-store.ts:50</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &#x27;rxjs&#x27;;
 import { LogService } from &#x27;../services/log.service&#x27;;
-import { Message } from &#x27;./message&#x27;;
-import { findSortedIndex, findSortedInsertionIndexLast, insertSortedLast } from &#x27;./utils-array&#x27;;
+import { Direction, Message } from &#x27;./message&#x27;;
+import { findLast, findSortedIndex, findSortedInsertionIndexLast, insertSortedLast } from &#x27;./utils-array&#x27;;
 import { extractDateStringFromDate } from &#x27;./utils-date&#x27;;
 
 export interface DateMessagesGroup&lt;T extends Message&gt; {
@@ -501,6 +617,22 @@ export class MessageStore&lt;T extends Message&gt; {
         this.messageIdToMessage[message.id] &#x3D; message;
         this.messages$.next(message);
         return true;
+    }
+
+    get oldestMessage() {
+        return this.messages[0];
+    }
+
+    get mostRecentMessage() {
+        return this.messages[this.messages.length - 1];
+    }
+
+    get mostRecentMessageReceived() {
+        return findLast(this.messages, msg &#x3D;&gt; msg.direction &#x3D;&#x3D;&#x3D; Direction.in);
+    }
+
+    get mostRecentMessageSent() {
+        return findLast(this.messages, msg &#x3D;&gt; msg.direction &#x3D;&#x3D;&#x3D; Direction.out);
     }
 
     private addToDateMessageGroups(message: T) {

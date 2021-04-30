@@ -159,16 +159,18 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Input, OnDestroy, OnInit, Optional, ViewChild } from &#x27;@angular/core&#x27;;
-import { Subject } from &#x27;rxjs&#x27;;
+import { Observable, Subject } from &#x27;rxjs&#x27;;
 import { filter, takeUntil } from &#x27;rxjs/operators&#x27;;
-import { Direction } from &#x27;../../core/message&#x27;;
+import { Direction, Message } from &#x27;../../core/message&#x27;;
 import { Presence } from &#x27;../../core/presence&#x27;;
 import { HttpFileUploadPlugin } from &#x27;../../services/adapters/xmpp/plugins/http-file-upload.plugin&#x27;;
+import { RoomMessage } from &#x27;../../services/adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
 import { ChatContactClickHandler, CONTACT_CLICK_HANDLER_TOKEN } from &#x27;../../services/chat-contact-click-handler&#x27;;
 import { ChatListStateService, ChatWindowState } from &#x27;../../services/chat-list-state.service&#x27;;
 import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
 import { ChatMessageInputComponent } from &#x27;../chat-message-input/chat-message-input.component&#x27;;
 import { ChatMessageListComponent } from &#x27;../chat-message-list/chat-message-list.component&#x27;;
+import { ChatRoomMessagesComponent } from &#x27;../chat-room-messages/chat-room-messages.component&#x27;;
 
 @Component({
     selector: &#x27;ngx-chat-window&#x27;,
@@ -183,8 +185,13 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     @ViewChild(ChatMessageInputComponent)
     messageInput: ChatMessageInputComponent;
 
+    // deduplicate in #62
     @ViewChild(ChatMessageListComponent)
-    messageList: ChatMessageListComponent;
+    contactMessageList: ChatMessageListComponent;
+
+    // deduplicate in #62
+    @ViewChild(ChatRoomMessagesComponent)
+    roomMessageList: ChatRoomMessagesComponent;
 
     httpFileUploadPlugin: HttpFileUploadPlugin;
 
@@ -201,7 +208,8 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.chatWindowState.contact.messages$
+        const messages$: Observable&lt;RoomMessage | Message&gt; &#x3D; this.chatWindowState.recipient.messages$;
+        messages$
             .pipe(
                 filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in),
                 takeUntil(this.ngDestroy),
@@ -221,7 +229,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     }
 
     public onClickClose() {
-        this.chatListService.closeChat(this.chatWindowState.contact);
+        this.chatListService.closeChat(this.chatWindowState.recipient);
     }
 
     sendMessage() {
@@ -229,12 +237,17 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     }
 
     afterSendMessage() {
-        this.messageList.scheduleScrollToLastMessage();
+        if (this.contactMessageList) { // TODO: remove if after #62
+            this.contactMessageList.scheduleScrollToLastMessage();
+        }
+        if (this.roomMessageList) {
+            this.roomMessageList.scheduleScrollToLastMessage();
+        }
     }
 
     async uploadFile(file: File) {
         const url &#x3D; await this.httpFileUploadPlugin.upload(file);
-        this.chatService.sendMessage(this.chatWindowState.contact.jidBare.toString(), url);
+        this.chatService.sendMessage(this.chatWindowState.recipient, url);
     }
 
     onFocus() {
@@ -243,7 +256,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
 
     onActionClick(chatAction: ChatAction) {
         chatAction.onClick({
-            contact: this.chatWindowState.contact.jidBare.toString(),
+            contact: this.chatWindowState.recipient.jidBare.toString(),
             chatWindow: this,
         });
     }
@@ -251,7 +264,7 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     onContactClick($event: MouseEvent) {
         if (this.contactClickHandler &amp;&amp; !this.chatWindowState.isCollapsed) {
             $event.stopPropagation();
-            this.contactClickHandler.onClickContact(this.chatWindowState.contact);
+            this.contactClickHandler.onClick(this.chatWindowState.recipient);
         }
     }
 }

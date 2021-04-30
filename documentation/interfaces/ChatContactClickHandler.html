@@ -79,7 +79,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#onClickContact">onClickContact</a>
+                                    <a href="#onClick">onClick</a>
                                 </li>
                             </ul>
                         </td>
@@ -97,18 +97,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onClickContact"></a>
+                    <a name="onClick"></a>
                     <span class="name">
                         <b>
-                            onClickContact
+                            onClick
                         </b>
-                        <a href="#onClickContact"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onClickContact(contact: <a href="../classes/Contact.html">Contact</a>)</code>
+<code>onClick(contact: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -138,7 +138,7 @@
                                 <tr>
                                     <td>contact</td>
                                     <td>
-                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
                                     </td>
 
                                     <td>
@@ -153,7 +153,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -170,13 +170,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { InjectionToken } from &#x27;@angular/core&#x27;;
-import { Contact } from &#x27;../core/contact&#x27;;
+import { Recipient } from &#x27;../core/recipient&#x27;;
 
 export const CONTACT_CLICK_HANDLER_TOKEN &#x3D; new InjectionToken(&#x27;ChatContactClickHandler&#x27;);
 
 export interface ChatContactClickHandler {
 
-    onClickContact(contact: Contact);
+    onClick(contact: Recipient): void;
 
 }
 </code></pre>

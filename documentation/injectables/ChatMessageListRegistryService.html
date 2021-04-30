@@ -63,7 +63,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Used to determine if a message component for a given contact is open.</p>
+                <p>Used to determine if a message component for a given recipient is open.</p>
 
             </p>
 
@@ -86,12 +86,12 @@
                                 <a href="#chatOpened$">chatOpened$</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#contactToOpenMessageListCount">contactToOpenMessageListCount</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#openChats$">openChats$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#recipientToOpenMessageListCount">recipientToOpenMessageListCount</a>
                             </li>
                         </ul>
                     </td>
@@ -169,7 +169,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>decrementOpenWindowCount(contact: <a href="../classes/Contact.html">Contact</a>)</code>
+<code>decrementOpenWindowCount(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -197,9 +197,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>contact</td>
+                                    <td>recipient</td>
                                     <td>
-                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
                                     </td>
 
                                     <td>
@@ -241,7 +241,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getOrDefault(contact: <a href="../classes/Contact.html">Contact</a>, defaultValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>getOrDefault(recipient: <a href="../undefineds/Recipient.html">Recipient</a>, defaultValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
@@ -269,9 +269,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>contact</td>
+                                    <td>recipient</td>
                                     <td>
-                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
                                     </td>
 
                                     <td>
@@ -323,7 +323,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>incrementOpenWindowCount(contact: <a href="../classes/Contact.html">Contact</a>)</code>
+<code>incrementOpenWindowCount(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -351,9 +351,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>contact</td>
+                                    <td>recipient</td>
                                     <td>
-                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
                                     </td>
 
                                     <td>
@@ -393,7 +393,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>isChatOpen(contact: <a href="../classes/Contact.html">Contact</a>)</code>
+<code>isChatOpen(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -421,9 +421,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>contact</td>
+                                    <td>recipient</td>
                                     <td>
-                                                <code><a href="../classes/Contact.html" target="_self" >Contact</a></code>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
                                     </td>
 
                                     <td>
@@ -469,39 +469,12 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Subject&lt;Contact&gt;()</code>
+                            <i>Default value : </i><code>new Subject&lt;Recipient&gt;()</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:12</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="contactToOpenMessageListCount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            contactToOpenMessageListCount</b>
-                            <a href="#contactToOpenMessageListCount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>new Map&lt;Contact, number&gt;()</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -523,12 +496,39 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new BehaviorSubject&lt;Set&lt;Contact&gt;&gt;(new Set())</code>
+                            <i>Default value : </i><code>new BehaviorSubject&lt;Set&lt;Recipient&gt;&gt;(new Set())</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="recipientToOpenMessageListCount"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            recipientToOpenMessageListCount</b>
+                            <a href="#recipientToOpenMessageListCount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Map&lt;Recipient, number&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-message-list-registry.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -543,50 +543,50 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
-import { Contact } from &#x27;../core/contact&#x27;;
+import { Recipient } from &#x27;../core/recipient&#x27;;
 
 /**
- * Used to determine if a message component for a given contact is open.
+ * Used to determine if a message component for a given recipient is open.
  */
 @Injectable()
 export class ChatMessageListRegistryService {
 
-    public openChats$ &#x3D; new BehaviorSubject&lt;Set&lt;Contact&gt;&gt;(new Set());
-    public chatOpened$ &#x3D; new Subject&lt;Contact&gt;();
-    private contactToOpenMessageListCount &#x3D; new Map&lt;Contact, number&gt;();
+    public openChats$ &#x3D; new BehaviorSubject&lt;Set&lt;Recipient&gt;&gt;(new Set());
+    public chatOpened$ &#x3D; new Subject&lt;Recipient&gt;();
+    private recipientToOpenMessageListCount &#x3D; new Map&lt;Recipient, number&gt;();
 
     constructor() {
     }
 
-    isChatOpen(contact: Contact) {
-        return this.getOrDefault(contact, 0) &gt; 0;
+    isChatOpen(recipient: Recipient) {
+        return this.getOrDefault(recipient, 0) &gt; 0;
     }
 
-    incrementOpenWindowCount(contact: Contact) {
-        const wasWindowOpen &#x3D; this.isChatOpen(contact);
-        this.contactToOpenMessageListCount.set(contact, this.getOrDefault(contact, 0) + 1);
+    incrementOpenWindowCount(recipient: Recipient) {
+        const wasWindowOpen &#x3D; this.isChatOpen(recipient);
+        this.recipientToOpenMessageListCount.set(recipient, this.getOrDefault(recipient, 0) + 1);
         const openWindowSet &#x3D; this.openChats$.getValue();
-        openWindowSet.add(contact);
+        openWindowSet.add(recipient);
         this.openChats$.next(openWindowSet);
         if (!wasWindowOpen) {
-            this.chatOpened$.next(contact);
+            this.chatOpened$.next(recipient);
         }
     }
 
-    decrementOpenWindowCount(contact: Contact) {
-        const newValue &#x3D; this.getOrDefault(contact, 0) - 1;
+    decrementOpenWindowCount(recipient: Recipient) {
+        const newValue &#x3D; this.getOrDefault(recipient, 0) - 1;
         if (newValue &lt;&#x3D; 0) {
-            this.contactToOpenMessageListCount.set(contact, 0);
+            this.recipientToOpenMessageListCount.set(recipient, 0);
             const openWindowSet &#x3D; this.openChats$.getValue();
-            openWindowSet.delete(contact);
+            openWindowSet.delete(recipient);
             this.openChats$.next(openWindowSet);
         } else {
-            this.contactToOpenMessageListCount.set(contact, newValue);
+            this.recipientToOpenMessageListCount.set(recipient, newValue);
         }
     }
 
-    private getOrDefault(contact: Contact, defaultValue: number) {
-        return this.contactToOpenMessageListCount.get(contact) || defaultValue;
+    private getOrDefault(recipient: Recipient, defaultValue: number) {
+        return this.recipientToOpenMessageListCount.get(recipient) || defaultValue;
     }
 
 }
