@@ -387,7 +387,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>subscribeRoom(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>subscribeRoom(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nodes: string[])</code>
                 </td>
             </tr>
 
@@ -411,6 +411,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Default value</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -424,6 +425,23 @@
                                         No
                                     </td>
 
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>nodes</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>[]</code>
+                                    </td>
 
                                 </tr>
                             </tbody>
@@ -933,11 +951,13 @@ export class MucSubPlugin extends AbstractXmppPlugin {
         this.supportsMucSub.next(&#x27;unknown&#x27;);
     }
 
-    subscribeRoom(roomJid: string) {
+    subscribeRoom(roomJid: string, nodes: string[] &#x3D; []) {
         const nick &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.local;
         this.xmppChatAdapter.chatConnectionService.sendIq(
             xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid},
-                xml(&#x27;subscribe&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;, nick})
+                xml(&#x27;subscribe&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;, nick},
+                    nodes.map(node &#x3D;&gt; xml(&#x27;event&#x27;, {node}))
+                )
             )
         );
     }
