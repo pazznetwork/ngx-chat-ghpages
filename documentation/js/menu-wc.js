@@ -65,13 +65,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxChatModule.html" data-type="entity-link">NgxChatModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' : 'data-target="#xs-components-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' }>
+                                            'data-target="#components-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' : 'data-target="#xs-components-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' :
-                                            'id="xs-components-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' :
+                                            'id="xs-components-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' }>
                                             <li class="link">
                                                 <a href="components/ChatAvatarComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatAvatarComponent</a>
@@ -105,10 +105,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatMessageTextComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ChatRoomMessagesComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatRoomMessagesComponent</a>
-                                            </li>
-                                            <li class="link">
                                                 <a href="components/ChatVideoWindowComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatVideoWindowComponent</a>
                                             </li>
@@ -140,13 +136,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' : 'data-target="#xs-directives-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' }>
+                                        'data-target="#directives-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' : 'data-target="#xs-directives-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' :
-                                        'id="xs-directives-links-module-NgxChatModule-7a307fcfacf496c5e2713b3e9772ccaf"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' :
+                                        'id="xs-directives-links-module-NgxChatModule-4c4e0ab15ef4459a4e73bc2c2a6c3648"' }>
                                         <li class="link">
                                             <a href="directives/IntersectionObserverDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">IntersectionObserverDirective</a>

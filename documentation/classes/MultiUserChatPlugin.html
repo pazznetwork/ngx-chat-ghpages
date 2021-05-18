@@ -142,7 +142,6 @@
                                 <a href="#getRoomByJid">getRoomByJid</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#handleRoomMessageStanza">handleRoomMessageStanza</a>
                             </li>
                             <li>
@@ -905,7 +904,6 @@
                     <a name="handleRoomMessageStanza"></a>
                     <span class="name">
                         <b>
-                            <span class="modifier">Private</span>
                             handleRoomMessageStanza
                         </b>
                         <a href="#handleRoomMessageStanza"><span class="icon ion-ios-link"></span></a>
@@ -914,8 +912,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleRoomMessageStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+<code>handleRoomMessageStanza(messageStanza: <a href="../interfaces/Stanza.html">Stanza</a>, archiveDelayElement?: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -943,13 +940,25 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>stanza</td>
+                                    <td>messageStanza</td>
                                     <td>
                                                 <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
                                     </td>
 
                                     <td>
                                         No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>archiveDelayElement</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
                                     </td>
 
 
@@ -2768,33 +2777,33 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
         return stanza.name &#x3D;&#x3D;&#x3D; &#x27;message&#x27; &amp;&amp; stanza.attrs.type &#x3D;&#x3D;&#x3D; &#x27;groupchat&#x27; &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;)?.trim();
     }
 
-    private handleRoomMessageStanza(stanza: Stanza) {
+    handleRoomMessageStanza(messageStanza: Stanza, archiveDelayElement?: Stanza) {
         let datetime;
-        const delay &#x3D; stanza.getChild(&#x27;delay&#x27;);
+        const delay &#x3D; archiveDelayElement ?? messageStanza.getChild(&#x27;delay&#x27;);
         if (delay &amp;&amp; delay.attrs.stamp) {
             datetime &#x3D; new Date(delay.attrs.stamp);
         } else {
             datetime &#x3D; new Date(); // TODO: replace with entity time plugin
         }
 
-        const from &#x3D; parseJid(stanza.attrs.from);
+        const from &#x3D; parseJid(messageStanza.attrs.from);
         const room &#x3D; this.getRoomByJid(from.bare());
         if (!room) {
             throw new Error(&#x27;received stanza for non-existent room: &#x27; + from.bare().toString());
         }
 
-        const message &#x3D; {
-            body: stanza.getChildText(&#x27;body&#x27;).trim(),
+        const message: RoomMessage &#x3D; {
+            body: messageStanza.getChildText(&#x27;body&#x27;).trim(),
             datetime,
-            id: stanza.attrs.id,
+            id: messageStanza.attrs.id,
             from,
             direction: from.equals(room.occupantJid) ? Direction.out : Direction.in,
-            delayed: !!stanza.getChild(&#x27;delay&#x27;),
+            delayed: !!delay,
         };
 
         const messageReceivedEvent &#x3D; new MessageReceivedEvent();
         for (const plugin of this.xmppChatAdapter.plugins) {
-            plugin.afterReceiveMessage(message, stanza, messageReceivedEvent);
+            plugin.afterReceiveMessage(message, messageStanza, messageReceivedEvent);
         }
         if (!messageReceivedEvent.discard) {
             room.addMessage(message);

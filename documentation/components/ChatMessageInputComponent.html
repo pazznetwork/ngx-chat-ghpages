@@ -159,7 +159,6 @@
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
                                 <a href="#onSendMessage">onSendMessage</a>
                             </li>
                         </ul>
@@ -328,8 +327,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-input/chat-message-input.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-input/chat-message-input.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -391,7 +390,6 @@
                     <a name="onSendMessage"></a>
                     <span class="name">
                         <b>
-                            <span class="modifier">Async</span>
                             onSendMessage
                         </b>
                         <a href="#onSendMessage"><span class="icon ion-ios-link"></span></a>
@@ -400,8 +398,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onSendMessage()</code>
+<code>onSendMessage($event?: KeyboardEvent)</code>
                 </td>
             </tr>
 
@@ -418,8 +415,39 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                            <code>KeyboardEvent</code>
+                                    </td>
 
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -571,11 +599,13 @@ export class ChatMessageInputComponent implements OnInit {
     ngOnInit() {
     }
 
-    async onSendMessage() {
+    onSendMessage($event?: KeyboardEvent) {
+        if ($event) {
+            $event.preventDefault();
+        }
         this.chatService.sendMessage(this.recipient, this.message);
         this.message &#x3D; &#x27;&#x27;;
         this.messageSent.emit();
-        return false;
     }
 
     focus() {
@@ -590,7 +620,7 @@ export class ChatMessageInputComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;textarea class&#x3D;&quot;chat-input&quot;
           #chatInput
           [(ngModel)]&#x3D;&quot;message&quot;
-          (keydown.enter)&#x3D;&quot;onSendMessage()&quot;
+          (keydown.enter)&#x3D;&quot;onSendMessage($event)&quot;
           cdkTextareaAutosize
           cdkAutosizeMinRows&#x3D;&quot;1&quot;
           cdkAutosizeMaxRows&#x3D;&quot;5&quot;
@@ -649,8 +679,8 @@ export class ChatMessageInputComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><textarea class="chat-input"          #chatInput          [(ngModel)]="message"          (keydown.enter)="onSendMessage()"          cdkTextareaAutosize          cdkAutosizeMinRows="1"          cdkAutosizeMaxRows="5"          placeholder="{{chatService.translations.placeholder}}"></textarea></div>'
-    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatRoomMessagesComponent', 'selector': 'ngx-chat-room-messages'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'},{'name': 'RosterRecipientComponent', 'selector': 'ngx-chat-roster-recipient'}];
+        var COMPONENT_TEMPLATE = '<div><textarea class="chat-input"          #chatInput          [(ngModel)]="message"          (keydown.enter)="onSendMessage($event)"          cdkTextareaAutosize          cdkAutosizeMinRows="1"          cdkAutosizeMaxRows="5"          placeholder="{{chatService.translations.placeholder}}"></textarea></div>'
+    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'},{'name': 'RosterRecipientComponent', 'selector': 'ngx-chat-roster-recipient'}];
     var DIRECTIVES = [{'name': 'IntersectionObserverDirective', 'selector': '[ngxChatIntersectionObserver]'},{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
     var ACTUAL_COMPONENT = {'name': 'ChatMessageInputComponent'};
 </script>
