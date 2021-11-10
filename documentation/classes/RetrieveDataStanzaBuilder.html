@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>RetrieveDataStanzaBuilder</li>
+  <li >RetrieveDataStanzaBuilder</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +63,7 @@
         <p class="comment">
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/publish-subscribe.plugin.ts</code>
         </p>
+
 
 
             <p class="comment">
@@ -87,11 +89,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#toStanza">toStanza</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                <a href="#toStanza">toStanza</a>
+                                <a href="#toStanza" >toStanza</a>
                             </li>
                         </ul>
                     </td>
@@ -116,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/publish-subscribe.plugin.ts:64</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/publish-subscribe.plugin.ts:65</a></div>
                             </td>
                         </tr>
 
@@ -166,9 +164,7 @@
                 <td class="col-md-4">
                     <a name="toStanza"></a>
                     <span class="name">
-                        <b>
-                            toStanza
-                        </b>
+                        <span ><b>toStanza</b></span>
                         <a href="#toStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -182,8 +178,14 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/publish-subscribe.plugin.ts:70</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/Stanza.html" target="_self" >AbstractStanzaBuilder</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/Stanza.html#source" target="_self" >AbstractStanzaBuilder:71</a></code>
+</div>
                 </td>
             </tr>
 
@@ -193,53 +195,6 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="toStanza"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            toStanza
-                        </b>
-                        <a href="#toStanza"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>toStanza()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/Stanza.html" target="_self" >AbstractStanzaBuilder</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/Stanza.html#source" target="_self" >AbstractStanzaBuilder:5</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Element</code>
 
                     </div>
                 </td>
@@ -265,6 +220,7 @@ import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
+import { IqResponseError } from &#x27;../iq-response.error&#x27;;
 
 export const PUBSUB_EVENT_XMLNS &#x3D; &#x27;http://jabber.org/protocol/pubsub#event&#x27;;
 
@@ -277,7 +233,7 @@ interface PublishOptions {
 
 class PublishStanzaBuilder extends AbstractStanzaBuilder {
 
-    private publishOptions: PublishOptions &#x3D; {
+    private readonly publishOptions: PublishOptions &#x3D; {
         persistItems: false,
     };
 
@@ -321,7 +277,7 @@ class PublishStanzaBuilder extends AbstractStanzaBuilder {
 
 class RetrieveDataStanzaBuilder extends AbstractStanzaBuilder {
 
-    constructor(private node: string) {
+    constructor(private readonly node: string) {
         super();
     }
 
@@ -336,15 +292,16 @@ class RetrieveDataStanzaBuilder extends AbstractStanzaBuilder {
 }
 
 /**
- * XEP-0060 Publish Subscribe
- * XEP-0223 Persistent Storage of Private Data via PubSub
+ * XEP-0060 Publish Subscribe (https://xmpp.org/extensions/xep-0060.html)
+ * XEP-0223 Persistent Storage of Private Data via PubSub (https://xmpp.org/extensions/xep-0223.html)
  */
 export class PublishSubscribePlugin extends AbstractXmppPlugin {
 
-    publish$ &#x3D; new Subject&lt;Stanza&gt;();
-    private supportsPrivatePublish &#x3D; new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;);
+    readonly publish$ &#x3D; new Subject&lt;Stanza&gt;();
+    private readonly supportsPrivatePublish &#x3D; new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;);
 
-    constructor(private xmppChatAdapter: XmppChatAdapter, private serviceDiscoveryPlugin: ServiceDiscoveryPlugin) {
+    constructor(private readonly xmppChatAdapter: XmppChatAdapter,
+                private readonly serviceDiscoveryPlugin: ServiceDiscoveryPlugin) {
         super();
     }
 
@@ -356,13 +313,13 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
         this.supportsPrivatePublish.next(&#x27;unknown&#x27;);
     }
 
-    storePrivatePayloadPersistent(node: string, id: string, data: Element): Promise&lt;IqResponseStanza&gt; {
+    storePrivatePayloadPersistent(node: string, id: string, data: Element): Promise&lt;IqResponseStanza&lt;&#x27;result&#x27;&gt;&gt; {
         return new Promise((resolve, reject) &#x3D;&gt; {
             this.supportsPrivatePublish
                 .pipe(filter(support &#x3D;&gt; support !&#x3D;&#x3D; &#x27;unknown&#x27;))
                 .subscribe((support: boolean) &#x3D;&gt; {
                     if (!support) {
-                        reject(&#x27;does not support private publish subscribe&#x27;);
+                        reject(new Error(&#x27;does not support private publish subscribe&#x27;));
                     } else {
                         resolve(this.xmppChatAdapter.chatConnectionService.sendIq(
                             new PublishStanzaBuilder({node, id, data, persistItems: true}).toStanza()
@@ -378,7 +335,7 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
                 .pipe(filter(support &#x3D;&gt; support !&#x3D;&#x3D; &#x27;unknown&#x27;))
                 .subscribe((support: boolean) &#x3D;&gt; {
                     if (!support) {
-                        reject(&#x27;does not support private publish subscribe&#x27;);
+                        reject(new Error(&#x27;does not support private publish subscribe&#x27;));
                     } else {
                         resolve(this.xmppChatAdapter.chatConnectionService.sendIq(
                             new PublishStanzaBuilder({node, id, data, persistItems: false}).toStanza()
@@ -403,8 +360,13 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
                 new RetrieveDataStanzaBuilder(node).toStanza()
             );
             return iqResponseStanza.getChild(&#x27;pubsub&#x27;).getChild(&#x27;items&#x27;).getChildren(&#x27;item&#x27;);
-        } catch (e) {
-            return [];
+        } catch (e: unknown) {
+            if (e instanceof IqResponseError &amp;&amp;
+                (e.errorCondition &#x3D;&#x3D;&#x3D; &#x27;item-not-found&#x27; || e.errorCode &#x3D;&#x3D;&#x3D; 404)) {
+                return [];
+            }
+
+            throw e;
         }
     }
 
@@ -412,7 +374,7 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
         let isSupported: boolean;
         try {
             const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;pubsub&#x27;, &#x27;pep&#x27;);
-            isSupported &#x3D; service.features.indexOf(&#x27;http://jabber.org/protocol/pubsub#publish-options&#x27;) &gt; -1;
+            isSupported &#x3D; service.features.includes(&#x27;http://jabber.org/protocol/pubsub#publish-options&#x27;);
         } catch (e) {
             isSupported &#x3D; false;
         }
@@ -426,14 +388,14 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -454,9 +416,9 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

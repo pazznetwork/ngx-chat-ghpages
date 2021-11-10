@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -38,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>ChatListStateService</li>
+  <li >ChatListStateService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,6 +59,7 @@
         <p class="comment">
             <code>projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -83,11 +85,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#openChats$">openChats$</a>
+                                <a href="#openChats$" >openChats$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#openTracks$">openTracks$</a>
+                                <a href="#openTracks$" >openTracks$</a>
                             </li>
                         </ul>
                     </td>
@@ -103,34 +105,34 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#closeChat">closeChat</a>
+                                <a href="#closeChat" >closeChat</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#closeTrack">closeTrack</a>
+                                <a href="#closeTrack" >closeTrack</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#findChatWindowStateByRecipient">findChatWindowStateByRecipient</a>
+                                <a href="#findChatWindowStateByRecipient" >findChatWindowStateByRecipient</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#findChatWindowStateIndexByRecipient">findChatWindowStateIndexByRecipient</a>
+                                <a href="#findChatWindowStateIndexByRecipient" >findChatWindowStateIndexByRecipient</a>
                             </li>
                             <li>
-                                <a href="#isChatWithRecipientOpen">isChatWithRecipientOpen</a>
+                                <a href="#isChatWithRecipientOpen" >isChatWithRecipientOpen</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#openChat">openChat</a>
+                                <a href="#openChat" >openChat</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#openChatCollapsed">openChatCollapsed</a>
+                                <a href="#openChatCollapsed" >openChatCollapsed</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#openTrack">openTrack</a>
+                                <a href="#openTrack" >openTrack</a>
                             </li>
                         </ul>
                     </td>
@@ -150,7 +152,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatService: <a href="../interfaces/ChatService.html">ChatService</a>)</code>
+<code>constructor(chatService: <a href="../interfaces/ChatService.html" target="_self">ChatService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -204,10 +206,8 @@
                 <td class="col-md-4">
                     <a name="closeChat"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            closeChat
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>closeChat</b></span>
                         <a href="#closeChat"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -215,7 +215,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>closeChat(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
+                    <code>closeChat(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -233,6 +233,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -276,10 +277,8 @@
                 <td class="col-md-4">
                     <a name="closeTrack"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            closeTrack
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>closeTrack</b></span>
                         <a href="#closeTrack"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -287,7 +286,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>closeTrack(track: <a href="../interfaces/AttachableTrack.html">AttachableTrack</a>)</code>
+                    <code>closeTrack(track: <a href="../interfaces/AttachableTrack.html" target="_self">AttachableTrack</a>)</code>
                 </td>
             </tr>
 
@@ -305,6 +304,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -348,10 +348,8 @@
                 <td class="col-md-4">
                     <a name="findChatWindowStateByRecipient"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            findChatWindowStateByRecipient
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>findChatWindowStateByRecipient</b></span>
                         <a href="#findChatWindowStateByRecipient"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -359,7 +357,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findChatWindowStateByRecipient(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
+                    <code>findChatWindowStateByRecipient(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -377,6 +375,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -420,10 +419,8 @@
                 <td class="col-md-4">
                     <a name="findChatWindowStateIndexByRecipient"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            findChatWindowStateIndexByRecipient
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>findChatWindowStateIndexByRecipient</b></span>
                         <a href="#findChatWindowStateIndexByRecipient"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -431,7 +428,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findChatWindowStateIndexByRecipient(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
+                    <code>findChatWindowStateIndexByRecipient(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -449,6 +446,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -492,16 +490,14 @@
                 <td class="col-md-4">
                     <a name="isChatWithRecipientOpen"></a>
                     <span class="name">
-                        <b>
-                            isChatWithRecipientOpen
-                        </b>
+                        <span ><b>isChatWithRecipientOpen</b></span>
                         <a href="#isChatWithRecipientOpen"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>isChatWithRecipientOpen(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
+<code>isChatWithRecipientOpen(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -519,6 +515,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -562,10 +559,8 @@
                 <td class="col-md-4">
                     <a name="openChat"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            openChat
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>openChat</b></span>
                         <a href="#openChat"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -573,7 +568,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>openChat(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
+                    <code>openChat(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -591,6 +586,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -634,10 +630,8 @@
                 <td class="col-md-4">
                     <a name="openChatCollapsed"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            openChatCollapsed
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>openChatCollapsed</b></span>
                         <a href="#openChatCollapsed"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -645,7 +639,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>openChatCollapsed(recipient: <a href="../undefineds/Recipient.html">Recipient</a>)</code>
+                    <code>openChatCollapsed(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
                 </td>
             </tr>
 
@@ -663,6 +657,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -706,10 +701,8 @@
                 <td class="col-md-4">
                     <a name="openTrack"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            openTrack
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>openTrack</b></span>
                         <a href="#openTrack"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -717,7 +710,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>openTrack(track: <a href="../interfaces/AttachableTrack.html">AttachableTrack</a>)</code>
+                    <code>openTrack(track: <a href="../interfaces/AttachableTrack.html" target="_self">AttachableTrack</a>)</code>
                 </td>
             </tr>
 
@@ -735,6 +728,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -775,63 +769,61 @@
 </section>
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openChats$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openChats$</b></span>
+                        <a href="#openChats$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="openChats$"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            openChats$</b>
-                            <a href="#openChats$"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;ChatWindowState[]&gt;([])</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new BehaviorSubject&lt;ChatWindowState[]&gt;([])</code>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts:23</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts:23</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openTracks$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openTracks$</b></span>
+                        <a href="#openTracks$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="openTracks$"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            openTracks$</b>
-                            <a href="#openTracks$"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;AttachableTrack[]&gt;([])</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new BehaviorSubject&lt;AttachableTrack[]&gt;([])</code>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts:24</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-list-state.service.ts:24</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -842,10 +834,10 @@
 import { BehaviorSubject } from &#x27;rxjs&#x27;;
 import { filter } from &#x27;rxjs/operators&#x27;;
 import { Recipient } from &#x27;../core/recipient&#x27;;
-import { ChatService, ChatServiceToken } from &#x27;./chat-service&#x27;;
+import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;./chat-service&#x27;;
 
 export class ChatWindowState {
-    constructor(public recipient: Recipient,
+    constructor(readonly recipient: Recipient,
                 public isCollapsed: boolean) {
     }
 }
@@ -863,7 +855,7 @@ export class ChatListStateService {
     public openChats$ &#x3D; new BehaviorSubject&lt;ChatWindowState[]&gt;([]);
     public openTracks$ &#x3D; new BehaviorSubject&lt;AttachableTrack[]&gt;([]);
 
-    constructor(@Inject(ChatServiceToken) private chatService: ChatService) {
+    constructor(@Inject(CHAT_SERVICE_TOKEN) private chatService: ChatService) {
         this.chatService.state$
             .pipe(filter(newState &#x3D;&gt; newState &#x3D;&#x3D;&#x3D; &#x27;disconnected&#x27;))
             .subscribe(() &#x3D;&gt; {
@@ -935,14 +927,14 @@ export class ChatListStateService {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -963,9 +955,9 @@ export class ChatListStateService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

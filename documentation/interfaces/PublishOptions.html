@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -43,7 +44,9 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>PublishOptions</li>
+  <li
+  >
+  PublishOptions</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,6 +69,7 @@
 
 
 
+
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -80,19 +84,31 @@
                             <ul class="index-list">
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#data">data</a>
+                                        <a href="#data" 
+>
+                                            data
+                                        </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#id">id</a>
+                                        <a href="#id" 
+>
+                                            id
+                                        </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#node">node</a>
+                                        <a href="#node" 
+>
+                                            node
+                                        </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#persistItems">persistItems</a>
+                                        <a href="#persistItems" 
+>
+                                            persistItems
+                                        </a>
                                 </li>
                             </ul>
                         </td>
@@ -110,7 +126,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="data"></a>
-                                        <span class="name"><b>data</b><a href="#data"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>data</b>
+                                            <a href="#data">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -144,7 +164,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="id"></a>
-                                        <span class="name"><b>id</b><a href="#id"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>id</b>
+                                            <a href="#id">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -178,7 +202,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="node"></a>
-                                        <span class="name"><b>node</b><a href="#node"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>node</b>
+                                            <a href="#node">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -212,7 +240,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="persistItems"></a>
-                                        <span class="name"><b>persistItems</b><a href="#persistItems"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>persistItems</b>
+                                            <a href="#persistItems">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -255,6 +287,7 @@ import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
+import { IqResponseError } from &#x27;../iq-response.error&#x27;;
 
 export const PUBSUB_EVENT_XMLNS &#x3D; &#x27;http://jabber.org/protocol/pubsub#event&#x27;;
 
@@ -267,7 +300,7 @@ interface PublishOptions {
 
 class PublishStanzaBuilder extends AbstractStanzaBuilder {
 
-    private publishOptions: PublishOptions &#x3D; {
+    private readonly publishOptions: PublishOptions &#x3D; {
         persistItems: false,
     };
 
@@ -311,7 +344,7 @@ class PublishStanzaBuilder extends AbstractStanzaBuilder {
 
 class RetrieveDataStanzaBuilder extends AbstractStanzaBuilder {
 
-    constructor(private node: string) {
+    constructor(private readonly node: string) {
         super();
     }
 
@@ -326,15 +359,16 @@ class RetrieveDataStanzaBuilder extends AbstractStanzaBuilder {
 }
 
 /**
- * XEP-0060 Publish Subscribe
- * XEP-0223 Persistent Storage of Private Data via PubSub
+ * XEP-0060 Publish Subscribe (https://xmpp.org/extensions/xep-0060.html)
+ * XEP-0223 Persistent Storage of Private Data via PubSub (https://xmpp.org/extensions/xep-0223.html)
  */
 export class PublishSubscribePlugin extends AbstractXmppPlugin {
 
-    publish$ &#x3D; new Subject&lt;Stanza&gt;();
-    private supportsPrivatePublish &#x3D; new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;);
+    readonly publish$ &#x3D; new Subject&lt;Stanza&gt;();
+    private readonly supportsPrivatePublish &#x3D; new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;);
 
-    constructor(private xmppChatAdapter: XmppChatAdapter, private serviceDiscoveryPlugin: ServiceDiscoveryPlugin) {
+    constructor(private readonly xmppChatAdapter: XmppChatAdapter,
+                private readonly serviceDiscoveryPlugin: ServiceDiscoveryPlugin) {
         super();
     }
 
@@ -346,13 +380,13 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
         this.supportsPrivatePublish.next(&#x27;unknown&#x27;);
     }
 
-    storePrivatePayloadPersistent(node: string, id: string, data: Element): Promise&lt;IqResponseStanza&gt; {
+    storePrivatePayloadPersistent(node: string, id: string, data: Element): Promise&lt;IqResponseStanza&lt;&#x27;result&#x27;&gt;&gt; {
         return new Promise((resolve, reject) &#x3D;&gt; {
             this.supportsPrivatePublish
                 .pipe(filter(support &#x3D;&gt; support !&#x3D;&#x3D; &#x27;unknown&#x27;))
                 .subscribe((support: boolean) &#x3D;&gt; {
                     if (!support) {
-                        reject(&#x27;does not support private publish subscribe&#x27;);
+                        reject(new Error(&#x27;does not support private publish subscribe&#x27;));
                     } else {
                         resolve(this.xmppChatAdapter.chatConnectionService.sendIq(
                             new PublishStanzaBuilder({node, id, data, persistItems: true}).toStanza()
@@ -368,7 +402,7 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
                 .pipe(filter(support &#x3D;&gt; support !&#x3D;&#x3D; &#x27;unknown&#x27;))
                 .subscribe((support: boolean) &#x3D;&gt; {
                     if (!support) {
-                        reject(&#x27;does not support private publish subscribe&#x27;);
+                        reject(new Error(&#x27;does not support private publish subscribe&#x27;));
                     } else {
                         resolve(this.xmppChatAdapter.chatConnectionService.sendIq(
                             new PublishStanzaBuilder({node, id, data, persistItems: false}).toStanza()
@@ -393,8 +427,13 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
                 new RetrieveDataStanzaBuilder(node).toStanza()
             );
             return iqResponseStanza.getChild(&#x27;pubsub&#x27;).getChild(&#x27;items&#x27;).getChildren(&#x27;item&#x27;);
-        } catch (e) {
-            return [];
+        } catch (e: unknown) {
+            if (e instanceof IqResponseError &amp;&amp;
+                (e.errorCondition &#x3D;&#x3D;&#x3D; &#x27;item-not-found&#x27; || e.errorCode &#x3D;&#x3D;&#x3D; 404)) {
+                return [];
+            }
+
+            throw e;
         }
     }
 
@@ -402,7 +441,7 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
         let isSupported: boolean;
         try {
             const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;pubsub&#x27;, &#x27;pep&#x27;);
-            isSupported &#x3D; service.features.indexOf(&#x27;http://jabber.org/protocol/pubsub#publish-options&#x27;) &gt; -1;
+            isSupported &#x3D; service.features.includes(&#x27;http://jabber.org/protocol/pubsub#publish-options&#x27;);
         } catch (e) {
             isSupported &#x3D; false;
         }
@@ -415,14 +454,14 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
 </div>
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -443,9 +482,9 @@ export class PublishSubscribePlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

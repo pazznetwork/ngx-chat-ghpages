@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>PushPlugin</li>
+  <li >PushPlugin</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +63,7 @@
         <p class="comment">
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/push.plugin.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -96,33 +98,33 @@
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
-                                <a href="#getPushServiceComponent">getPushServiceComponent</a>
+                                <a href="#getPushServiceComponent" >getPushServiceComponent</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#register">register</a>
+                                <a href="#register" >register</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#unregister">unregister</a>
+                                <a href="#unregister" >unregister</a>
                             </li>
                             <li>
-                                <a href="#afterReceiveMessage">afterReceiveMessage</a>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
                             </li>
                             <li>
-                                <a href="#afterSendMessage">afterSendMessage</a>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
                             </li>
                             <li>
-                                <a href="#beforeSendMessage">beforeSendMessage</a>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#handleStanza" >handleStanza</a>
                             </li>
                             <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
                             </li>
                             <li>
-                                <a href="#onOffline">onOffline</a>
+                                <a href="#onOffline" >onOffline</a>
                             </li>
                         </ul>
                     </td>
@@ -142,7 +144,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, serviceDiscoveryPlugin: <a href="../interfaces/Service.html">ServiceDiscoveryPlugin</a>)</code>
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, serviceDiscoveryPlugin: <a href="../interfaces/Service.html" target="_self">ServiceDiscoveryPlugin</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -209,11 +211,9 @@
                 <td class="col-md-4">
                     <a name="getPushServiceComponent"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Async</span>
-                            getPushServiceComponent
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getPushServiceComponent</b></span>
                         <a href="#getPushServiceComponent"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -238,7 +238,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>    <code>unknown</code>
 
                     </div>
                 </td>
@@ -251,10 +251,8 @@
                 <td class="col-md-4">
                     <a name="register"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            register
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>register</b></span>
                         <a href="#register"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -280,6 +278,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -335,10 +334,8 @@
                 <td class="col-md-4">
                     <a name="unregister"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            unregister
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>unregister</b></span>
                         <a href="#unregister"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -364,6 +361,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -419,16 +417,14 @@
                 <td class="col-md-4">
                     <a name="afterReceiveMessage"></a>
                     <span class="name">
-                        <b>
-                            afterReceiveMessage
-                        </b>
+                        <span ><b>afterReceiveMessage</b></span>
                         <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterReceiveMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html">MessageReceivedEvent</a>)</code>
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
                 </td>
             </tr>
 
@@ -452,6 +448,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -519,16 +516,14 @@
                 <td class="col-md-4">
                     <a name="afterSendMessage"></a>
                     <span class="name">
-                        <b>
-                            afterSendMessage
-                        </b>
+                        <span ><b>afterSendMessage</b></span>
                         <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterSendMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: Element)</code>
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
                 </td>
             </tr>
 
@@ -552,6 +547,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -607,16 +603,14 @@
                 <td class="col-md-4">
                     <a name="beforeSendMessage"></a>
                     <span class="name">
-                        <b>
-                            beforeSendMessage
-                        </b>
+                        <span ><b>beforeSendMessage</b></span>
                         <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html">Message</a>)</code>
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
                 </td>
             </tr>
 
@@ -640,6 +634,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -695,16 +690,14 @@
                 <td class="col-md-4">
                     <a name="handleStanza"></a>
                     <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
+                        <span ><b>handleStanza</b></span>
                         <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -728,6 +721,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -771,9 +765,7 @@
                 <td class="col-md-4">
                     <a name="onBeforeOnline"></a>
                     <span class="name">
-                        <b>
-                            onBeforeOnline
-                        </b>
+                        <span ><b>onBeforeOnline</b></span>
                         <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -816,9 +808,7 @@
                 <td class="col-md-4">
                     <a name="onOffline"></a>
                     <span class="name">
-                        <b>
-                            onOffline
-                        </b>
+                        <span ><b>onOffline</b></span>
                         <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -917,14 +907,14 @@ export class PushPlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -945,9 +935,9 @@ export class PushPlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>MessageReceivedEvent</li>
+  <li >MessageReceivedEvent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -67,6 +68,7 @@
 
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -80,7 +82,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#discard">discard</a>
+                                <a href="#discard" >discard</a>
                             </li>
                         </ul>
                     </td>
@@ -98,35 +100,34 @@
 
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="discard"></a>
+                    <span class="name">
+                        <span ><b>discard</b></span>
+                        <a href="#discard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="discard"></a>
-                        <span class="name">
-                            <b>
-                            discard</b>
-                            <a href="#discard"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:10</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:10</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
 
@@ -139,7 +140,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, xml } from &#x27;@xmpp/client&#x27;;
 import { Contact } from &#x27;../../../../core/contact&#x27;;
 import { Direction, Message } from &#x27;../../../../core/message&#x27;;
 import { MessageWithBodyStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
@@ -151,18 +152,22 @@ export class MessageReceivedEvent {
     discard &#x3D; false;
 }
 
+/**
+ * Part of the XMPP Core Specification
+ * see: https://datatracker.ietf.org/doc/rfc6120/
+ */
 export class MessagePlugin extends AbstractXmppPlugin {
 
     constructor(
-        private xmppChatAdapter: XmppChatAdapter,
-        private logService: LogService,
+        private readonly xmppChatAdapter: XmppChatAdapter,
+        private readonly logService: LogService,
     ) {
         super();
     }
 
-    handleStanza(stanza: Stanza) {
+    handleStanza(stanza: Stanza, archiveDelayElement?: Stanza) {
         if (this.isMessageStanza(stanza)) {
-            this.handleMessageStanza(stanza);
+            this.handleMessageStanza(stanza, archiveDelayElement);
             return true;
         }
         return false;
@@ -175,21 +180,42 @@ export class MessagePlugin extends AbstractXmppPlugin {
             &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;)?.trim();
     }
 
-    private handleMessageStanza(messageStanza: MessageWithBodyStanza) {
-        this.logService.debug(&#x27;message received &lt;&#x3D;&#x27;, messageStanza.getChildText(&#x27;body&#x27;));
+    private handleMessageStanza(messageStanza: MessageWithBodyStanza, archiveDelayElement?: Stanza) {
+        const isAddressedToMe &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.bare()
+            .equals(parseJid(messageStanza.attrs.to).bare());
+        const messageDirection &#x3D; isAddressedToMe ? Direction.in : Direction.out;
+
+        const messageFromArchive &#x3D; archiveDelayElement !&#x3D; null;
+
+        const delayElement &#x3D; archiveDelayElement ?? messageStanza.getChild(&#x27;delay&#x27;);
+        const datetime &#x3D; delayElement?.attrs.stamp
+            ? new Date(delayElement.attrs.stamp)
+            : new Date() /* TODO: replace with entity time plugin */;
+
+        if (messageDirection &#x3D;&#x3D;&#x3D; Direction.in &amp;&amp; !messageFromArchive) {
+            this.logService.debug(&#x27;message received &lt;&#x3D;&#x27;, messageStanza.getChildText(&#x27;body&#x27;));
+        }
 
         const message &#x3D; {
             body: messageStanza.getChildText(&#x27;body&#x27;).trim(),
-            direction: Direction.in,
-            datetime: new Date(), // TODO: replace with entity time plugin
-            delayed: !!messageStanza.getChild(&#x27;delay&#x27;),
+            direction: messageDirection,
+            datetime,
+            delayed: !!delayElement,
+            fromArchive: messageFromArchive
         };
 
         const messageReceivedEvent &#x3D; new MessageReceivedEvent();
         this.xmppChatAdapter.plugins.forEach(plugin &#x3D;&gt; plugin.afterReceiveMessage(message, messageStanza, messageReceivedEvent));
-        if (!messageReceivedEvent.discard) {
-            const contact &#x3D; this.xmppChatAdapter.getOrCreateContactById(messageStanza.attrs.from);
-            contact.addMessage(message);
+
+        if (messageReceivedEvent.discard) {
+            return;
+        }
+
+        const contactJid &#x3D; isAddressedToMe ? messageStanza.attrs.from : messageStanza.attrs.to;
+        const contact &#x3D; this.xmppChatAdapter.getOrCreateContactById(contactJid);
+        contact.addMessage(message);
+
+        if (messageDirection &#x3D;&#x3D;&#x3D; Direction.in &amp;&amp; !messageFromArchive) {
             this.xmppChatAdapter.message$.next(contact);
         }
     }
@@ -208,6 +234,7 @@ export class MessagePlugin extends AbstractXmppPlugin {
             body,
             datetime: new Date(), // TODO: replace with entity time plugin
             delayed: false,
+            fromArchive: false,
         };
         this.xmppChatAdapter.plugins.forEach(plugin &#x3D;&gt; plugin.beforeSendMessage(messageStanza, message));
         contact.addMessage(message);
@@ -226,14 +253,14 @@ export class MessagePlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -254,9 +281,9 @@ export class MessagePlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

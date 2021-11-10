@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>LastReadEntriesNodeBuilder</li>
+  <li >LastReadEntriesNodeBuilder</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +63,7 @@
         <p class="comment">
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts</code>
         </p>
+
 
 
             <p class="comment">
@@ -87,7 +89,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#lastReadNodes">lastReadNodes</a>
+                                <a href="#lastReadNodes" >lastReadNodes</a>
                             </li>
                         </ul>
                     </td>
@@ -102,14 +104,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#addLastReadNode">addLastReadNode</a>
+                                <a href="#addLastReadNode" >addLastReadNode</a>
                             </li>
                             <li>
-                                <a href="#toStanza">toStanza</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                <a href="#toStanza">toStanza</a>
+                                <a href="#toStanza" >toStanza</a>
                             </li>
                         </ul>
                     </td>
@@ -126,36 +124,35 @@
 
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastReadNodes"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>lastReadNodes</b></span>
+                        <a href="#lastReadNodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="lastReadNodes"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            lastReadNodes</b>
-                            <a href="#lastReadNodes"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>[] as Element[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[] as Element[]</code>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:25</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:25</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
             <section>
@@ -169,9 +166,7 @@
                 <td class="col-md-4">
                     <a name="addLastReadNode"></a>
                     <span class="name">
-                        <b>
-                            addLastReadNode
-                        </b>
+                        <span ><b>addLastReadNode</b></span>
                         <a href="#addLastReadNode"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -196,6 +191,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -251,9 +247,7 @@
                 <td class="col-md-4">
                     <a name="toStanza"></a>
                     <span class="name">
-                        <b>
-                            toStanza
-                        </b>
+                        <span ><b>toStanza</b></span>
                         <a href="#toStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -267,54 +261,13 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:33</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Element</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="toStanza"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            toStanza
-                        </b>
-                        <a href="#toStanza"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>toStanza()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
                     <div class="io-line">Inherited from         <code><a href="../interfaces/Stanza.html" target="_self" >AbstractStanzaBuilder</a></code>
 </div>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/Stanza.html#source" target="_self" >AbstractStanzaBuilder:5</a></code>
+                        <div class="io-line">Defined in         <code><a href="../interfaces/Stanza.html#source" target="_self" >AbstractStanzaBuilder:33</a></code>
 </div>
                 </td>
             </tr>
@@ -554,14 +507,14 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -582,9 +535,9 @@ export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

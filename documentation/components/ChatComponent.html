@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -35,7 +36,9 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>ChatComponent</li>
+  <li
+  >
+  ChatComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,27 +67,23 @@
     <code>projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts</code>
 </p>
 
+
     <p class="comment">
         <h3>Description</h3>
     </p>
     <p class="comment">
         <p>The main UI component. Should be instantiated near the root of your application.</p>
-<p>```html</p>
-<ul>
-<li><!-- plain usage, no configuration --></li>
-<li><ngx-chat></ngx-chat></li>
-<li></li>
-<li><!-- if supplied, translations contain an object with the structure of the Translations interface. --></li>
-<li><ngx-chat translations="{'contacts': 'Kontakte', ...}"></ngx-chat></li>
-<li></li>
-<li><!-- if supplied, the contacts input attribute takes an Observable<Contact[]> as source for your roster list --></li>
-<li><ngx-chat contacts="..."></ngx-chat></li>
-<li></li>
-<li><!-- if supplied, userAvatar$ contains an Obervable<string>, which is used as the src attribute of the img for the current user. --></li>
-<li>&lt;ngx-chat userAvatar$=&quot;Observable.of(&#39;http://...&#39;)&quot;&gt;</ngx-chat></li>
-<li>```</li>
-</ul>
+<div><pre class="line-numbers"><code class="language-html">&lt;!-- plain usage, no configuration --&gt;
+&lt;ngx-chat&gt;&lt;/ngx-chat&gt;
 
+&lt;!-- if supplied, translations contain an object with the structure of the Translations interface. --&gt;
+&lt;ngx-chat translations=&quot;{&#39;contacts&#39;: &#39;Kontakte&#39;, ...}&quot;&gt;&lt;/ngx-chat&gt;
+
+&lt;!-- if supplied, the contacts input attribute takes an Observable&lt;Contact[]&gt; as source for your roster list --&gt;
+&lt;ngx-chat contacts=&quot;...&quot;&gt;&lt;/ngx-chat&gt;
+
+&lt;!-- if supplied, userAvatar$ contains an Obervable&lt;string&gt;, which is used as the src attribute of the img for the current user. --&gt;
+&lt;ngx-chat userAvatar$=&quot;Observable.of(&#39;http://...&#39;)&quot;&gt;&lt;/ngx-chat&gt;</code></pre></div>
     </p>
 
 
@@ -153,7 +152,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#showChatComponent">showChatComponent</a>
+                                <a href="#showChatComponent" >showChatComponent</a>
                             </li>
                         </ul>
                     </td>
@@ -168,21 +167,21 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnChanges">ngOnChanges</a>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#onChatStateChange">onChatStateChange</a>
-                            </li>
-                            <li>
-                                <a href="#onRosterStateChanged">onRosterStateChanged</a>
+                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#updateBodyClass">updateBodyClass</a>
+                                <a href="#onChatStateChange" >onChatStateChange</a>
+                            </li>
+                            <li>
+                                <a href="#onRosterStateChanged" >onRosterStateChanged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateBodyClass" >updateBodyClass</a>
                             </li>
                         </ul>
                     </td>
@@ -197,25 +196,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#contactRequestsReceived$">contactRequestsReceived$</a>
+                                <a href="#contactRequestsReceived$" >contactRequestsReceived$</a>
                             </li>
                             <li>
-                                <a href="#contactRequestsSent$">contactRequestsSent$</a>
+                                <a href="#contactRequestsSent$" >contactRequestsSent$</a>
                             </li>
                             <li>
-                                <a href="#contacts">contacts</a>
+                                <a href="#contacts" >contacts</a>
                             </li>
                             <li>
-                                <a href="#contactsUnaffiliated$">contactsUnaffiliated$</a>
+                                <a href="#contactsUnaffiliated$" >contactsUnaffiliated$</a>
                             </li>
                             <li>
-                                <a href="#rosterState">rosterState</a>
+                                <a href="#rosterState" >rosterState</a>
                             </li>
                             <li>
-                                <a href="#translations">translations</a>
+                                <a href="#translations" >translations</a>
                             </li>
                             <li>
-                                <a href="#userAvatar$">userAvatar$</a>
+                                <a href="#userAvatar$" >userAvatar$</a>
                             </li>
                         </ul>
                     </td>
@@ -233,7 +232,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#translations">translations</a>
+                                    <a href="#translations" >translations</a>
                                 </li>
                             </ul>
                         </td>
@@ -248,7 +247,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatService: <a href="../interfaces/ChatService.html">ChatService</a>)</code>
+<code>constructor(chatService: <a href="../interfaces/ChatService.html" target="_self">ChatService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -494,9 +493,7 @@ list.</p>
                 <td class="col-md-4">
                     <a name="ngOnChanges"></a>
                     <span class="name">
-                        <b>
-                            ngOnChanges
-                        </b>
+                        <span ><b>ngOnChanges</b></span>
                         <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -521,6 +518,7 @@ list.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -564,9 +562,7 @@ list.</p>
                 <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
+                        <span ><b>ngOnInit</b></span>
                         <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -603,10 +599,8 @@ list.</p>
                 <td class="col-md-4">
                     <a name="onChatStateChange"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            onChatStateChange
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>onChatStateChange</b></span>
                         <a href="#onChatStateChange"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -632,6 +626,7 @@ list.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -675,16 +670,14 @@ list.</p>
                 <td class="col-md-4">
                     <a name="onRosterStateChanged"></a>
                     <span class="name">
-                        <b>
-                            onRosterStateChanged
-                        </b>
+                        <span ><b>onRosterStateChanged</b></span>
                         <a href="#onRosterStateChanged"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onRosterStateChanged(state: <a href="../undefineds/id.html">"shown" | "hidden"</a>)</code>
+<code>onRosterStateChanged(state: <a href="../undefineds/id.html" target="_self">&quot;shown&quot; | &quot;hidden&quot;</a>)</code>
                 </td>
             </tr>
 
@@ -702,6 +695,7 @@ list.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -745,10 +739,8 @@ list.</p>
                 <td class="col-md-4">
                     <a name="updateBodyClass"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            updateBodyClass
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>updateBodyClass</b></span>
                         <a href="#updateBodyClass"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -783,35 +775,34 @@ list.</p>
 </section>
     <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showChatComponent"></a>
+                    <span class="name">
+                        <span ><b>showChatComponent</b></span>
+                        <a href="#showChatComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="showChatComponent"></a>
-                        <span class="name">
-                            <b>
-                            showChatComponent</b>
-                            <a href="#showChatComponent"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:89</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat.component.ts:89</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
     <section>
@@ -830,7 +821,7 @@ list.</p>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>set</b><code>translations(translations)</code></span>
+                        <span class="accessor"><b>set</b><code>translations(translations: <a href="../interfaces/Translations.html" target="_self">Partial&lt;Translations&gt;</a>)</code></span>
                     </td>
                 </tr>
                             <tr>
@@ -849,6 +840,7 @@ list.</p>
                                             <thead>
                                                 <tr>
                                                     <td>Name</td>
+                                                        <td>Type</td>
                                                     <td>Optional</td>
                                                 </tr>
                                             </thead>
@@ -856,6 +848,9 @@ list.</p>
                                                     <tr>
                                                             <td>translations</td>
                                                     
+                                                            <td>
+                                                                            <code><a href="../interfaces/Translations.html" target="_self" >Partial&lt;Translations&gt;</a></code>
+                                                            </td>
                                                     
                                                         <td>
                                                                 No
@@ -885,7 +880,7 @@ import { Observable } from &#x27;rxjs&#x27;;
 import { Contact } from &#x27;../core/contact&#x27;;
 import { Translations } from &#x27;../core/translations&#x27;;
 import { defaultTranslations } from &#x27;../core/translations-default&#x27;;
-import { ChatService, ChatServiceToken } from &#x27;../services/chat-service&#x27;;
+import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;../services/chat-service&#x27;;
 
 /**
  * The main UI component. Should be instantiated near the root of your application.
@@ -971,7 +966,7 @@ export class ChatComponent implements OnInit, OnChanges {
     showChatComponent &#x3D; false;
 
     constructor(
-        @Inject(ChatServiceToken) private chatService: ChatService,
+        @Inject(CHAT_SERVICE_TOKEN) private chatService: ChatService,
     ) {
     }
 
@@ -1076,14 +1071,14 @@ export class ChatComponent implements OnInit, OnChanges {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1104,9 +1099,9 @@ export class ChatComponent implements OnInit, OnChanges {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

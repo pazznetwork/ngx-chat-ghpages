@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -35,7 +36,9 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>FileDropComponent</li>
+  <li
+  >
+  FileDropComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,12 +69,7 @@
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
+
 
 
 <section>
@@ -130,7 +128,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isDropTarget">isDropTarget</a>
+                                <a href="#isDropTarget" >isDropTarget</a>
                             </li>
                         </ul>
                     </td>
@@ -145,7 +143,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#onDragLeave" >onDragLeave</a>
+                            </li>
+                            <li>
+                                <a href="#onDragOver" >onDragOver</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onDrop" >onDrop</a>
                             </li>
                         </ul>
                     </td>
@@ -160,10 +165,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#dropMessage">dropMessage</a>
+                                <a href="#dropMessage" >dropMessage</a>
                             </li>
                             <li>
-                                <a href="#enabled">enabled</a>
+                                <a href="#enabled" >enabled</a>
                             </li>
                         </ul>
                     </td>
@@ -178,7 +183,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#fileUpload">fileUpload</a>
+                                <a href="#fileUpload" >fileUpload</a>
                             </li>
                         </ul>
                     </td>
@@ -194,13 +199,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#dragleave">dragleave</a>
+                                <a href="#dragenter" >dragenter</a>
                             </li>
                             <li>
-                                <a href="#dragover">dragover</a>
+                                <a href="#dragexit" >dragexit</a>
                             </li>
                             <li>
-                                <a href="#drop">drop</a>
+                                <a href="#dragleave" >dragleave</a>
+                            </li>
+                            <li>
+                                <a href="#dragover" >dragover</a>
+                            </li>
+                            <li>
+                                <a href="#drop" >drop</a>
                             </li>
                         </ul>
                     </td>
@@ -210,24 +221,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:19</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
@@ -258,6 +251,12 @@
                     <td class="col-md-4">
                         <a name="enabled"></a>
                         <b>enabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
                     </td>
                 </tr>
                 <tr>
@@ -303,11 +302,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="dragenter"></a>
+                    <span class="name">
+                        <span ><b>dragenter</b></span>
+                        <a href="#dragenter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dragenter(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dragexit"></a>
+                    <span class="name">
+                        <span ><b>dragexit</b></span>
+                        <a href="#dragexit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dragexit(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="dragleave"></a>
                     <span class="name">
-                        <b>
-                            dragleave
-                        </b>
+                        <span ><b>dragleave</b></span>
                         <a href="#dragleave"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -326,8 +389,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -340,9 +403,7 @@
                 <td class="col-md-4">
                     <a name="dragover"></a>
                     <span class="name">
-                        <b>
-                            dragover
-                        </b>
+                        <span ><b>dragover</b></span>
                         <a href="#dragover"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -361,8 +422,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -375,9 +436,7 @@
                 <td class="col-md-4">
                     <a name="drop"></a>
                     <span class="name">
-                        <b>
-                            drop
-                        </b>
+                        <span ><b>drop</b></span>
                         <a href="#drop"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -396,8 +455,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -414,21 +473,102 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="onDragLeave"></a>
                     <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>onDragLeave</b></span>
+                        <a href="#onDragLeave"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>onDragLeave(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;dragleave&#x27;, [&#x27;$event&#x27;])<br />@HostListener(&#x27;dragexit&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDragOver"></a>
+                    <span class="name">
+                        <span ><b>onDragOver</b></span>
+                        <a href="#onDragOver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDragOver(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;dragover&#x27;, [&#x27;$event&#x27;])<br />@HostListener(&#x27;dragenter&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -442,8 +582,118 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDrop"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>onDrop</b></span>
+                        <a href="#onDrop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onDrop(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;drop&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -452,52 +702,51 @@
 </section>
     <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDropTarget"></a>
+                    <span class="name">
+                        <span ><b>isDropTarget</b></span>
+                        <a href="#isDropTarget"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isDropTarget"></a>
-                        <span class="name">
-                            <b>
-                            isDropTarget</b>
-                            <a href="#isDropTarget"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:19</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-filedrop/file-drop.component.ts:19</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, HostListener, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, HostListener, Input, Output } from &#x27;@angular/core&#x27;;
 
 @Component({
     selector: &#x27;ngx-chat-filedrop&#x27;,
     templateUrl: &#x27;./file-drop.component.html&#x27;,
-    styleUrls: [&#x27;./file-drop.component.less&#x27;]
+    styleUrls: [&#x27;./file-drop.component.less&#x27;],
 })
-export class FileDropComponent implements OnInit {
+export class FileDropComponent {
 
     @Output()
-    public fileUpload &#x3D; new EventEmitter&lt;File&gt;();
+    readonly fileUpload &#x3D; new EventEmitter&lt;File&gt;();
 
     @Input()
     dropMessage: string;
@@ -506,11 +755,6 @@ export class FileDropComponent implements OnInit {
     enabled &#x3D; true;
 
     isDropTarget &#x3D; false;
-
-    constructor() { }
-
-    ngOnInit() {
-    }
 
     @HostListener(&#x27;dragover&#x27;, [&#x27;$event&#x27;])
     @HostListener(&#x27;dragenter&#x27;, [&#x27;$event&#x27;])
@@ -636,14 +880,14 @@ export class FileDropComponent implements OnInit {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -664,9 +908,9 @@ export class FileDropComponent implements OnInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

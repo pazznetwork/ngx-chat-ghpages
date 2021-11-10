@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>MessagePlugin</li>
+  <li >MessagePlugin</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,6 +64,15 @@
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts</code>
         </p>
 
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Part of the XMPP Core Specification
+see: <a href="https://datatracker.ietf.org/doc/rfc6120/">https://datatracker.ietf.org/doc/rfc6120/</a></p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -88,35 +98,32 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#handleMessageStanza">handleMessageStanza</a>
+                                <a href="#handleMessageStanza" >handleMessageStanza</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#handleStanza" >handleStanza</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#isMessageStanza">isMessageStanza</a>
+                                <a href="#isMessageStanza" >isMessageStanza</a>
                             </li>
                             <li>
-                                <a href="#sendMessage">sendMessage</a>
+                                <a href="#sendMessage" >sendMessage</a>
                             </li>
                             <li>
-                                <a href="#afterReceiveMessage">afterReceiveMessage</a>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
                             </li>
                             <li>
-                                <a href="#afterSendMessage">afterSendMessage</a>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
                             </li>
                             <li>
-                                <a href="#beforeSendMessage">beforeSendMessage</a>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
                             </li>
                             <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
-                            </li>
-                            <li>
-                                <a href="#onOffline">onOffline</a>
+                                <a href="#onOffline" >onOffline</a>
                             </li>
                         </ul>
                     </td>
@@ -136,12 +143,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html">LogService</a>)</code>
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html" target="_self">LogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -203,10 +210,8 @@
                 <td class="col-md-4">
                     <a name="handleMessageStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            handleMessageStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>handleMessageStanza</b></span>
                         <a href="#handleMessageStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -214,15 +219,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleMessageStanza(messageStanza: <a href="../interfaces/MessageWithBodyStanza.html">MessageWithBodyStanza</a>)</code>
+                    <code>handleMessageStanza(messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, archiveDelayElement?: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:41</a></div>
                 </td>
             </tr>
 
@@ -232,6 +237,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -249,6 +255,18 @@
 
                                     <td>
                                         No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>archiveDelayElement</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
                                     </td>
 
 
@@ -275,24 +293,28 @@
                 <td class="col-md-4">
                     <a name="handleStanza"></a>
                     <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
+                        <span ><b>handleStanza</b></span>
                         <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>, archiveDelayElement?: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:22</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:26</a></code>
+</div>
                 </td>
             </tr>
 
@@ -302,6 +324,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -319,6 +342,18 @@
 
                                     <td>
                                         No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>archiveDelayElement</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
                                     </td>
 
 
@@ -345,10 +380,8 @@
                 <td class="col-md-4">
                     <a name="isMessageStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            isMessageStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>isMessageStanza</b></span>
                         <a href="#isMessageStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -356,15 +389,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isMessageStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+                    <code>isMessageStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:34</a></div>
                 </td>
             </tr>
 
@@ -374,6 +407,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -417,24 +451,22 @@
                 <td class="col-md-4">
                     <a name="sendMessage"></a>
                     <span class="name">
-                        <b>
-                            sendMessage
-                        </b>
+                        <span ><b>sendMessage</b></span>
                         <a href="#sendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>sendMessage(contact: <a href="../classes/Contact.html">Contact</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>sendMessage(contact: <a href="../classes/Contact.html" target="_self">Contact</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:81</a></div>
                 </td>
             </tr>
 
@@ -444,6 +476,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -499,16 +532,14 @@
                 <td class="col-md-4">
                     <a name="afterReceiveMessage"></a>
                     <span class="name">
-                        <b>
-                            afterReceiveMessage
-                        </b>
+                        <span ><b>afterReceiveMessage</b></span>
                         <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterReceiveMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html">MessageReceivedEvent</a>)</code>
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
                 </td>
             </tr>
 
@@ -532,6 +563,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -599,16 +631,14 @@
                 <td class="col-md-4">
                     <a name="afterSendMessage"></a>
                     <span class="name">
-                        <b>
-                            afterSendMessage
-                        </b>
+                        <span ><b>afterSendMessage</b></span>
                         <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterSendMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: Element)</code>
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
                 </td>
             </tr>
 
@@ -632,6 +662,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -687,16 +718,14 @@
                 <td class="col-md-4">
                     <a name="beforeSendMessage"></a>
                     <span class="name">
-                        <b>
-                            beforeSendMessage
-                        </b>
+                        <span ><b>beforeSendMessage</b></span>
                         <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html">Message</a>)</code>
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
                 </td>
             </tr>
 
@@ -720,6 +749,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -773,87 +803,9 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleStanza"></a>
-                    <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
-                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:24</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>stanza</td>
-                                    <td>
-                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="onBeforeOnline"></a>
                     <span class="name">
-                        <b>
-                            onBeforeOnline
-                        </b>
+                        <span ><b>onBeforeOnline</b></span>
                         <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -896,9 +848,7 @@
                 <td class="col-md-4">
                     <a name="onOffline"></a>
                     <span class="name">
-                        <b>
-                            onOffline
-                        </b>
+                        <span ><b>onOffline</b></span>
                         <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -945,7 +895,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, xml } from &#x27;@xmpp/client&#x27;;
 import { Contact } from &#x27;../../../../core/contact&#x27;;
 import { Direction, Message } from &#x27;../../../../core/message&#x27;;
 import { MessageWithBodyStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
@@ -957,18 +907,22 @@ export class MessageReceivedEvent {
     discard &#x3D; false;
 }
 
+/**
+ * Part of the XMPP Core Specification
+ * see: https://datatracker.ietf.org/doc/rfc6120/
+ */
 export class MessagePlugin extends AbstractXmppPlugin {
 
     constructor(
-        private xmppChatAdapter: XmppChatAdapter,
-        private logService: LogService,
+        private readonly xmppChatAdapter: XmppChatAdapter,
+        private readonly logService: LogService,
     ) {
         super();
     }
 
-    handleStanza(stanza: Stanza) {
+    handleStanza(stanza: Stanza, archiveDelayElement?: Stanza) {
         if (this.isMessageStanza(stanza)) {
-            this.handleMessageStanza(stanza);
+            this.handleMessageStanza(stanza, archiveDelayElement);
             return true;
         }
         return false;
@@ -981,21 +935,42 @@ export class MessagePlugin extends AbstractXmppPlugin {
             &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;)?.trim();
     }
 
-    private handleMessageStanza(messageStanza: MessageWithBodyStanza) {
-        this.logService.debug(&#x27;message received &lt;&#x3D;&#x27;, messageStanza.getChildText(&#x27;body&#x27;));
+    private handleMessageStanza(messageStanza: MessageWithBodyStanza, archiveDelayElement?: Stanza) {
+        const isAddressedToMe &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.bare()
+            .equals(parseJid(messageStanza.attrs.to).bare());
+        const messageDirection &#x3D; isAddressedToMe ? Direction.in : Direction.out;
+
+        const messageFromArchive &#x3D; archiveDelayElement !&#x3D; null;
+
+        const delayElement &#x3D; archiveDelayElement ?? messageStanza.getChild(&#x27;delay&#x27;);
+        const datetime &#x3D; delayElement?.attrs.stamp
+            ? new Date(delayElement.attrs.stamp)
+            : new Date() /* TODO: replace with entity time plugin */;
+
+        if (messageDirection &#x3D;&#x3D;&#x3D; Direction.in &amp;&amp; !messageFromArchive) {
+            this.logService.debug(&#x27;message received &lt;&#x3D;&#x27;, messageStanza.getChildText(&#x27;body&#x27;));
+        }
 
         const message &#x3D; {
             body: messageStanza.getChildText(&#x27;body&#x27;).trim(),
-            direction: Direction.in,
-            datetime: new Date(), // TODO: replace with entity time plugin
-            delayed: !!messageStanza.getChild(&#x27;delay&#x27;),
+            direction: messageDirection,
+            datetime,
+            delayed: !!delayElement,
+            fromArchive: messageFromArchive
         };
 
         const messageReceivedEvent &#x3D; new MessageReceivedEvent();
         this.xmppChatAdapter.plugins.forEach(plugin &#x3D;&gt; plugin.afterReceiveMessage(message, messageStanza, messageReceivedEvent));
-        if (!messageReceivedEvent.discard) {
-            const contact &#x3D; this.xmppChatAdapter.getOrCreateContactById(messageStanza.attrs.from);
-            contact.addMessage(message);
+
+        if (messageReceivedEvent.discard) {
+            return;
+        }
+
+        const contactJid &#x3D; isAddressedToMe ? messageStanza.attrs.from : messageStanza.attrs.to;
+        const contact &#x3D; this.xmppChatAdapter.getOrCreateContactById(contactJid);
+        contact.addMessage(message);
+
+        if (messageDirection &#x3D;&#x3D;&#x3D; Direction.in &amp;&amp; !messageFromArchive) {
             this.xmppChatAdapter.message$.next(contact);
         }
     }
@@ -1014,6 +989,7 @@ export class MessagePlugin extends AbstractXmppPlugin {
             body,
             datetime: new Date(), // TODO: replace with entity time plugin
             delayed: false,
+            fromArchive: false,
         };
         this.xmppChatAdapter.plugins.forEach(plugin &#x3D;&gt; plugin.beforeSendMessage(messageStanza, message));
         contact.addMessage(message);
@@ -1032,14 +1008,14 @@ export class MessagePlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1060,9 +1036,9 @@ export class MessagePlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

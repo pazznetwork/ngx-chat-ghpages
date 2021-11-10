@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -43,7 +44,9 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>ChatActionContext</li>
+  <li
+  >
+  ChatActionContext</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,6 +69,7 @@
 
 
 
+
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -79,10 +83,16 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#chatWindow">chatWindow</a>
+                                        <a href="#chatWindow" 
+>
+                                            chatWindow
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#contact">contact</a>
+                                        <a href="#contact" 
+>
+                                            contact
+                                        </a>
                                 </li>
                             </ul>
                         </td>
@@ -100,7 +110,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="chatWindow"></a>
-                                        <span class="name"><b>chatWindow</b><a href="#chatWindow"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>chatWindow</b>
+                                            <a href="#chatWindow">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -129,7 +143,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="contact"></a>
-                                        <span class="name"><b>contact</b><a href="#contact"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>contact</b>
+                                            <a href="#contact">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -162,12 +180,11 @@
 import { Observable, Subject } from &#x27;rxjs&#x27;;
 import { filter, takeUntil } from &#x27;rxjs/operators&#x27;;
 import { Direction, Message } from &#x27;../../core/message&#x27;;
-import { Presence } from &#x27;../../core/presence&#x27;;
 import { HttpFileUploadPlugin } from &#x27;../../services/adapters/xmpp/plugins/http-file-upload.plugin&#x27;;
 import { RoomMessage } from &#x27;../../services/adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
 import { ChatContactClickHandler, CONTACT_CLICK_HANDLER_TOKEN } from &#x27;../../services/chat-contact-click-handler&#x27;;
 import { ChatListStateService, ChatWindowState } from &#x27;../../services/chat-list-state.service&#x27;;
-import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
+import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;../../services/chat-service&#x27;;
 import { ChatMessageInputComponent } from &#x27;../chat-message-input/chat-message-input.component&#x27;;
 import { ChatMessageListComponent } from &#x27;../chat-message-list/chat-message-list.component&#x27;;
 
@@ -182,21 +199,19 @@ export class ChatWindowComponent implements OnInit, OnDestroy {
     public chatWindowState: ChatWindowState;
 
     @ViewChild(ChatMessageInputComponent)
-    messageInput: ChatMessageInputComponent;
+    private readonly messageInput: ChatMessageInputComponent;
 
     @ViewChild(ChatMessageListComponent)
-    contactMessageList: ChatMessageListComponent;
+    private readonly contactMessageList: ChatMessageListComponent;
 
-    httpFileUploadPlugin: HttpFileUploadPlugin;
+    readonly httpFileUploadPlugin: HttpFileUploadPlugin;
 
-    Presence &#x3D; Presence;
-
-    private ngDestroy &#x3D; new Subject&lt;void&gt;();
+    private readonly ngDestroy &#x3D; new Subject&lt;void&gt;();
 
     constructor(
-        @Inject(ChatServiceToken) public chatService: ChatService,
-        private chatListService: ChatListStateService,
-        @Inject(CONTACT_CLICK_HANDLER_TOKEN) @Optional() public contactClickHandler: ChatContactClickHandler,
+        @Inject(CHAT_SERVICE_TOKEN) readonly chatService: ChatService,
+        private readonly chatListService: ChatListStateService,
+        @Inject(CONTACT_CLICK_HANDLER_TOKEN) @Optional() readonly contactClickHandler: ChatContactClickHandler,
     ) {
         this.httpFileUploadPlugin &#x3D; this.chatService.getPlugin(HttpFileUploadPlugin);
     }
@@ -278,14 +293,14 @@ export interface ChatActionContext {
 </div>
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -306,9 +321,9 @@ export interface ChatActionContext {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

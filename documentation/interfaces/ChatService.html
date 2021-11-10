@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -43,7 +44,9 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>ChatService</li>
+  <li
+  >
+  ChatService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,17 +67,13 @@
             <code>projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts</code>
         </p>
 
+
             <p class="comment">
                 <h3>Description</h3>
             </p>
             <p class="comment">
                 <p>ChatService is your main API for using ngx-chat. Can be injected in your services like in the following example:</p>
-<p>```</p>
-<ul>
-<li>constructor(@Inject(ChatServiceToken) chatService: ChatService)</li>
-<li>```</li>
-</ul>
-
+<div><pre class="line-numbers"><code class="language-none">constructor(&#64;Inject(CHAT_SERVICE_TOKEN) chatService: ChatService)</code></pre></div>
             </p>
 
 
@@ -91,43 +90,82 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#blockedContacts$">blockedContacts$</a>
+                                        <a href="#blockedContacts$" 
+>
+                                            blockedContacts$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#chatActions">chatActions</a>
+                                        <a href="#chatActions" 
+>
+                                            chatActions
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#contactRequestsReceived$">contactRequestsReceived$</a>
+                                        <a href="#contactRequestsReceived$" 
+>
+                                            contactRequestsReceived$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#contactRequestsSent$">contactRequestsSent$</a>
+                                        <a href="#contactRequestsSent$" 
+>
+                                            contactRequestsSent$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#contacts$">contacts$</a>
+                                        <a href="#contacts$" 
+>
+                                            contacts$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#contactsSubscribed$">contactsSubscribed$</a>
+                                        <a href="#contactsSubscribed$" 
+>
+                                            contactsSubscribed$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#contactsUnaffiliated$">contactsUnaffiliated$</a>
+                                        <a href="#contactsUnaffiliated$" 
+>
+                                            contactsUnaffiliated$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#enableDebugging">enableDebugging</a>
+                                        <a href="#enableDebugging" 
+>
+                                            enableDebugging
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#message$">message$</a>
+                                        <a href="#message$" 
+>
+                                            message$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#notBlockedContacts$">notBlockedContacts$</a>
+                                        <a href="#notBlockedContacts$" 
+>
+                                            notBlockedContacts$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#state$">state$</a>
+                                        <a href="#state$" 
+>
+                                            state$
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#translations">translations</a>
+                                        <a href="#translations" 
+>
+                                            translations
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#userAvatar$">userAvatar$</a>
+                                        <a href="#userAvatar$" 
+>
+                                            userAvatar$
+                                        </a>
                                 </li>
                             </ul>
                         </td>
@@ -141,40 +179,76 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#addContact">addContact</a>
+                                    <a href="#addContact" 
+>
+                                        addContact
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#getContactById">getContactById</a>
+                                    <a href="#getContactById" 
+>
+                                        getContactById
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#getOrCreateContactById">getOrCreateContactById</a>
+                                    <a href="#getOrCreateContactById" 
+>
+                                        getOrCreateContactById
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#getPlugin">getPlugin</a>
+                                    <a href="#getPlugin" 
+>
+                                        getPlugin
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#loadCompleteHistory">loadCompleteHistory</a>
+                                    <a href="#loadCompleteHistory" 
+>
+                                        loadCompleteHistory
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#logIn">logIn</a>
+                                    <a href="#logIn" 
+>
+                                        logIn
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#logOut">logOut</a>
+                                    <a href="#logOut" 
+>
+                                        logOut
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#reconnect">reconnect</a>
+                                    <a href="#reconnect" 
+>
+                                        reconnect
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#reconnectSilently">reconnectSilently</a>
+                                    <a href="#reconnectSilently" 
+>
+                                        reconnectSilently
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#reloadContacts">reloadContacts</a>
+                                    <a href="#reloadContacts" 
+>
+                                        reloadContacts
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#removeContact">removeContact</a>
+                                    <a href="#removeContact" 
+>
+                                        removeContact
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#sendMessage">sendMessage</a>
+                                    <a href="#sendMessage" 
+>
+                                        sendMessage
+                                    </a>
                                 </li>
                             </ul>
                         </td>
@@ -194,9 +268,7 @@
                 <td class="col-md-4">
                     <a name="addContact"></a>
                     <span class="name">
-                        <b>
-                            addContact
-                        </b>
+                        <span ><b>addContact</b></span>
                         <a href="#addContact"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -210,8 +282,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="120"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:120</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:125</a></div>
                 </td>
             </tr>
 
@@ -223,6 +295,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -271,9 +344,7 @@
                 <td class="col-md-4">
                     <a name="getContactById"></a>
                     <span class="name">
-                        <b>
-                            getContactById
-                        </b>
+                        <span ><b>getContactById</b></span>
                         <a href="#getContactById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -287,8 +358,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:106</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:111</a></div>
                 </td>
             </tr>
 
@@ -301,6 +372,7 @@ bare, the search will convert it to a bare JID.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -350,9 +422,7 @@ bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="getOrCreateContactById"></a>
                     <span class="name">
-                        <b>
-                            getOrCreateContactById
-                        </b>
+                        <span ><b>getOrCreateContactById</b></span>
                         <a href="#getOrCreateContactById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -366,8 +436,8 @@ bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="114"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:114</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:119</a></div>
                 </td>
             </tr>
 
@@ -380,6 +450,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -429,9 +500,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="getPlugin"></a>
                     <span class="name">
-                        <b>
-                            getPlugin
-                        </b>
+                        <span ><b>getPlugin</b></span>
                         <a href="#getPlugin"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -445,8 +514,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:160</a></div>
                 </td>
             </tr>
 
@@ -466,6 +535,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -484,7 +554,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
 
                                     <td>
-                                        <p>The plugin constructor, e.g. {</p>
+                                        <p>The plugin constructor, e.g. <a href="../classess/RosterPlugin.html">RosterPlugin</a></p>
 
                                     </td>
                                 </tr>
@@ -510,9 +580,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="loadCompleteHistory"></a>
                     <span class="name">
-                        <b>
-                            loadCompleteHistory
-                        </b>
+                        <span ><b>loadCompleteHistory</b></span>
                         <a href="#loadCompleteHistory"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -526,8 +594,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:154</a></div>
                 </td>
             </tr>
 
@@ -551,24 +619,22 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="logIn"></a>
                     <span class="name">
-                        <b>
-                            logIn
-                        </b>
+                        <span ><b>logIn</b></span>
                         <a href="#logIn"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>logIn(logInRequest: <a href="../interfaces/LogInRequest.html">LogInRequest</a>)</code>
+<code>logIn(logInRequest: <a href="../interfaces/LogInRequest.html" target="_self">LogInRequest</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="132"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:132</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:137</a></div>
                 </td>
             </tr>
 
@@ -580,6 +646,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -623,9 +690,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="logOut"></a>
                     <span class="name">
-                        <b>
-                            logOut
-                        </b>
+                        <span ><b>logOut</b></span>
                         <a href="#logOut"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -639,8 +704,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="137"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:137</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:142</a></div>
                 </td>
             </tr>
 
@@ -664,9 +729,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="reconnect"></a>
                     <span class="name">
-                        <b>
-                            reconnect
-                        </b>
+                        <span ><b>reconnect</b></span>
                         <a href="#reconnect"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -680,8 +743,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="165"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:165</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:170</a></div>
                 </td>
             </tr>
 
@@ -705,9 +768,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="reconnectSilently"></a>
                     <span class="name">
-                        <b>
-                            reconnectSilently
-                        </b>
+                        <span ><b>reconnectSilently</b></span>
                         <a href="#reconnectSilently"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -721,8 +782,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="160"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:160</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="165"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:165</a></div>
                 </td>
             </tr>
 
@@ -746,9 +807,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="reloadContacts"></a>
                     <span class="name">
-                        <b>
-                            reloadContacts
-                        </b>
+                        <span ><b>reloadContacts</b></span>
                         <a href="#reloadContacts"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -762,8 +821,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:103</a></div>
                 </td>
             </tr>
 
@@ -787,9 +846,7 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
                 <td class="col-md-4">
                     <a name="removeContact"></a>
                     <span class="name">
-                        <b>
-                            removeContact
-                        </b>
+                        <span ><b>removeContact</b></span>
                         <a href="#removeContact"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -803,8 +860,8 @@ it does not have to be bare, the search will convert it to a bare JID.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="127"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:127</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:132</a></div>
                 </td>
             </tr>
 
@@ -817,6 +874,7 @@ accepted subscriptions from the contact to the user.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -865,24 +923,22 @@ accepted subscriptions from the contact to the user.</p>
                 <td class="col-md-4">
                     <a name="sendMessage"></a>
                     <span class="name">
-                        <b>
-                            sendMessage
-                        </b>
+                        <span ><b>sendMessage</b></span>
                         <a href="#sendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>sendMessage(recipient: <a href="../undefineds/Recipient.html">Recipient</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>sendMessage(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="144"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:144</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts:149</a></div>
                 </td>
             </tr>
 
@@ -894,6 +950,7 @@ accepted subscriptions from the contact to the user.</p>
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -961,7 +1018,11 @@ accepted subscriptions from the contact to the user.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="blockedContacts$"></a>
-                                        <span class="name"><b>blockedContacts$</b><a href="#blockedContacts$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>blockedContacts$</b>
+                                            <a href="#blockedContacts$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -996,7 +1057,11 @@ accepted subscriptions from the contact to the user.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="chatActions"></a>
-                                        <span class="name"><b>chatActions</b><a href="#chatActions"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>chatActions</b>
+                                            <a href="#chatActions">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1032,7 +1097,11 @@ new actions, e.g. for file uploads.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="contactRequestsReceived$"></a>
-                                        <span class="name"><b>contactRequestsReceived$</b><a href="#contactRequestsReceived$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>contactRequestsReceived$</b>
+                                            <a href="#contactRequestsReceived$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1067,7 +1136,11 @@ new actions, e.g. for file uploads.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="contactRequestsSent$"></a>
-                                        <span class="name"><b>contactRequestsSent$</b><a href="#contactRequestsSent$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>contactRequestsSent$</b>
+                                            <a href="#contactRequestsSent$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1102,7 +1175,11 @@ new actions, e.g. for file uploads.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="contacts$"></a>
-                                        <span class="name"><b>contacts$</b><a href="#contacts$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>contacts$</b>
+                                            <a href="#contacts$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1138,7 +1215,11 @@ This does not represent your roster list.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="contactsSubscribed$"></a>
-                                        <span class="name"><b>contactsSubscribed$</b><a href="#contactsSubscribed$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>contactsSubscribed$</b>
+                                            <a href="#contactsSubscribed$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1173,7 +1254,11 @@ This does not represent your roster list.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="contactsUnaffiliated$"></a>
-                                        <span class="name"><b>contactsUnaffiliated$</b><a href="#contactsUnaffiliated$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>contactsUnaffiliated$</b>
+                                            <a href="#contactsUnaffiliated$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1208,7 +1293,11 @@ This does not represent your roster list.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="enableDebugging"></a>
-                                        <span class="name"><b>enableDebugging</b><a href="#enableDebugging"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>enableDebugging</b>
+                                            <a href="#enableDebugging">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1243,7 +1332,11 @@ This does not represent your roster list.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="message$"></a>
-                                        <span class="name"><b>message$</b><a href="#message$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>message$</b>
+                                            <a href="#message$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1278,7 +1371,11 @@ This does not represent your roster list.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="notBlockedContacts$"></a>
-                                        <span class="name"><b>notBlockedContacts$</b><a href="#notBlockedContacts$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>notBlockedContacts$</b>
+                                            <a href="#notBlockedContacts$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1313,7 +1410,11 @@ This does not represent your roster list.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="state$"></a>
-                                        <span class="name"><b>state$</b><a href="#state$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>state$</b>
+                                            <a href="#state$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1350,7 +1451,11 @@ initialization, the new state will be &#39;online&#39;.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="translations"></a>
-                                        <span class="name"><b>translations</b><a href="#translations"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>translations</b>
+                                            <a href="#translations">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1386,7 +1491,11 @@ of <a href="../components/ChatComponent.html">ChatComponent</a> instead.</p>
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="userAvatar$"></a>
-                                        <span class="name"><b>userAvatar$</b><a href="#userAvatar$"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>userAvatar$</b>
+                                            <a href="#userAvatar$">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1431,7 +1540,12 @@ import { ChatPlugin } from &#x27;../core/plugin&#x27;;
 import { Recipient } from &#x27;../core/recipient&#x27;;
 import { Translations } from &#x27;../core/translations&#x27;;
 
-export const ChatServiceToken &#x3D; new InjectionToken(&#x27;pazznetworkNgxChatService&#x27;);
+/**
+ * The chat service token gives you access to the main chat api and is implemented by default with an XMPP adapter,
+ * you can always reuse the api and ui with a new service implementing the ChatService interface and providing the
+ * said implementation with the token
+ */
+export const CHAT_SERVICE_TOKEN &#x3D; new InjectionToken&lt;ChatService&gt;(&#x27;ngxChatService&#x27;);
 
 
 export type ConnectionStates &#x3D; &#x27;disconnected&#x27; | &#x27;connecting&#x27; | &#x27;online&#x27;;
@@ -1440,7 +1554,7 @@ export type ConnectionStates &#x3D; &#x27;disconnected&#x27; | &#x27;connecting&
  * ChatService is your main API for using ngx-chat. Can be injected in your services like in the following example:
  *
  * &#x60;&#x60;&#x60;
- * constructor(@Inject(ChatServiceToken) chatService: ChatService)
+ * constructor(@Inject(CHAT_SERVICE_TOKEN) chatService: ChatService)
  * &#x60;&#x60;&#x60;
  */
 export interface ChatService {
@@ -1594,14 +1708,14 @@ export interface ChatService {
 </div>
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1622,9 +1736,9 @@ export interface ChatService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

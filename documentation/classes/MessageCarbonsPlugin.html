@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>MessageCarbonsPlugin</li>
+  <li >MessageCarbonsPlugin</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +63,7 @@
         <p class="comment">
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-carbons.plugin.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -95,31 +97,26 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#handleCarbonMessageStanza">handleCarbonMessageStanza</a>
+                                <a href="#handleCarbonMessageStanza" >handleCarbonMessageStanza</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#handleStanza" >handleStanza</a>
                             </li>
                             <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
                             </li>
                             <li>
-                                <a href="#afterReceiveMessage">afterReceiveMessage</a>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
                             </li>
                             <li>
-                                <a href="#afterSendMessage">afterSendMessage</a>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
                             </li>
                             <li>
-                                <a href="#beforeSendMessage">beforeSendMessage</a>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
-                            </li>
-                            <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
-                            </li>
-                            <li>
-                                <a href="#onOffline">onOffline</a>
+                                <a href="#onOffline" >onOffline</a>
                             </li>
                         </ul>
                     </td>
@@ -139,7 +136,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>)</code>
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -194,10 +191,8 @@
                 <td class="col-md-4">
                     <a name="handleCarbonMessageStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            handleCarbonMessageStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>handleCarbonMessageStanza</b></span>
                         <a href="#handleCarbonMessageStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -223,6 +218,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -278,24 +274,28 @@
                 <td class="col-md-4">
                     <a name="handleStanza"></a>
                     <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
+                        <span ><b>handleStanza</b></span>
                         <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-carbons.plugin.ts:26</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:26</a></code>
+</div>
                 </td>
             </tr>
 
@@ -305,6 +305,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -348,24 +349,30 @@
                 <td class="col-md-4">
                     <a name="onBeforeOnline"></a>
                     <span class="name">
-                        <b>
-                            onBeforeOnline
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>onBeforeOnline</b></span>
                         <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onBeforeOnline()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onBeforeOnline()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message-carbons.plugin.ts:18</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:18</a></code>
+</div>
                 </td>
             </tr>
 
@@ -374,7 +381,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>PromiseLike&lt;any&gt;</code>
+                        <b>Returns : </b>    <code>Promise&lt;IqResponseStanza&gt;</code>
 
                     </div>
                 </td>
@@ -387,16 +394,14 @@
                 <td class="col-md-4">
                     <a name="afterReceiveMessage"></a>
                     <span class="name">
-                        <b>
-                            afterReceiveMessage
-                        </b>
+                        <span ><b>afterReceiveMessage</b></span>
                         <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterReceiveMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html">MessageReceivedEvent</a>)</code>
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
                 </td>
             </tr>
 
@@ -420,6 +425,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -487,16 +493,14 @@
                 <td class="col-md-4">
                     <a name="afterSendMessage"></a>
                     <span class="name">
-                        <b>
-                            afterSendMessage
-                        </b>
+                        <span ><b>afterSendMessage</b></span>
                         <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterSendMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: Element)</code>
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
                 </td>
             </tr>
 
@@ -520,6 +524,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -575,16 +580,14 @@
                 <td class="col-md-4">
                     <a name="beforeSendMessage"></a>
                     <span class="name">
-                        <b>
-                            beforeSendMessage
-                        </b>
+                        <span ><b>beforeSendMessage</b></span>
                         <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html">Message</a>)</code>
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
                 </td>
             </tr>
 
@@ -608,6 +611,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -661,132 +665,9 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleStanza"></a>
-                    <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
-                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:24</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>stanza</td>
-                                    <td>
-                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onBeforeOnline"></a>
-                    <span class="name">
-                        <b>
-                            onBeforeOnline
-                        </b>
-                        <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onBeforeOnline()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:9</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>PromiseLike&lt;any&gt;</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="onOffline"></a>
                     <span class="name">
-                        <b>
-                            onOffline
-                        </b>
+                        <span ><b>onOffline</b></span>
                         <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -836,7 +717,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
 import { Element } from &#x27;ltx&#x27;;
 import { Direction } from &#x27;../../../../core/message&#x27;;
-import { Stanza } from &#x27;../../../../core/stanza&#x27;;
+import { IqResponseStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { MessageReceivedEvent } from &#x27;./message.plugin&#x27;;
@@ -846,19 +727,19 @@ import { MessageReceivedEvent } from &#x27;./message.plugin&#x27;;
  */
 export class MessageCarbonsPlugin extends AbstractXmppPlugin {
 
-    constructor(private xmppChatAdapter: XmppChatAdapter) {
+    constructor(private readonly xmppChatAdapter: XmppChatAdapter) {
         super();
     }
 
-    onBeforeOnline(): PromiseLike&lt;any&gt; {
-        return this.xmppChatAdapter.chatConnectionService.sendIq(
+    async onBeforeOnline(): Promise&lt;IqResponseStanza&gt; {
+        return await this.xmppChatAdapter.chatConnectionService.sendIq(
             xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
                 xml(&#x27;enable&#x27;, {xmlns: &#x27;urn:xmpp:carbons:2&#x27;})
             )
         );
     }
 
-    handleStanza(stanza: Stanza) {
+    handleStanza(stanza: Stanza): boolean {
         const receivedOrSentElement &#x3D; stanza.getChildByAttr(&#x27;xmlns&#x27;, &#x27;urn:xmpp:carbons:2&#x27;);
         const forwarded &#x3D; receivedOrSentElement &amp;&amp; receivedOrSentElement.getChild(&#x27;forwarded&#x27;, &#x27;urn:xmpp:forward:0&#x27;);
         const messageElement &#x3D; forwarded &amp;&amp; forwarded.getChild(&#x27;message&#x27;, &#x27;jabber:client&#x27;);
@@ -871,7 +752,7 @@ export class MessageCarbonsPlugin extends AbstractXmppPlugin {
         return false;
     }
 
-    private handleCarbonMessageStanza(messageElement: Element, receivedOrSent: Element) {
+    private handleCarbonMessageStanza(messageElement: Element, receivedOrSent: Element): boolean {
         const direction &#x3D; receivedOrSent.is(&#x27;received&#x27;) ? Direction.in : Direction.out;
 
         const message &#x3D; {
@@ -879,6 +760,7 @@ export class MessageCarbonsPlugin extends AbstractXmppPlugin {
             direction,
             datetime: new Date(), // TODO: replace with entity time plugin
             delayed: false,
+            fromArchive: false,
         };
 
         const messageReceivedEvent &#x3D; new MessageReceivedEvent();
@@ -904,14 +786,14 @@ export class MessageCarbonsPlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -932,9 +814,9 @@ export class MessageCarbonsPlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

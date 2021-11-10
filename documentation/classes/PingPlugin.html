@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>PingPlugin</li>
+  <li >PingPlugin</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -63,11 +64,12 @@
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts</code>
         </p>
 
+
             <p class="comment">
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>xep-0199</p>
+                <p>XEP-0199 XMPP Ping (<a href="https://xmpp.org/extensions/xep-0199.html">https://xmpp.org/extensions/xep-0199.html</a>)</p>
 
             </p>
 
@@ -95,11 +97,11 @@
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Readonly</span>
-                                <a href="#pingInterval">pingInterval</a>
+                                <a href="#pingInterval" >pingInterval</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#timeoutHandle">timeoutHandle</a>
+                                <a href="#timeoutHandle" >timeoutHandle</a>
                             </li>
                         </ul>
                     </td>
@@ -116,37 +118,38 @@
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Async</span>
-                                <a href="#ping">ping</a>
+                                <a href="#ping" >ping</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#schedulePings">schedulePings</a>
+                                <a href="#schedulePings" >schedulePings</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#sendPing">sendPing</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendPing" >sendPing</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#unschedulePings">unschedulePings</a>
+                                <a href="#unschedulePings" >unschedulePings</a>
                             </li>
                             <li>
-                                <a href="#afterReceiveMessage">afterReceiveMessage</a>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
                             </li>
                             <li>
-                                <a href="#afterSendMessage">afterSendMessage</a>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
                             </li>
                             <li>
-                                <a href="#beforeSendMessage">beforeSendMessage</a>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#handleStanza" >handleStanza</a>
                             </li>
                             <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
                             </li>
                             <li>
-                                <a href="#onOffline">onOffline</a>
+                                <a href="#onOffline" >onOffline</a>
                             </li>
                         </ul>
                     </td>
@@ -166,12 +169,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html">LogService</a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>)</code>
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html" target="_self">LogService</a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -235,71 +238,69 @@
 
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pingInterval"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>pingInterval</b></span>
+                        <a href="#pingInterval"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="pingInterval"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                                <span class="modifier">Readonly</span>
-                            pingInterval</b>
-                            <a href="#pingInterval"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>60_000</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:16</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>60_000</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:15</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeoutHandle"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>timeoutHandle</b></span>
+                        <a href="#timeoutHandle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="timeoutHandle"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            timeoutHandle</b>
-                            <a href="#timeoutHandle"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:15</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:14</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
             <section>
@@ -313,11 +314,9 @@
                 <td class="col-md-4">
                     <a name="ping"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Async</span>
-                            ping
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>ping</b></span>
                         <a href="#ping"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -332,8 +331,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:41</a></div>
                 </td>
             </tr>
 
@@ -342,7 +341,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
 
                     </div>
                 </td>
@@ -355,10 +354,8 @@
                 <td class="col-md-4">
                     <a name="schedulePings"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            schedulePings
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>schedulePings</b></span>
                         <a href="#schedulePings"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -373,8 +370,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:34</a></div>
                 </td>
             </tr>
 
@@ -396,10 +393,9 @@
                 <td class="col-md-4">
                     <a name="sendPing"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            sendPing
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>sendPing</b></span>
                         <a href="#sendPing"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -414,8 +410,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:54</a></div>
                 </td>
             </tr>
 
@@ -424,7 +420,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Promise&lt;IqResponseStanza&lt;result&gt;&gt;</code>
 
                     </div>
                 </td>
@@ -437,10 +433,8 @@
                 <td class="col-md-4">
                     <a name="unschedulePings"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            unschedulePings
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>unschedulePings</b></span>
                         <a href="#unschedulePings"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -455,8 +449,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/ping.plugin.ts:62</a></div>
                 </td>
             </tr>
 
@@ -478,16 +472,14 @@
                 <td class="col-md-4">
                     <a name="afterReceiveMessage"></a>
                     <span class="name">
-                        <b>
-                            afterReceiveMessage
-                        </b>
+                        <span ><b>afterReceiveMessage</b></span>
                         <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterReceiveMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html">MessageReceivedEvent</a>)</code>
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
                 </td>
             </tr>
 
@@ -511,6 +503,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -578,16 +571,14 @@
                 <td class="col-md-4">
                     <a name="afterSendMessage"></a>
                     <span class="name">
-                        <b>
-                            afterSendMessage
-                        </b>
+                        <span ><b>afterSendMessage</b></span>
                         <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterSendMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: Element)</code>
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
                 </td>
             </tr>
 
@@ -611,6 +602,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -666,16 +658,14 @@
                 <td class="col-md-4">
                     <a name="beforeSendMessage"></a>
                     <span class="name">
-                        <b>
-                            beforeSendMessage
-                        </b>
+                        <span ><b>beforeSendMessage</b></span>
                         <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html">Message</a>)</code>
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
                 </td>
             </tr>
 
@@ -699,6 +689,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -754,16 +745,14 @@
                 <td class="col-md-4">
                     <a name="handleStanza"></a>
                     <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
+                        <span ><b>handleStanza</b></span>
                         <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -787,6 +776,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -830,9 +820,7 @@
                 <td class="col-md-4">
                     <a name="onBeforeOnline"></a>
                     <span class="name">
-                        <b>
-                            onBeforeOnline
-                        </b>
+                        <span ><b>onBeforeOnline</b></span>
                         <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -875,9 +863,7 @@
                 <td class="col-md-4">
                     <a name="onOffline"></a>
                     <span class="name">
-                        <b>
-                            onOffline
-                        </b>
+                        <span ><b>onOffline</b></span>
                         <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -931,9 +917,10 @@ import { timeout } from &#x27;../../../../core/utils-timeout&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { IqResponseStanza } from &#x27;../../../../core/stanza&#x27;;
 
 /**
- * xep-0199
+ * XEP-0199 XMPP Ping (https://xmpp.org/extensions/xep-0199.html)
  */
 export class PingPlugin extends AbstractXmppPlugin {
 
@@ -941,38 +928,34 @@ export class PingPlugin extends AbstractXmppPlugin {
     private readonly pingInterval &#x3D; 60_000;
 
     constructor(
-        private xmppChatAdapter: XmppChatAdapter,
-        private logService: LogService,
-        private ngZone: NgZone,
+        private readonly xmppChatAdapter: XmppChatAdapter,
+        private readonly logService: LogService,
+        private readonly ngZone: NgZone,
     ) {
         super();
 
         this.xmppChatAdapter.state$.pipe(
             filter(newState &#x3D;&gt; newState &#x3D;&#x3D;&#x3D; &#x27;online&#x27;),
-        ).subscribe(() &#x3D;&gt; {
-            this.schedulePings();
-        });
+        ).subscribe(() &#x3D;&gt; this.schedulePings());
 
         this.xmppChatAdapter.state$.pipe(
             filter(newState &#x3D;&gt; newState &#x3D;&#x3D;&#x3D; &#x27;disconnected&#x27;),
-        ).subscribe(() &#x3D;&gt; {
-            this.unschedulePings();
-        });
+        ).subscribe(() &#x3D;&gt; this.unschedulePings());
     }
 
-    private schedulePings() {
+    private schedulePings(): void {
         this.unschedulePings();
         this.ngZone.runOutsideAngular(() &#x3D;&gt; {
             this.timeoutHandle &#x3D; window.setInterval(() &#x3D;&gt; this.ping(), this.pingInterval);
         });
     }
 
-    private async ping() {
+    private async ping(): Promise&lt;void&gt; {
         this.logService.debug(&#x27;ping...&#x27;);
         try {
             await timeout(this.sendPing(), 10_000);
             this.logService.debug(&#x27;... pong&#x27;);
-        } catch (e) {
+        } catch {
             if (this.xmppChatAdapter.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;
                 &amp;&amp; this.xmppChatAdapter.chatConnectionService.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;) {
                 this.logService.error(&#x27;... pong errored,  connection should be online, waiting for browser websocket timeout&#x27;);
@@ -980,19 +963,15 @@ export class PingPlugin extends AbstractXmppPlugin {
         }
     }
 
-    private sendPing() {
-        try {
-            return this.xmppChatAdapter.chatConnectionService.sendIq(
-                xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;},
-                    xml(&#x27;ping&#x27;, {xmlns: &#x27;urn:xmpp:ping&#x27;})
-                )
-            );
-        } catch (e) {
-            return Promise.reject(e);
-        }
+    private async sendPing(): Promise&lt;IqResponseStanza&lt;&#x27;result&#x27;&gt;&gt; {
+        return await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;},
+                xml(&#x27;ping&#x27;, {xmlns: &#x27;urn:xmpp:ping&#x27;})
+            )
+        );
     }
 
-    private unschedulePings() {
+    private unschedulePings(): void {
         window.clearInterval(this.timeoutHandle);
     }
 
@@ -1003,14 +982,14 @@ export class PingPlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1031,9 +1010,9 @@ export class PingPlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

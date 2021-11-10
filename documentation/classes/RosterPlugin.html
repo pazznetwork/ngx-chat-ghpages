@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -42,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>RosterPlugin</li>
+  <li >RosterPlugin</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +63,7 @@
         <p class="comment">
             <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/roster.plugin.ts</code>
         </p>
+
 
             <p class="comment">
                 <h3>Description</h3>
@@ -94,97 +96,91 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#addRosterContact">addRosterContact</a>
+                                <a href="#addRosterContact" >addRosterContact</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#convertToContacts">convertToContacts</a>
+                                <a href="#convertToContacts" >convertToContacts</a>
                             </li>
                             <li>
-                                <a href="#getRosterContacts">getRosterContacts</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#handlePresenceStanza">handlePresenceStanza</a>
+                                <a href="#getRosterContacts" >getRosterContacts</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#handleRosterPushStanza">handleRosterPushStanza</a>
-                            </li>
-                            <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#handlePresenceStanza" >handlePresenceStanza</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#isCapabilitiesStanza">isCapabilitiesStanza</a>
+                                <a href="#handleRosterPushStanza" >handleRosterPushStanza</a>
+                            </li>
+                            <li>
+                                <a href="#handleStanza" >handleStanza</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#isPresenceStanza">isPresenceStanza</a>
+                                <a href="#isCapabilitiesStanza" >isCapabilitiesStanza</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#isRosterPushStanza">isRosterPushStanza</a>
+                                <a href="#isPresenceStanza" >isPresenceStanza</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isRosterPushStanza" >isRosterPushStanza</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#parseSubscription">parseSubscription</a>
+                                <a href="#parseSubscription" >parseSubscription</a>
                             </li>
                             <li>
-                                <a href="#refreshRosterContacts">refreshRosterContacts</a>
+                                <a href="#refreshRosterContacts" >refreshRosterContacts</a>
                             </li>
                             <li>
-                                <a href="#removeRosterContact">removeRosterContact</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#sendAcceptPresenceSubscriptionRequest">sendAcceptPresenceSubscriptionRequest</a>
+                                <a href="#removeRosterContact" >removeRosterContact</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#sendAddToRoster">sendAddToRoster</a>
+                                <a href="#sendAcceptPresenceSubscriptionRequest" >sendAcceptPresenceSubscriptionRequest</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#sendRemoveFromRoster">sendRemoveFromRoster</a>
+                                <a href="#sendAddToRoster" >sendAddToRoster</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#sendSubscribeToPresence">sendSubscribeToPresence</a>
+                                <a href="#sendRemoveFromRoster" >sendRemoveFromRoster</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#sendWithdrawPresenceSubscription">sendWithdrawPresenceSubscription</a>
+                                <a href="#sendSubscribeToPresence" >sendSubscribeToPresence</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#transitionSubscriptionRequestReceivedAccepted">transitionSubscriptionRequestReceivedAccepted</a>
+                                <a href="#sendWithdrawPresenceSubscription" >sendWithdrawPresenceSubscription</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#transitionSubscriptionRequestSentAccepted">transitionSubscriptionRequestSentAccepted</a>
+                                <a href="#transitionSubscriptionRequestReceivedAccepted" >transitionSubscriptionRequestReceivedAccepted</a>
                             </li>
                             <li>
-                                <a href="#afterReceiveMessage">afterReceiveMessage</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#transitionSubscriptionRequestSentAccepted" >transitionSubscriptionRequestSentAccepted</a>
                             </li>
                             <li>
-                                <a href="#afterSendMessage">afterSendMessage</a>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
                             </li>
                             <li>
-                                <a href="#beforeSendMessage">beforeSendMessage</a>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
                             </li>
                             <li>
-                                <a href="#handleStanza">handleStanza</a>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
                             </li>
                             <li>
-                                <a href="#onBeforeOnline">onBeforeOnline</a>
-                            </li>
-                            <li>
-                                <a href="#onOffline">onOffline</a>
+                                <a href="#onOffline" >onOffline</a>
                             </li>
                         </ul>
                     </td>
@@ -204,7 +200,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html">LogService</a>)</code>
+<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html" target="_self">LogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -271,9 +267,7 @@
                 <td class="col-md-4">
                     <a name="addRosterContact"></a>
                     <span class="name">
-                        <b>
-                            addRosterContact
-                        </b>
+                        <span ><b>addRosterContact</b></span>
                         <a href="#addRosterContact"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -298,6 +292,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -341,10 +336,8 @@
                 <td class="col-md-4">
                     <a name="convertToContacts"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            convertToContacts
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>convertToContacts</b></span>
                         <a href="#convertToContacts"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -352,7 +345,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>convertToContacts(responseStanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+                    <code>convertToContacts(responseStanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -370,6 +363,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -413,9 +407,7 @@
                 <td class="col-md-4">
                     <a name="getRosterContacts"></a>
                     <span class="name">
-                        <b>
-                            getRosterContacts
-                        </b>
+                        <span ><b>getRosterContacts</b></span>
                         <a href="#getRosterContacts"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -452,10 +444,8 @@
                 <td class="col-md-4">
                     <a name="handlePresenceStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            handlePresenceStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>handlePresenceStanza</b></span>
                         <a href="#handlePresenceStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -463,7 +453,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handlePresenceStanza(stanza: <a href="../interfaces/PresenceStanza.html">PresenceStanza</a>)</code>
+                    <code>handlePresenceStanza(stanza: <a href="../interfaces/PresenceStanza.html" target="_self">PresenceStanza</a>)</code>
                 </td>
             </tr>
 
@@ -481,6 +471,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -524,10 +515,8 @@
                 <td class="col-md-4">
                     <a name="handleRosterPushStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            handleRosterPushStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>handleRosterPushStanza</b></span>
                         <a href="#handleRosterPushStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -535,7 +524,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleRosterPushStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+                    <code>handleRosterPushStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -553,6 +542,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -596,24 +586,28 @@
                 <td class="col-md-4">
                     <a name="handleStanza"></a>
                     <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
+                        <span ><b>handleStanza</b></span>
                         <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/roster.plugin.ts:22</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:22</a></code>
+</div>
                 </td>
             </tr>
 
@@ -623,6 +617,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -666,10 +661,8 @@
                 <td class="col-md-4">
                     <a name="isCapabilitiesStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            isCapabilitiesStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>isCapabilitiesStanza</b></span>
                         <a href="#isCapabilitiesStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -677,7 +670,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isCapabilitiesStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+                    <code>isCapabilitiesStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -695,6 +688,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -738,10 +732,8 @@
                 <td class="col-md-4">
                     <a name="isPresenceStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            isPresenceStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>isPresenceStanza</b></span>
                         <a href="#isPresenceStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -749,7 +741,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isPresenceStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+                    <code>isPresenceStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -767,6 +759,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -810,10 +803,8 @@
                 <td class="col-md-4">
                     <a name="isRosterPushStanza"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            isRosterPushStanza
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>isRosterPushStanza</b></span>
                         <a href="#isRosterPushStanza"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -821,7 +812,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isRosterPushStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
+                    <code>isRosterPushStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
                 </td>
             </tr>
 
@@ -839,6 +830,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -882,10 +874,8 @@
                 <td class="col-md-4">
                     <a name="onBeforeOnline"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            onBeforeOnline
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>onBeforeOnline</b></span>
                         <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -900,8 +890,14 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="178"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/roster.plugin.ts:178</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:178</a></code>
+</div>
                 </td>
             </tr>
 
@@ -923,10 +919,8 @@
                 <td class="col-md-4">
                     <a name="parseSubscription"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            parseSubscription
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>parseSubscription</b></span>
                         <a href="#parseSubscription"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -952,6 +946,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -995,9 +990,7 @@
                 <td class="col-md-4">
                     <a name="refreshRosterContacts"></a>
                     <span class="name">
-                        <b>
-                            refreshRosterContacts
-                        </b>
+                        <span ><b>refreshRosterContacts</b></span>
                         <a href="#refreshRosterContacts"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1034,9 +1027,7 @@
                 <td class="col-md-4">
                     <a name="removeRosterContact"></a>
                     <span class="name">
-                        <b>
-                            removeRosterContact
-                        </b>
+                        <span ><b>removeRosterContact</b></span>
                         <a href="#removeRosterContact"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1061,6 +1052,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1104,10 +1096,8 @@
                 <td class="col-md-4">
                     <a name="sendAcceptPresenceSubscriptionRequest"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            sendAcceptPresenceSubscriptionRequest
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>sendAcceptPresenceSubscriptionRequest</b></span>
                         <a href="#sendAcceptPresenceSubscriptionRequest"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1133,6 +1123,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1176,10 +1167,8 @@
                 <td class="col-md-4">
                     <a name="sendAddToRoster"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            sendAddToRoster
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>sendAddToRoster</b></span>
                         <a href="#sendAddToRoster"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1205,6 +1194,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1248,10 +1238,8 @@
                 <td class="col-md-4">
                     <a name="sendRemoveFromRoster"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            sendRemoveFromRoster
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>sendRemoveFromRoster</b></span>
                         <a href="#sendRemoveFromRoster"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1277,6 +1265,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1320,10 +1309,8 @@
                 <td class="col-md-4">
                     <a name="sendSubscribeToPresence"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            sendSubscribeToPresence
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>sendSubscribeToPresence</b></span>
                         <a href="#sendSubscribeToPresence"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1349,6 +1336,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1392,10 +1380,8 @@
                 <td class="col-md-4">
                     <a name="sendWithdrawPresenceSubscription"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            sendWithdrawPresenceSubscription
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>sendWithdrawPresenceSubscription</b></span>
                         <a href="#sendWithdrawPresenceSubscription"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1421,6 +1407,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1464,10 +1451,8 @@
                 <td class="col-md-4">
                     <a name="transitionSubscriptionRequestReceivedAccepted"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            transitionSubscriptionRequestReceivedAccepted
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>transitionSubscriptionRequestReceivedAccepted</b></span>
                         <a href="#transitionSubscriptionRequestReceivedAccepted"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1475,7 +1460,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transitionSubscriptionRequestReceivedAccepted(subscription: <a href="../classes/Contact.html">ContactSubscription</a>)</code>
+                    <code>transitionSubscriptionRequestReceivedAccepted(subscription: <a href="../classes/Contact.html" target="_self">ContactSubscription</a>)</code>
                 </td>
             </tr>
 
@@ -1493,6 +1478,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1536,10 +1522,8 @@
                 <td class="col-md-4">
                     <a name="transitionSubscriptionRequestSentAccepted"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            transitionSubscriptionRequestSentAccepted
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>transitionSubscriptionRequestSentAccepted</b></span>
                         <a href="#transitionSubscriptionRequestSentAccepted"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -1547,7 +1531,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>transitionSubscriptionRequestSentAccepted(subscription: <a href="../classes/Contact.html">ContactSubscription</a>)</code>
+                    <code>transitionSubscriptionRequestSentAccepted(subscription: <a href="../classes/Contact.html" target="_self">ContactSubscription</a>)</code>
                 </td>
             </tr>
 
@@ -1565,6 +1549,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1608,16 +1593,14 @@
                 <td class="col-md-4">
                     <a name="afterReceiveMessage"></a>
                     <span class="name">
-                        <b>
-                            afterReceiveMessage
-                        </b>
+                        <span ><b>afterReceiveMessage</b></span>
                         <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterReceiveMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html">MessageReceivedEvent</a>)</code>
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
                 </td>
             </tr>
 
@@ -1641,6 +1624,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1708,16 +1692,14 @@
                 <td class="col-md-4">
                     <a name="afterSendMessage"></a>
                     <span class="name">
-                        <b>
-                            afterSendMessage
-                        </b>
+                        <span ><b>afterSendMessage</b></span>
                         <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>afterSendMessage(message: <a href="../interfaces/Message.html">Message</a>, messageStanza: Element)</code>
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
                 </td>
             </tr>
 
@@ -1741,6 +1723,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1796,16 +1779,14 @@
                 <td class="col-md-4">
                     <a name="beforeSendMessage"></a>
                     <span class="name">
-                        <b>
-                            beforeSendMessage
-                        </b>
+                        <span ><b>beforeSendMessage</b></span>
                         <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html">Message</a>)</code>
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
                 </td>
             </tr>
 
@@ -1829,6 +1810,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -1882,132 +1864,9 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleStanza"></a>
-                    <span class="name">
-                        <b>
-                            handleStanza
-                        </b>
-                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>handleStanza(stanza: <a href="../interfaces/Stanza.html">Stanza</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:24</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>stanza</td>
-                                    <td>
-                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onBeforeOnline"></a>
-                    <span class="name">
-                        <b>
-                            onBeforeOnline
-                        </b>
-                        <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onBeforeOnline()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:9</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>PromiseLike&lt;any&gt;</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="onOffline"></a>
                     <span class="name">
-                        <b>
-                            onOffline
-                        </b>
+                        <span ><b>onOffline</b></span>
                         <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -2329,14 +2188,14 @@ export class RosterPlugin extends AbstractXmppPlugin {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -2357,9 +2216,9 @@ export class RosterPlugin extends AbstractXmppPlugin {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

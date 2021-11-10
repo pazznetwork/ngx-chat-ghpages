@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -43,7 +44,9 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>ReportUserService</li>
+  <li
+  >
+  ReportUserService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,6 +69,7 @@
 
 
 
+
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -79,7 +83,10 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#reportUser">reportUser</a>
+                                    <a href="#reportUser" 
+>
+                                        reportUser
+                                    </a>
                                 </li>
                             </ul>
                         </td>
@@ -99,24 +106,22 @@
                 <td class="col-md-4">
                     <a name="reportUser"></a>
                     <span class="name">
-                        <b>
-                            reportUser
-                        </b>
+                        <span ><b>reportUser</b></span>
                         <a href="#reportUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>reportUser(user: <a href="../classes/Contact.html">Contact</a>)</code>
+<code>reportUser(user: <a href="../classes/Contact.html" target="_self">Contact</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/report-user-service.ts:8</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="11"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/report-user-service.ts:11</a></div>
                 </td>
             </tr>
 
@@ -126,6 +131,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -172,7 +178,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { InjectionToken } from &#x27;@angular/core&#x27;;
 import { Contact } from &#x27;../core/contact&#x27;;
 
-export const REPORT_USER_INJECTION_TOKEN &#x3D; new InjectionToken(&#x27;ReportUserService&#x27;);
+/**
+ * Optional injectable token to handle contact reports in the chat
+ */
+export const REPORT_USER_INJECTION_TOKEN &#x3D; new InjectionToken&lt;ReportUserService&gt;(&#x27;ngxChatReportUserService&#x27;);
 
 export interface ReportUserService {
 
@@ -184,14 +193,14 @@ export interface ReportUserService {
 </div>
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -212,9 +221,9 @@ export interface ReportUserService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
