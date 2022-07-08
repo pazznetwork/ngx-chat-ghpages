@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -1646,7 +1646,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @Inject(ChatServiceToken)<br />
+                            @Inject(CHAT_SERVICE_TOKEN)<br />
                         </code>
                     </td>
                 </tr>
@@ -1910,7 +1910,7 @@ import { MessageArchivePlugin } from &#x27;../../services/adapters/xmpp/plugins/
 import { RoomMessage } from &#x27;../../services/adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
 import { ChatListStateService } from &#x27;../../services/chat-list-state.service&#x27;;
 import { ChatMessageListRegistryService } from &#x27;../../services/chat-message-list-registry.service&#x27;;
-import { ChatService, ChatServiceToken } from &#x27;../../services/chat-service&#x27;;
+import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;../../services/chat-service&#x27;;
 import { ContactFactoryService } from &#x27;../../services/contact-factory.service&#x27;;
 import { REPORT_USER_INJECTION_TOKEN, ReportUserService } from &#x27;../../services/report-user-service&#x27;;
 import { ChatMessageComponent } from &#x27;../chat-message/chat-message.component&#x27;;
@@ -1953,7 +1953,7 @@ export class ChatMessageListComponent implements OnInit, OnDestroy, OnChanges, A
 
     constructor(
         public chatListService: ChatListStateService,
-        @Inject(ChatServiceToken) public chatService: ChatService,
+        @Inject(CHAT_SERVICE_TOKEN) public chatService: ChatService,
         private chatMessageListRegistry: ChatMessageListRegistryService,
         @Optional() @Inject(REPORT_USER_INJECTION_TOKEN) public reportUserService: ReportUserService,
         private changeDetectorRef: ChangeDetectorRef,

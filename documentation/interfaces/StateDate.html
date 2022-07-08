@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -245,6 +245,8 @@ const nodeName &#x3D; &#x27;contact-message-state&#x27;;
 
 /**
  * Plugin using PubSub to persist message read states.
+ * Custom not part of the XMPP Specification
+ * Standardized implementation specification would be https://xmpp.org/extensions/xep-0184.html
  */
 export class MessageStatePlugin extends AbstractXmppPlugin {
 
@@ -283,14 +285,14 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
     }
 
     private async parseContactMessageStates(): Promise&lt;void&gt; {
-        const itemElement &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES);
-        this.processPubSub(itemElement);
+        const itemElements &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES);
+        this.processPubSub(itemElements);
     }
 
-    private processPubSub(itemElement: Element[]): void {
+    private processPubSub(itemElements: Element[]): void {
         let results &#x3D; [] as [string, StateDate][];
-        if (itemElement.length &#x3D;&#x3D;&#x3D; 1) {
-            results &#x3D; itemElement[0]
+        if (itemElements.length &#x3D;&#x3D;&#x3D; 1) {
+            results &#x3D; itemElements[0]
                 .getChild(wrapperNodeName)
                 .getChildren(nodeName)
                 .map((contactMessageStateElement: Stanza) &#x3D;&gt; {

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -177,7 +177,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PlatformLocation } from &#x27;@angular/common&#x27;;
-import { Component, Inject, InjectionToken, OnInit, Optional } from &#x27;@angular/core&#x27;;
+import { Component, Inject, InjectionToken, Optional } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 
 export interface LinkOpener {
@@ -187,24 +187,21 @@ export interface LinkOpener {
 /**
  * You can provide your own implementation for {@link LinkOpener} to override link opening e.g. when using Cordova.
  */
-export const LinkOpenerToken &#x3D; new InjectionToken&lt;LinkOpener&gt;(&#x27;pazznetworkNgxChatLinkOpener&#x27;);
+export const LINK_OPENER_TOKEN &#x3D; new InjectionToken&lt;LinkOpener&gt;(&#x27;ngxChatLinkOpener&#x27;);
 
 @Component({
     selector: &#x27;ngx-chat-message-link&#x27;,
     templateUrl: &#x27;./chat-message-link.component.html&#x27;,
     styleUrls: [&#x27;./chat-message-link.component.less&#x27;]
 })
-export class ChatMessageLinkComponent implements OnInit {
+export class ChatMessageLinkComponent {
 
     link: string;
     text: string;
 
     constructor(private router: Router,
                 private platformLocation: PlatformLocation,
-                @Optional() @Inject(LinkOpenerToken) private linkOpener: LinkOpener) { }
-
-    ngOnInit() {
-    }
+                @Optional() @Inject(LINK_OPENER_TOKEN) private linkOpener: LinkOpener) { }
 
     onClick($event: Event) {
         if (this.linkOpener) {
