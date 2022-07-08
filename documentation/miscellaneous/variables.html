@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -61,7 +61,7 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#ChatServiceToken" title="projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts" ><b>ChatServiceToken</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-service.ts)</a>
+                            <a href="#CHAT_SERVICE_TOKEN" title="projects/pazznetwork/ngx-chat/src/lib/services/chat-service.ts" ><b>CHAT_SERVICE_TOKEN</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-service.ts)</a>
                         </li>
                         <li>
                             <a href="#CONTACT_CLICK_HANDLER_TOKEN" title="projects/pazznetwork/ngx-chat/src/lib/services/chat-contact-click-handler.ts" ><b>CONTACT_CLICK_HANDLER_TOKEN</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-contact-click-handler.ts)</a>
@@ -76,7 +76,7 @@
                             <a href="#identity" title="projects/pazznetwork/ngx-chat/src/lib/core/utils-array.ts" ><b>identity</b>&nbsp;&nbsp;&nbsp;(projects/.../utils-array.ts)</a>
                         </li>
                         <li>
-                            <a href="#LinkOpenerToken" title="projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts" ><b>LinkOpenerToken</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-message-link.component.ts)</a>
+                            <a href="#LINK_OPENER_TOKEN" title="projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts" ><b>LINK_OPENER_TOKEN</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-message-link.component.ts)</a>
                         </li>
                         <li>
                             <a href="#MAX_IMAGE_SIZE" title="projects/pazznetwork/ngx-chat/src/lib/components/chat-message/chat-message.component.ts" ><b>MAX_IMAGE_SIZE</b>&nbsp;&nbsp;&nbsp;(projects/.../chat-message.component.ts)</a>
@@ -130,19 +130,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ChatServiceToken"></a>
+                    <a name="CHAT_SERVICE_TOKEN"></a>
                     <span class="name">
-                        <span ><b>ChatServiceToken</b></span>
-                        <a href="#ChatServiceToken"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>CHAT_SERVICE_TOKEN</b></span>
+                        <a href="#CHAT_SERVICE_TOKEN"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken(&#x27;pazznetworkNgxChatService&#x27;)</code>
+                        <i>Default value : </i><code>new InjectionToken&lt;ChatService&gt;(&#x27;ngxChatService&#x27;)</code>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The chat service token gives you access to the main chat api and is implemented by default with an XMPP adapter,
+you can always reuse the api and ui with a new service implementing the ChatService interface and providing the
+said implementation with the token</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -162,10 +170,16 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken(&#x27;ChatContactClickHandler&#x27;)</code>
+                        <i>Default value : </i><code>new InjectionToken&lt;ChatContactClickHandler&gt;(&#x27;ngxChatContactClickHandler&#x27;)</code>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Optional injectable token to handle contact clicks in the chat</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -286,16 +300,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="LinkOpenerToken"></a>
+                    <a name="LINK_OPENER_TOKEN"></a>
                     <span class="name">
-                        <span ><b>LinkOpenerToken</b></span>
-                        <a href="#LinkOpenerToken"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>LINK_OPENER_TOKEN</b></span>
+                        <a href="#LINK_OPENER_TOKEN"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;LinkOpener&gt;(&#x27;pazznetworkNgxChatLinkOpener&#x27;)</code>
+                        <i>Default value : </i><code>new InjectionToken&lt;LinkOpener&gt;(&#x27;ngxChatLinkOpener&#x27;)</code>
                     </td>
                 </tr>
 
@@ -567,10 +581,16 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken(&#x27;ReportUserService&#x27;)</code>
+                        <i>Default value : </i><code>new InjectionToken&lt;ReportUserService&gt;(&#x27;ngxChatReportUserService&#x27;)</code>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Optional injectable token to handle contact reports in the chat</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

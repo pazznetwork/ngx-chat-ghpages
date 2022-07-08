@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -70,12 +70,6 @@
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
 
 
 <section>
@@ -158,9 +152,6 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#isInApp" >isInApp</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
                                 <a href="#onClick" >onClick</a>
@@ -281,8 +272,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -320,8 +311,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -331,43 +322,6 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:28</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
                     </div>
                 </td>
@@ -394,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/chat-message-link/chat-message-link.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -508,7 +462,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PlatformLocation } from &#x27;@angular/common&#x27;;
-import { Component, Inject, InjectionToken, OnInit, Optional } from &#x27;@angular/core&#x27;;
+import { Component, Inject, InjectionToken, Optional } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 
 export interface LinkOpener {
@@ -518,24 +472,21 @@ export interface LinkOpener {
 /**
  * You can provide your own implementation for {@link LinkOpener} to override link opening e.g. when using Cordova.
  */
-export const LinkOpenerToken &#x3D; new InjectionToken&lt;LinkOpener&gt;(&#x27;pazznetworkNgxChatLinkOpener&#x27;);
+export const LINK_OPENER_TOKEN &#x3D; new InjectionToken&lt;LinkOpener&gt;(&#x27;ngxChatLinkOpener&#x27;);
 
 @Component({
     selector: &#x27;ngx-chat-message-link&#x27;,
     templateUrl: &#x27;./chat-message-link.component.html&#x27;,
     styleUrls: [&#x27;./chat-message-link.component.less&#x27;]
 })
-export class ChatMessageLinkComponent implements OnInit {
+export class ChatMessageLinkComponent {
 
     link: string;
     text: string;
 
     constructor(private router: Router,
                 private platformLocation: PlatformLocation,
-                @Optional() @Inject(LinkOpenerToken) private linkOpener: LinkOpener) { }
-
-    ngOnInit() {
-    }
+                @Optional() @Inject(LINK_OPENER_TOKEN) private linkOpener: LinkOpener) { }
 
     onClick($event: Event) {
         if (this.linkOpener) {

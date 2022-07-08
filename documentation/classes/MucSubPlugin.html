@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat-xmpp-shell documentation</title>
+        <title>ngx-chat documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -118,6 +118,13 @@
                                 <a href="#determineSupportForMucSub" >determineSupportForMucSub</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getSubscribedRooms" >getSubscribedRooms</a>
+                            </li>
+                            <li>
+                                <a href="#getSubscribers" >getSubscribers</a>
+                            </li>
+                            <li>
                                 <a href="#onBeforeOnline" >onBeforeOnline</a>
                             </li>
                             <li>
@@ -130,6 +137,9 @@
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#subscribeRoom" >subscribeRoom</a>
+                            </li>
+                            <li>
+                                <a href="#unsubscribeJidFromRoom" >unsubscribeJidFromRoom</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -303,6 +313,125 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getSubscribedRooms"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getSubscribedRooms</b></span>
+                        <a href="#getSubscribedRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubscribedRooms()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A user can query the MUC service to get their list of subscriptions.
+see: <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#g">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#g</a> dd ddetting-list-of-subscribed-rooms</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubscribers"></a>
+                    <span class="name">
+                        <span ><b>getSubscribers</b></span>
+                        <a href="#getSubscribers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSubscribers(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A subscriber or room moderator can get the list of subscribers by sending <subscriptions/> request directly to the room JID.
+see: <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#getting-list-of-subscribers-of-a-room">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#getting-list-of-subscribers-of-a-room</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>of the room the get a subscriber list from</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="onBeforeOnline"></a>
                     <span class="name">
                         <span ><b>onBeforeOnline</b></span>
@@ -407,8 +536,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:107</a></div>
                 </td>
             </tr>
 
@@ -504,6 +633,99 @@
                     </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribeJidFromRoom"></a>
+                    <span class="name">
+                        <span ><b>unsubscribeJidFromRoom</b></span>
+                        <a href="#unsubscribeJidFromRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unsubscribeJidFromRoom(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A room moderator can unsubscribe others providing the their jid as attribute to the information query (iq)
+see: <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#unsubscribing-from-a-muc-room">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#unsubscribing-from-a-muc-room</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>for the room to be unsubscribed from</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>jid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>user id to be unsubscribed</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1003,6 +1225,48 @@ export class MucSubPlugin extends AbstractXmppPlugin {
     async unsubscribeRoom(roomJid: string): Promise&lt;void&gt; {
         await this.xmppChatAdapter.chatConnectionService.sendIq(
             makeUnsubscribeRoomStanza(roomJid)
+        );
+    }
+
+    /**
+     * A room moderator can unsubscribe others providing the their jid as attribute to the information query (iq)
+     * see: https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#unsubscribing-from-a-muc-room
+     * @param roomJid for the room to be unsubscribed from
+     * @param jid user id to be unsubscribed
+     */
+    unsubscribeJidFromRoom(roomJid: string, jid: string) {
+        this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid},
+                xml(&#x27;unsubscribe&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;, jid}),
+            ),
+        );
+    }
+
+    /**
+     * A user can query the MUC service to get their list of subscriptions.
+     * see: https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#g dd ddetting-list-of-subscribed-rooms
+     */
+    async getSubscribedRooms() {
+        const {local, domain} &#x3D; this.xmppChatAdapter.chatConnectionService.userJid;
+        const from &#x3D; &#x60;${local}@${domain}&#x60;;
+        const subscriptions &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, from, to: &#x27;muc.&#x27; + domain},
+                xml(&#x27;subscriptions&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;}),
+            ),
+        );
+        return subscriptions.getChildren(&#x27;subscription&#x27;).map(sub &#x3D;&gt; sub.getAttr(&#x27;jid&#x27;));
+    }
+
+    /**
+     * A subscriber or room moderator can get the list of subscribers by sending &lt;subscriptions/&gt; request directly to the room JID.
+     * see: https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#getting-list-of-subscribers-of-a-room
+     * @param roomJid of the room the get a subscriber list from
+     */
+    getSubscribers(roomJid: string) {
+        this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: roomJid},
+                xml(&#x27;subscriptions&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;}),
+            ),
         );
     }
 
