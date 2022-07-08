@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -30,6 +30,7 @@
                <!-- START CONTENT -->
                <div class="content interface">
                    <div class="content-data">
+
 
 
 
@@ -244,12 +245,10 @@ const nodeName &#x3D; &#x27;contact-message-state&#x27;;
 
 /**
  * Plugin using PubSub to persist message read states.
- * Custom not part of the XMPP Specification
- * Standardized implementation specification would be https://xmpp.org/extensions/xep-0184.html
  */
 export class MessageStatePlugin extends AbstractXmppPlugin {
 
-    private jidToMessageStateDate: JidToMessageStateDate &#x3D; Object.create(null);
+    private jidToMessageStateDate: JidToMessageStateDate &#x3D; new Map();
 
     constructor(
         private readonly publishSubscribePlugin: PublishSubscribePlugin,
@@ -276,7 +275,7 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
             });
 
         this.publishSubscribePlugin.publish$
-            .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event));
+            .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event as Stanza));
     }
 
     async onBeforeOnline(): Promise&lt;void&gt; {
@@ -284,14 +283,14 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
     }
 
     private async parseContactMessageStates(): Promise&lt;void&gt; {
-        const itemElements &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES);
-        this.processPubSub(itemElements);
+        const itemElement &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES);
+        this.processPubSub(itemElement);
     }
 
-    private processPubSub(itemElements: Stanza[]): void {
+    private processPubSub(itemElement: Element[]): void {
         let results &#x3D; [] as [string, StateDate][];
-        if (itemElements.length &#x3D;&#x3D;&#x3D; 1) {
-            results &#x3D; itemElements[0]
+        if (itemElement.length &#x3D;&#x3D;&#x3D; 1) {
+            results &#x3D; itemElement[0]
                 .getChild(wrapperNodeName)
                 .getChildren(nodeName)
                 .map((contactMessageStateElement: Stanza) &#x3D;&gt; {
@@ -433,10 +432,10 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
         return this.jidToMessageStateDate.get(contactJid);
     }
 
-    private handlePubSubEvent(event: Stanza): void {
-        const items: Stanza | undefined &#x3D; event.getChild(&#x27;items&#x27;);
+    private handlePubSubEvent(event: Element): void {
+        const items: Element | undefined &#x3D; event.getChild(&#x27;items&#x27;);
         const itemsNode &#x3D; items?.attrs.node;
-        const itemElements: Stanza[] | undefined &#x3D; items?.getChildren(&#x27;item&#x27;);
+        const itemElements: Element[] | undefined &#x3D; items?.getChildren(&#x27;item&#x27;);
         if (itemsNode &#x3D;&#x3D;&#x3D; STORAGE_NGX_CHAT_CONTACT_MESSAGE_STATES &amp;&amp; itemElements) {
             this.processPubSub(itemElements);
         }
@@ -445,6 +444,7 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
 </code></pre>
     </div>
 </div>
+
 
 
 
@@ -465,6 +465,15 @@ export class MessageStatePlugin extends AbstractXmppPlugin {
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

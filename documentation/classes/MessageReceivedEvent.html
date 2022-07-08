@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -30,6 +30,7 @@
                <!-- START CONTENT -->
                <div class="content class">
                    <div class="content-data">
+
 
 
 
@@ -121,7 +122,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/message.plugin.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -147,15 +148,12 @@ import { MessageWithBodyStanza, Stanza } from &#x27;../../../../core/stanza&#x27
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { Element} from &#x27;ltx&#x27;;
 
 export class MessageReceivedEvent {
     discard &#x3D; false;
 }
 
-/**
- * Part of the XMPP Core Specification
- * see: https://datatracker.ietf.org/doc/rfc6120/
- */
 export class MessagePlugin extends AbstractXmppPlugin {
 
     constructor(
@@ -165,7 +163,7 @@ export class MessagePlugin extends AbstractXmppPlugin {
         super();
     }
 
-    handleStanza(stanza: Stanza, archiveDelayElement?: Stanza) {
+    handleStanza(stanza: Stanza, archiveDelayElement?: Element) {
         if (this.isMessageStanza(stanza)) {
             this.handleMessageStanza(stanza, archiveDelayElement);
             return true;
@@ -180,7 +178,7 @@ export class MessagePlugin extends AbstractXmppPlugin {
             &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;)?.trim();
     }
 
-    private handleMessageStanza(messageStanza: MessageWithBodyStanza, archiveDelayElement?: Stanza) {
+    private handleMessageStanza(messageStanza: MessageWithBodyStanza, archiveDelayElement?: Element) {
         const isAddressedToMe &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.bare()
             .equals(parseJid(messageStanza.attrs.to).bare());
         const messageDirection &#x3D; isAddressedToMe ? Direction.in : Direction.out;
@@ -258,6 +256,7 @@ export class MessagePlugin extends AbstractXmppPlugin {
 
 
 
+
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
@@ -271,6 +270,15 @@ export class MessagePlugin extends AbstractXmppPlugin {
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

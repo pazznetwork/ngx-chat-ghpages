@@ -15,7 +15,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
         <nav>
             <ul class="list">
                 <li class="title">
-                    <a href="index.html" data-type="index-link">ngx-chat documentation</a>
+                    <a href="index.html" data-type="index-link">ngx-chat-xmpp-shell documentation</a>
                 </li>
 
                 <li class="divider"></li>
@@ -48,6 +48,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <span class="icon ion-ios-list"></span>Dependencies
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="properties.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-apps"></span>Properties
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter modules">
@@ -64,13 +69,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxChatModule.html" data-type="entity-link" >NgxChatModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' : 'data-target="#xs-components-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' }>
+                                            'data-target="#components-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' : 'data-target="#xs-components-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' :
-                                            'id="xs-components-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' :
+                                            'id="xs-components-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' }>
                                             <li class="link">
                                                 <a href="components/ChatAvatarComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ChatAvatarComponent</a>
                                             </li>
@@ -120,13 +125,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' : 'data-target="#xs-directives-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' }>
+                                        'data-target="#directives-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' : 'data-target="#xs-directives-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' :
-                                        'id="xs-directives-links-module-NgxChatModule-51f80260db0c8652f46d544cc849ebd6"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' :
+                                        'id="xs-directives-links-module-NgxChatModule-00f5a7cb642f4ffea281bcc654b7dcf97c1e917e6659fa398b9db94b8d97dcd125e6aad11b9451821a6f8fe167217a8805baddcefdd443da23304ce57f42a5ce"' }>
                                         <li class="link">
                                             <a href="directives/IntersectionObserverDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >IntersectionObserverDirective</a>
                                         </li>
@@ -234,13 +239,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Room.html" data-type="entity-link" >Room</a>
                             </li>
                             <li class="link">
+                                <a href="classes/RoomMessageStanzaBuilder.html" data-type="entity-link" >RoomMessageStanzaBuilder</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/RosterPlugin.html" data-type="entity-link" >RosterPlugin</a>
                             </li>
                             <li class="link">
                                 <a href="classes/ServiceDiscoveryPlugin.html" data-type="entity-link" >ServiceDiscoveryPlugin</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/StanzaBuilder.html" data-type="entity-link" >StanzaBuilder</a>
                             </li>
                             <li class="link">
                                 <a href="classes/TimeoutError.html" data-type="entity-link" >TimeoutError</a>
@@ -329,7 +334,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/LogInRequest.html" data-type="entity-link" >LogInRequest</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/MemberListItem.html" data-type="entity-link" >MemberListItem</a>
+                                <a href="interfaces/MemberlistItem.html" data-type="entity-link" >MemberlistItem</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Message.html" data-type="entity-link" >Message</a>

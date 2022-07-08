@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -30,6 +30,7 @@
                <!-- START CONTENT -->
                <div class="content interface">
                    <div class="content-data">
+
 
 
 
@@ -64,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/pazznetwork/ngx-chat/src/lib/components/chat-window/chat-window.component.ts</code>
+            <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/xmpp-chat-adapter.service.ts</code>
         </p>
 
 
@@ -119,7 +120,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>chatWindow:         <code><a href="../components/ChatWindowComponent.html" target="_self" >ChatWindowComponent</a></code>
+                                        <code>chatWindow:     <code>TChatWindow</code>
 </code>
                                     </td>
                                 </tr>
@@ -127,7 +128,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../components/ChatWindowComponent.html" target="_self" >ChatWindowComponent</a></code>
+                                            <i>Type : </i>    <code>TChatWindow</code>
 
                                         </td>
                                     </tr>
@@ -176,104 +177,29 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, Input, OnDestroy, OnInit, Optional, ViewChild } from &#x27;@angular/core&#x27;;
-import { Observable, Subject } from &#x27;rxjs&#x27;;
-import { filter, takeUntil } from &#x27;rxjs/operators&#x27;;
-import { Direction, Message } from &#x27;../../core/message&#x27;;
-import { HttpFileUploadPlugin } from &#x27;../../services/adapters/xmpp/plugins/http-file-upload.plugin&#x27;;
-import { RoomMessage } from &#x27;../../services/adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
-import { ChatContactClickHandler, CONTACT_CLICK_HANDLER_TOKEN } from &#x27;../../services/chat-contact-click-handler&#x27;;
-import { ChatListStateService, ChatWindowState } from &#x27;../../services/chat-list-state.service&#x27;;
-import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;../../services/chat-service&#x27;;
-import { ChatMessageInputComponent } from &#x27;../chat-message-input/chat-message-input.component&#x27;;
-import { ChatMessageListComponent } from &#x27;../chat-message-list/chat-message-list.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {jid as parseJid} from &#x27;@xmpp/client&#x27;;
+import {BehaviorSubject, combineLatest, merge, Observable, Subject} from &#x27;rxjs&#x27;;
+import {filter, map} from &#x27;rxjs/operators&#x27;;
+import {Contact} from &#x27;../../../core/contact&#x27;;
+import {dummyAvatarContact} from &#x27;../../../core/contact-avatar&#x27;;
+import {LogInRequest} from &#x27;../../../core/log-in-request&#x27;;
+import {ChatPlugin} from &#x27;../../../core/plugin&#x27;;
+import {Recipient} from &#x27;../../../core/recipient&#x27;;
+import {Stanza} from &#x27;../../../core/stanza&#x27;;
+import {Translations} from &#x27;../../../core/translations&#x27;;
+import {defaultTranslations} from &#x27;../../../core/translations-default&#x27;;
+import {ChatService, ConnectionStates} from &#x27;../../chat-service&#x27;;
+import {ContactFactoryService} from &#x27;../../contact-factory.service&#x27;;
+import {LogService} from &#x27;../../log.service&#x27;;
+import {MessageArchivePlugin} from &#x27;./plugins/message-archive.plugin&#x27;;
+import {MessagePlugin} from &#x27;./plugins/message.plugin&#x27;;
+import {MultiUserChatPlugin} from &#x27;./plugins/multi-user-chat.plugin&#x27;;
+import {RosterPlugin} from &#x27;./plugins/roster.plugin&#x27;;
+import {XmppChatConnectionService, XmppChatStates} from &#x27;./xmpp-chat-connection.service&#x27;;
 
-@Component({
-    selector: &#x27;ngx-chat-window&#x27;,
-    templateUrl: &#x27;./chat-window.component.html&#x27;,
-    styleUrls: [&#x27;./chat-window.component.less&#x27;],
-})
-export class ChatWindowComponent implements OnInit, OnDestroy {
 
-    @Input()
-    public chatWindowState: ChatWindowState;
-
-    @ViewChild(ChatMessageInputComponent)
-    private readonly messageInput: ChatMessageInputComponent;
-
-    @ViewChild(ChatMessageListComponent)
-    private readonly contactMessageList: ChatMessageListComponent;
-
-    readonly httpFileUploadPlugin: HttpFileUploadPlugin;
-
-    private readonly ngDestroy &#x3D; new Subject&lt;void&gt;();
-
-    constructor(
-        @Inject(CHAT_SERVICE_TOKEN) readonly chatService: ChatService,
-        private readonly chatListService: ChatListStateService,
-        @Inject(CONTACT_CLICK_HANDLER_TOKEN) @Optional() readonly contactClickHandler: ChatContactClickHandler,
-    ) {
-        this.httpFileUploadPlugin &#x3D; this.chatService.getPlugin(HttpFileUploadPlugin);
-    }
-
-    ngOnInit() {
-        const messages$: Observable&lt;RoomMessage | Message&gt; &#x3D; this.chatWindowState.recipient.messages$;
-        messages$
-            .pipe(
-                filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in),
-                takeUntil(this.ngDestroy),
-            )
-            .subscribe(() &#x3D;&gt; {
-                this.chatWindowState.isCollapsed &#x3D; false;
-            });
-    }
-
-    ngOnDestroy() {
-        this.ngDestroy.next();
-        this.ngDestroy.complete();
-    }
-
-    public onClickHeader() {
-        this.chatWindowState.isCollapsed &#x3D; !this.chatWindowState.isCollapsed;
-    }
-
-    public onClickClose() {
-        this.chatListService.closeChat(this.chatWindowState.recipient);
-    }
-
-    sendMessage() {
-        this.messageInput.onSendMessage();
-    }
-
-    afterSendMessage() {
-        this.contactMessageList.scheduleScrollToLastMessage();
-    }
-
-    async uploadFile(file: File) {
-        const url &#x3D; await this.httpFileUploadPlugin.upload(file);
-        this.chatService.sendMessage(this.chatWindowState.recipient, url);
-    }
-
-    onFocus() {
-        this.messageInput.focus();
-    }
-
-    onActionClick(chatAction: ChatAction) {
-        chatAction.onClick({
-            contact: this.chatWindowState.recipient.jidBare.toString(),
-            chatWindow: this,
-        });
-    }
-
-    onContactClick($event: MouseEvent) {
-        if (this.contactClickHandler &amp;&amp; !this.chatWindowState.isCollapsed) {
-            $event.stopPropagation();
-            this.contactClickHandler.onClick(this.chatWindowState.recipient);
-        }
-    }
-}
-
-export interface ChatAction {
+export interface ChatAction&lt;TChatWindow&gt; {
     cssClass: { [className: string]: boolean } | string | string[];
     /**
      * to identify actions
@@ -281,16 +207,231 @@ export interface ChatAction {
     id: string;
     html: string;
 
-    onClick(chatActionContext: ChatActionContext): void;
+    onClick(chatActionContext: ChatActionContext&lt;TChatWindow&gt;): void;
 }
 
-export interface ChatActionContext {
+export interface ChatActionContext&lt;TChatWindow&gt; {
     contact: string;
-    chatWindow: ChatWindowComponent;
+    chatWindow: TChatWindow;
+}
+
+
+@Injectable()
+export class XmppChatAdapter implements ChatService {
+
+    readonly message$ &#x3D; new Subject&lt;Contact&gt;();
+    readonly messageSent$: Subject&lt;Contact&gt; &#x3D; new Subject();
+
+    readonly contacts$ &#x3D; new BehaviorSubject&lt;Contact[]&gt;([]);
+    readonly contactCreated$ &#x3D; new Subject&lt;Contact&gt;();
+
+    readonly blockedContactIds$ &#x3D; new BehaviorSubject&lt;Set&lt;string&gt;&gt;(new Set&lt;string&gt;());
+    readonly blockedContacts$ &#x3D; combineLatest([this.contacts$, this.blockedContactIds$])
+        .pipe(
+            map(
+                ([contacts, blockedJids]) &#x3D;&gt;
+                    contacts.filter(contact &#x3D;&gt; blockedJids.has(contact.jidBare.toString())),
+            ),
+        );
+    readonly notBlockedContacts$ &#x3D; combineLatest([this.contacts$, this.blockedContactIds$])
+        .pipe(
+            map(
+                ([contacts, blockedJids]) &#x3D;&gt;
+                    contacts.filter(contact &#x3D;&gt; !blockedJids.has(contact.jidBare.toString())),
+            ),
+        );
+    readonly contactsSubscribed$: Observable&lt;Contact[]&gt; &#x3D; this.notBlockedContacts$.pipe(
+        map(contacts &#x3D;&gt; contacts.filter(contact &#x3D;&gt; contact.isSubscribed())));
+    readonly contactRequestsReceived$: Observable&lt;Contact[]&gt; &#x3D; this.notBlockedContacts$.pipe(
+        map(contacts &#x3D;&gt; contacts.filter(contact &#x3D;&gt; contact.pendingIn$.getValue())));
+    readonly contactRequestsSent$: Observable&lt;Contact[]&gt; &#x3D; this.notBlockedContacts$.pipe(
+        map(contacts &#x3D;&gt; contacts.filter(contact &#x3D;&gt; contact.pendingOut$.getValue())));
+    readonly contactsUnaffiliated$: Observable&lt;Contact[]&gt; &#x3D; this.notBlockedContacts$.pipe(
+        map(contacts &#x3D;&gt; contacts.filter(contact &#x3D;&gt; contact.isUnaffiliated() &amp;&amp; contact.messages.length &gt; 0)));
+    readonly state$ &#x3D; new BehaviorSubject&lt;ConnectionStates&gt;(&#x27;disconnected&#x27;);
+    readonly plugins: ChatPlugin[] &#x3D; [];
+    enableDebugging &#x3D; false;
+    readonly userAvatar$ &#x3D; new BehaviorSubject(dummyAvatarContact);
+    translations: Translations &#x3D; defaultTranslations();
+
+    chatActions &#x3D; [{
+        id: &#x27;sendMessage&#x27;,
+        cssClass: &#x27;chat-window-send&#x27;,
+        html: &#x27;&amp;raquo;&#x27;,
+        onClick: (chatActionContext: ChatActionContext&lt;{ sendMessage: () &#x3D;&gt; void }&gt;) &#x3D;&gt; {
+            chatActionContext.chatWindow.sendMessage();
+        },
+    }];
+
+    private lastLogInRequest: LogInRequest;
+
+    constructor(
+        public chatConnectionService: XmppChatConnectionService,
+        private logService: LogService,
+        private contactFactory: ContactFactoryService,
+    ) {
+        this.state$.subscribe((state) &#x3D;&gt; this.logService.info(&#x27;state changed to:&#x27;, state));
+        chatConnectionService.state$
+            .pipe(filter(nextState &#x3D;&gt; nextState !&#x3D;&#x3D; this.state$.getValue()))
+            .subscribe((nextState) &#x3D;&gt; {
+                this.handleInternalStateChange(nextState);
+            });
+        this.chatConnectionService.stanzaUnknown$.subscribe((stanza) &#x3D;&gt; this.onUnknownStanza(stanza));
+
+        merge(this.messageSent$, this.message$).subscribe(() &#x3D;&gt; {
+            // re-emit contacts when sending or receiving a message to refresh contcat groups
+            // if the sending contact was in &#x27;other&#x27;, he still is in other now, but passes the &#x27;messages.length &gt; 0&#x27; predicate, so that
+            // he should be seen now.
+            this.contacts$.next(this.contacts$.getValue());
+        });
+    }
+
+    private handleInternalStateChange(internalState: XmppChatStates) {
+        if (internalState &#x3D;&#x3D;&#x3D; &#x27;online&#x27;) {
+            this.state$.next(&#x27;connecting&#x27;);
+            Promise.all(this.plugins.map(plugin &#x3D;&gt; plugin.onBeforeOnline()))
+                .then(
+                    () &#x3D;&gt; this.announceAvailability(),
+                    (e) &#x3D;&gt; {
+                        this.logService.error(&#x27;error while connecting&#x27;, e);
+                        this.announceAvailability();
+                    },
+                );
+        } else {
+            if (this.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;online&#x27;) {
+                // clear data the first time we transition to a not-online state
+                this.onOffline();
+            }
+            this.state$.next(&#x27;disconnected&#x27;);
+        }
+    }
+
+    private onOffline() {
+        this.contacts$.next([]);
+        this.plugins.forEach(plugin &#x3D;&gt; {
+            try {
+                plugin.onOffline();
+            } catch (e) {
+                this.logService.error(&#x27;error while handling offline in &#x27;, plugin);
+            }
+        });
+    }
+
+    private announceAvailability() {
+        this.logService.info(&#x27;announcing availability&#x27;);
+        this.chatConnectionService.sendPresence();
+        this.state$.next(&#x27;online&#x27;);
+    }
+
+    addPlugins(plugins: ChatPlugin[]) {
+        plugins.forEach(plugin &#x3D;&gt; {
+            this.plugins.push(plugin);
+        });
+    }
+
+    reloadContacts(): void {
+        this.getPlugin(RosterPlugin).refreshRosterContacts();
+    }
+
+    getContactById(jidPlain: string) {
+        const bareJidToFind &#x3D; parseJid(jidPlain).bare();
+        return this.contacts$.getValue().find(contact &#x3D;&gt; contact.jidBare.equals(bareJidToFind));
+    }
+
+    getOrCreateContactById(jidPlain: string, name?: string) {
+        let contact &#x3D; this.getContactById(jidPlain);
+        if (!contact) {
+            contact &#x3D; this.contactFactory.createContact(parseJid(jidPlain).bare().toString(), name);
+            this.contacts$.next([contact, ...this.contacts$.getValue()]);
+            this.contactCreated$.next(contact);
+        }
+        return contact;
+    }
+
+    addContact(identifier: string) {
+        this.getPlugin(RosterPlugin).addRosterContact(identifier);
+    }
+
+    removeContact(identifier: string) {
+        this.getPlugin(RosterPlugin).removeRosterContact(identifier);
+    }
+
+    async logIn(logInRequest: LogInRequest) {
+        this.lastLogInRequest &#x3D; logInRequest;
+        if (this.state$.getValue() &#x3D;&#x3D;&#x3D; &#x27;disconnected&#x27;) {
+            await this.chatConnectionService.logIn(logInRequest);
+        }
+    }
+
+    logOut(): Promise&lt;void&gt; {
+        return this.chatConnectionService.logOut();
+    }
+
+    async sendMessage(recipient: Recipient, body: string) {
+        const trimmedBody &#x3D; body.trim();
+        if (trimmedBody.length &#x3D;&#x3D;&#x3D; 0) {
+            return;
+        }
+        switch (recipient.recipientType) {
+            case &#x27;room&#x27;:
+                await this.getPlugin(MultiUserChatPlugin).sendMessage(recipient, trimmedBody);
+                break;
+            case &#x27;contact&#x27;:
+                this.getPlugin(MessagePlugin).sendMessage(recipient, trimmedBody);
+                this.messageSent$.next(recipient);
+                break;
+            default:
+                throw new Error(&#x27;invalid recipient type: &#x27; + (recipient as any)?.recipientType);
+        }
+    }
+
+    loadCompleteHistory() {
+        return this.getPlugin(MessageArchivePlugin).loadAllMessages();
+    }
+
+    getPlugin&lt;T extends ChatPlugin&gt;(constructor: new(...args: any[]) &#x3D;&gt; T): T {
+        for (const plugin of this.plugins) {
+            if (plugin.constructor &#x3D;&#x3D;&#x3D; constructor) {
+                return plugin as T;
+            }
+        }
+        throw new Error(&#x27;plugin not found: &#x27; + constructor);
+    }
+
+    private onUnknownStanza(stanza: Stanza) {
+
+        let handled &#x3D; false;
+
+        for (const plugin of this.plugins) {
+            try {
+                if (plugin.handleStanza(stanza)) {
+                    this.logService.debug(plugin.constructor.name, &#x27;handled&#x27;, stanza.toString());
+                    handled &#x3D; true;
+                }
+            } catch (e) {
+                this.logService.error(&#x27;error handling stanza in &#x27;, plugin.constructor.name, e);
+            }
+        }
+
+        if (!handled) {
+            this.logService.warn(&#x27;unknown stanza &lt;&#x3D;&#x27;, stanza.toString());
+        }
+
+    }
+
+    reconnectSilently(): void {
+        this.chatConnectionService.reconnectSilently();
+    }
+
+    reconnect() {
+        return this.logIn(this.lastLogInRequest);
+    }
+
 }
 </code></pre>
     </div>
 </div>
+
 
 
 
@@ -311,6 +452,15 @@ export interface ChatActionContext {
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
