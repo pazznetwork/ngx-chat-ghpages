@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -121,8 +121,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/report-user-service.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="8"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/report-user-service.ts:8</a></div>
                 </td>
             </tr>
 
@@ -179,10 +179,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { InjectionToken } from &#x27;@angular/core&#x27;;
 import { Contact } from &#x27;../core/contact&#x27;;
 
-/**
- * Optional injectable token to handle contact reports in the chat
- */
-export const REPORT_USER_INJECTION_TOKEN &#x3D; new InjectionToken&lt;ReportUserService&gt;(&#x27;ngxChatReportUserService&#x27;);
+export const REPORT_USER_INJECTION_TOKEN &#x3D; new InjectionToken(&#x27;ReportUserService&#x27;);
 
 export interface ReportUserService {
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ngx-chat documentation</a>
+            <a href="./" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -31,47 +31,19 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="get-started--get-help--get-involved"><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Get Started</a> | <a href="https://pazznetwork.github.io/ngx-chat-ghpages/documentation/">Get Help</a> | <a href="https://pazznetwork.github.io/ngx-chat-ghpages/documentation/">Get Involved</a></h1>
-<p><a href="https://travis-ci.com/pazznetwork/ngx-chat"><img src="https://api.travis-ci.com/pazznetwork/ngx-chat.svg?branch=master" alt="Build status" class="img-responsive"></a> <a href="https://coveralls.io/github/pazznetwork/ngx-chat"><img src="https://coveralls.io/repos/github/pazznetwork/ngx-chat/badge.svg?branch=master" alt="Coverage" class="img-responsive"></a> <img src="https://img.shields.io/badge/maintained-yes-blue" alt="maintained - yes" class="img-responsive"> <a href="https://pazznetwork.github.io/ngx-chat-ghpages/documentation/"><img src="https://img.shields.io/badge/contributions-welcome-blue" alt="contributions - welcome" class="img-responsive"></a> <a href="https://typescriptlang.org"><img src="https://img.shields.io/badge/4-blue?logo=typescript&logoColor=white" alt="Made with TypeScript" class="img-responsive"></a> <a href="https://nodejs.org"><img src="https://img.shields.io/badge/>=10-blue?logo=node.js&logoColor=white" alt="Made with Node.js" class="img-responsive"></a> <a href="https://angular.io/"><img src="https://img.shields.io/badge/12-blue?logo=angular&logoColor=white" alt="Made with Node.js" class="img-responsive"></a></p>
-<p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/documentation/"><img src="https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge" alt="view - Documentation" class="img-responsive"></a></p>
+<h1 id="pazznetworkngx-chat-build-status-coverage">@pazznetwork/ngx-chat <a href="https://travis-ci.com/pazznetwork/ngx-chat"><img src="https://api.travis-ci.com/pazznetwork/ngx-chat.svg?branch=master" alt="Build status" class="img-responsive"></a> <a href="https://coveralls.io/github/pazznetwork/ngx-chat"><img src="https://coveralls.io/repos/github/pazznetwork/ngx-chat/badge.svg?branch=master" alt="Coverage" class="img-responsive"></a></h1>
 <p>This library provides an out-of-the-box usable XMPP chat component. It is customizable and offers an API to integrate it with your application.</p>
-<p><img src="https://user-images.githubusercontent.com/4292951/49931801-f5c3d880-fec7-11e8-8a74-6600ea2cf9b0.png" alt="screenshot" class="img-responsive"></p>
-<p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Have a look at our demo (valid XMPP credentials required)</a></p>
+<h2 id="features">Features</h2>
 <ul>
-<li>🌋 build in XMPP server support<ul>
-<li>send and receive messages, load messages from message history (XEP-0313), supports multi-user chat</li>
+<li>connect to XMPP servers via websocket</li>
+<li>send and receive messages</li>
+<li>load messages from message history (XEP-0313)</li>
+<li>use the server side buddy list or use your own data source for that, API methods for adding / removing buddies available </li>
+<li>supports multi-user chat</li>
 </ul>
-</li>
-<li>🔥 fully featured angular chat components</li>
-<li>💉 open for injection<ul>
-<li>use the server side buddy list or use your own data source for that, API methods for adding / removing buddies available</li>
-<li>replace the chat service with an own interface implementations to change the chat server</li>
-</ul>
-</li>
-</ul>
-<h2 id="table-of-contents">Table of Contents</h2>
+<h2 id="compatibility">Compatibility</h2>
 <ul>
-<li>Get Started<ul>
-<li>Compatibility</li>
-<li>Installation and usage</li>
-</ul>
-</li>
-<li>Get Help<ul>
-<li>Documentation</li>
-<li>FAQ</li>
-</ul>
-</li>
-<li>Get Involved<ul>
-<li>Development</li>
-<li>Build the plugin</li>
-<li>Run the plugin tests</li>
-<li>Releasing</li>
-</ul>
-</li>
-</ul>
-<h2 id="get-started">Get Started</h2>
-<h3 id="compatibility">Compatibility</h3>
-<ul>
+<li>Angular 14 (ngx-chat 0.14.x)</li>
 <li>Angular 13 (ngx-chat 0.13.x)</li>
 <li>Angular 12 (ngx-chat 0.12.x)</li>
 <li>Angular 11 (ngx-chat 0.11.x)</li>
@@ -79,12 +51,17 @@
 <li>Angular 9 (ngx-chat 0.9.x)</li>
 <li>Angular 8 (ngx-chat 0.4.x)</li>
 <li>Angular 6 (ngx-chat 0.3.x)</li>
-<li>requires node &gt;= 10.13 &amp;&amp; npm &gt;= 5 for build</li>
+<li>requires node &gt;= 16.16 &amp;&amp; npm &gt;= 8.11 for build</li>
 </ul>
-<h3 id="installation-and-usage">Installation and usage</h3>
-<p>These instructions require Angular 12.</p>
-<p>First install ngx-chat and its dependencies via npm:</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.9.2 &#64;angular/cdk&#64;~12.0.0</code></pre></div><p>After that, import ngx-chat in your root module:</p>
+<h2 id="demo">Demo</h2>
+<p><a href="https://pazznetwork.github.io/ngx-chat-ghpages/">Have a look at our demo (valid XMPP credentials required)</a> 
+<img src="https://user-images.githubusercontent.com/4292951/49931801-f5c3d880-fec7-11e8-8a74-6600ea2cf9b0.png" alt="screenshot" class="img-responsive"></p>
+<h2 id="documentation">Documentation</h2>
+<p>Below you will find some instructions to getting started. <a href="https://github.com/pazznetwork/ngx-chat/wiki">Have a look at the wiki for FAQ&#39;s and the API documentation.</a></p>
+<h2 id="installation-and-usage">Installation and usage</h2>
+<p>This instructions require Angular 11.</p>
+<p>First of all, install ngx-chat and its dependencies via npm:</p>
+<div><pre class="line-numbers"><code class="language-bash">npm install --save &#64;pazznetwork/ngx-chat &#64;xmpp/client&#64;~0.9.2 &#64;angular/cdk&#64;~11.0.0</code></pre></div><p>After that, import ngx-chat in your root module:</p>
 <div><pre class="line-numbers"><code class="language-none">&#64;NgModule({
     ...
     imports: [
@@ -96,8 +73,8 @@
 })</code></pre></div><p>Add the <code>ngx-chat</code>-component at the end of your root component template:</p>
 <div><pre class="line-numbers"><code class="language-html">&lt;ngx-chat&gt;&lt;/ngx-chat&gt;</code></pre></div><p>You are now ready to go. You will not see anything until you log in.
 Log in via <code>ngx-chat</code> wherever you want (e.g. in a component or a service)
-by injecting <code>ChatService</code> and calling <code>login</code>:</p>
-<div><pre class="line-numbers"><code class="language-none">constructor(&#64;Inject(CHAT_SERVICE_TOKEN) chatService: ChatService) {
+ by injecting <code>ChatService</code> and calling <code>login</code>:</p>
+<div><pre class="line-numbers"><code class="language-none">constructor(&#64;Inject(ChatServiceToken) chatService: ChatService) {
     chatService.logIn({
         domain: &#39;ngx-chat.example&#39;,
         service: &#39;wss://ngx-chat.example:5280/websocket&#39;,
@@ -109,37 +86,33 @@ by injecting <code>ChatService</code> and calling <code>login</code>:</p>
  * APPLICATION IMPORTS
  */
 (window as any).global = window;</code></pre></div><p><em>Optional</em>: body padding when roster list is expanded</p>
-<p>Add css styling like the following to your main styles.css if
+<p>Add css styling like the following to your main styles.css if 
 you want to resize your main content when the roster is expanded.</p>
 <div><pre class="line-numbers"><code class="language-css">body {
     transition-property: padding-right;
     transition-duration: 0.4s;
-    padding-right: 0;
+    padding-right: 0px;
 }
 
 body.has-roster {
     padding-right: 14em;
-}</code></pre></div><h2 id="get-help">Get Help</h2>
-<h3 id="documentation">Documentation</h3>
-<p>Below you will find some instructions to getting started. <a href="https://github.com/pazznetwork/ngx-chat/wiki">Have a look at the wiki for more FAQ&#39;s and abstract documentation.</a></p>
-<p>For a api, architecture and coder overview checkout our <a href="https://pazznetwork.github.io/ngx-chat-ghpages/documentation/"><strong>compo</strong>doc documentation</a>.</p>
-<h3 id="faq">FAQ</h3>
-<p><strong>Q: Which browsers are supported?</strong><br>A: It is tested in Chrome, Safari and Firefox.</p>
-<p><strong>Q: Does ngx-chat work with self signed certificates?</strong><br>A: Yes, if the following criteria are met:</p>
+}</code></pre></div><h2 id="faq">FAQ</h2>
+<p><strong>Q: Which browsers are supported?</strong>
+A: It is tested in Chrome, Safari and Firefox.</p>
+<p><strong>Q: Does ngx-chat work with self signed certificates?</strong>
+A: Yes, if the following criteria are met:</p>
 <ul>
 <li>the certificate has to be trusted by the browser you are using. Chrome uses the operating system trust store for certificates while Firefox has a custom implementation.</li>
 <li>the common name (CN) matches the uri of the service you are connecting to</li>
 </ul>
-<p><strong>Q: Can ngx-chat be used without the UI?</strong><br>A: Yes. Inject the chat service via <code>@Inject(CHAT_SERVICE_TOKEN) public chatService: ChatService</code>, login via <code>logIn</code> and start sending messages via the <code>sendMessage</code> method.</p>
-<p><strong>Q: My question is not answered</strong><br>A: <a href="https://github.com/pazznetwork/ngx-chat/issues/new">No problem, feel free to raise an issue</a>.</p>
-<h2 id="get-involved">Get Involved</h2>
-<h3 id="development">Development</h3>
-<p><strong>WARNING</strong>
-Pay attention to your imports in the testing app:
-<code>&#39;@pazznetwork/ngx-chat&#39;</code> instead of <code>&#39;../../../projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin&#39;</code></p>
+<p><strong>Q: Can ngx-chat be used without the UI?</strong>
+A: Yes. Inject the chat service via <code>@Inject(ChatServiceToken) public chatService: ChatService</code>, login via <code>logIn</code> and start sending messages via the <code>sendMessage</code> method.</p>
+<p><strong>Q: My question is not answered</strong>
+A: <a href="https://github.com/pazznetwork/ngx-chat/issues/new">No problem, feel free to raise an issue</a>.</p>
+<h2 id="development">Development</h2>
 <p><strong>Pull requests are welcome!</strong></p>
 <p>The source code for ngx-chat can be found in the <code>projects/pazznetwork/ngx-chat</code> folder.
-The demo application is in the <code>src</code> folder in the project root.</p>
+The demo application is in the <code>src</code> folder in the project root.  </p>
 <div><pre class="line-numbers"><code class="language-bash"># clone this repository
 git clone git&#64;github.com:pazznetwork/ngx-chat.git
 cd ngx-chat
@@ -155,16 +128,11 @@ ng build &#64;pazznetwork/ngx-chat --watch
 # http://localhost:4200
 ng serve</code></pre></div><h3 id="build-the-plugin">Build the plugin</h3>
 <p><code>npm run build-lib</code></p>
-<h3 id="test-the-integration-of-your-project-with-the-plugin">Test the integration of your project with the plugin</h3>
-<p><code>$fileOutDirPath</code> is your <code>npm run build</code> out-dir path</p>
-<p><code>npm install $fileOutDirPath</code></p>
 <h3 id="run-the-plugin-tests">Run the plugin tests</h3>
 <p><code>npm run test:once</code></p>
-<h3 id="committing">Committing</h3>
-<p>For clean and standardised commit messages we use commit lint, for the format see: <a href="https://www.conventionalcommits.org/en/v1.0.0/">https://www.conventionalcommits.org/en/v1.0.0/</a>.</p>
-<h3 id="releasing">Releasing</h3>
+<h2 id="releasing">Releasing</h2>
 <div><pre class="line-numbers"><code class="language-bash"># increment version number in projects/pazznetwork/ngx-chat/package.json
-VERSION=0.13.0 # change accordingly
+VERSION=0.14.1 # change accordingly
 npm run changelog
 git add .
 git commit -m &quot;docs: release $VERSION&quot;

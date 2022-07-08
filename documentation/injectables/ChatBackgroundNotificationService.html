@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -207,7 +207,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>customizeGroupMessage(sender: JID, message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>customizeGroupMessage(sender: JID, message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, room: <a href="../classes/Room.html" target="_self">Room</a>)</code>
                 </td>
             </tr>
 
@@ -251,6 +251,18 @@
                                     <td>message</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>room</td>
+                                    <td>
+                                                <code><a href="../classes/Room.html" target="_self" >Room</a></code>
                                     </td>
 
                                     <td>
@@ -651,19 +663,19 @@
 import { JID } from &#x27;@xmpp/jid&#x27;;
 import { Contact } from &#x27;../core/contact&#x27;;
 import { MultiUserChatPlugin, Room } from &#x27;./adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
-import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;./chat-service&#x27;;
+import { ChatService, ChatServiceToken } from &#x27;./chat-service&#x27;;
 
 @Injectable()
 export class ChatBackgroundNotificationService {
 
     private enabled &#x3D; false;
 
-    constructor(@Inject(CHAT_SERVICE_TOKEN) protected chatService: ChatService) {
+    constructor(@Inject(ChatServiceToken) protected chatService: ChatService) {
         chatService.message$.subscribe((msg) &#x3D;&gt; {
             this.receivedDirectMessage(msg);
         });
-        chatService.getPlugin(MultiUserChatPlugin).message$.subscribe(async room &#x3D;&gt; {
-            await this.receivedGroupMessage(room);
+        chatService.getPlugin(MultiUserChatPlugin).message$.subscribe(room &#x3D;&gt; {
+            this.receivedGroupMessage(room);
         });
     }
 
@@ -697,7 +709,7 @@ export class ChatBackgroundNotificationService {
         if (this.shouldDisplayNotification()) {
             const message &#x3D; room.mostRecentMessage.body;
             const sender &#x3D; room.mostRecentMessage.from;
-            const options &#x3D; await this.customizeGroupMessage(sender, message);
+            const options &#x3D; await this.customizeGroupMessage(sender, message, room);
             const notification &#x3D; new Notification(room.name, options);
             notification.addEventListener(&#x27;click&#x27;, () &#x3D;&gt; {
                 window.focus();
@@ -706,7 +718,7 @@ export class ChatBackgroundNotificationService {
         }
     }
 
-    protected async customizeGroupMessage(sender: JID, message: string) {
+    protected async customizeGroupMessage(sender: JID, message: string, room: Room) {
         return {body: &#x60;${sender}: ${message}&#x60;};
     }
 

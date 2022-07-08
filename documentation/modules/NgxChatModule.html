@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -696,7 +696,7 @@ import { XmppClientFactoryService } from &#x27;./services/adapters/xmpp/xmpp-cli
 import { ChatBackgroundNotificationService } from &#x27;./services/chat-background-notification.service&#x27;;
 import { ChatListStateService } from &#x27;./services/chat-list-state.service&#x27;;
 import { ChatMessageListRegistryService } from &#x27;./services/chat-message-list-registry.service&#x27;;
-import { CHAT_SERVICE_TOKEN } from &#x27;./services/chat-service&#x27;;
+import { ChatServiceToken } from &#x27;./services/chat-service&#x27;;
 import { ContactFactoryService } from &#x27;./services/contact-factory.service&#x27;;
 import { LogService } from &#x27;./services/log.service&#x27;;
 
@@ -751,7 +751,7 @@ export class NgxChatModule {
                 XmppChatConnectionService,
                 XmppClientFactoryService,
                 {
-                    provide: CHAT_SERVICE_TOKEN,
+                    provide: ChatServiceToken,
                     deps: [
                         XmppChatConnectionService,
                         ChatMessageListRegistryService,

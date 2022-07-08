@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ngx-chat documentation</title>
+        <title>ngx-chat-xmpp-shell documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <a href="../" class="navbar-brand">ngx-chat-xmpp-shell documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -189,53 +189,20 @@ import { isJid, Recipient } from &#x27;../../../../core/recipient&#x27;;
 import { IqResponseStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
 import { LogService } from &#x27;../../../log.service&#x27;;
 import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
-import { StanzaBuilder } from &#x27;../stanza-builder&#x27;;
 import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
 import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
 import { MessageReceivedEvent } from &#x27;./message.plugin&#x27;;
 import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
 
-/**
- * see:
- * https://xmpp.org/extensions/xep-0045.html#terms-rooms
- */
 export interface RoomCreationOptions {
     name?: string;
     roomId: string;
-    /**
-     * A room that can be found by any user through normal means such as searching and service discovery
-     */
     public: boolean;
-    /**
-     * for true:
-     * A room that a user cannot enter without being on the member list.
-     * for false:
-     * A room that non-banned entities are allowed to enter without being on the member list.
-     */
     membersOnly: boolean;
-    /**
-     * for true:
-     * A room in which an occupant&#x27;s full JID is exposed to all other occupants,
-     * although the occupant can request any desired room nickname.
-     * for false:
-     * A room in which an occupant&#x27;s full JID can be discovered by room admins only.
-     */
     nonAnonymous: boolean;
-    /**
-     * for true:
-     * A room that is not destroyed if the last occupant exits.
-     * for false:
-     * A room that is destroyed if the last occupant exits.
-     */
     persistentRoom: boolean;
-    /**
-     * Optional name for the room, if no provided room will be only identified by its jid
-     */
     nick?: string;
-    /**
-     * allow ejabberd MucSub subscriptions.
-     * Room occupants are allowed to subscribe to message notifications being archived while they were offline
-     */
+    /** ejabberd MucSub */
     allowSubscription?: boolean;
 }
 
@@ -316,6 +283,29 @@ export class Room {
 
 }
 
+class RoomMessageStanzaBuilder extends AbstractStanzaBuilder {
+
+    constructor(private readonly roomJid: string,
+                private readonly from: string,
+                private readonly body: string,
+                private readonly thread?: string) {
+        super();
+    }
+
+    toStanza(): Stanza {
+        const messageStanza &#x3D; xml(&#x27;message&#x27;, {from: this.from, to: this.roomJid, type: &#x27;groupchat&#x27;},
+            xml(&#x27;body&#x27;, {}, this.body),
+        );
+        if (this.thread) {
+            messageStanza.children.push(
+                xml(&#x27;thread&#x27;, {}, this.thread),
+            );
+        }
+        return messageStanza;
+    }
+
+}
+
 export enum Affiliation {
     none,
     member,
@@ -344,7 +334,7 @@ class QueryMemberListStanzaBuilder extends AbstractStanzaBuilder {
 
 }
 
-export interface MemberListItem {
+export interface MemberlistItem {
     jid: string;
     affiliation: Affiliation;
     nick?: string;
@@ -357,11 +347,11 @@ export interface RoomSummary {
 
 class ModifyMemberListStanzaBuilder extends AbstractStanzaBuilder {
 
-    constructor(private readonly roomJid: string, private readonly modifications: readonly MemberListItem[]) {
+    constructor(private readonly roomJid: string, private readonly modifications: readonly MemberlistItem[]) {
         super();
     }
 
-    static build(roomJid: string, modifications: readonly MemberListItem[]): Stanza {
+    static build(roomJid: string, modifications: readonly MemberlistItem[]): Stanza {
         return new ModifyMemberListStanzaBuilder(roomJid, modifications).toStanza();
     }
 
@@ -373,19 +363,16 @@ class ModifyMemberListStanzaBuilder extends AbstractStanzaBuilder {
         );
     }
 
-    private buildItem({nick, jid, affiliation}: MemberListItem): Element {
-        const item &#x3D; xml(&#x27;item&#x27;, {jid, affiliation: Affiliation[affiliation]});
-        if (nick) {
-            item.attrs.nick &#x3D; nick;
+    private buildItem(modification: MemberlistItem): Element {
+        const item &#x3D; xml(&#x27;item&#x27;, {jid: modification.jid, affiliation: Affiliation[modification.affiliation]});
+        if (modification.nick) {
+            item.attrs.nick &#x3D; modification.nick;
         }
         return item;
     }
 }
 
 /**
- * The MultiUserChatPlugin tries to provide the necessary functionality for a multi-user text chat,
- * whereby multiple XMPP users can exchange messages in the context of a room or channel, similar to Internet Relay Chat (IRC).
- * For more details see:
  * @see https://xmpp.org/extensions/xep-0045.html
  */
 export class MultiUserChatPlugin extends AbstractXmppPlugin {
@@ -437,21 +424,16 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
      * Resolves if room could be configured as requested, rejects if room did exist or server did not accept configuration.
      */
     async createRoom(request: RoomCreationOptions): Promise&lt;Room&gt; {
-        const {roomId, nick, name} &#x3D; request;
+        const roomId &#x3D; request.roomId;
         const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
-        const occupantJid &#x3D; parseJid(roomId, service.jid, nick);
-        const {presenceResponse, room} &#x3D; await this.joinRoomInternal(occupantJid, name);
+        const occupantJid &#x3D; parseJid(roomId, service.jid, request.nick);
+        const {presenceResponse, room} &#x3D; await this.joinRoomInternal(occupantJid, request.name);
 
         const itemElement &#x3D; presenceResponse.getChild(&#x27;x&#x27;).getChild(&#x27;item&#x27;);
         if (itemElement.attrs.affiliation !&#x3D;&#x3D; &#x27;owner&#x27;) {
             throw new Error(&#x27;error creating room, user is not owner: &#x27; + presenceResponse.toString());
         }
 
-        /**
-         * requests a configuration form for a room which returns with the default values
-         * for an example see:
-         * https://xmpp.org/extensions/xep-0045.html#registrar-formtype-owner
-         */
         const configurationForm &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
             xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: room.roomJid.toString()},
                 xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#owner&#x27;}),
@@ -553,7 +535,6 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
 
     async queryAllRooms(): Promise&lt;RoomSummary[]&gt; {
         const conferenceServer &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
-        const to &#x3D; conferenceServer.jid.toString();
 
         const result &#x3D; [];
 
@@ -597,18 +578,14 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
             ?.getChild(&#x27;set&#x27;, &#x27;http://jabber.org/protocol/rsm&#x27;) as Stanza;
     }
 
-    /**
-     * Get all members of a MUC-Room with their affiliation to the room using the rooms fullJid
-     * @param fullRoomJid fullJid of the room as string
-     */
-    async queryMemberList(fullRoomJid: string): Promise&lt;MemberListItem[]&gt; {
+    async queryMemberList(room: Room): Promise&lt;MemberlistItem[]&gt; {
         const memberQueryResponses &#x3D; await Promise.all([
-            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;admin&#x27;)),
-            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;member&#x27;)),
-            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;owner&#x27;)),
-            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;outcast&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(room.roomJid.toString(), &#x27;admin&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(room.roomJid.toString(), &#x27;member&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(room.roomJid.toString(), &#x27;owner&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(room.roomJid.toString(), &#x27;outcast&#x27;)),
         ]);
-        let members: MemberListItem[] &#x3D; [];
+        let members: MemberlistItem[] &#x3D; [];
         for (const memberQueryResponse of memberQueryResponses) {
             const membersFromQueryResponse &#x3D; memberQueryResponse.getChild(&#x27;query&#x27;).getChildren(&#x27;item&#x27;)
                 .map((memberItem: Element) &#x3D;&gt; ({
@@ -647,10 +624,9 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
     }
 
     async sendMessage(room: Room, body: string, thread?: string): Promise&lt;void&gt; {
-        const from &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.toString();
-        const roomJid &#x3D; room.roomJid.toString();
-        const roomMessageStanza &#x3D; thread ? StanzaBuilder.buildRoomMessageWithThread(from, roomJid, body, thread)
-            : StanzaBuilder.buildRoomMessageWithBody(from, roomJid, body);
+        const from &#x3D; this.xmppChatAdapter.chatConnectionService.userJid;
+        const roomMessageStanza &#x3D; new RoomMessageStanzaBuilder(room.roomJid.toString(), from.toString(), body, thread)
+            .toStanza();
 
         for (const plugin of this.xmppChatAdapter.plugins) {
             plugin.beforeSendMessage(roomMessageStanza);
@@ -743,41 +719,16 @@ export class MultiUserChatPlugin extends AbstractXmppPlugin {
         return true;
     }
 
-    getRoomByJid(jid: JID): Room | undefined {
-        return this.rooms$.getValue().find(room &#x3D;&gt; room.roomJid.equals(jid));
+    getRoomByJid(jid: JID): Room | null {
+        for (const room of this.rooms$.getValue()) {
+            if (room.roomJid.equals(jid)) {
+                return room;
+            }
+        }
+
+        return null;
     }
 
-    ban() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
-
-    invite() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
-
-    join() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
-
-    kick() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
-
-    nick() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
-
-    part() {
-        this.leave();
-    }
-
-    leave() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
-
-    topic() {
-        throw new Error(&#x27;moderation not implemented&#x27;);
-    }
 }
 </code></pre>
     </div>
