@@ -1,0 +1,3259 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li >MultiUserChatPlugin</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>The MultiUserChatPlugin tries to provide the necessary functionality for a multi-user text chat,
+whereby multiple XMPP users can exchange messages in the context of a room or channel, similar to Internet Relay Chat (IRC).
+For more details see:
+See <a href="https://xmpp.org/extensions/xep-0045.html">https://xmpp.org/extensions/xep-0045.html</a></p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#message$" >message$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#roomJoinResponseHandlers" >roomJoinResponseHandlers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#rooms$" >rooms$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#applyRoomCreationRequestOptions" >applyRoomCreationRequestOptions</a>
+                            </li>
+                            <li>
+                                <a href="#ban" >ban</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#configurationToElements" >configurationToElements</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createRoom" >createRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#destroyRoom" >destroyRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractDefaultConfiguration" >extractDefaultConfiguration</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractResultSetFromResponse" >extractResultSetFromResponse</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractRoomSummariesFromResponse" >extractRoomSummariesFromResponse</a>
+                            </li>
+                            <li>
+                                <a href="#getRoomByJid" >getRoomByJid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleRoomMessageStanza" >handleRoomMessageStanza</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleRoomPresenceStanza" >handleRoomPresenceStanza</a>
+                            </li>
+                            <li>
+                                <a href="#handleStanza" >handleStanza</a>
+                            </li>
+                            <li>
+                                <a href="#invite" >invite</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isRoomMessageStanza" >isRoomMessageStanza</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isRoomPresenceStanza" >isRoomPresenceStanza</a>
+                            </li>
+                            <li>
+                                <a href="#join" >join</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#joinRoom" >joinRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#joinRoomInternal" >joinRoomInternal</a>
+                            </li>
+                            <li>
+                                <a href="#kick" >kick</a>
+                            </li>
+                            <li>
+                                <a href="#leave" >leave</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#modifyMemberList" >modifyMemberList</a>
+                            </li>
+                            <li>
+                                <a href="#nick" >nick</a>
+                            </li>
+                            <li>
+                                <a href="#onOffline" >onOffline</a>
+                            </li>
+                            <li>
+                                <a href="#part" >part</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#queryAllRooms" >queryAllRooms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#queryMemberList" >queryMemberList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#reverseMapAffiliation" >reverseMapAffiliation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendMessage" >sendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#topic" >topic</a>
+                            </li>
+                            <li>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
+                            </li>
+                            <li>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, logService: <a href="../injectables/LogService.html" target="_self">LogService</a>, serviceDiscoveryPlugin: <a href="../interfaces/Service.html" target="_self">ServiceDiscoveryPlugin</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:221</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>xmppChatAdapter</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/XmppChatAdapter.html" target="_self" >XmppChatAdapter</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LogService.html" target="_self" >LogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>serviceDiscoveryPlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Service.html" target="_self" >ServiceDiscoveryPlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="message$"></a>
+                    <span class="name">
+                            <span class="modifier">Readonly</span>
+                        <span ><b>message$</b></span>
+                        <a href="#message$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;Room&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="220" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:220</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roomJoinResponseHandlers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>roomJoinResponseHandlers</b></span>
+                        <a href="#roomJoinResponseHandlers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;string, (stanza: Stanza) &#x3D;&gt; void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:221</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rooms$"></a>
+                    <span class="name">
+                            <span class="modifier">Readonly</span>
+                        <span ><b>rooms$</b></span>
+                        <a href="#rooms$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;Room[]&gt;([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="219" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyRoomCreationRequestOptions"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>applyRoomCreationRequestOptions</b></span>
+                        <a href="#applyRoomCreationRequestOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>applyRoomCreationRequestOptions(defaultOptions: ReadonlyMap<string | string[]>, request: <a href="../interfaces/RoomCreationOptions.html" target="_self">RoomCreationOptions</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="506"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:506</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>defaultOptions</td>
+                                    <td>
+                                            <code>ReadonlyMap&lt;string | string[]&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomCreationOptions.html" target="_self" >RoomCreationOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Map&lt;string, string[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ban"></a>
+                    <span class="name">
+                        <span ><b>ban</b></span>
+                        <a href="#ban"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ban()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="576"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:576</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configurationToElements"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>configurationToElements</b></span>
+                        <a href="#configurationToElements"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>configurationToElements(configurationOptions: Map<string | string[]>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="488"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:488</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>configurationOptions</td>
+                                    <td>
+                                            <code>Map&lt;string | string[]&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Element[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>createRoom</b></span>
+                        <a href="#createRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createRoom(request: <a href="../interfaces/RoomCreationOptions.html" target="_self">RoomCreationOptions</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="265"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:265</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Resolves if room could be configured as requested, rejects if room did exist or server did not accept configuration.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomCreationOptions.html" target="_self" >RoomCreationOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Room.html" target="_self" >Promise&lt;Room&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>destroyRoom</b></span>
+                        <a href="#destroyRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroyRoom(roomJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="318"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:318</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;IqResponseStanza&lt;result&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractDefaultConfiguration"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>extractDefaultConfiguration</b></span>
+                        <a href="#extractDefaultConfiguration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractDefaultConfiguration(fields: Element[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="495"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:495</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fields</td>
+                                    <td>
+                                            <code>Element[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Map&lt;string, string[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractResultSetFromResponse"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>extractResultSetFromResponse</b></span>
+                        <a href="#extractResultSetFromResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractResultSetFromResponse(iq: <a href="../interfaces/IqResponseStanza.html" target="_self">IqResponseStanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="420"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:420</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>iq</td>
+                                    <td>
+                                                <code><a href="../interfaces/IqResponseStanza.html" target="_self" >IqResponseStanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractRoomSummariesFromResponse"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>extractRoomSummariesFromResponse</b></span>
+                        <a href="#extractRoomSummariesFromResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractRoomSummariesFromResponse(iq: <a href="../interfaces/IqResponseStanza.html" target="_self">IqResponseStanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="413"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:413</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>iq</td>
+                                    <td>
+                                                <code><a href="../interfaces/IqResponseStanza.html" target="_self" >IqResponseStanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/RoomSummary.html" target="_self" >RoomSummary[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRoomByJid"></a>
+                    <span class="name">
+                        <span ><b>getRoomByJid</b></span>
+                        <a href="#getRoomByJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRoomByJid(jid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="572"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:572</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>jid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Room.html" target="_self" >Room | undefined</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleRoomMessageStanza"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>handleRoomMessageStanza</b></span>
+                        <a href="#handleRoomMessageStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleRoomMessageStanza(messageStanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>, archiveDelayElement?: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="528"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:528</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>archiveDelayElement</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleRoomPresenceStanza"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>handleRoomPresenceStanza</b></span>
+                        <a href="#handleRoomPresenceStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleRoomPresenceStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:252</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleStanza"></a>
+                    <span class="name">
+                        <span ><b>handleStanza</b></span>
+                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>, archiveDelayElement?: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:236</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>archiveDelayElement</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="invite"></a>
+                    <span class="name">
+                        <span ><b>invite</b></span>
+                        <a href="#invite"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>invite()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="580"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:580</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isRoomMessageStanza"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isRoomMessageStanza</b></span>
+                        <a href="#isRoomMessageStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isRoomMessageStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="524"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:524</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isRoomPresenceStanza"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>isRoomPresenceStanza</b></span>
+                        <a href="#isRoomPresenceStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isRoomPresenceStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="245"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:245</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="join"></a>
+                    <span class="name">
+                        <span ><b>join</b></span>
+                        <a href="#join"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>join()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="584"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:584</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="joinRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>joinRoom</b></span>
+                        <a href="#joinRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>joinRoom(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="376"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:376</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Room.html" target="_self" >Promise&lt;Room&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="joinRoomInternal"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>joinRoomInternal</b></span>
+                        <a href="#joinRoomInternal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>joinRoomInternal(roomJid: JID, name?: string | undefined)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="340"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:340</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                            <code>string | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kick"></a>
+                    <span class="name">
+                        <span ><b>kick</b></span>
+                        <a href="#kick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>kick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="588"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:588</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leave"></a>
+                    <span class="name">
+                        <span ><b>leave</b></span>
+                        <a href="#leave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>leave()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="600"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:600</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modifyMemberList"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>modifyMemberList</b></span>
+                        <a href="#modifyMemberList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>modifyMemberList(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, affiliation: <a href="../undefineds/Affiliation.html" target="_self">Affiliation</a>, nick?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="469"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:469</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>jid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>affiliation</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#Affiliation" target="_self" >Affiliation</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>nick</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;IqResponseStanza&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nick"></a>
+                    <span class="name">
+                        <span ><b>nick</b></span>
+                        <a href="#nick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="592"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:592</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOffline"></a>
+                    <span class="name">
+                        <span ><b>onOffline</b></span>
+                        <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOffline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:231</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="part"></a>
+                    <span class="name">
+                        <span ><b>part</b></span>
+                        <a href="#part"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>part()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="596"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:596</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryAllRooms"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>queryAllRooms</b></span>
+                        <a href="#queryAllRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>queryAllRooms()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="380"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:380</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/RoomSummary.html" target="_self" >Promise&lt;RoomSummary[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryMemberList"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>queryMemberList</b></span>
+                        <a href="#queryMemberList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>queryMemberList(fullRoomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="430"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:430</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get all members of a MUC-Room with their affiliation to the room using the rooms fullJid</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fullRoomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>fullJid of the room as string</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/MemberListItem.html" target="_self" >Promise&lt;MemberListItem[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reverseMapAffiliation"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>reverseMapAffiliation</b></span>
+                        <a href="#reverseMapAffiliation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>reverseMapAffiliation(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="451"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:451</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/enumerations.html#Affiliation" target="_self" >Affiliation</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendMessage"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>sendMessage</b></span>
+                        <a href="#sendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendMessage(room: <a href="../classes/Room.html" target="_self">Room</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, thread?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="475"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:475</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>room</td>
+                                    <td>
+                                                <code><a href="../classes/Room.html" target="_self" >Room</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>thread</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="topic"></a>
+                    <span class="name">
+                        <span ><b>topic</b></span>
+                        <a href="#topic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>topic()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="604"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:604</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterReceiveMessage"></a>
+                    <span class="name">
+                        <span ><b>afterReceiveMessage</b></span>
+                        <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:28</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/MessageWithBodyStanza.html" target="_self" >MessageWithBodyStanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageReceivedEvent</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >MessageReceivedEvent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterSendMessage"></a>
+                    <span class="name">
+                        <span ><b>afterSendMessage</b></span>
+                        <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:16</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeSendMessage"></a>
+                    <span class="name">
+                        <span ><b>beforeSendMessage</b></span>
+                        <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:20</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBeforeOnline"></a>
+                    <span class="name">
+                        <span ><b>onBeforeOnline</b></span>
+                        <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBeforeOnline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:9</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>PromiseLike&lt;any&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid, xml } from &#x27;@xmpp/client&#x27;;
+import { JID } from &#x27;@xmpp/jid&#x27;;
+import { Element } from &#x27;ltx&#x27;;
+import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
+import { ContactMetadata } from &#x27;../../../../core/contact&#x27;;
+import { dummyAvatarRoom } from &#x27;../../../../core/contact-avatar&#x27;;
+import { Direction, Message } from &#x27;../../../../core/message&#x27;;
+import { DateMessagesGroup, MessageStore } from &#x27;../../../../core/message-store&#x27;;
+import { isJid, Recipient } from &#x27;../../../../core/recipient&#x27;;
+import { IqResponseStanza, Stanza } from &#x27;../../../../core/stanza&#x27;;
+import { LogService } from &#x27;../../../log.service&#x27;;
+import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
+import { StanzaBuilder } from &#x27;../stanza-builder&#x27;;
+import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
+import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { MessageReceivedEvent } from &#x27;./message.plugin&#x27;;
+import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
+
+/**
+ * see:
+ * https://xmpp.org/extensions/xep-0045.html#terms-rooms
+ */
+export interface RoomCreationOptions {
+    name?: string;
+    roomId: string;
+    /**
+     * A room that can be found by any user through normal means such as searching and service discovery
+     */
+    public: boolean;
+    /**
+     * for true:
+     * A room that a user cannot enter without being on the member list.
+     * for false:
+     * A room that non-banned entities are allowed to enter without being on the member list.
+     */
+    membersOnly: boolean;
+    /**
+     * for true:
+     * A room in which an occupant&#x27;s full JID is exposed to all other occupants,
+     * although the occupant can request any desired room nickname.
+     * for false:
+     * A room in which an occupant&#x27;s full JID can be discovered by room admins only.
+     */
+    nonAnonymous: boolean;
+    /**
+     * for true:
+     * A room that is not destroyed if the last occupant exits.
+     * for false:
+     * A room that is destroyed if the last occupant exits.
+     */
+    persistentRoom: boolean;
+    /**
+     * Optional name for the room, if no provided room will be only identified by its jid
+     */
+    nick?: string;
+    /**
+     * allow ejabberd MucSub subscriptions.
+     * Room occupants are allowed to subscribe to message notifications being archived while they were offline
+     */
+    allowSubscription?: boolean;
+
+    /**
+     * Only occupants with &quot;voice&quot; can send public messages. The default value is true.
+     */
+    moderated?: boolean;
+}
+
+export interface RoomMessage extends Message {
+    from: JID;
+}
+
+export interface Occupant {
+    roomJid: JID;
+    realJid?: JID;
+    metadata: ContactMetadata;
+}
+
+export interface RoomMetadata {
+    [key: string]: any;
+}
+
+export class Room {
+
+    readonly recipientType &#x3D; &#x27;room&#x27;;
+    readonly roomJid: JID;
+    occupantJid: JID;
+    name: string;
+    avatar &#x3D; dummyAvatarRoom;
+    metadata: RoomMetadata &#x3D; {};
+    private messageStore: MessageStore&lt;RoomMessage&gt;;
+
+    get jidBare(): JID {
+        return this.roomJid;
+    }
+
+    constructor(occupantJid: JID, logService: LogService, name?: string | undefined) {
+        this.roomJid &#x3D; occupantJid.bare();
+        this.name &#x3D; name ?? occupantJid.bare().toString();
+        this.occupantJid &#x3D; occupantJid;
+        this.messageStore &#x3D; new MessageStore&lt;RoomMessage&gt;(logService);
+    }
+
+    get messages$(): Subject&lt;RoomMessage&gt; {
+        return this.messageStore.messages$;
+    }
+
+    get messages(): RoomMessage[] {
+        return this.messageStore.messages;
+    }
+
+    get dateMessagesGroups(): DateMessagesGroup&lt;RoomMessage&gt;[] {
+        return this.messageStore.dateMessageGroups;
+    }
+
+    get oldestMessage(): RoomMessage {
+        return this.messageStore.oldestMessage;
+    }
+
+    get mostRecentMessage(): RoomMessage {
+        return this.messageStore.mostRecentMessage;
+    }
+
+    get mostRecentMessageReceived(): RoomMessage {
+        return this.messageStore.mostRecentMessageReceived;
+    }
+
+    get mostRecentMessageSent(): RoomMessage {
+        return this.messageStore.mostRecentMessageSent;
+    }
+
+    addMessage(message: RoomMessage): void {
+        this.messageStore.addMessage(message);
+    }
+
+    equalsBareJid(other: Recipient | JID): boolean {
+        if (other instanceof Room || isJid(other)) {
+            const otherJid &#x3D; other instanceof Room ? other.roomJid : other.bare();
+            return this.roomJid.bare().equals(otherJid);
+        }
+        return false;
+    }
+
+}
+
+export enum Affiliation {
+    none,
+    member,
+    admin,
+    owner,
+    outcast
+}
+
+class QueryMemberListStanzaBuilder extends AbstractStanzaBuilder {
+
+    constructor(private readonly roomJid: string, private readonly affiliation: string) {
+        super();
+    }
+
+    static build(roomJid: string, affiliation: string): Stanza {
+        return new QueryMemberListStanzaBuilder(roomJid, affiliation).toStanza();
+    }
+
+    toStanza(): Stanza {
+        return xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: this.roomJid},
+            xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#admin&#x27;},
+                xml(&#x27;item&#x27;, {affiliation: this.affiliation}),
+            ),
+        );
+    }
+
+}
+
+export interface MemberListItem {
+    jid: string;
+    affiliation: Affiliation;
+    nick?: string;
+}
+
+export interface RoomSummary {
+    jid: string;
+    name: string;
+}
+
+class ModifyMemberListStanzaBuilder extends AbstractStanzaBuilder {
+
+    constructor(private readonly roomJid: string, private readonly modifications: readonly MemberListItem[]) {
+        super();
+    }
+
+    static build(roomJid: string, modifications: readonly MemberListItem[]): Stanza {
+        return new ModifyMemberListStanzaBuilder(roomJid, modifications).toStanza();
+    }
+
+    toStanza(): Stanza {
+        return xml(&#x27;iq&#x27;, {to: this.roomJid, type: &#x27;set&#x27;},
+            xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#admin&#x27;},
+                ...this.modifications.map(modification &#x3D;&gt; this.buildItem(modification)),
+            ),
+        );
+    }
+
+    private buildItem({nick, jid, affiliation}: MemberListItem): Element {
+        const item &#x3D; xml(&#x27;item&#x27;, {jid, affiliation: Affiliation[affiliation]});
+        if (nick) {
+            item.attrs.nick &#x3D; nick;
+        }
+        return item;
+    }
+}
+
+/**
+ * The MultiUserChatPlugin tries to provide the necessary functionality for a multi-user text chat,
+ * whereby multiple XMPP users can exchange messages in the context of a room or channel, similar to Internet Relay Chat (IRC).
+ * For more details see:
+ * @see https://xmpp.org/extensions/xep-0045.html
+ */
+export class MultiUserChatPlugin extends AbstractXmppPlugin {
+
+    readonly rooms$ &#x3D; new BehaviorSubject&lt;Room[]&gt;([]);
+    readonly message$ &#x3D; new Subject&lt;Room&gt;();
+    private readonly roomJoinResponseHandlers &#x3D; new Map&lt;string, (stanza: Stanza) &#x3D;&gt; void&gt;();
+
+    constructor(
+        private readonly xmppChatAdapter: XmppChatAdapter,
+        private readonly logService: LogService,
+        private readonly serviceDiscoveryPlugin: ServiceDiscoveryPlugin,
+    ) {
+        super();
+    }
+
+    onOffline(): void {
+        this.roomJoinResponseHandlers.clear();
+        this.rooms$.next([]);
+    }
+
+    handleStanza(stanza: Stanza, archiveDelayElement?: Stanza): boolean {
+        if (this.isRoomPresenceStanza(stanza)) {
+            return this.handleRoomPresenceStanza(stanza);
+        } else if (this.isRoomMessageStanza(stanza)) {
+            return this.handleRoomMessageStanza(stanza, archiveDelayElement);
+        }
+        return false;
+    }
+
+    private isRoomPresenceStanza(stanza: Stanza): boolean {
+        return stanza.name &#x3D;&#x3D;&#x3D; &#x27;presence&#x27; &amp;&amp; (
+            stanza.getChild(&#x27;x&#x27;, &#x27;http://jabber.org/protocol/muc&#x27;)
+            || stanza.getChild(&#x27;x&#x27;, &#x27;http://jabber.org/protocol/muc#user&#x27;)
+        ) !&#x3D; null;
+    }
+
+    private handleRoomPresenceStanza(stanza: Stanza): boolean {
+        const handleStanza &#x3D; this.roomJoinResponseHandlers.get(stanza.attrs.from);
+        if (handleStanza) {
+            this.roomJoinResponseHandlers.delete(stanza.attrs.from);
+            handleStanza(stanza);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Resolves if room could be configured as requested, rejects if room did exist or server did not accept configuration.
+     */
+    async createRoom(request: RoomCreationOptions): Promise&lt;Room&gt; {
+        const {roomId, nick, name} &#x3D; request;
+        const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
+        const occupantJid &#x3D; parseJid(roomId, service.jid, nick);
+        const {presenceResponse, room} &#x3D; await this.joinRoomInternal(occupantJid, name);
+
+        const itemElement &#x3D; presenceResponse.getChild(&#x27;x&#x27;).getChild(&#x27;item&#x27;);
+        if (itemElement.attrs.affiliation !&#x3D;&#x3D; &#x27;owner&#x27;) {
+            throw new Error(&#x27;error creating room, user is not owner: &#x27; + presenceResponse.toString());
+        }
+
+        /**
+         * requests a configuration form for a room which returns with the default values
+         * for an example see:
+         * https://xmpp.org/extensions/xep-0045.html#registrar-formtype-owner
+         */
+        const configurationForm &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: room.roomJid.toString()},
+                xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#owner&#x27;}),
+            ),
+        );
+
+        const configurationListElement &#x3D; configurationForm.getChild(&#x27;query&#x27;).getChild(&#x27;x&#x27;);
+        if (!configurationListElement) {
+            throw new Error(&#x27;room not configurable&#x27;);
+        }
+
+        const roomConfigurationOptions &#x3D;
+            this.applyRoomCreationRequestOptions(
+                this.extractDefaultConfiguration(configurationListElement.getChildren(&#x27;field&#x27;)),
+                request
+            );
+
+        try {
+            await this.xmppChatAdapter.chatConnectionService.sendIq(
+                xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: room.roomJid.toString()},
+                    xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#owner&#x27;},
+                        xml(&#x27;x&#x27;, {xmlns: &#x27;jabber:x:data&#x27;, type: &#x27;submit&#x27;},
+                            xml(&#x27;field&#x27;, {var: &#x27;FORM_TYPE&#x27;},
+                                xml(&#x27;value&#x27;, {}, &#x27;http://jabber.org/protocol/muc#roomconfig&#x27;),
+                            ),
+                            ...this.configurationToElements(roomConfigurationOptions),
+                        ),
+                    ),
+                ),
+            );
+            return room;
+        } catch (e: unknown) {
+            this.logService.error(&#x27;room configuration rejected&#x27;, e);
+            throw e;
+        }
+    }
+
+    async destroyRoom(roomJid: JID): Promise&lt;IqResponseStanza&lt;&#x27;result&#x27;&gt;&gt; {
+        let roomDestroyedResponse: IqResponseStanza&lt;&#x27;result&#x27;&gt;;
+        try {
+            roomDestroyedResponse &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+                xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid.toString()},
+                    xml(&#x27;query&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc#owner&#x27;},
+                        xml(&#x27;destroy&#x27;))));
+        } catch (e: unknown) {
+            this.logService.error(&#x27;error destroying room&#x27;);
+            throw e;
+        }
+
+        // TODO: refactor so that we instead listen to the presence destroy stanza
+        const allRoomsWithoutDestroyedRoom &#x3D; this.rooms$.getValue().filter(
+            room &#x3D;&gt; !room.roomJid.equals(roomJid),
+        );
+
+        this.rooms$.next(allRoomsWithoutDestroyedRoom);
+
+        return roomDestroyedResponse;
+    }
+
+    private async joinRoomInternal(roomJid: JID, name?: string | undefined): Promise&lt;{ presenceResponse: Stanza, room: Room }&gt; {
+        if (this.getRoomByJid(roomJid.bare())) {
+            throw new Error(&#x27;can not join room more than once: &#x27; + roomJid.bare().toString());
+        }
+        const userJid &#x3D; this.xmppChatAdapter.chatConnectionService.userJid;
+        const occupantJid &#x3D; parseJid(roomJid.local, roomJid.domain, roomJid.resource || userJid.local);
+        const roomJoinedPromise &#x3D; new Promise&lt;Stanza&gt;(
+            resolve &#x3D;&gt; this.roomJoinResponseHandlers.set(occupantJid.toString(), resolve)
+        );
+
+        try {
+            await this.xmppChatAdapter.chatConnectionService.send(
+                xml(&#x27;presence&#x27;, {from: userJid.toString(), to: occupantJid.toString()},
+                    xml(&#x27;x&#x27;, {xmlns: &#x27;http://jabber.org/protocol/muc&#x27;}),
+                ),
+            );
+        } catch (e: unknown) {
+            this.logService.error(&#x27;error sending presence stanza to join a room&#x27;, e);
+            this.roomJoinResponseHandlers.delete(occupantJid.toString());
+            throw e;
+        }
+
+        const presenceResponse &#x3D; await roomJoinedPromise;
+        if (presenceResponse.getChild(&#x27;error&#x27;)) {
+            throw new Error(&#x27;error joining room: &#x27; + presenceResponse.toString());
+        }
+
+        let room &#x3D; this.getRoomByJid(roomJid);
+        if (!room) {
+            room &#x3D; new Room(occupantJid, this.logService, name);
+            this.rooms$.next([room].concat(this.rooms$.getValue()));
+        }
+
+        return {presenceResponse, room};
+    }
+
+    async joinRoom(occupantJid: JID): Promise&lt;Room&gt; {
+        return (await this.joinRoomInternal(occupantJid)).room;
+    }
+
+    async queryAllRooms(): Promise&lt;RoomSummary[]&gt; {
+        const conferenceServer &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
+        const to &#x3D; conferenceServer.jid.toString();
+
+        const result &#x3D; [];
+
+        let roomQueryResponse &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: conferenceServer.jid.toString()},
+                xml(&#x27;query&#x27;, {xmlns: ServiceDiscoveryPlugin.DISCO_ITEMS}),
+            ),
+        );
+        result.push(...this.extractRoomSummariesFromResponse(roomQueryResponse));
+
+
+        let resultSet &#x3D; this.extractResultSetFromResponse(roomQueryResponse);
+        while (resultSet &amp;&amp; resultSet.getChild(&#x27;last&#x27;)) {
+            const lastReceivedRoom &#x3D; resultSet.getChildText(&#x27;last&#x27;);
+            roomQueryResponse &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+                xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: conferenceServer.jid.toString()},
+                    xml(&#x27;query&#x27;, {xmlns: ServiceDiscoveryPlugin.DISCO_ITEMS},
+                        xml(&#x27;set&#x27;, {xmlns: &#x27;http://jabber.org/protocol/rsm&#x27;},
+                            xml(&#x27;max&#x27;, {}, 250),
+                            xml(&#x27;after&#x27;, {}, lastReceivedRoom),
+                        ),
+                    ),
+                ),
+            );
+            result.push(...this.extractRoomSummariesFromResponse(roomQueryResponse));
+            resultSet &#x3D; this.extractResultSetFromResponse(roomQueryResponse);
+        }
+        return result;
+    }
+
+    private extractRoomSummariesFromResponse(iq: IqResponseStanza): RoomSummary[] {
+        return iq
+            .getChild(&#x27;query&#x27;, ServiceDiscoveryPlugin.DISCO_ITEMS)
+            ?.getChildren(&#x27;item&#x27;)
+            ?.map(room &#x3D;&gt; room.attrs as RoomSummary) || [];
+    }
+
+    private extractResultSetFromResponse(iq: IqResponseStanza): Stanza {
+        return iq
+            .getChild(&#x27;query&#x27;, ServiceDiscoveryPlugin.DISCO_ITEMS)
+            ?.getChild(&#x27;set&#x27;, &#x27;http://jabber.org/protocol/rsm&#x27;) as Stanza;
+    }
+
+    /**
+     * Get all members of a MUC-Room with their affiliation to the room using the rooms fullJid
+     * @param fullRoomJid fullJid of the room as string
+     */
+    async queryMemberList(fullRoomJid: string): Promise&lt;MemberListItem[]&gt; {
+        const memberQueryResponses &#x3D; await Promise.all([
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;admin&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;member&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;owner&#x27;)),
+            this.xmppChatAdapter.chatConnectionService.sendIq(QueryMemberListStanzaBuilder.build(fullRoomJid, &#x27;outcast&#x27;)),
+        ]);
+        let members: MemberListItem[] &#x3D; [];
+        for (const memberQueryResponse of memberQueryResponses) {
+            const membersFromQueryResponse &#x3D; memberQueryResponse.getChild(&#x27;query&#x27;).getChildren(&#x27;item&#x27;)
+                .map((memberItem: Element) &#x3D;&gt; ({
+                    jid: memberItem.attrs.jid,
+                    nick: memberItem.attrs.nick,
+                    affiliation: this.reverseMapAffiliation(memberItem.attrs.affiliation),
+                }));
+            members &#x3D; members.concat(membersFromQueryResponse);
+        }
+
+        return members;
+    }
+
+    private reverseMapAffiliation(value: string): Affiliation {
+        if (!value || value &#x3D;&#x3D;&#x3D; &#x27;none&#x27;) {
+            return Affiliation.none;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;member&#x27;) {
+            return Affiliation.member;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;admin&#x27;) {
+            return Affiliation.admin;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;owner&#x27;) {
+            return Affiliation.owner;
+        } else if (value &#x3D;&#x3D;&#x3D; &#x27;outcast&#x27;) {
+            return Affiliation.outcast;
+        } else {
+            const message &#x3D; &#x27;unexpected affilation: &#x27; + value;
+            this.logService.error(message);
+            throw new Error(message);
+        }
+    }
+
+    async modifyMemberList(roomJid: string, jid: string, affiliation: Affiliation, nick?: string): Promise&lt;IqResponseStanza&gt; {
+        return await this.xmppChatAdapter.chatConnectionService.sendIq(
+            ModifyMemberListStanzaBuilder.build(roomJid, [{jid, affiliation, nick}]),
+        );
+    }
+
+    async sendMessage(room: Room, body: string, thread?: string): Promise&lt;void&gt; {
+        const from &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.toString();
+        const roomJid &#x3D; room.roomJid.toString();
+        const roomMessageStanza &#x3D; thread ? StanzaBuilder.buildRoomMessageWithThread(from, roomJid, body, thread)
+            : StanzaBuilder.buildRoomMessageWithBody(from, roomJid, body);
+
+        for (const plugin of this.xmppChatAdapter.plugins) {
+            plugin.beforeSendMessage(roomMessageStanza);
+        }
+
+        return await this.xmppChatAdapter.chatConnectionService.send(roomMessageStanza);
+    }
+
+    private configurationToElements(configurationOptions: Map&lt;string, string[]&gt;): Element[] {
+        return [...configurationOptions.entries()]
+            .map(([configurationKey, configurationValues]) &#x3D;&gt;
+                xml(&#x27;field&#x27;, {var: configurationKey},
+                    ...configurationValues.map(value &#x3D;&gt; xml(&#x27;value&#x27;, {}, value))));
+    }
+
+    private extractDefaultConfiguration(fields: Element[]): Map&lt;string, string[]&gt; {
+        const entries &#x3D; fields
+            .filter(field &#x3D;&gt; field.attrs.type !&#x3D;&#x3D; &#x27;hidden&#x27;)
+            .map((field) &#x3D;&gt; ([
+                field.attrs.var as string,
+                field.getChildren(&#x27;value&#x27;).map(value &#x3D;&gt; value.getText())
+            ] as const));
+
+        return new Map(entries);
+    }
+
+    private applyRoomCreationRequestOptions(
+        defaultOptions: ReadonlyMap&lt;string, string[]&gt;,
+        request: RoomCreationOptions
+    ): Map&lt;string, string[]&gt; {
+        const options &#x3D; new Map(defaultOptions);
+        options
+            .set(&#x27;muc#roomconfig_whois&#x27;, [request.nonAnonymous ? &#x27;anyone&#x27; : &#x27;moderators&#x27;])
+            .set(&#x27;muc#roomconfig_publicroom&#x27;, [request.public ? &#x27;1&#x27; : &#x27;0&#x27;])
+            .set(&#x27;muc#roomconfig_membersonly&#x27;, [request.membersOnly ? &#x27;1&#x27; : &#x27;0&#x27;])
+            .set(&#x27;muc#roomconfig_persistentroom&#x27;, [request.persistentRoom ? &#x27;1&#x27; : &#x27;0&#x27;]);
+
+        if (request.allowSubscription !&#x3D;&#x3D; undefined) {
+            options.set(&#x27;allow_subscription&#x27;, [request.allowSubscription &#x3D;&#x3D;&#x3D; true ? &#x27;1&#x27; : &#x27;0&#x27;]);
+        }
+
+        return options;
+    }
+
+    private isRoomMessageStanza(stanza: Stanza): boolean {
+        return stanza.name &#x3D;&#x3D;&#x3D; &#x27;message&#x27; &amp;&amp; stanza.attrs.type &#x3D;&#x3D;&#x3D; &#x27;groupchat&#x27; &amp;&amp; !!stanza.getChildText(&#x27;body&#x27;)?.trim();
+    }
+
+    private handleRoomMessageStanza(messageStanza: Stanza, archiveDelayElement?: Stanza): boolean {
+        const delayElement &#x3D; archiveDelayElement ?? messageStanza.getChild(&#x27;delay&#x27;);
+        const datetime &#x3D; delayElement?.attrs.stamp
+            ? new Date(delayElement.attrs.stamp)
+            : new Date() /* TODO: replace with entity time plugin */;
+
+        const from &#x3D; parseJid(messageStanza.attrs.from);
+        const room &#x3D; this.getRoomByJid(from.bare());
+        if (!room) {
+            // there are several reasons why we can receive a message for an unknown room:
+            // - this is a message delivered via MAM/MUCSub but the room it was stored for
+            //   - is gone (was destroyed)
+            //   - user was banned from room
+            //   - room wasn&#x27;t joined yet
+            // - this is some kind of error on developer&#x27;s side
+            this.logService.warn(&#x60;received stanza for unknown room: ${from.bare().toString()}&#x60;);
+            return false;
+        }
+
+        const message: RoomMessage &#x3D; {
+            body: messageStanza.getChildText(&#x27;body&#x27;).trim(),
+            datetime,
+            id: messageStanza.attrs.id,
+            from,
+            direction: from.equals(room.occupantJid) ? Direction.out : Direction.in,
+            delayed: !!delayElement,
+            fromArchive: archiveDelayElement !&#x3D; null
+        };
+
+        const messageReceivedEvent &#x3D; new MessageReceivedEvent();
+        for (const plugin of this.xmppChatAdapter.plugins) {
+            plugin.afterReceiveMessage(message, messageStanza, messageReceivedEvent);
+        }
+        if (!messageReceivedEvent.discard) {
+            room.addMessage(message);
+        }
+
+        if (!message.delayed) {
+            this.message$.next(room);
+        }
+
+        return true;
+    }
+
+    getRoomByJid(jid: JID): Room | undefined {
+        return this.rooms$.getValue().find(room &#x3D;&gt; room.roomJid.equals(jid));
+    }
+
+    ban() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+
+    invite() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+
+    join() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+
+    kick() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+
+    nick() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+
+    part() {
+        this.leave();
+    }
+
+    leave() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+
+    topic() {
+        throw new Error(&#x27;moderation not implemented&#x27;);
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'MultiUserChatPlugin.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

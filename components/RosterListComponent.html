@@ -1,0 +1,1084 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  RosterListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ngx-chat-roster-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./roster-list.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./roster-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chatService" >chatService</a>
+                            </li>
+                            <li>
+                                <a href="#hasNoContacts$" >hasNoContacts$</a>
+                            </li>
+                            <li>
+                                <a href="#multiUserChatPlugin" >multiUserChatPlugin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClickRecipient" >onClickRecipient</a>
+                            </li>
+                            <li>
+                                <a href="#toggleVisibility" >toggleVisibility</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#contactRequestsReceived$" >contactRequestsReceived$</a>
+                            </li>
+                            <li>
+                                <a href="#contactRequestsSent$" >contactRequestsSent$</a>
+                            </li>
+                            <li>
+                                <a href="#contacts" >contacts</a>
+                            </li>
+                            <li>
+                                <a href="#contactsUnaffiliated$" >contactsUnaffiliated$</a>
+                            </li>
+                            <li>
+                                <a href="#rosterState" >rosterState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#rosterStateChanged" >rosterStateChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(chatService: <a href="../interfaces/ChatService.html" target="_self">ChatService</a>, chatListService: <a href="../injectables/ChatListStateService.html" target="_self">ChatListStateService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chatService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/ChatService.html" target="_self" >ChatService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>chatListService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ChatListStateService.html" target="_self" >ChatListStateService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contactRequestsReceived$"></a>
+                        <b>contactRequestsReceived$</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:47</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contactRequestsSent$"></a>
+                        <b>contactRequestsSent$</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:50</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contacts"></a>
+                        <b>contacts</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contactsUnaffiliated$"></a>
+                        <b>contactsUnaffiliated$</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Contact.html" target="_self" >Observable&lt;Contact[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:53</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rosterState"></a>
+                        <b>rosterState</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/functions.html#id" target="_self" >&quot;hidden&quot; | &quot;shown&quot;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rosterStateChanged"></a>
+                        <b>rosterStateChanged</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:58</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickRecipient"></a>
+                    <span class="name">
+                        <span ><b>onClickRecipient</b></span>
+                        <a href="#onClickRecipient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClickRecipient(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:90</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>recipient</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleVisibility"></a>
+                    <span class="name">
+                        <span ><b>toggleVisibility</b></span>
+                        <a href="#toggleVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleVisibility()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chatService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>chatService</b></span>
+                        <a href="#chatService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ChatService.html" target="_self" >ChatService</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(CHAT_SERVICE_TOKEN)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasNoContacts$"></a>
+                    <span class="name">
+                        <span ><b>hasNoContacts$</b></span>
+                        <a href="#hasNoContacts$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="multiUserChatPlugin"></a>
+                    <span class="name">
+                        <span ><b>multiUserChatPlugin</b></span>
+                        <a href="#multiUserChatPlugin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ChatPlugin.html" target="_self" >MultiUserChatPlugin</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/components/roster-list/roster-list.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, state, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { combineLatest, Observable } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+import { Contact } from &#x27;../../core/contact&#x27;;
+import { Recipient } from &#x27;../../core/recipient&#x27;;
+import { MultiUserChatPlugin } from &#x27;../../services/adapters/xmpp/plugins/multi-user-chat.plugin&#x27;;
+import { ChatListStateService } from &#x27;../../services/chat-list-state.service&#x27;;
+import { CHAT_SERVICE_TOKEN, ChatService } from &#x27;../../services/chat-service&#x27;;
+
+@Component({
+    selector: &#x27;ngx-chat-roster-list&#x27;,
+    templateUrl: &#x27;./roster-list.component.html&#x27;,
+    styleUrls: [&#x27;./roster-list.component.less&#x27;],
+    animations: [
+        trigger(&#x27;rosterVisibility&#x27;, [
+            state(&#x27;hidden&#x27;, style({
+                right: &#x27;-14em&#x27;,
+            })),
+            state(&#x27;shown&#x27;, style({
+                right: &#x27;0em&#x27;,
+            })),
+            transition(&#x27;hidden &#x3D;&gt; shown&#x27;, animate(&#x27;400ms ease&#x27;)),
+            transition(&#x27;shown &#x3D;&gt; hidden&#x27;, animate(&#x27;400ms ease&#x27;))
+        ]),
+        trigger(&#x27;drawerVisibility&#x27;, [
+            state(&#x27;hidden&#x27;, style({
+                right: &#x27;0em&#x27;,
+            })),
+            state(&#x27;shown&#x27;, style({
+                right: &#x27;14em&#x27;,
+            })),
+            transition(&#x27;hidden &#x3D;&gt; shown&#x27;, animate(&#x27;400ms ease&#x27;)),
+            transition(&#x27;shown &#x3D;&gt; hidden&#x27;, animate(&#x27;400ms ease&#x27;))
+        ])
+    ]
+})
+export class RosterListComponent implements OnInit {
+
+    @Input()
+    rosterState: &#x27;hidden&#x27; | &#x27;shown&#x27;;
+
+    @Input()
+    contacts: Observable&lt;Contact[]&gt;;
+
+    @Input()
+    contactRequestsReceived$: Observable&lt;Contact[]&gt;;
+
+    @Input()
+    contactRequestsSent$: Observable&lt;Contact[]&gt;;
+
+    @Input()
+    contactsUnaffiliated$: Observable&lt;Contact[]&gt;;
+
+    hasNoContacts$: Observable&lt;boolean&gt;;
+
+    @Output()
+    rosterStateChanged &#x3D; new EventEmitter&lt;&#x27;hidden&#x27; | &#x27;shown&#x27;&gt;();
+
+    multiUserChatPlugin: MultiUserChatPlugin;
+
+    constructor(@Inject(CHAT_SERVICE_TOKEN) public chatService: ChatService,
+                private chatListService: ChatListStateService) {
+        this.multiUserChatPlugin &#x3D; this.chatService.getPlugin(MultiUserChatPlugin);
+    }
+
+    ngOnInit() {
+        if (!this.contacts) {
+            this.contacts &#x3D; this.chatService.contactsSubscribed$;
+        }
+        if (!this.contactRequestsReceived$) {
+            this.contactRequestsReceived$ &#x3D; this.chatService.contactRequestsReceived$;
+        }
+        if (!this.contactRequestsSent$) {
+            this.contactRequestsSent$ &#x3D; this.chatService.contactRequestsSent$;
+        }
+        if (!this.contactsUnaffiliated$) {
+            this.contactsUnaffiliated$ &#x3D; this.chatService.contactsUnaffiliated$;
+        }
+        this.hasNoContacts$ &#x3D; combineLatest([
+            this.contacts,
+            this.contactRequestsReceived$,
+            this.contactRequestsSent$,
+            this.contactsUnaffiliated$,
+        ]).pipe(
+            map(([contacts, received, sent, unaffiliated]) &#x3D;&gt; contacts.length + received.length + sent.length + unaffiliated.length &#x3D;&#x3D;&#x3D; 0)
+        );
+    }
+
+    onClickRecipient(recipient: Recipient) {
+        this.chatListService.openChat(recipient);
+    }
+
+    toggleVisibility() {
+        const newState &#x3D; this.rosterState &#x3D;&#x3D;&#x3D; &#x27;shown&#x27; ? &#x27;hidden&#x27; : &#x27;shown&#x27;;
+        this.rosterStateChanged.emit(newState);
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;roster-drawer&quot; (click)&#x3D;&quot;toggleVisibility()&quot; [@drawerVisibility]&#x3D;&quot;rosterState&quot;&gt;
+    &lt;div class&#x3D;&quot;roster-drawer__button&quot; *ngIf&#x3D;&quot;rosterState &#x3D;&#x3D;&#x3D; &#x27;shown&#x27;&quot;&gt;&amp;raquo;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;roster-drawer__button&quot; *ngIf&#x3D;&quot;rosterState &#x3D;&#x3D;&#x3D; &#x27;hidden&#x27;&quot;&gt;&amp;laquo;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;roster-list&quot; [@rosterVisibility]&#x3D;&quot;rosterState&quot; [attr.data-ngx-chat-state]&#x3D;&quot;chatService.state$ | async&quot;&gt;
+
+    &lt;div class&#x3D;&quot;roster-header&quot;&gt;
+        {{ chatService.translations.chat }}
+    &lt;/div&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;(multiUserChatPlugin.rooms$ | async) as rooms&quot;&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;rooms.length &gt; 0&quot;&gt;
+            &lt;div class&#x3D;&quot;roster-group-header&quot;&gt;{{chatService.translations.rooms}}&lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;contact-list-wrapper&quot;&gt;
+                &lt;ngx-chat-roster-recipient
+                        *ngFor&#x3D;&quot;let room of rooms&quot;
+                        [recipient]&#x3D;&quot;room&quot;
+                        (click)&#x3D;&quot;onClickRecipient(room)&quot;&gt;
+                &lt;/ngx-chat-roster-recipient&gt;
+            &lt;/div&gt;
+        &lt;/ng-container&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;(contacts | async).length &gt; 0&quot;&gt;
+        &lt;div class&#x3D;&quot;roster-group-header&quot;&gt;{{chatService.translations.contacts}}&lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-list-wrapper&quot;&gt;
+
+            &lt;ngx-chat-roster-recipient
+                    *ngFor&#x3D;&quot;let contact of (contacts | async)&quot;
+                    [recipient]&#x3D;&quot;contact&quot;
+                    (click)&#x3D;&quot;onClickRecipient(contact)&quot;&gt;
+            &lt;/ngx-chat-roster-recipient&gt;
+
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;(contactRequestsReceived$ | async).length &gt; 0&quot;&gt;
+        &lt;div class&#x3D;&quot;roster-group-header&quot;&gt;{{chatService.translations.contactRequestIn}}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;contact-list-wrapper&quot;&gt;
+
+            &lt;ngx-chat-roster-recipient
+                    *ngFor&#x3D;&quot;let contact of (contactRequestsReceived$ | async)&quot;
+                    [recipient]&#x3D;&quot;contact&quot;
+                    (click)&#x3D;&quot;onClickRecipient(contact)&quot;&gt;
+            &lt;/ngx-chat-roster-recipient&gt;
+
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;(contactRequestsSent$ | async).length &gt; 0&quot;&gt;
+        &lt;div class&#x3D;&quot;roster-group-header&quot;&gt;{{chatService.translations.contactRequestOut}}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;contact-list-wrapper&quot;&gt;
+
+            &lt;ngx-chat-roster-recipient
+                    *ngFor&#x3D;&quot;let contact of (contactRequestsSent$ | async)&quot;
+                    [recipient]&#x3D;&quot;contact&quot;
+                    (click)&#x3D;&quot;onClickRecipient(contact)&quot;&gt;
+            &lt;/ngx-chat-roster-recipient&gt;
+
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;(contactsUnaffiliated$ | async).length &gt; 0&quot;&gt;
+        &lt;div class&#x3D;&quot;roster-group-header&quot;&gt;{{chatService.translations.contactsUnaffiliated}}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;contact-list-wrapper&quot;&gt;
+
+            &lt;ng-container *ngFor&#x3D;&quot;let contact of (contactsUnaffiliated$ | async)&quot;&gt;
+                &lt;ngx-chat-roster-recipient
+                        *ngIf&#x3D;&quot;contact.messages.length &gt; 0&quot;
+                        [recipient]&#x3D;&quot;contact&quot;
+                        (click)&#x3D;&quot;onClickRecipient(contact)&quot;&gt;
+                &lt;/ngx-chat-roster-recipient&gt;
+            &lt;/ng-container&gt;
+
+        &lt;/div&gt;
+    &lt;/ng-container&gt;
+
+    &lt;div class&#x3D;&quot;roster-list__empty&quot; *ngIf&#x3D;&quot;hasNoContacts$ | async&quot;&gt;
+        {{chatService.translations.noContacts}}
+    &lt;/div&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;chatService.enableDebugging&quot;&gt;
+        &lt;hr/&gt;
+
+        &lt;div class&#x3D;&quot;contact-pending-request-received-wrapper&quot;&gt;
+            debug contact requests in:
+            &lt;div class&#x3D;&quot;contact-pending-request-received&quot; *ngFor&#x3D;&quot;let request of (chatService.contactRequestsReceived$ | async)&quot;&gt;
+                {{request.name}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;hr/&gt;
+
+        &lt;div class&#x3D;&quot;contact-pending-request-sent-wrapper&quot;&gt;
+            debug contact requests out:
+            &lt;div class&#x3D;&quot;contact-pending-request-sent&quot; *ngFor&#x3D;&quot;let request of (chatService.contactRequestsSent$ | async)&quot;&gt;
+                {{request.name}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;hr/&gt;
+
+        &lt;p&gt;
+            debug contacts (count: {{ (chatService.contacts$ | async).length }})&lt;br/&gt;
+        &lt;/p&gt;
+        &lt;p *ngFor&#x3D;&quot;let contact of (chatService.contacts$|async)&quot; style&#x3D;&quot;margin-bottom: 1em&quot;&gt;
+            &lt;em&gt;{{contact.name}}:&lt;/em&gt;&lt;br/&gt;
+            subscription&#x3D;{{contact.subscription$ | async}}&lt;br/&gt;
+            presence&#x3D;{{contact.presence$ | async}}&lt;br/&gt;
+            pendingIn&#x3D;{{contact.pendingIn$ | async}}&lt;br/&gt;
+            pendingOut&#x3D;{{contact.pendingOut$ | async}}
+        &lt;/p&gt;
+        &lt;p class&#x3D;&quot;roster-debug-state&quot;&gt;state: {{chatService.state$ | async}}&lt;/p&gt;
+    &lt;/ng-container&gt;
+
+    &lt;!--
+    &lt;div class&#x3D;&quot;roster-footer&quot;&gt;
+    &lt;/div&gt;
+    --&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./roster-list.component.less</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;../../style&#x27;;
+
+@roster-width: 14em;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, serif
+}
+
+.roster-list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: @roster-width;
+  overflow-y: auto;
+  border-left: 1px solid @general-border-color;
+  z-index: 80;
+  margin-left: 10px;
+  background-color: @roster-background-color;
+  text-align: left;
+  padding: 0.5em 0.5em 0 0.5em;
+  display: flex;
+  flex-direction: column;
+
+  .roster-header {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .roster-group-header {
+    border-bottom: 1px solid @general-border-color;
+    padding-bottom: 0.5em;
+  }
+
+  .roster-footer {
+    border-top: 1px solid @general-border-color;
+    width: @roster-width;
+    padding-top: 0.5em;
+  }
+
+  .contact-list-wrapper {
+    margin-bottom: 1em;
+  }
+
+  ngx-chat-roster-recipient {
+    display: block;
+    padding: 0.5em;
+
+    &amp;:hover {
+      background-color: darken(@roster-background-color, 5%);
+      cursor: pointer;
+    }
+  }
+
+}
+
+.roster-list__empty {
+  color: @general-light;
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 1.5em;
+}
+
+.roster-drawer {
+  top: 0;
+  bottom: 0;
+  right: 14em;
+  width: 1em;
+  position: fixed;
+  z-index: 80;
+  cursor: pointer;
+
+  &amp;:hover {
+    background-color: rgba(30, 30, 30, 0.2);
+  }
+}
+
+.roster-drawer__button {
+  top: 50%;
+  color: transparent;
+  background-color: transparent;
+  position: fixed;
+  margin-left: 0.4rem;
+}
+
+.roster-drawer:hover .roster-drawer__button {
+  color: #fff;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="roster-drawer" (click)="toggleVisibility()" [@drawerVisibility]="rosterState">    <div class="roster-drawer__button" *ngIf="rosterState === \'shown\'">&raquo;</div>    <div class="roster-drawer__button" *ngIf="rosterState === \'hidden\'">&laquo;</div></div><div class="roster-list" [@rosterVisibility]="rosterState" [attr.data-ngx-chat-state]="chatService.state$ | async">    <div class="roster-header">        {{ chatService.translations.chat }}    </div>    <ng-container *ngIf="(multiUserChatPlugin.rooms$ | async) as rooms">        <ng-container *ngIf="rooms.length > 0">            <div class="roster-group-header">{{chatService.translations.rooms}}</div>            <div class="contact-list-wrapper">                <ngx-chat-roster-recipient                        *ngFor="let room of rooms"                        [recipient]="room"                        (click)="onClickRecipient(room)">                </ngx-chat-roster-recipient>            </div>        </ng-container>    </ng-container>    <ng-container *ngIf="(contacts | async).length > 0">        <div class="roster-group-header">{{chatService.translations.contacts}}</div>        <div class="contact-list-wrapper">            <ngx-chat-roster-recipient                    *ngFor="let contact of (contacts | async)"                    [recipient]="contact"                    (click)="onClickRecipient(contact)">            </ngx-chat-roster-recipient>        </div>    </ng-container>    <ng-container *ngIf="(contactRequestsReceived$ | async).length > 0">        <div class="roster-group-header">{{chatService.translations.contactRequestIn}}</div>        <div class="contact-list-wrapper">            <ngx-chat-roster-recipient                    *ngFor="let contact of (contactRequestsReceived$ | async)"                    [recipient]="contact"                    (click)="onClickRecipient(contact)">            </ngx-chat-roster-recipient>        </div>    </ng-container>    <ng-container *ngIf="(contactRequestsSent$ | async).length > 0">        <div class="roster-group-header">{{chatService.translations.contactRequestOut}}</div>        <div class="contact-list-wrapper">            <ngx-chat-roster-recipient                    *ngFor="let contact of (contactRequestsSent$ | async)"                    [recipient]="contact"                    (click)="onClickRecipient(contact)">            </ngx-chat-roster-recipient>        </div>    </ng-container>    <ng-container *ngIf="(contactsUnaffiliated$ | async).length > 0">        <div class="roster-group-header">{{chatService.translations.contactsUnaffiliated}}</div>        <div class="contact-list-wrapper">            <ng-container *ngFor="let contact of (contactsUnaffiliated$ | async)">                <ngx-chat-roster-recipient                        *ngIf="contact.messages.length > 0"                        [recipient]="contact"                        (click)="onClickRecipient(contact)">                </ngx-chat-roster-recipient>            </ng-container>        </div>    </ng-container>    <div class="roster-list__empty" *ngIf="hasNoContacts$ | async">        {{chatService.translations.noContacts}}    </div>    <ng-container *ngIf="chatService.enableDebugging">        <hr/>        <div class="contact-pending-request-received-wrapper">            debug contact requests in:            <div class="contact-pending-request-received" *ngFor="let request of (chatService.contactRequestsReceived$ | async)">                {{request.name}}            </div>        </div>        <hr/>        <div class="contact-pending-request-sent-wrapper">            debug contact requests out:            <div class="contact-pending-request-sent" *ngFor="let request of (chatService.contactRequestsSent$ | async)">                {{request.name}}            </div>        </div>        <hr/>        <p>            debug contacts (count: {{ (chatService.contacts$ | async).length }})<br/>        </p>        <p *ngFor="let contact of (chatService.contacts$|async)" style="margin-bottom: 1em">            <em>{{contact.name}}:</em><br/>            subscription={{contact.subscription$ | async}}<br/>            presence={{contact.presence$ | async}}<br/>            pendingIn={{contact.pendingIn$ | async}}<br/>            pendingOut={{contact.pendingOut$ | async}}        </p>        <p class="roster-debug-state">state: {{chatService.state$ | async}}</p>    </ng-container>    <!--    <div class="roster-footer">    </div>    --></div></div>'
+    var COMPONENTS = [{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'},{'name': 'RosterRecipientComponent', 'selector': 'ngx-chat-roster-recipient'}];
+    var DIRECTIVES = [{'name': 'IntersectionObserverDirective', 'selector': '[ngxChatIntersectionObserver]'},{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
+    var ACTUAL_COMPONENT = {'name': 'RosterListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RosterListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
