@@ -85,7 +85,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:73</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/multi-user-chat.plugin.ts:77</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -156,6 +156,10 @@ export interface RoomCreationOptions {
      * Room occupants are allowed to subscribe to message notifications being archived while they were offline
      */
     allowSubscription?: boolean;
+    /**
+     * Only occupants with &quot;voice&quot; can send public messages. The default value is true.
+     */
+    moderated?: boolean;
 }
 
 export interface RoomMessage extends Message {
