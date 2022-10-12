@@ -1,0 +1,295 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  ContactMetadata</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/pazznetwork/ngx-chat/src/lib/core/contact.ts</code>
+        </p>
+
+
+
+
+
+
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[key: string]:        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/core/contact.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { jid as parseJid } from &#x27;@xmpp/client&#x27;;
+import { JID } from &#x27;@xmpp/jid&#x27;;
+import { BehaviorSubject, Subject } from &#x27;rxjs&#x27;;
+import { LogService } from &#x27;../services/log.service&#x27;;
+import { dummyAvatarContact } from &#x27;./contact-avatar&#x27;;
+import { Message } from &#x27;./message&#x27;;
+import { DateMessagesGroup, MessageStore } from &#x27;./message-store&#x27;;
+import { Presence } from &#x27;./presence&#x27;;
+import { isJid, Recipient } from &#x27;./recipient&#x27;;
+import { ContactSubscription } from &#x27;./subscription&#x27;;
+
+export interface ContactMetadata {
+    [key: string]: any;
+}
+
+export type JidToPresence &#x3D; Map&lt;string, Presence&gt;;
+
+export class Contact {
+
+    readonly recipientType &#x3D; &#x27;contact&#x27;;
+    public avatar &#x3D; dummyAvatarContact;
+    public metadata: ContactMetadata &#x3D; {};
+
+    /** use {@link jidBare}, jid resource is only set for chat room contacts */
+    public readonly jidFull: JID;
+    public readonly jidBare: JID;
+    public readonly presence$ &#x3D; new BehaviorSubject&lt;Presence&gt;(Presence.unavailable);
+    public readonly subscription$ &#x3D; new BehaviorSubject&lt;ContactSubscription&gt;(ContactSubscription.none);
+    public readonly pendingOut$ &#x3D; new BehaviorSubject(false);
+    public readonly pendingIn$ &#x3D; new BehaviorSubject(false);
+    public readonly resources$ &#x3D; new BehaviorSubject&lt;JidToPresence&gt;(new Map());
+
+    private readonly messageStore: MessageStore&lt;Message&gt;;
+
+    get messages$(): Subject&lt;Message&gt; {
+        return this.messageStore.messages$;
+    }
+
+    get messages(): Message[] {
+        return this.messageStore.messages;
+    }
+
+    get dateMessagesGroups(): DateMessagesGroup&lt;Message&gt;[] {
+        return this.messageStore.dateMessageGroups;
+    }
+
+    get oldestMessage(): Message | undefined {
+        return this.messageStore.oldestMessage;
+    }
+
+    get mostRecentMessage(): Message | undefined {
+        return this.messageStore.mostRecentMessage;
+    }
+
+    get mostRecentMessageReceived(): Message | undefined {
+        return this.messageStore.mostRecentMessageReceived;
+    }
+
+    get mostRecentMessageSent(): Message | undefined {
+        return this.messageStore.mostRecentMessageSent;
+    }
+
+    /**
+     * Do not call directly, use {@link ContactFactoryService#createContact} instead.
+     */
+    constructor(jidPlain: string,
+                public name: string,
+                logService?: LogService,
+                avatar?: string) {
+        if (avatar) {
+            this.avatar &#x3D; avatar;
+        }
+        const jid &#x3D; parseJid(jidPlain);
+        this.jidFull &#x3D; jid;
+        this.jidBare &#x3D; jid.bare();
+        this.messageStore &#x3D; new MessageStore(logService);
+    }
+
+    addMessage(message: Message): void {
+        this.messageStore.addMessage(message);
+    }
+
+    public equalsBareJid(other: Recipient | JID): boolean {
+        if (other instanceof Contact || isJid(other)) {
+            const otherJid &#x3D; other instanceof Contact ? other.jidBare : other.bare();
+            return this.jidBare.equals(otherJid);
+        }
+        return false;
+    }
+
+    isSubscribed(): boolean {
+        const subscription &#x3D; this.subscription$.getValue();
+        return subscription &#x3D;&#x3D;&#x3D; ContactSubscription.both || subscription &#x3D;&#x3D;&#x3D; ContactSubscription.to;
+    }
+
+    isUnaffiliated(): boolean {
+        return !this.isSubscribed() &amp;&amp; !this.pendingIn$.getValue() &amp;&amp; !this.pendingOut$.getValue();
+    }
+
+    updateResourcePresence(jid: string, presence: Presence): void {
+        const resources &#x3D; this.resources$.getValue();
+        resources.set(jid, presence);
+        this.presence$.next(this.determineOverallPresence(resources));
+        this.resources$.next(resources);
+    }
+
+    getMessageById(id: string): Message | null {
+        return this.messageStore.messageIdToMessage.get(id);
+    }
+
+    private determineOverallPresence(jidToPresence: JidToPresence): Presence {
+        let result &#x3D; Presence.unavailable;
+
+        [...jidToPresence.values()].some((presence) &#x3D;&gt; {
+            if (presence &#x3D;&#x3D;&#x3D; Presence.present) {
+                result &#x3D; presence;
+                return true;
+            } else if (presence &#x3D;&#x3D;&#x3D; Presence.away) {
+                result &#x3D; Presence.away;
+            }
+            return false;
+        });
+
+        return result;
+    }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContactMetadata.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1098 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li >BlockPlugin</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>XEP-0191: Blocking Command
+<a href="https://xmpp.org/extensions/xep-0191.html">https://xmpp.org/extensions/xep-0191.html</a></p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#supportsBlock$" >supportsBlock$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#blockJid" >blockJid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#determineSupportForBlock" >determineSupportForBlock</a>
+                            </li>
+                            <li>
+                                <a href="#handleStanza" >handleStanza</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
+                            </li>
+                            <li>
+                                <a href="#onOffline" >onOffline</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#requestBlockedJids" >requestBlockedJids</a>
+                            </li>
+                            <li>
+                                <a href="#unblockJid" >unblockJid</a>
+                            </li>
+                            <li>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
+                            </li>
+                            <li>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, serviceDiscoveryPlugin: <a href="../interfaces/Service.html" target="_self">ServiceDiscoveryPlugin</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>xmppChatAdapter</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/XmppChatAdapter.html" target="_self" >XmppChatAdapter</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>serviceDiscoveryPlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Service.html" target="_self" >ServiceDiscoveryPlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="supportsBlock$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>supportsBlock$</b></span>
+                        <a href="#supportsBlock$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="blockJid"></a>
+                    <span class="name">
+                        <span ><b>blockJid</b></span>
+                        <a href="#blockJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>blockJid(jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>jid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="determineSupportForBlock"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>determineSupportForBlock</b></span>
+                        <a href="#determineSupportForBlock"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>determineSupportForBlock()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleStanza"></a>
+                    <span class="name">
+                        <span ><b>handleStanza</b></span>
+                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:75</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBeforeOnline"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>onBeforeOnline</b></span>
+                        <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onBeforeOnline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:23</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOffline"></a>
+                    <span class="name">
+                        <span ><b>onOffline</b></span>
+                        <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOffline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:41</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestBlockedJids"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>requestBlockedJids</b></span>
+                        <a href="#requestBlockedJids"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>requestBlockedJids()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unblockJid"></a>
+                    <span class="name">
+                        <span ><b>unblockJid</b></span>
+                        <a href="#unblockJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unblockJid(jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">projects/pazznetwork/ngx-chat/src/lib/services/adapters/xmpp/plugins/block.plugin.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>jid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterReceiveMessage"></a>
+                    <span class="name">
+                        <span ><b>afterReceiveMessage</b></span>
+                        <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:28</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/MessageWithBodyStanza.html" target="_self" >MessageWithBodyStanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageReceivedEvent</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >MessageReceivedEvent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterSendMessage"></a>
+                    <span class="name">
+                        <span ><b>afterSendMessage</b></span>
+                        <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:16</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeSendMessage"></a>
+                    <span class="name">
+                        <span ><b>beforeSendMessage</b></span>
+                        <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:20</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { Stanza } from &#x27;../../../../core/stanza&#x27;;
+import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
+import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
+
+/**
+ * XEP-0191: Blocking Command
+ * https://xmpp.org/extensions/xep-0191.html
+ */
+export class BlockPlugin extends AbstractXmppPlugin {
+
+    public supportsBlock$ &#x3D; new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;);
+
+    constructor(
+        private xmppChatAdapter: XmppChatAdapter,
+        private serviceDiscoveryPlugin: ServiceDiscoveryPlugin,
+    ) {
+        super();
+    }
+
+    async onBeforeOnline() {
+        const supportsBlock &#x3D; await this.determineSupportForBlock();
+        this.supportsBlock$.next(supportsBlock);
+        if (supportsBlock) {
+            await this.requestBlockedJids();
+        }
+    }
+
+    private async determineSupportForBlock() {
+        try {
+            return await this.serviceDiscoveryPlugin.supportsFeature(
+                this.xmppChatAdapter.chatConnectionService.userJid.domain,
+                &#x27;urn:xmpp:blocking&#x27;);
+        } catch (e) {
+            return false;
+        }
+    }
+
+    onOffline() {
+        this.supportsBlock$.next(&#x27;unknown&#x27;);
+        this.xmppChatAdapter.blockedContactIds$.next(new Set&lt;string&gt;());
+    }
+
+    blockJid(jid: string) {
+        return this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
+                xml(&#x27;block&#x27;, {xmlns: &#x27;urn:xmpp:blocking&#x27;},
+                    xml(&#x27;item&#x27;, {jid}))));
+    }
+
+    unblockJid(jid: string) {
+        return this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;},
+                xml(&#x27;unblock&#x27;, {xmlns: &#x27;urn:xmpp:blocking&#x27;},
+                    xml(&#x27;item&#x27;, {jid}))));
+    }
+
+    private async requestBlockedJids() {
+        const blockListResponse &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;},
+                xml(&#x27;blocklist&#x27;, {xmlns: &#x27;urn:xmpp:blocking&#x27;})
+            )
+        );
+
+        const blockedJids &#x3D; blockListResponse
+            .getChild(&#x27;blocklist&#x27;)
+            .getChildren(&#x27;item&#x27;)
+            .map(e &#x3D;&gt; e.attrs.jid);
+
+        this.xmppChatAdapter.blockedContactIds$.next(new Set&lt;string&gt;(blockedJids));
+    }
+
+    handleStanza(stanza: Stanza): boolean {
+        const {from} &#x3D; stanza.attrs;
+        if (from &amp;&amp; from &#x3D;&#x3D;&#x3D; this.xmppChatAdapter.chatConnectionService.userJid?.bare().toString()) {
+            const blockPush &#x3D; stanza.getChild(&#x27;block&#x27;, &#x27;urn:xmpp:blocking&#x27;);
+            const unblockPush &#x3D; stanza.getChild(&#x27;unblock&#x27;, &#x27;urn:xmpp:blocking&#x27;);
+            const blockList &#x3D; this.xmppChatAdapter.blockedContactIds$.getValue();
+            if (blockPush) {
+                blockPush.getChildren(&#x27;item&#x27;)
+                    .map(e &#x3D;&gt; e.attrs.jid as string)
+                    .forEach(jid &#x3D;&gt; blockList.add(jid));
+                this.xmppChatAdapter.blockedContactIds$.next(blockList);
+                return true;
+            } else if (unblockPush) {
+                const jidsToUnblock &#x3D; unblockPush.getChildren(&#x27;item&#x27;).map(e &#x3D;&gt; e.attrs.jid as string);
+                if (jidsToUnblock.length &#x3D;&#x3D;&#x3D; 0) {
+                    // unblock everyone
+                    blockList.clear();
+                } else {
+                    // unblock individually
+                    jidsToUnblock.forEach(jid &#x3D;&gt; blockList.delete(jid));
+                }
+                this.xmppChatAdapter.blockedContactIds$.next(blockList);
+                return true;
+            }
+        }
+        return false;
+    }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'BlockPlugin.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
