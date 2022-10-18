@@ -1,0 +1,1739 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@pazznetwork/ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@pazznetwork/ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  MucComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>demo/app/routes/muc/muc.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-muc</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./muc.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./muc.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentRoom" >currentRoom</a>
+                            </li>
+                            <li>
+                                <a href="#inviteJid" >inviteJid</a>
+                            </li>
+                            <li>
+                                <a href="#memberJid" >memberJid</a>
+                            </li>
+                            <li>
+                                <a href="#moderatorNick" >moderatorNick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#multiUserChatPlugin" >multiUserChatPlugin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#ngDestroySubject" >ngDestroySubject</a>
+                            </li>
+                            <li>
+                                <a href="#nick" >nick</a>
+                            </li>
+                            <li>
+                                <a href="#occupants$" >occupants$</a>
+                            </li>
+                            <li>
+                                <a href="#rooms$" >rooms$</a>
+                            </li>
+                            <li>
+                                <a href="#selectedRoom$" >selectedRoom$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#selectedRoomSubject" >selectedRoomSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#state$" >state$</a>
+                            </li>
+                            <li>
+                                <a href="#subject" >subject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ban" >ban</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#changeNick" >changeNick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#changeRoomSubject" >changeRoomSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#grantMembership" >grantMembership</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#grantModeratorStatus" >grantModeratorStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#inviteUser" >inviteUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#joinRoom" >joinRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#kick" >kick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#leaveRoom" >leaveRoom</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#revokeMembership" >revokeMembership</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#revokeModeratorStatus" >revokeModeratorStatus</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(chatService: <a href="../interfaces/ChatService.html" target="_self">ChatService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">demo/app/routes/muc/muc.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chatService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/ChatService.html" target="_self" >ChatService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ban"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ban</b></span>
+                        <a href="#ban"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ban(occupant: <a href="../interfaces/RoomOccupant.html" target="_self">RoomOccupant</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupant</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomOccupant.html" target="_self" >RoomOccupant</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeNick"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>changeNick</b></span>
+                        <a href="#changeNick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeNick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeRoomSubject"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>changeRoomSubject</b></span>
+                        <a href="#changeRoomSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeRoomSubject()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="grantMembership"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>grantMembership</b></span>
+                        <a href="#grantMembership"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>grantMembership()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="grantModeratorStatus"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>grantModeratorStatus</b></span>
+                        <a href="#grantModeratorStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>grantModeratorStatus()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inviteUser"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>inviteUser</b></span>
+                        <a href="#inviteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>inviteUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="joinRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>joinRoom</b></span>
+                        <a href="#joinRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>joinRoom(roomJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kick"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>kick</b></span>
+                        <a href="#kick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>kick(occupant: <a href="../interfaces/RoomOccupant.html" target="_self">RoomOccupant</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupant</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomOccupant.html" target="_self" >RoomOccupant</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leaveRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>leaveRoom</b></span>
+                        <a href="#leaveRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>leaveRoom()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="revokeMembership"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>revokeMembership</b></span>
+                        <a href="#revokeMembership"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>revokeMembership()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="revokeModeratorStatus"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>revokeModeratorStatus</b></span>
+                        <a href="#revokeModeratorStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>revokeModeratorStatus()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">demo/app/routes/muc/muc.component.ts:157</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentRoom"></a>
+                    <span class="name">
+                        <span ><b>currentRoom</b></span>
+                        <a href="#currentRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Room.html" target="_self" >Room</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">demo/app/routes/muc/muc.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inviteJid"></a>
+                    <span class="name">
+                        <span ><b>inviteJid</b></span>
+                        <a href="#inviteJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">demo/app/routes/muc/muc.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="memberJid"></a>
+                    <span class="name">
+                        <span ><b>memberJid</b></span>
+                        <a href="#memberJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">demo/app/routes/muc/muc.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moderatorNick"></a>
+                    <span class="name">
+                        <span ><b>moderatorNick</b></span>
+                        <a href="#moderatorNick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">demo/app/routes/muc/muc.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="multiUserChatPlugin"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>multiUserChatPlugin</b></span>
+                        <a href="#multiUserChatPlugin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ChatPlugin.html" target="_self" >MultiUserChatPlugin</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">demo/app/routes/muc/muc.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngDestroySubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>ngDestroySubject</b></span>
+                        <a href="#ngDestroySubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">demo/app/routes/muc/muc.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nick"></a>
+                    <span class="name">
+                        <span ><b>nick</b></span>
+                        <a href="#nick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">demo/app/routes/muc/muc.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="occupants$"></a>
+                    <span class="name">
+                        <span ><b>occupants$</b></span>
+                        <a href="#occupants$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RoomOccupant.html" target="_self" >Observable&lt;RoomOccupant[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">demo/app/routes/muc/muc.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rooms$"></a>
+                    <span class="name">
+                        <span ><b>rooms$</b></span>
+                        <a href="#rooms$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RoomSummary.html" target="_self" >Observable&lt;RoomSummary[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">demo/app/routes/muc/muc.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedRoom$"></a>
+                    <span class="name">
+                        <span ><b>selectedRoom$</b></span>
+                        <a href="#selectedRoom$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Room.html" target="_self" >Observable&lt;Room&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.selectedRoomSubject.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">demo/app/routes/muc/muc.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedRoomSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>selectedRoomSubject</b></span>
+                        <a href="#selectedRoomSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;Room&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">demo/app/routes/muc/muc.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state$"></a>
+                    <span class="name">
+                            <span class="modifier">Readonly</span>
+                        <span ><b>state$</b></span>
+                        <a href="#state$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#ConnectionStates" target="_self" >Observable&lt;ConnectionStates&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.chatService.state$.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">demo/app/routes/muc/muc.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subject"></a>
+                    <span class="name">
+                        <span ><b>subject</b></span>
+                        <a href="#subject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">demo/app/routes/muc/muc.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+import {
+    CHAT_SERVICE_TOKEN,
+    ChatService,
+    ConnectionStates,
+    JID,
+    MultiUserChatPlugin,
+    Room,
+    RoomOccupant,
+    RoomSummary,
+} from &#x27;@pazznetwork/ngx-chat&#x27;;
+import { from, Observable, Subject } from &#x27;rxjs&#x27;;
+import { jid } from &#x27;@xmpp/client&#x27;;
+import { distinctUntilChanged, filter, switchMap, takeUntil } from &#x27;rxjs/operators&#x27;;
+
+@Component({
+    selector: &#x27;app-muc&#x27;,
+    templateUrl: &#x27;./muc.component.html&#x27;,
+    styleUrls: [&#x27;./muc.component.css&#x27;],
+})
+export class MucComponent implements OnInit, OnDestroy {
+    private selectedRoomSubject &#x3D; new Subject&lt;Room&gt;();
+    selectedRoom$: Observable&lt;Room&gt; &#x3D; this.selectedRoomSubject.asObservable();
+
+    currentRoom: Room;
+
+    inviteJid &#x3D; &#x27;&#x27;;
+    subject &#x3D; &#x27;&#x27;;
+    nick &#x3D; &#x27;&#x27;;
+    memberJid &#x3D; &#x27;&#x27;;
+    moderatorNick &#x3D; &#x27;&#x27;;
+
+    rooms$: Observable&lt;RoomSummary[]&gt;;
+    readonly state$: Observable&lt;ConnectionStates&gt; &#x3D; this.chatService.state$.asObservable();
+
+    occupants$: Observable&lt;RoomOccupant[]&gt;;
+
+    private readonly multiUserChatPlugin: MultiUserChatPlugin;
+    private readonly ngDestroySubject &#x3D; new Subject&lt;void&gt;();
+
+    constructor(@Inject(CHAT_SERVICE_TOKEN) private chatService: ChatService) {
+        this.multiUserChatPlugin &#x3D; chatService.getPlugin(MultiUserChatPlugin);
+    }
+
+    ngOnInit(): void {
+        this.rooms$ &#x3D; from(this.multiUserChatPlugin.queryAllRooms());
+
+        this.selectedRoom$
+            .pipe(takeUntil(this.ngDestroySubject))
+            .subscribe(room &#x3D;&gt; {
+                this.currentRoom &#x3D; room;
+            });
+
+        this.occupants$ &#x3D; this.selectedRoom$.pipe(
+            filter(room &#x3D;&gt; room !&#x3D; null),
+            switchMap(room &#x3D;&gt; room.occupants$),
+            takeUntil(this.ngDestroySubject),
+        );
+
+        this.multiUserChatPlugin.rooms$
+            .pipe(takeUntil(this.ngDestroySubject))
+            .subscribe((rooms) &#x3D;&gt; {
+                if (!this.currentRoom) {
+                    return;
+                }
+
+                const updatedRoom &#x3D; rooms.find((room) &#x3D;&gt; room.roomJid.equals(this.currentRoom.roomJid));
+                if (updatedRoom) {
+                    this.selectedRoomSubject.next(updatedRoom);
+                }
+            });
+
+        const occupantChanges$ &#x3D; this.selectedRoom$.pipe(
+            distinctUntilChanged((r1, r2) &#x3D;&gt; (r1 &#x3D;&#x3D; null &amp;&amp; r2 &#x3D;&#x3D; null) || Boolean(r1?.equals(r2) || r2?.equals(r1))),
+            filter(room &#x3D;&gt; room !&#x3D; null),
+            switchMap((room) &#x3D;&gt; room.onOccupantChange$),
+        );
+
+        occupantChanges$
+            .pipe(takeUntil(this.ngDestroySubject))
+            .subscribe((occupantChange) &#x3D;&gt; {
+                const {change, occupant, isCurrentUser} &#x3D; occupantChange;
+                if (occupantChange.change &#x3D;&#x3D;&#x3D; &#x27;modified&#x27;) {
+                    console.log(
+                        &#x60;change&#x3D;${change}, modified&#x3D;${occupant.occupantJid.toString()}, currentUser&#x3D;${isCurrentUser}&#x60;,
+                        occupant,
+                        occupantChange.oldOccupant,
+                    );
+                } else {
+                    console.log(&#x60;change&#x3D;${change}, currentUser&#x3D;${isCurrentUser}&#x60;, occupant);
+                }
+            });
+
+        occupantChanges$.pipe(
+            filter(({change, isCurrentUser}) &#x3D;&gt;
+                (change &#x3D;&#x3D;&#x3D; &#x27;kicked&#x27;
+                    || change &#x3D;&#x3D;&#x3D; &#x27;banned&#x27;
+                    || change &#x3D;&#x3D;&#x3D; &#x27;left&#x27;
+                    || change &#x3D;&#x3D;&#x3D; &#x27;leftOnConnectionError&#x27;
+                    || change &#x3D;&#x3D;&#x3D; &#x27;lostMembership&#x27;
+                ) &amp;&amp; isCurrentUser,
+            ),
+            takeUntil(this.ngDestroySubject),
+        )
+            .subscribe(() &#x3D;&gt; {
+                this.selectedRoomSubject.next(null);
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.ngDestroySubject.next();
+        this.ngDestroySubject.complete();
+    }
+
+    async joinRoom(roomJid: JID) {
+        const room &#x3D; await this.multiUserChatPlugin.joinRoom(roomJid);
+        this.selectedRoomSubject.next(room);
+    }
+
+    async leaveRoom() {
+        await this.multiUserChatPlugin.leaveRoom(this.currentRoom.roomJid);
+        this.selectedRoomSubject.next(null);
+    }
+
+    async changeRoomSubject() {
+        await this.multiUserChatPlugin.changeRoomSubject(this.currentRoom.roomJid, this.subject);
+    }
+
+    async inviteUser() {
+        await this.multiUserChatPlugin.inviteUser(jid(this.inviteJid), this.currentRoom.roomJid);
+    }
+
+    async changeNick() {
+        await this.multiUserChatPlugin.changeUserNickname(this.nick, this.currentRoom.roomJid);
+    }
+
+    async kick(occupant: RoomOccupant) {
+        await this.multiUserChatPlugin.kickOccupant(occupant.nick, this.currentRoom.roomJid);
+    }
+
+    async ban(occupant: RoomOccupant) {
+        await this.multiUserChatPlugin.banUser(occupant.occupantJid, this.currentRoom.roomJid);
+    }
+
+    async grantMembership() {
+        await this.multiUserChatPlugin.grantMembership(jid(this.memberJid), this.currentRoom.roomJid);
+    }
+
+    async revokeMembership() {
+        await this.multiUserChatPlugin.revokeMembership(jid(this.memberJid), this.currentRoom.roomJid);
+    }
+
+    async grantModeratorStatus() {
+        await this.multiUserChatPlugin.grantModeratorStatus(this.moderatorNick, this.currentRoom.roomJid);
+    }
+
+    async revokeModeratorStatus() {
+        await this.multiUserChatPlugin.revokeModeratorStatus(this.moderatorNick, this.currentRoom.roomJid);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;nav&gt;
+        &lt;a routerLink&#x3D;&quot;../&quot;&gt;Back&lt;/a&gt;
+        &lt;div class&#x3D;&quot;state&quot;&gt;
+            Connection state: {{state$ | async}}
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;aside&gt;
+        &lt;h4&gt;Rooms:&lt;/h4&gt;
+        &lt;div class&#x3D;&quot;list&quot;&gt;
+            &lt;div class&#x3D;&quot;list-item&quot; *ngFor&#x3D;&quot;let room of rooms$ | async&quot;&gt;
+                &lt;div&gt;
+                    &lt;p&gt;{{room.name}}&lt;/p&gt;
+                    &lt;small&gt;JID: {{room.jid.toString()}}&lt;/small&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;button *ngIf&#x3D;&quot;!currentRoom || currentRoom?.roomJid.equals(room.jid)&quot;
+                            (click)&#x3D;&quot;joinRoom(room.jid)&quot;&gt;Join
+                    &lt;/button&gt;
+                    &lt;button *ngIf&#x3D;&quot;currentRoom?.roomJid.equals(room.jid)&quot; (click)&#x3D;&quot;leaveRoom()&quot;&gt;Leave&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/aside&gt;
+    &lt;main&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;selectedRoom$ | async as room&quot;&gt;
+            &lt;h1 style&#x3D;&quot;text-align: center&quot;&gt;
+                {{room.name}}&lt;br&gt;
+                &lt;small&gt;JID: {{room.roomJid.toString()}}&lt;/small&gt;&lt;br&gt;
+                &lt;small&gt;Subject: {{room.subject || &#x27;[unset]&#x27;}}&lt;/small&gt;
+            &lt;/h1&gt;
+            &lt;h2&gt;Actions:&lt;/h2&gt;
+            &lt;form&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;room-subject&quot;&gt;Room subject:&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;subject&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;room-subject&quot; name&#x3D;&quot;room-subject&quot;
+                           placeholder&#x3D;&quot;Enter a new room subject&quot; type&#x3D;&quot;text&quot;/&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;changeRoomSubject()&quot;&gt;Change&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;change-nick&quot;&gt;Change nick:&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;nick&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;change-nick&quot; name&#x3D;&quot;change-nick&quot;
+                           placeholder&#x3D;&quot;Enter a new nick&quot; type&#x3D;&quot;text&quot;/&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;changeNick()&quot;&gt;Change&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;invite-user&quot;&gt;Invite user:&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;inviteJid&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;invite-user&quot; name&#x3D;&quot;invite-user&quot;
+                           placeholder&#x3D;&quot;Enter JID of a user to invite&quot; type&#x3D;&quot;text&quot;/&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;inviteUser()&quot;&gt;Invite&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;member&quot;&gt;Grant or revoke membership&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;memberJid&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;member&quot; name&#x3D;&quot;member&quot; type&#x3D;&quot;text&quot;
+                           placeholder&#x3D;&quot;Enter JID of an occupant to grant/revoke membership&quot;/&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;revokeMembership()&quot;&gt;Revoke&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;grantMembership()&quot;&gt;Grant&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;moderator&quot;&gt;Grant or revoke moderator status&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;moderatorNick&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;moderator&quot; name&#x3D;&quot;moderator&quot; type&#x3D;&quot;text&quot;
+                           placeholder&#x3D;&quot;Enter nick of an occupant to grant or revoke moderator status&quot;/&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;revokeModeratorStatus()&quot;&gt;Revoke&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;grantModeratorStatus()&quot;&gt;Grant&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;selectedRoom$ | async as room&quot;&gt;
+            &lt;h2&gt;Chat:&lt;/h2&gt;
+            &lt;ngx-chat-message-list [recipient]&#x3D;&quot;room&quot;&gt;&lt;/ngx-chat-message-list&gt;
+            &lt;ngx-chat-message-input [recipient]&#x3D;&quot;room&quot;&gt;&lt;/ngx-chat-message-input&gt;
+        &lt;/ng-container&gt;
+    &lt;/main&gt;
+    &lt;aside&gt;
+        &lt;h4&gt;Occupants:&lt;/h4&gt;
+        &lt;div class&#x3D;&quot;list&quot;&gt;
+            &lt;div class&#x3D;&quot;list-item&quot; *ngFor&#x3D;&quot;let occupant of occupants$ | async&quot;&gt;
+                &lt;div&gt;
+                    &lt;p&gt;{{occupant.nick}} - &lt;small&gt;{{occupant.affiliation}}, {{occupant.role}}&lt;/small&gt;&lt;/p&gt;
+                    &lt;small&gt;{{occupant.occupantJid.toString()}}&lt;/small&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;button (click)&#x3D;&quot;kick(occupant)&quot;&gt;Kick&lt;/button&gt;
+                    &lt;button (click)&#x3D;&quot;ban(occupant)&quot;&gt;Ban&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/aside&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./muc.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+    font-family: &#x27;Roboto&#x27;, sans-serif;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #666;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+nav a {
+    color: #fff;
+}
+
+aside {
+    padding: 1em;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas:
+            &quot;nav nav nav nav nav&quot;
+            &quot;left main main main right&quot;;
+}
+
+.grid aside:first-child {
+    grid-area: left;
+}
+
+.grid aside:last-child {
+    grid-area: right;
+}
+
+.grid main {
+    grid-area: main;
+    padding: 0 20px;
+}
+
+ul &gt; li {
+    background-color: #eee;
+    padding: .5em 1em;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    column-gap: .5em;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1em;
+    background-color: #eee;
+    border-radius: .5em;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="grid">    <nav>        <a routerLink="../">Back</a>        <div class="state">            Connection state: {{state$ | async}}        </div>    </nav>    <aside>        <h4>Rooms:</h4>        <div class="list">            <div class="list-item" *ngFor="let room of rooms$ | async">                <div>                    <p>{{room.name}}</p>                    <small>JID: {{room.jid.toString()}}</small>                </div>                <div>                    <button *ngIf="!currentRoom || currentRoom?.roomJid.equals(room.jid)"                            (click)="joinRoom(room.jid)">Join                    </button>                    <button *ngIf="currentRoom?.roomJid.equals(room.jid)" (click)="leaveRoom()">Leave</button>                </div>            </div>        </div>    </aside>    <main>        <ng-container *ngIf="selectedRoom$ | async as room">            <h1 style="text-align: center">                {{room.name}}<br>                <small>JID: {{room.roomJid.toString()}}</small><br>                <small>Subject: {{room.subject || \'[unset]\'}}</small>            </h1>            <h2>Actions:</h2>            <form>                <div class="form-group">                    <label for="room-subject">Room subject:</label>                    <input [(ngModel)]="subject" class="form-control" id="room-subject" name="room-subject"                           placeholder="Enter a new room subject" type="text"/>                    <button type="button" (click)="changeRoomSubject()">Change</button>                </div>                <div class="form-group">                    <label for="change-nick">Change nick:</label>                    <input [(ngModel)]="nick" class="form-control" id="change-nick" name="change-nick"                           placeholder="Enter a new nick" type="text"/>                    <button type="button" (click)="changeNick()">Change</button>                </div>                <div class="form-group">                    <label for="invite-user">Invite user:</label>                    <input [(ngModel)]="inviteJid" class="form-control" id="invite-user" name="invite-user"                           placeholder="Enter JID of a user to invite" type="text"/>                    <button type="button" (click)="inviteUser()">Invite</button>                </div>                <div class="form-group">                    <label for="member">Grant or revoke membership</label>                    <input [(ngModel)]="memberJid" class="form-control" id="member" name="member" type="text"                           placeholder="Enter JID of an occupant to grant/revoke membership"/>                    <button type="button" (click)="revokeMembership()">Revoke</button>                    <button type="button" (click)="grantMembership()">Grant</button>                </div>                <div class="form-group">                    <label for="moderator">Grant or revoke moderator status</label>                    <input [(ngModel)]="moderatorNick" class="form-control" id="moderator" name="moderator" type="text"                           placeholder="Enter nick of an occupant to grant or revoke moderator status"/>                    <button type="button" (click)="revokeModeratorStatus()">Revoke</button>                    <button type="button" (click)="grantModeratorStatus()">Grant</button>                </div>            </form>        </ng-container>        <ng-container *ngIf="selectedRoom$ | async as room">            <h2>Chat:</h2>            <ngx-chat-message-list [recipient]="room"></ngx-chat-message-list>            <ngx-chat-message-input [recipient]="room"></ngx-chat-message-input>        </ng-container>    </main>    <aside>        <h4>Occupants:</h4>        <div class="list">            <div class="list-item" *ngFor="let occupant of occupants$ | async">                <div>                    <p>{{occupant.nick}} - <small>{{occupant.affiliation}}, {{occupant.role}}</small></p>                    <small>{{occupant.occupantJid.toString()}}</small>                </div>                <div>                    <button (click)="kick(occupant)">Kick</button>                    <button (click)="ban(occupant)">Ban</button>                </div>            </div>        </div>    </aside></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'IqComponent', 'selector': 'app-iq'},{'name': 'MucComponent', 'selector': 'app-muc'},{'name': 'MultiUserChatComponent', 'selector': 'app-multi-user-chat'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'},{'name': 'RosterRecipientComponent', 'selector': 'ngx-chat-roster-recipient'},{'name': 'SendStanzaComponent', 'selector': 'app-send-stanza'},{'name': 'UiComponent', 'selector': 'app-ui'}];
+    var DIRECTIVES = [{'name': 'IntersectionObserverDirective', 'selector': '[ngxChatIntersectionObserver]'},{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
+    var ACTUAL_COMPONENT = {'name': 'MucComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MucComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

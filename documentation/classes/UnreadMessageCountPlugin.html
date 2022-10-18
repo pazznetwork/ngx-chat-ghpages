@@ -1,0 +1,1686 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@pazznetwork/ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@pazznetwork/ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li >UnreadMessageCountPlugin</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Unofficial plugin using XEP-0163 / PubSub to track count of unread messages per recipient</p>
+<p>It publishes entries to a private PubSub-Node &#39;ngxchat:unreadmessagedate&#39;
+The stored elements look like this:
+<item id="current">
+    <entries>
+        <last-read jid="user1@host1.tld" date="1546419050584"/>
+        <last-read jid="user2@host1.tld" date="1546419050000"/>
+    </entries>
+</item></p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#jidToLastReadTimestamp" >jidToLastReadTimestamp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#jidToUnreadCount$" >jidToUnreadCount$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#recipientIdToMessageSubscription" >recipientIdToMessageSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#unreadMessageCountSum$" >unreadMessageCountSum$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#calculateUnreadMessageCount" >calculateUnreadMessageCount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkForUnreadCountChange" >checkForUnreadCountChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchLastSeenDates" >fetchLastSeenDates</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#handlePubSubEvent" >handlePubSubEvent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mergeJidToDates" >mergeJidToDates</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
+                            </li>
+                            <li>
+                                <a href="#onOffline" >onOffline</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#parseLastSeenDates" >parseLastSeenDates</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#persistLastSeenDates" >persistLastSeenDates</a>
+                            </li>
+                            <li>
+                                <a href="#updateContactUnreadMessageState" >updateContactUnreadMessageState</a>
+                            </li>
+                            <li>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
+                            </li>
+                            <li>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#handleStanza" >handleStanza</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(chatService: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, chatMessageListRegistry: <a href="../injectables/ChatMessageListRegistryService.html" target="_self">ChatMessageListRegistryService</a>, publishSubscribePlugin: <a href="../classes/PublishSubscribePlugin.html" target="_self">PublishSubscribePlugin</a>, entityTimePlugin: <a href="../classes/EntityTimePlugin.html" target="_self">EntityTimePlugin</a>, multiUserChatPlugin: <a href="../interfaces/ChatPlugin.html" target="_self">MultiUserChatPlugin</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chatService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/XmppChatAdapter.html" target="_self" >XmppChatAdapter</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>chatMessageListRegistry</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ChatMessageListRegistryService.html" target="_self" >ChatMessageListRegistryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>publishSubscribePlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/PublishSubscribePlugin.html" target="_self" >PublishSubscribePlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>entityTimePlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/EntityTimePlugin.html" target="_self" >EntityTimePlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>multiUserChatPlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/ChatPlugin.html" target="_self" >MultiUserChatPlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jidToLastReadTimestamp"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>jidToLastReadTimestamp</b></span>
+                        <a href="#jidToLastReadTimestamp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/functions.html#id" target="_self" >JidToLastReadTimestamp</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;string, number&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jidToUnreadCount$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>jidToUnreadCount$</b></span>
+                        <a href="#jidToUnreadCount$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/functions.html#id" target="_self" >BehaviorSubject&lt;JidToNumber&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject(new Map&lt;string, number&gt;())</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>emits as soon as the unread message count changes, you might want to debounce it with e.g. half a a second, as
+new messages might be acknowledged in another session.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recipientIdToMessageSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>recipientIdToMessageSubscription</b></span>
+                        <a href="#recipientIdToMessageSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;string, Subscription&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unreadMessageCountSum$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>unreadMessageCountSum$</b></span>
+                        <a href="#unreadMessageCountSum$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:56</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>already debounced to prevent the issues described in <a href="UnreadMessageCountPlugin.jidToUnreadCount$">UnreadMessageCountPlugin.jidToUnreadCount$</a>.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateUnreadMessageCount"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>calculateUnreadMessageCount</b></span>
+                        <a href="#calculateUnreadMessageCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>calculateUnreadMessageCount(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>, lastReadTimestamp: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:169</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>recipient</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>lastReadTimestamp</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkForUnreadCountChange"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>checkForUnreadCountChange</b></span>
+                        <a href="#checkForUnreadCountChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkForUnreadCountChange(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>recipient</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchLastSeenDates"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>fetchLastSeenDates</b></span>
+                        <a href="#fetchLastSeenDates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchLastSeenDates()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;JidToLastReadTimestamp&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handlePubSubEvent"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>handlePubSubEvent</b></span>
+                        <a href="#handlePubSubEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handlePubSubEvent(event: Element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mergeJidToDates"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>mergeJidToDates</b></span>
+                        <a href="#mergeJidToDates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mergeJidToDates(newJidToDate: <a href="../undefineds/id.html" target="_self">JidToLastReadTimestamp</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:199</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>newJidToDate</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/functions.html#id" target="_self" >JidToLastReadTimestamp</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBeforeOnline"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>onBeforeOnline</b></span>
+                        <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onBeforeOnline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:124</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOffline"></a>
+                    <span class="name">
+                        <span ><b>onOffline</b></span>
+                        <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOffline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:129</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="parseLastSeenDates"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>parseLastSeenDates</b></span>
+                        <a href="#parseLastSeenDates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>parseLastSeenDates(topLevelElements: Element[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>topLevelElements</td>
+                                    <td>
+                                            <code>Element[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >JidToLastReadTimestamp</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="persistLastSeenDates"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>persistLastSeenDates</b></span>
+                        <a href="#persistLastSeenDates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>persistLastSeenDates()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="177"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:177</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateContactUnreadMessageState"></a>
+                    <span class="name">
+                        <span ><b>updateContactUnreadMessageState</b></span>
+                        <a href="#updateContactUnreadMessageState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateContactUnreadMessageState(recipient: <a href="../undefineds/Recipient.html" target="_self">Recipient</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/unread-message-count.plugin.ts:159</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>recipient</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Recipient" target="_self" >Recipient</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterReceiveMessage"></a>
+                    <span class="name">
+                        <span ><b>afterReceiveMessage</b></span>
+                        <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:28</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/MessageWithBodyStanza.html" target="_self" >MessageWithBodyStanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageReceivedEvent</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >MessageReceivedEvent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterSendMessage"></a>
+                    <span class="name">
+                        <span ><b>afterSendMessage</b></span>
+                        <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:16</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeSendMessage"></a>
+                    <span class="name">
+                        <span ><b>beforeSendMessage</b></span>
+                        <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:20</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleStanza"></a>
+                    <span class="name">
+                        <span ><b>handleStanza</b></span>
+                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:24</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
+import { Element } from &#x27;ltx&#x27;;
+import { BehaviorSubject, combineLatest, merge, Observable, Subject, Subscription } from &#x27;rxjs&#x27;;
+import { debounceTime, delay, distinctUntilChanged, map, share } from &#x27;rxjs/operators&#x27;;
+import { Direction, Message } from &#x27;../../../../core/message&#x27;;
+import { Recipient } from &#x27;../../../../core/recipient&#x27;;
+import { findSortedInsertionIndexLast } from &#x27;../../../../core/utils-array&#x27;;
+import { ChatMessageListRegistryService } from &#x27;../../../chat-message-list-registry.service&#x27;;
+import { AbstractStanzaBuilder } from &#x27;../abstract-stanza-builder&#x27;;
+import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
+import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { EntityTimePlugin } from &#x27;./entity-time.plugin&#x27;;
+import { MultiUserChatPlugin } from &#x27;./multi-user-chat/multi-user-chat.plugin&#x27;;
+import { PublishSubscribePlugin } from &#x27;./publish-subscribe.plugin&#x27;;
+
+const STORAGE_NGX_CHAT_LAST_READ_DATE &#x3D; &#x27;ngxchat:unreadmessagedate&#x27;;
+const wrapperNodeName &#x3D; &#x27;entries&#x27;;
+const nodeName &#x3D; &#x27;last-read&#x27;;
+
+export type JidToNumber &#x3D; Map&lt;string, number&gt;;
+type JidToLastReadTimestamp &#x3D; Map&lt;string, number&gt;;
+
+class LastReadEntriesNodeBuilder extends AbstractStanzaBuilder {
+
+    private lastReadNodes &#x3D; [] as Element[];
+
+    addLastReadNode(jid: string, date: string) {
+        this.lastReadNodes.push(
+            xml(nodeName, {jid, date}),
+        );
+    }
+
+    toStanza(): Element {
+        return xml(wrapperNodeName, {}, ...this.lastReadNodes);
+    }
+
+}
+
+/**
+ * Unofficial plugin using XEP-0163 / PubSub to track count of unread messages per recipient
+ *
+ * It publishes entries to a private PubSub-Node &#x27;ngxchat:unreadmessagedate&#x27;
+ * The stored elements look like this:
+ * &lt;item id&#x3D;&quot;current&quot;&gt;
+ *     &lt;entries&gt;
+ *         &lt;last-read jid&#x3D;&quot;user1@host1.tld&quot; date&#x3D;&quot;1546419050584&quot;/&gt;
+ *         &lt;last-read jid&#x3D;&quot;user2@host1.tld&quot; date&#x3D;&quot;1546419050000&quot;/&gt;
+ *     &lt;/entries&gt;
+ * &lt;/item&gt;
+ */
+export class UnreadMessageCountPlugin extends AbstractXmppPlugin {
+
+    /**
+     * already debounced to prevent the issues described in {@link UnreadMessageCountPlugin.jidToUnreadCount$}.
+     */
+    public readonly unreadMessageCountSum$: Observable&lt;number&gt;;
+    /**
+     * emits as soon as the unread message count changes, you might want to debounce it with e.g. half a a second, as
+     * new messages might be acknowledged in another session.
+     */
+    public readonly jidToUnreadCount$: BehaviorSubject&lt;JidToNumber&gt; &#x3D; new BehaviorSubject(new Map&lt;string, number&gt;());
+    private readonly jidToLastReadTimestamp: JidToLastReadTimestamp &#x3D; new Map&lt;string, number&gt;();
+    private readonly recipientIdToMessageSubscription &#x3D; new Map&lt;string, Subscription&gt;();
+
+    constructor(
+        private chatService: XmppChatAdapter,
+        private chatMessageListRegistry: ChatMessageListRegistryService,
+        private publishSubscribePlugin: PublishSubscribePlugin,
+        private entityTimePlugin: EntityTimePlugin,
+        private multiUserChatPlugin: MultiUserChatPlugin,
+    ) {
+        super();
+
+        this.chatMessageListRegistry.chatOpened$
+            .pipe(
+                delay(0), // prevent &#x27;Expression has changed after it was checked&#x27;
+            )
+            .subscribe(recipient &#x3D;&gt; this.checkForUnreadCountChange(recipient));
+
+        merge(
+            multiUserChatPlugin.rooms$,
+            this.chatService.contactCreated$.pipe(map(contact &#x3D;&gt; [contact])),
+        ).subscribe(recipients &#x3D;&gt; {
+            for (const recipient of recipients) {
+                const jid &#x3D; recipient.jidBare.toString();
+                if (!this.recipientIdToMessageSubscription.has(jid)) {
+                    const messages$: Subject&lt;Message&gt; &#x3D; recipient.messages$;
+                    const updateUnreadCountSubscription &#x3D; messages$
+                        .pipe(debounceTime(20))
+                        .subscribe(() &#x3D;&gt; this.checkForUnreadCountChange(recipient));
+                    this.recipientIdToMessageSubscription.set(jid, updateUnreadCountSubscription);
+                }
+            }
+        });
+
+        this.publishSubscribePlugin.publish$
+            .subscribe((event) &#x3D;&gt; this.handlePubSubEvent(event));
+
+        this.unreadMessageCountSum$ &#x3D; combineLatest([this.jidToUnreadCount$, this.chatService.blockedContactIds$])
+            .pipe(
+                debounceTime(20),
+                map(([jidToUnreadCount, blockedContactIdSet]) &#x3D;&gt; {
+                    let sum &#x3D; 0;
+                    for (const [recipientJid, count] of jidToUnreadCount) {
+                        if (!blockedContactIdSet.has(recipientJid)) {
+                            sum +&#x3D; count;
+                        }
+                    }
+                    return sum;
+                }),
+                distinctUntilChanged(),
+                share(),
+            );
+    }
+
+    private async checkForUnreadCountChange(recipient: Recipient) {
+        if (this.chatMessageListRegistry.isChatOpen(recipient)) {
+            this.jidToLastReadTimestamp.set(recipient.jidBare.toString(), await this.entityTimePlugin.getNow());
+            await this.persistLastSeenDates();
+        }
+        this.updateContactUnreadMessageState(recipient);
+    }
+
+    async onBeforeOnline(): Promise&lt;any&gt; {
+        const fetchedDates &#x3D; await this.fetchLastSeenDates();
+        this.mergeJidToDates(fetchedDates);
+    }
+
+    onOffline() {
+        for (const subscription of this.recipientIdToMessageSubscription.values()) {
+            subscription.unsubscribe();
+        }
+        this.recipientIdToMessageSubscription.clear();
+        this.jidToLastReadTimestamp.clear();
+        this.jidToUnreadCount$.next(new Map&lt;string, number&gt;());
+    }
+
+    private async fetchLastSeenDates(): Promise&lt;JidToLastReadTimestamp&gt; {
+        const entries &#x3D; await this.publishSubscribePlugin.retrieveNodeItems(STORAGE_NGX_CHAT_LAST_READ_DATE);
+        return this.parseLastSeenDates(entries);
+    }
+
+    private parseLastSeenDates(topLevelElements: Element[]): JidToLastReadTimestamp {
+        const result: JidToLastReadTimestamp &#x3D; new Map&lt;string, number&gt;();
+
+        if (topLevelElements.length &#x3D;&#x3D;&#x3D; 1) {
+            const [itemElement] &#x3D; topLevelElements;
+            for (const lastReadEntry of itemElement.getChild(wrapperNodeName).getChildren(nodeName)) {
+                const {jid, date} &#x3D; lastReadEntry.attrs;
+                if (!isNaN(date)) {
+                    result.set(jid, date);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    updateContactUnreadMessageState(recipient: Recipient) {
+        const contactJid &#x3D; recipient.jidBare.toString();
+        const lastReadDate &#x3D; this.jidToLastReadTimestamp.get(contactJid) || 0;
+        const contactUnreadMessageCount &#x3D; this.calculateUnreadMessageCount(recipient, lastReadDate);
+        const jidToCount &#x3D; this.jidToUnreadCount$.getValue();
+        if (jidToCount.get(contactJid) !&#x3D;&#x3D; contactUnreadMessageCount) {
+            this.jidToUnreadCount$.next(jidToCount.set(contactJid, contactUnreadMessageCount));
+        }
+    }
+
+    private calculateUnreadMessageCount(recipient: Recipient, lastReadTimestamp: number) {
+        const firstUnreadMessageIndex &#x3D; findSortedInsertionIndexLast(lastReadTimestamp, recipient.messages,
+            message &#x3D;&gt; message.datetime.getTime());
+        return recipient.messages.slice(firstUnreadMessageIndex)
+            .filter(message &#x3D;&gt; message.direction &#x3D;&#x3D;&#x3D; Direction.in)
+            .length;
+    }
+
+    private async persistLastSeenDates() {
+        const lastReadNodeBuilder &#x3D; new LastReadEntriesNodeBuilder();
+        for (const [jid, date] of this.jidToLastReadTimestamp) {
+            lastReadNodeBuilder.addLastReadNode(jid, date.toString());
+        }
+
+        await this.publishSubscribePlugin.storePrivatePayloadPersistent(
+            STORAGE_NGX_CHAT_LAST_READ_DATE,
+            &#x27;current&#x27;,
+            lastReadNodeBuilder.toStanza());
+    }
+
+    private handlePubSubEvent(event: Element) {
+        const items &#x3D; event.getChild(&#x27;items&#x27;);
+        const itemsNode &#x3D; items &amp;&amp; items.attrs.node;
+        const item &#x3D; items &amp;&amp; items.getChildren(&#x27;item&#x27;);
+        if (itemsNode &#x3D;&#x3D;&#x3D; STORAGE_NGX_CHAT_LAST_READ_DATE &amp;&amp; item) {
+            const publishedLastJidToDate &#x3D; this.parseLastSeenDates(item);
+            this.mergeJidToDates(publishedLastJidToDate);
+        }
+    }
+
+    private mergeJidToDates(newJidToDate: JidToLastReadTimestamp) {
+        for (const [jid, date] of newJidToDate) {
+            const oldLastReadDate &#x3D; this.jidToLastReadTimestamp.get(jid);
+            if (!oldLastReadDate || oldLastReadDate &lt; date) {
+                this.jidToLastReadTimestamp.set(jid, date);
+            }
+        }
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'UnreadMessageCountPlugin.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1383 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@pazznetwork/ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@pazznetwork/ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li >MucSubPlugin</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>support for <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/</a></p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#supportsMucSub$" >supportsMucSub$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#determineSupportForMucSub" >determineSupportForMucSub</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getSubscribedRooms" >getSubscribedRooms</a>
+                            </li>
+                            <li>
+                                <a href="#getSubscribers" >getSubscribers</a>
+                            </li>
+                            <li>
+                                <a href="#onBeforeOnline" >onBeforeOnline</a>
+                            </li>
+                            <li>
+                                <a href="#onOffline" >onOffline</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#retrieveSubscriptions" >retrieveSubscriptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#subscribeRoom" >subscribeRoom</a>
+                            </li>
+                            <li>
+                                <a href="#unsubscribeJidFromRoom" >unsubscribeJidFromRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#unsubscribeRoom" >unsubscribeRoom</a>
+                            </li>
+                            <li>
+                                <a href="#afterReceiveMessage" >afterReceiveMessage</a>
+                            </li>
+                            <li>
+                                <a href="#afterSendMessage" >afterSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#beforeSendMessage" >beforeSendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#handleStanza" >handleStanza</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(xmppChatAdapter: <a href="../injectables/XmppChatAdapter.html" target="_self">XmppChatAdapter</a>, serviceDiscoveryPlugin: <a href="../interfaces/Service.html" target="_self">ServiceDiscoveryPlugin</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>xmppChatAdapter</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/XmppChatAdapter.html" target="_self" >XmppChatAdapter</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>serviceDiscoveryPlugin</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Service.html" target="_self" >ServiceDiscoveryPlugin</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="supportsMucSub$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>supportsMucSub$</b></span>
+                        <a href="#supportsMucSub$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="determineSupportForMucSub"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>determineSupportForMucSub</b></span>
+                        <a href="#determineSupportForMucSub"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>determineSupportForMucSub()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubscribedRooms"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getSubscribedRooms</b></span>
+                        <a href="#getSubscribedRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubscribedRooms()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A user can query the MUC service to get their list of subscriptions.
+see: <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#g">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#g</a> dd ddetting-list-of-subscribed-rooms</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubscribers"></a>
+                    <span class="name">
+                        <span ><b>getSubscribers</b></span>
+                        <a href="#getSubscribers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSubscribers(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A subscriber or room moderator can get the list of subscribers by sending <subscriptions/> request directly to the room JID.
+see: <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#getting-list-of-subscribers-of-a-room">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#getting-list-of-subscribers-of-a-room</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>of the room the get a subscriber list from</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBeforeOnline"></a>
+                    <span class="name">
+                        <span ><b>onBeforeOnline</b></span>
+                        <a href="#onBeforeOnline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBeforeOnline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:33</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >PromiseLike&lt;void&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOffline"></a>
+                    <span class="name">
+                        <span ><b>onOffline</b></span>
+                        <a href="#onOffline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOffline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:48</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrieveSubscriptions"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>retrieveSubscriptions</b></span>
+                        <a href="#retrieveSubscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>retrieveSubscriptions()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Map&lt;string, string[]&gt;&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscribeRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>subscribeRoom</b></span>
+                        <a href="#subscribeRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>subscribeRoom(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nodes: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>nodes</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>[]</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribeJidFromRoom"></a>
+                    <span class="name">
+                        <span ><b>unsubscribeJidFromRoom</b></span>
+                        <a href="#unsubscribeJidFromRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unsubscribeJidFromRoom(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, jid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A room moderator can unsubscribe others providing the their jid as attribute to the information query (iq)
+see: <a href="https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#unsubscribing-from-a-muc-room">https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#unsubscribing-from-a-muc-room</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>for the room to be unsubscribed from</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>jid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>user id to be unsubscribed</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribeRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>unsubscribeRoom</b></span>
+                        <a href="#unsubscribeRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>unsubscribeRoom(roomJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/lib/services/adapters/xmpp/plugins/muc-sub.plugin.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterReceiveMessage"></a>
+                    <span class="name">
+                        <span ><b>afterReceiveMessage</b></span>
+                        <a href="#afterReceiveMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterReceiveMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: <a href="../interfaces/MessageWithBodyStanza.html" target="_self">MessageWithBodyStanza</a>, messageReceivedEvent: <a href="../interfaces/Message.html" target="_self">MessageReceivedEvent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:28</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/MessageWithBodyStanza.html" target="_self" >MessageWithBodyStanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageReceivedEvent</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >MessageReceivedEvent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterSendMessage"></a>
+                    <span class="name">
+                        <span ><b>afterSendMessage</b></span>
+                        <a href="#afterSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterSendMessage(message: <a href="../interfaces/Message.html" target="_self">Message</a>, messageStanza: Element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:16</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeSendMessage"></a>
+                    <span class="name">
+                        <span ><b>beforeSendMessage</b></span>
+                        <a href="#beforeSendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeSendMessage(messageStanza: Element, message: <a href="../interfaces/Message.html" target="_self">Message</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:20</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>messageStanza</td>
+                                    <td>
+                                            <code>Element</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleStanza"></a>
+                    <span class="name">
+                        <span ><b>handleStanza</b></span>
+                        <a href="#handleStanza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleStanza(stanza: <a href="../interfaces/Stanza.html" target="_self">Stanza</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/AbstractXmppPlugin.html" target="_self" >AbstractXmppPlugin</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/AbstractXmppPlugin.html#source" target="_self" >AbstractXmppPlugin:24</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stanza</td>
+                                    <td>
+                                                <code><a href="../interfaces/Stanza.html" target="_self" >Stanza</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { xml } from &#x27;@xmpp/client&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { XmppChatAdapter } from &#x27;../xmpp-chat-adapter.service&#x27;;
+import { AbstractXmppPlugin } from &#x27;./abstract-xmpp-plugin&#x27;;
+import { ServiceDiscoveryPlugin } from &#x27;./service-discovery.plugin&#x27;;
+import { Stanza } from &#x27;../../../../core/stanza&#x27;;
+
+export const MUC_SUB_FEATURE_ID &#x3D; &#x27;urn:xmpp:mucsub:0&#x27;;
+
+export enum MUC_SUB_EVENT_TYPE {
+    presence &#x3D; &#x27;urn:xmpp:mucsub:nodes:presence&#x27;,
+    messages &#x3D; &#x27;urn:xmpp:mucsub:nodes:messages&#x27;,
+    affiliations &#x3D; &#x27;urn:xmpp:mucsub:nodes:affiliations&#x27;,
+    subscribers &#x3D; &#x27;urn:xmpp:mucsub:nodes:subscribers&#x27;,
+    config &#x3D; &#x27;urn:xmpp:mucsub:nodes:config&#x27;,
+    subject &#x3D; &#x27;urn:xmpp:mucsub:nodes:subject&#x27;,
+    system &#x3D; &#x27;urn:xmpp:mucsub:nodes:system&#x27;,
+}
+
+/**
+ * support for https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/
+ */
+export class MucSubPlugin extends AbstractXmppPlugin {
+    private readonly supportsMucSub$ &#x3D; new BehaviorSubject&lt;boolean | &#x27;unknown&#x27;&gt;(&#x27;unknown&#x27;);
+
+    constructor(
+        private readonly xmppChatAdapter: XmppChatAdapter,
+        private readonly serviceDiscoveryPlugin: ServiceDiscoveryPlugin,
+    ) {
+        super();
+    }
+
+    onBeforeOnline(): PromiseLike&lt;void&gt; {
+        return this.determineSupportForMucSub();
+    }
+
+    private async determineSupportForMucSub() {
+        let isSupported: boolean;
+        try {
+            const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
+            isSupported &#x3D; service.features.includes(MUC_SUB_FEATURE_ID);
+        } catch (e) {
+            isSupported &#x3D; false;
+        }
+        this.supportsMucSub$.next(isSupported);
+    }
+
+    onOffline() {
+        this.supportsMucSub$.next(&#x27;unknown&#x27;);
+    }
+
+    async subscribeRoom(roomJid: string, nodes: string[] &#x3D; []): Promise&lt;void&gt; {
+        const nick &#x3D; this.xmppChatAdapter.chatConnectionService.userJid.local;
+        await this.xmppChatAdapter.chatConnectionService.sendIq(
+            makeSubscribeRoomStanza(roomJid, nick, nodes)
+        );
+    }
+
+    async unsubscribeRoom(roomJid: string): Promise&lt;void&gt; {
+        await this.xmppChatAdapter.chatConnectionService.sendIq(
+            makeUnsubscribeRoomStanza(roomJid)
+        );
+    }
+
+    /**
+     * A room moderator can unsubscribe others providing the their jid as attribute to the information query (iq)
+     * see: https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#unsubscribing-from-a-muc-room
+     * @param roomJid for the room to be unsubscribed from
+     * @param jid user id to be unsubscribed
+     */
+    unsubscribeJidFromRoom(roomJid: string, jid: string) {
+        this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid},
+                xml(&#x27;unsubscribe&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;, jid}),
+            ),
+        );
+    }
+
+    /**
+     * A user can query the MUC service to get their list of subscriptions.
+     * see: https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#g dd ddetting-list-of-subscribed-rooms
+     */
+    async getSubscribedRooms() {
+        const {local, domain} &#x3D; this.xmppChatAdapter.chatConnectionService.userJid;
+        const from &#x3D; &#x60;${local}@${domain}&#x60;;
+        const subscriptions &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, from, to: &#x27;muc.&#x27; + domain},
+                xml(&#x27;subscriptions&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;}),
+            ),
+        );
+        return subscriptions.getChildren(&#x27;subscription&#x27;).map(sub &#x3D;&gt; sub.getAttr(&#x27;jid&#x27;));
+    }
+
+    /**
+     * A subscriber or room moderator can get the list of subscribers by sending &lt;subscriptions/&gt; request directly to the room JID.
+     * see: https://docs.ejabberd.im/developer/xmpp-clients-bots/extensions/muc-sub/#getting-list-of-subscribers-of-a-room
+     * @param roomJid of the room the get a subscriber list from
+     */
+    getSubscribers(roomJid: string) {
+        this.xmppChatAdapter.chatConnectionService.sendIq(
+            xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: roomJid},
+                xml(&#x27;subscriptions&#x27;, {xmlns: &#x27;urn:xmpp:mucsub:0&#x27;}),
+            ),
+        );
+    }
+
+    async retrieveSubscriptions(): Promise&lt;Map&lt;string, string[]&gt;&gt; {
+        const service &#x3D; await this.serviceDiscoveryPlugin.findService(&#x27;conference&#x27;, &#x27;text&#x27;);
+
+        const result &#x3D; await this.xmppChatAdapter.chatConnectionService.sendIq(
+            makeRetrieveSubscriptionsStanza(service.jid)
+        );
+
+        const subscriptions &#x3D; result
+            .getChild(&#x27;subscriptions&#x27;, MUC_SUB_FEATURE_ID)
+            ?.getChildren(&#x27;subscription&#x27;)
+            ?.map(subscriptionElement &#x3D;&gt; {
+                const subscribedEvents: string[] &#x3D; subscriptionElement
+                    .getChildren(&#x27;event&#x27;)
+                    ?.map(eventElement &#x3D;&gt; eventElement.attrs.node) ?? [];
+                return [subscriptionElement.attrs.jid as string, subscribedEvents] as const;
+            });
+
+        return new Map(subscriptions);
+    }
+}
+
+function makeSubscribeRoomStanza(roomJid: string, nick: string, nodes: readonly string[]): Stanza {
+    return xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid},
+        xml(&#x27;subscribe&#x27;, {xmlns: MUC_SUB_FEATURE_ID, nick},
+            ...nodes.map(node &#x3D;&gt; xml(&#x27;event&#x27;, {node}))
+        )
+    ) as Stanza;
+}
+
+function makeUnsubscribeRoomStanza(roomJid: string): Stanza {
+    return xml(&#x27;iq&#x27;, {type: &#x27;set&#x27;, to: roomJid},
+        xml(&#x27;unsubscribe&#x27;, {xmlns: MUC_SUB_FEATURE_ID})
+    ) as Stanza;
+}
+
+function makeRetrieveSubscriptionsStanza(conferenceServiceJid: string): Stanza {
+    return xml(&#x27;iq&#x27;, {type: &#x27;get&#x27;, to: conferenceServiceJid},
+        xml(&#x27;subscriptions&#x27;, {xmlns: MUC_SUB_FEATURE_ID})
+    ) as Stanza;
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'MucSubPlugin.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

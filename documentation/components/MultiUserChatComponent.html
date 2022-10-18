@@ -1,0 +1,2265 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@pazznetwork/ngx-chat documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@pazznetwork/ngx-chat documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  MultiUserChatComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>demo/app/multi-user-chat/multi-user-chat.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-multi-user-chat</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./multi-user-chat.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./multi-user-chat.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allRooms" >allRooms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chatService" >chatService</a>
+                            </li>
+                            <li>
+                                <a href="#mucSubPlugin" >mucSubPlugin</a>
+                            </li>
+                            <li>
+                                <a href="#mucSubSubscriptions" >mucSubSubscriptions</a>
+                            </li>
+                            <li>
+                                <a href="#multiUserChatPlugin" >multiUserChatPlugin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#newRoom" >newRoom</a>
+                            </li>
+                            <li>
+                                <a href="#occupantJid" >occupantJid</a>
+                            </li>
+                            <li>
+                                <a href="#occupantJidInput" >occupantJidInput</a>
+                            </li>
+                            <li>
+                                <a href="#occupantJidText" >occupantJidText</a>
+                            </li>
+                            <li>
+                                <a href="#roomConfiguration" >roomConfiguration</a>
+                            </li>
+                            <li>
+                                <a href="#roomUserList" >roomUserList</a>
+                            </li>
+                            <li>
+                                <a href="#selectedRoom" >selectedRoom</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#banOrUnban" >banOrUnban</a>
+                            </li>
+                            <li>
+                                <a href="#cancelRoomCreation" >cancelRoomCreation</a>
+                            </li>
+                            <li>
+                                <a href="#createNewRoom" >createNewRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createRoomOnServer" >createRoomOnServer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#destroyRoom" >destroyRoom</a>
+                            </li>
+                            <li>
+                                <a href="#displayMemberJid" >displayMemberJid</a>
+                            </li>
+                            <li>
+                                <a href="#displayMemberNicks" >displayMemberNicks</a>
+                            </li>
+                            <li>
+                                <a href="#findIdWithNick" >findIdWithNick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getRoomConfiguration" >getRoomConfiguration</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getSubscriptions" >getSubscriptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#joinRoom" >joinRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#kick" >kick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#leaveRoom" >leaveRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#queryAllRooms" >queryAllRooms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#queryUserList" >queryUserList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#subscribeWithMucSub" >subscribeWithMucSub</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#unsubscribeFromMucSub" >unsubscribeFromMucSub</a>
+                            </li>
+                            <li>
+                                <a href="#updateOccupantJid" >updateOccupantJid</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(chatService: <a href="../interfaces/ChatService.html" target="_self">ChatService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chatService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/ChatService.html" target="_self" >ChatService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="banOrUnban"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>banOrUnban</b></span>
+                        <a href="#banOrUnban"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>banOrUnban(member: <a href="../interfaces/RoomUser.html" target="_self">RoomUser</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>member</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomUser.html" target="_self" >RoomUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelRoomCreation"></a>
+                    <span class="name">
+                        <span ><b>cancelRoomCreation</b></span>
+                        <a href="#cancelRoomCreation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelRoomCreation()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createNewRoom"></a>
+                    <span class="name">
+                        <span ><b>createNewRoom</b></span>
+                        <a href="#createNewRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createNewRoom()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createRoomOnServer"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>createRoomOnServer</b></span>
+                        <a href="#createRoomOnServer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createRoomOnServer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>destroyRoom</b></span>
+                        <a href="#destroyRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroyRoom(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayMemberJid"></a>
+                    <span class="name">
+                        <span ><b>displayMemberJid</b></span>
+                        <a href="#displayMemberJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>displayMemberJid(member: <a href="../interfaces/RoomUser.html" target="_self">RoomUser</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>member</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomUser.html" target="_self" >RoomUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayMemberNicks"></a>
+                    <span class="name">
+                        <span ><b>displayMemberNicks</b></span>
+                        <a href="#displayMemberNicks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>displayMemberNicks(member: <a href="../interfaces/RoomUser.html" target="_self">RoomUser</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>member</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomUser.html" target="_self" >RoomUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findIdWithNick"></a>
+                    <span class="name">
+                        <span ><b>findIdWithNick</b></span>
+                        <a href="#findIdWithNick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findIdWithNick(member: <a href="../interfaces/RoomUser.html" target="_self">RoomUser</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>member</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomUser.html" target="_self" >RoomUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRoomConfiguration"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getRoomConfiguration</b></span>
+                        <a href="#getRoomConfiguration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRoomConfiguration(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubscriptions"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getSubscriptions</b></span>
+                        <a href="#getSubscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubscriptions()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="joinRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>joinRoom</b></span>
+                        <a href="#joinRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>joinRoom(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kick"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>kick</b></span>
+                        <a href="#kick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>kick(member: <a href="../interfaces/RoomUser.html" target="_self">RoomUser</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:128</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>member</td>
+                                    <td>
+                                                <code><a href="../interfaces/RoomUser.html" target="_self" >RoomUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leaveRoom"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>leaveRoom</b></span>
+                        <a href="#leaveRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>leaveRoom(roomJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roomJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryAllRooms"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>queryAllRooms</b></span>
+                        <a href="#queryAllRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>queryAllRooms()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryUserList"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>queryUserList</b></span>
+                        <a href="#queryUserList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>queryUserList(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscribeWithMucSub"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>subscribeWithMucSub</b></span>
+                        <a href="#subscribeWithMucSub"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>subscribeWithMucSub(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribeFromMucSub"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>unsubscribeFromMucSub</b></span>
+                        <a href="#unsubscribeFromMucSub"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>unsubscribeFromMucSub(occupantJid: JID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>occupantJid</td>
+                                    <td>
+                                            <code>JID</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >Promise&lt;void&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOccupantJid"></a>
+                    <span class="name">
+                        <span ><b>updateOccupantJid</b></span>
+                        <a href="#updateOccupantJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateOccupantJid(enteredJid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>enteredJid</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#id" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allRooms"></a>
+                    <span class="name">
+                        <span ><b>allRooms</b></span>
+                        <a href="#allRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RoomSummary.html" target="_self" >RoomSummary[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chatService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>chatService</b></span>
+                        <a href="#chatService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ChatService.html" target="_self" >ChatService</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(CHAT_SERVICE_TOKEN)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mucSubPlugin"></a>
+                    <span class="name">
+                        <span ><b>mucSubPlugin</b></span>
+                        <a href="#mucSubPlugin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/MucSubPlugin.html" target="_self" >MucSubPlugin</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mucSubSubscriptions"></a>
+                    <span class="name">
+                        <span ><b>mucSubSubscriptions</b></span>
+                        <a href="#mucSubSubscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;string, string[]&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="multiUserChatPlugin"></a>
+                    <span class="name">
+                        <span ><b>multiUserChatPlugin</b></span>
+                        <a href="#multiUserChatPlugin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ChatPlugin.html" target="_self" >MultiUserChatPlugin</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newRoom"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>newRoom</b></span>
+                        <a href="#newRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RoomCreationOptions.html" target="_self" >RoomCreationOptions</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="occupantJid"></a>
+                    <span class="name">
+                        <span ><b>occupantJid</b></span>
+                        <a href="#occupantJid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>JID | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="occupantJidInput"></a>
+                    <span class="name">
+                        <span ><b>occupantJidInput</b></span>
+                        <a href="#occupantJidInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/NgModel" target="_blank" >NgModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;occupantJidInput&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="occupantJidText"></a>
+                    <span class="name">
+                        <span ><b>occupantJidText</b></span>
+                        <a href="#occupantJidText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roomConfiguration"></a>
+                    <span class="name">
+                        <span ><b>roomConfiguration</b></span>
+                        <a href="#roomConfiguration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >Form</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roomUserList"></a>
+                    <span class="name">
+                        <span ><b>roomUserList</b></span>
+                        <a href="#roomUserList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RoomUser.html" target="_self" >RoomUser[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedRoom"></a>
+                    <span class="name">
+                        <span ><b>selectedRoom</b></span>
+                        <a href="#selectedRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Room.html" target="_self" >Room</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">demo/app/multi-user-chat/multi-user-chat.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, ViewChild } from &#x27;@angular/core&#x27;;
+import {
+    Affiliation,
+    CHAT_SERVICE_TOKEN,
+    ChatService,
+    Form,
+    JID,
+    MUC_SUB_EVENT_TYPE,
+    MucSubPlugin,
+    MultiUserChatPlugin,
+    RoomUser,
+    Room,
+    RoomCreationOptions,
+    RoomSummary,
+} from &#x27;@pazznetwork/ngx-chat&#x27;;
+import { jid } from &#x27;@xmpp/jid&#x27;;
+import { NgModel } from &#x27;@angular/forms&#x27;;
+
+@Component({
+    selector: &#x27;app-multi-user-chat&#x27;,
+    templateUrl: &#x27;./multi-user-chat.component.html&#x27;,
+    styleUrls: [&#x27;./multi-user-chat.component.css&#x27;],
+})
+export class MultiUserChatComponent {
+
+    multiUserChatPlugin: MultiUserChatPlugin;
+    mucSubPlugin: MucSubPlugin;
+    @ViewChild(&#x27;occupantJidInput&#x27;) occupantJidInput: NgModel;
+    occupantJidText: string;
+    occupantJid: JID | null &#x3D; null;
+    selectedRoom: Room;
+    allRooms: RoomSummary[] &#x3D; [];
+    roomUserList: RoomUser[] &#x3D; [];
+    newRoom?: RoomCreationOptions;
+    mucSubSubscriptions &#x3D; new Map&lt;string, string[]&gt;();
+    roomConfiguration: Form;
+
+    constructor(@Inject(CHAT_SERVICE_TOKEN) public chatService: ChatService) {
+        this.multiUserChatPlugin &#x3D; chatService.getPlugin(MultiUserChatPlugin);
+        this.mucSubPlugin &#x3D; chatService.getPlugin(MucSubPlugin);
+    }
+
+    updateOccupantJid(enteredJid: string) {
+        try {
+            this.occupantJid &#x3D; jid(enteredJid);
+            this.occupantJidInput.control.setErrors(null);
+        } catch (e) {
+            this.occupantJidInput.control.setErrors({notAJid: true});
+        }
+    }
+
+    async joinRoom(occupantJid: JID) {
+        this.selectedRoom &#x3D; await this.multiUserChatPlugin.joinRoom(occupantJid);
+        this.occupantJid &#x3D; occupantJid;
+        this.occupantJidText &#x3D; occupantJid.toString();
+    }
+
+    async subscribeWithMucSub(occupantJid: JID): Promise&lt;void&gt; {
+        await this.mucSubPlugin.subscribeRoom(occupantJid.toString(), [MUC_SUB_EVENT_TYPE.messages]);
+    }
+
+    async unsubscribeFromMucSub(occupantJid: JID): Promise&lt;void&gt; {
+        await this.mucSubPlugin.unsubscribeRoom(occupantJid.toString());
+    }
+
+    async getSubscriptions() {
+        this.mucSubSubscriptions &#x3D; await this.mucSubPlugin.retrieveSubscriptions();
+    }
+
+    async queryUserList(occupantJid: JID) {
+        this.roomUserList &#x3D; await this.multiUserChatPlugin.queryUserList(occupantJid.bare());
+    }
+
+    async getRoomConfiguration(occupantJid: JID) {
+        this.roomConfiguration &#x3D; await this.multiUserChatPlugin.getRoomConfiguration(occupantJid.bare());
+    }
+
+    displayMemberJid(member: RoomUser): string {
+        return member.userIdentifiers[0].userJid.bare().toString();
+    }
+
+    displayMemberNicks(member: RoomUser): string {
+        const nicks &#x3D; new Set(member.userIdentifiers
+            .filter(id &#x3D;&gt; id.nick !&#x3D; null)
+            .map(id &#x3D;&gt; id.nick));
+        return [...nicks].join(&#x27;, &#x27;);
+    }
+
+    async destroyRoom(occupantJid: JID) {
+        await this.multiUserChatPlugin.destroyRoom(occupantJid);
+        await this.queryAllRooms();
+    }
+
+    async queryAllRooms() {
+        this.allRooms &#x3D; await this.multiUserChatPlugin.queryAllRooms();
+    }
+
+    createNewRoom(): void {
+        this.newRoom &#x3D; {
+            roomId: &#x27;&#x27;,
+            membersOnly: true,
+            nonAnonymous: false,
+            persistentRoom: true,
+            public: false,
+            allowSubscription: true,
+        };
+    }
+
+    cancelRoomCreation(): void {
+        this.newRoom &#x3D; null;
+    }
+
+    async createRoomOnServer() {
+        if (!this.newRoom?.roomId || this.newRoom.roomId &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+            return;
+        }
+
+        const createdRoom &#x3D; await this.multiUserChatPlugin.createRoom(this.newRoom);
+        this.updateOccupantJid(createdRoom.occupantJid.toString());
+
+        this.newRoom &#x3D; undefined;
+    }
+
+    findIdWithNick(member: RoomUser) {
+        return member.userIdentifiers.find(id &#x3D;&gt; id.nick !&#x3D; null);
+    }
+
+    async kick(member: RoomUser) {
+        const {nick} &#x3D; this.findIdWithNick(member);
+        await this.multiUserChatPlugin.kickOccupant(nick, this.selectedRoom.jidBare);
+    }
+
+    async banOrUnban(member: RoomUser) {
+        const memberJid &#x3D; member.userIdentifiers[0].userJid.bare();
+        if (member.affiliation &#x3D;&#x3D;&#x3D; Affiliation.outcast) {
+            await this.multiUserChatPlugin.unbanUser(memberJid, this.selectedRoom.jidBare);
+            return;
+        }
+        await this.multiUserChatPlugin.banUser(memberJid, this.selectedRoom.jidBare);
+    }
+
+    async leaveRoom(roomJid: JID) {
+        if (roomJid.equals(this.occupantJid.bare())) {
+            this.occupantJidText &#x3D; &#x27;&#x27;;
+            this.occupantJid &#x3D; null;
+            this.selectedRoom &#x3D; null;
+        }
+        await this.multiUserChatPlugin.leaveRoom(roomJid);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+    &lt;h2&gt;Chat rooms:&lt;/h2&gt;
+    &lt;div *ngIf&#x3D;&quot;(chatService.state$ | async) &#x3D;&#x3D;&#x3D; &#x27;online&#x27;; else offline&quot;&gt;
+        &lt;div *ngFor&#x3D;&quot;let room of (multiUserChatPlugin.rooms$ | async)&quot;&gt;
+            {{room.roomJid.bare().toString()}}:
+            &lt;button (click)&#x3D;&quot;selectedRoom &#x3D; room&quot;&gt;Select&lt;/button&gt;
+            &lt;button (click)&#x3D;&quot;leaveRoom(room.occupantJid)&quot; class&#x3D;&quot;red&quot;&gt;Leave&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;selectedRoom&quot;&gt;
+            &lt;ngx-chat-message-list [recipient]&#x3D;&quot;selectedRoom&quot;&gt;&lt;/ngx-chat-message-list&gt;
+            &lt;ngx-chat-message-input [recipient]&#x3D;&quot;selectedRoom&quot;&gt;&lt;/ngx-chat-message-input&gt;
+        &lt;/ng-container&gt;
+        &lt;span *ngIf&#x3D;&quot;(multiUserChatPlugin.rooms$ | async).length &#x3D;&#x3D;&#x3D; 0&quot;&gt;(no room joined yet)&lt;/span&gt;
+
+        &lt;hr/&gt;
+
+        &lt;input [(ngModel)]&#x3D;&quot;occupantJidText&quot; (ngModelChange)&#x3D;&quot;updateOccupantJid($event)&quot; class&#x3D;&quot;form-control&quot;
+               #occupantJidInput&#x3D;&quot;ngModel&quot;
+               [ngClass]&#x3D;&quot;occupantJidInput.control.invalid ? &#x27;red&#x27; : null&quot;
+               type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;room&quot;/&gt;
+
+        &lt;button (click)&#x3D;&quot;joinRoom(occupantJid)&quot;&gt;Join room&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;subscribeWithMucSub(occupantJid)&quot;&gt;subscribe with MUC/Sub&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;unsubscribeFromMucSub(occupantJid)&quot;&gt;unsubscribe from MUC/Sub&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;getSubscriptions()&quot;&gt;get MUC/Sub subscriptions&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;queryUserList(occupantJid)&quot;&gt;get user list&lt;/button&gt;
+        &lt;button (click)&#x3D;&quot;getRoomConfiguration(occupantJid)&quot;&gt;get room configuration&lt;/button&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;mucSubSubscriptions.size &gt; 0&quot;&gt;
+            &lt;div&gt;Current MUC subscriptions to room: {{occupantJid}}&lt;/div&gt;
+            &lt;ul&gt;
+                &lt;li *ngFor&#x3D;&quot;let subscription of mucSubSubscriptions | keyvalue&quot;&gt;
+                    {{subscription.key}}:
+                    &lt;ul&gt;
+                        &lt;li *ngFor&#x3D;&quot;let subscribedNode of subscription.value&quot;&gt;
+                            {{subscribedNode}}
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ng-container&gt;
+
+        &lt;br&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;roomUserList.length &gt; 0&quot;&gt;
+            &lt;div&gt;Members of room: {{occupantJid.bare().toString()}}&lt;/div&gt;
+            &lt;table&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;JID&lt;/th&gt;
+                    &lt;th&gt;Nicks&lt;/th&gt;
+                    &lt;th&gt;Affiliation&lt;/th&gt;
+                    &lt;th&gt;Role&lt;/th&gt;
+                    &lt;th&gt;Actions&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;tr *ngFor&#x3D;&quot;let member of roomUserList&quot;&gt;
+                    &lt;td&gt;{{displayMemberJid(member)}}&lt;/td&gt;
+                    &lt;td&gt;{{displayMemberNicks(member) || &#x27;[unknown]&#x27;}}&lt;/td&gt;
+                    &lt;td&gt;{{member.affiliation}}&lt;/td&gt;
+                    &lt;td&gt;{{member.role}}&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;button (click)&#x3D;&quot;kick(member)&quot;&gt;
+                            Kick ({{findIdWithNick(member)?.nick || &#x27;[unknown]&#x27;}})
+                        &lt;/button&gt;
+                        &lt;button (click)&#x3D;&quot;banOrUnban(member)&quot;&gt;
+                            Ban/Unban
+                        &lt;/button&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;(roomConfiguration?.fields.length || 0) &gt; 0&quot;&gt;
+            &lt;p&gt;Configuration of room: {{occupantJid.bare().toString()}}&lt;/p&gt;
+            &lt;table&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Variable&lt;/th&gt;
+                    &lt;th&gt;Value&lt;/th&gt;
+                    &lt;th&gt;Label&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;ng-container *ngFor&#x3D;&quot;let field of roomConfiguration.fields&quot;&gt;
+                    &lt;tr *ngIf&#x3D;&quot;field.type !&#x3D;&#x3D; &#x27;hidden&#x27;&quot;&gt;
+                        &lt;td&gt;{{field.variable}}&lt;/td&gt;
+                        &lt;td&gt;{{field.value}}&lt;/td&gt;
+                        &lt;td&gt;{{field.label}}&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/ng-container&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/ng-container&gt;
+        &lt;hr/&gt;
+
+        &lt;button (click)&#x3D;&quot;queryAllRooms()&quot;&gt;List all rooms&lt;/button&gt;
+
+        &lt;div *ngFor&#x3D;&quot;let room of allRooms&quot;&gt;
+            &lt;p&gt;{{room.name}}: {{room.jid.toString()}}&lt;/p&gt;
+            &lt;details&gt;
+                &lt;summary&gt;Room info&lt;/summary&gt;
+                &lt;table&gt;
+                    &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Variable&lt;/th&gt;
+                        &lt;th&gt;Value&lt;/th&gt;
+                        &lt;th&gt;Label&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;ng-container *ngFor&#x3D;&quot;let field of room.roomInfo.fields&quot;&gt;
+                        &lt;tr *ngIf&#x3D;&quot;field.type !&#x3D;&#x3D; &#x27;hidden&#x27;&quot;&gt;
+                            &lt;td&gt;{{field.variable}}&lt;/td&gt;
+                            &lt;td&gt;{{field.value}}&lt;/td&gt;
+                            &lt;td&gt;{{field.label}}&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/ng-container&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/details&gt;
+            &lt;button (click)&#x3D;&quot;joinRoom(room.jid)&quot;&gt;join&lt;/button&gt;
+            &lt;button (click)&#x3D;&quot;subscribeWithMucSub(room.jid)&quot;&gt;subscribe with MUC/Sub&lt;/button&gt;
+            &lt;button (click)&#x3D;&quot;unsubscribeFromMucSub(room.jid)&quot;&gt;unsubscribe from MUC/Sub&lt;/button&gt;
+            &lt;button (click)&#x3D;&quot;destroyRoom(room.jid)&quot;&gt;destroy&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;hr/&gt;
+
+        &lt;button *ngIf&#x3D;&quot;newRoom &#x3D;&#x3D; null&quot; (click)&#x3D;&quot;createNewRoom()&quot;&gt;Create new room&lt;/button&gt;
+
+        &lt;form (submit)&#x3D;&quot;createRoomOnServer()&quot; *ngIf&#x3D;&quot;newRoom !&#x3D; null&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;input name&#x3D;&quot;roomId&quot;
+                       [(ngModel)]&#x3D;&quot;newRoom.roomId&quot;
+                       class&#x3D;&quot;form-control&quot;
+                       type&#x3D;&quot;text&quot;
+                       placeholder&#x3D;&quot;Room id&quot;
+                       required&#x3D;&quot;required&quot;
+                       #roomId&#x3D;&quot;ngModel&quot;/&gt;
+                &lt;div [hidden]&#x3D;&quot;roomId.valid || roomId.pristine&quot;
+                     class&#x3D;&quot;alert alert-danger&quot;&gt;
+                    Room id is required
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;input name&#x3D;&quot;roomName&quot;
+                       class&#x3D;&quot;form-control&quot;
+                       [(ngModel)]&#x3D;&quot;newRoom.name&quot;
+                       type&#x3D;&quot;text&quot;
+                       placeholder&#x3D;&quot;Room name&quot;/&gt;
+            &lt;/div&gt;
+            &lt;label&gt;
+                &lt;input name&#x3D;&quot;membersOnly&quot; [(ngModel)]&#x3D;&quot;newRoom.membersOnly&quot; type&#x3D;&quot;checkbox&quot;/&gt;
+                members only
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;label&gt;
+                &lt;input name&#x3D;&quot;nonAnonymous&quot; [(ngModel)]&#x3D;&quot;newRoom.nonAnonymous&quot; type&#x3D;&quot;checkbox&quot;/&gt;
+                non-anonymous
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;label&gt;
+                &lt;input name&#x3D;&quot;persistentRoom&quot; [(ngModel)]&#x3D;&quot;newRoom.persistentRoom&quot; type&#x3D;&quot;checkbox&quot;/&gt;
+                persistent
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;label&gt;
+                &lt;input name&#x3D;&quot;public&quot; [(ngModel)]&#x3D;&quot;newRoom.public&quot; type&#x3D;&quot;checkbox&quot;/&gt;
+                public
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;label&gt;
+                &lt;input name&#x3D;&quot;allowSubscription&quot; [(ngModel)]&#x3D;&quot;newRoom.allowSubscription&quot; type&#x3D;&quot;checkbox&quot;/&gt;
+                allow subscription
+            &lt;/label&gt;
+            &lt;br&gt;
+            &lt;button type&#x3D;&quot;submit&quot;&gt;Create room&lt;/button&gt;
+            &lt;button (click)&#x3D;&quot;cancelRoomCreation()&quot;&gt;Cancel room creation&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;hr/&gt;
+
+    &lt;ng-template #offline&gt;
+        &lt;span *ngIf&#x3D;&quot;(chatService.state$ | async) !&#x3D;&#x3D; &#x27;online&#x27;&quot;&gt;You need to be online.&lt;/span&gt;
+    &lt;/ng-template&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./multi-user-chat.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ngx-chat-message-input {
+    display: block;
+    border: 1px solid #dadada;
+    width: 100%;
+    padding: 0.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: .5em;
+}
+
+th, td {
+    padding: .3em;
+    border: 1px solid #999;
+}
+
+td {
+    text-align: center;
+}
+
+button.red {
+    background-color: darkred;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div>    <h2>Chat rooms:</h2>    <div *ngIf="(chatService.state$ | async) === \'online\'; else offline">        <div *ngFor="let room of (multiUserChatPlugin.rooms$ | async)">            {{room.roomJid.bare().toString()}}:            <button (click)="selectedRoom = room">Select</button>            <button (click)="leaveRoom(room.occupantJid)" class="red">Leave</button>        </div>        <ng-container *ngIf="selectedRoom">            <ngx-chat-message-list [recipient]="selectedRoom"></ngx-chat-message-list>            <ngx-chat-message-input [recipient]="selectedRoom"></ngx-chat-message-input>        </ng-container>        <span *ngIf="(multiUserChatPlugin.rooms$ | async).length === 0">(no room joined yet)</span>        <hr/>        <input [(ngModel)]="occupantJidText" (ngModelChange)="updateOccupantJid($event)" class="form-control"               #occupantJidInput="ngModel"               [ngClass]="occupantJidInput.control.invalid ? \'red\' : null"               type="text" placeholder="room"/>        <button (click)="joinRoom(occupantJid)">Join room</button>        <button (click)="subscribeWithMucSub(occupantJid)">subscribe with MUC/Sub</button>        <button (click)="unsubscribeFromMucSub(occupantJid)">unsubscribe from MUC/Sub</button>        <button (click)="getSubscriptions()">get MUC/Sub subscriptions</button>        <button (click)="queryUserList(occupantJid)">get user list</button>        <button (click)="getRoomConfiguration(occupantJid)">get room configuration</button>        <ng-container *ngIf="mucSubSubscriptions.size > 0">            <div>Current MUC subscriptions to room: {{occupantJid}}</div>            <ul>                <li *ngFor="let subscription of mucSubSubscriptions | keyvalue">                    {{subscription.key}}:                    <ul>                        <li *ngFor="let subscribedNode of subscription.value">                            {{subscribedNode}}                        </li>                    </ul>                </li>            </ul>        </ng-container>        <br>        <ng-container *ngIf="roomUserList.length > 0">            <div>Members of room: {{occupantJid.bare().toString()}}</div>            <table>                <thead>                <tr>                    <th>JID</th>                    <th>Nicks</th>                    <th>Affiliation</th>                    <th>Role</th>                    <th>Actions</th>                </tr>                </thead>                <tbody>                <tr *ngFor="let member of roomUserList">                    <td>{{displayMemberJid(member)}}</td>                    <td>{{displayMemberNicks(member) || \'[unknown]\'}}</td>                    <td>{{member.affiliation}}</td>                    <td>{{member.role}}</td>                    <td>                        <button (click)="kick(member)">                            Kick ({{findIdWithNick(member)?.nick || \'[unknown]\'}})                        </button>                        <button (click)="banOrUnban(member)">                            Ban/Unban                        </button>                    </td>                </tr>                </tbody>            </table>        </ng-container>        <ng-container *ngIf="(roomConfiguration?.fields.length || 0) > 0">            <p>Configuration of room: {{occupantJid.bare().toString()}}</p>            <table>                <thead>                <tr>                    <th>Variable</th>                    <th>Value</th>                    <th>Label</th>                </tr>                </thead>                <tbody>                <ng-container *ngFor="let field of roomConfiguration.fields">                    <tr *ngIf="field.type !== \'hidden\'">                        <td>{{field.variable}}</td>                        <td>{{field.value}}</td>                        <td>{{field.label}}</td>                    </tr>                </ng-container>                </tbody>            </table>        </ng-container>        <hr/>        <button (click)="queryAllRooms()">List all rooms</button>        <div *ngFor="let room of allRooms">            <p>{{room.name}}: {{room.jid.toString()}}</p>            <details>                <summary>Room info</summary>                <table>                    <thead>                    <tr>                        <th>Variable</th>                        <th>Value</th>                        <th>Label</th>                    </tr>                    </thead>                    <tbody>                    <ng-container *ngFor="let field of room.roomInfo.fields">                        <tr *ngIf="field.type !== \'hidden\'">                            <td>{{field.variable}}</td>                            <td>{{field.value}}</td>                            <td>{{field.label}}</td>                        </tr>                    </ng-container>                    </tbody>                </table>            </details>            <button (click)="joinRoom(room.jid)">join</button>            <button (click)="subscribeWithMucSub(room.jid)">subscribe with MUC/Sub</button>            <button (click)="unsubscribeFromMucSub(room.jid)">unsubscribe from MUC/Sub</button>            <button (click)="destroyRoom(room.jid)">destroy</button>        </div>        <hr/>        <button *ngIf="newRoom == null" (click)="createNewRoom()">Create new room</button>        <form (submit)="createRoomOnServer()" *ngIf="newRoom != null">            <div class="form-group">                <input name="roomId"                       [(ngModel)]="newRoom.roomId"                       class="form-control"                       type="text"                       placeholder="Room id"                       required="required"                       #roomId="ngModel"/>                <div [hidden]="roomId.valid || roomId.pristine"                     class="alert alert-danger">                    Room id is required                </div>            </div>            <div class="form-group">                <input name="roomName"                       class="form-control"                       [(ngModel)]="newRoom.name"                       type="text"                       placeholder="Room name"/>            </div>            <label>                <input name="membersOnly" [(ngModel)]="newRoom.membersOnly" type="checkbox"/>                members only            </label>            <br>            <label>                <input name="nonAnonymous" [(ngModel)]="newRoom.nonAnonymous" type="checkbox"/>                non-anonymous            </label>            <br>            <label>                <input name="persistentRoom" [(ngModel)]="newRoom.persistentRoom" type="checkbox"/>                persistent            </label>            <br>            <label>                <input name="public" [(ngModel)]="newRoom.public" type="checkbox"/>                public            </label>            <br>            <label>                <input name="allowSubscription" [(ngModel)]="newRoom.allowSubscription" type="checkbox"/>                allow subscription            </label>            <br>            <button type="submit">Create room</button>            <button (click)="cancelRoomCreation()">Cancel room creation</button>        </form>    </div>    <hr/>    <ng-template #offline>        <span *ngIf="(chatService.state$ | async) !== \'online\'">You need to be online.</span>    </ng-template></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatAvatarComponent', 'selector': 'ngx-chat-avatar'},{'name': 'ChatComponent', 'selector': 'ngx-chat'},{'name': 'ChatMessageComponent', 'selector': 'ngx-chat-message'},{'name': 'ChatMessageInputComponent', 'selector': 'ngx-chat-message-input'},{'name': 'ChatMessageLinkComponent', 'selector': 'ngx-chat-message-link'},{'name': 'ChatMessageListComponent', 'selector': 'ngx-chat-message-list'},{'name': 'ChatMessageSimpleComponent', 'selector': 'ngx-chat-message-simple'},{'name': 'ChatMessageTextComponent', 'selector': 'ngx-chat-message-text'},{'name': 'ChatVideoWindowComponent', 'selector': 'ngx-chat-video-window'},{'name': 'ChatWindowComponent', 'selector': 'ngx-chat-window'},{'name': 'ChatWindowFrameComponent', 'selector': 'ngx-chat-window-frame'},{'name': 'ChatWindowListComponent', 'selector': 'ngx-chat-window-list'},{'name': 'FileDropComponent', 'selector': 'ngx-chat-filedrop'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'IqComponent', 'selector': 'app-iq'},{'name': 'MucComponent', 'selector': 'app-muc'},{'name': 'MultiUserChatComponent', 'selector': 'app-multi-user-chat'},{'name': 'RosterListComponent', 'selector': 'ngx-chat-roster-list'},{'name': 'RosterRecipientComponent', 'selector': 'ngx-chat-roster-recipient'},{'name': 'SendStanzaComponent', 'selector': 'app-send-stanza'},{'name': 'UiComponent', 'selector': 'app-ui'}];
+    var DIRECTIVES = [{'name': 'IntersectionObserverDirective', 'selector': '[ngxChatIntersectionObserver]'},{'name': 'LinksDirective', 'selector': '[ngxChatLinks]'}];
+    var ACTUAL_COMPONENT = {'name': 'MultiUserChatComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MultiUserChatComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
