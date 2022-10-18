@@ -1,0 +1,14 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/common";
+export class ChatAvatarComponent {
+}
+ChatAvatarComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatAvatarComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+ChatAvatarComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.6", type: ChatAvatarComponent, selector: "ngx-chat-avatar", inputs: { imageUrl: "imageUrl" }, ngImport: i0, template: "<div class=\"chat-avatar\" [ngStyle]=\"{backgroundImage: 'url(' + imageUrl + ')'}\"></div>\n", styles: [".chat-avatar{border-radius:50%;background-size:cover;background-position:50%;background-repeat:no-repeat;width:100%;height:100%}\n"], dependencies: [{ kind: "directive", type: i1.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatAvatarComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'ngx-chat-avatar', template: "<div class=\"chat-avatar\" [ngStyle]=\"{backgroundImage: 'url(' + imageUrl + ')'}\"></div>\n", styles: [".chat-avatar{border-radius:50%;background-size:cover;background-position:50%;background-repeat:no-repeat;width:100%;height:100%}\n"] }]
+        }], propDecorators: { imageUrl: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2hhdC1hdmF0YXIuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vc3JjL2xpYi9jb21wb25lbnRzL2NoYXQtYXZhdGFyL2NoYXQtYXZhdGFyLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9saWIvY29tcG9uZW50cy9jaGF0LWF2YXRhci9jaGF0LWF2YXRhci5jb21wb25lbnQuaHRtbCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLEtBQUssRUFBRSxNQUFNLGVBQWUsQ0FBQzs7O0FBT2pELE1BQU0sT0FBTyxtQkFBbUI7O2dIQUFuQixtQkFBbUI7b0dBQW5CLG1CQUFtQix5RkNQaEMsOEZBQ0E7MkZETWEsbUJBQW1CO2tCQUwvQixTQUFTOytCQUNJLGlCQUFpQjs4QkFPM0IsUUFBUTtzQkFEUCxLQUFLIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ25neC1jaGF0LWF2YXRhcicsXG4gICAgdGVtcGxhdGVVcmw6ICcuL2NoYXQtYXZhdGFyLmNvbXBvbmVudC5odG1sJyxcbiAgICBzdHlsZVVybHM6IFsnLi9jaGF0LWF2YXRhci5jb21wb25lbnQubGVzcyddLFxufSlcbmV4cG9ydCBjbGFzcyBDaGF0QXZhdGFyQ29tcG9uZW50IHtcblxuICAgIEBJbnB1dCgpXG4gICAgaW1hZ2VVcmw6IHN0cmluZztcblxufVxuIiwiPGRpdiBjbGFzcz1cImNoYXQtYXZhdGFyXCIgW25nU3R5bGVdPVwie2JhY2tncm91bmRJbWFnZTogJ3VybCgnICsgaW1hZ2VVcmwgKyAnKSd9XCI+PC9kaXY+XG4iXX0=

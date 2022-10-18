@@ -1,0 +1,8 @@
+export var Role;
+(function (Role) {
+    Role["none"] = "none";
+    Role["visitor"] = "visitor";
+    Role["participant"] = "participant";
+    Role["moderator"] = "moderator";
+})(Role || (Role = {}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicm9sZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3NyYy9saWIvc2VydmljZXMvYWRhcHRlcnMveG1wcC9wbHVnaW5zL211bHRpLXVzZXItY2hhdC9yb2xlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sQ0FBTixJQUFZLElBS1g7QUFMRCxXQUFZLElBQUk7SUFDWixxQkFBYSxDQUFBO0lBQ2IsMkJBQW1CLENBQUE7SUFDbkIsbUNBQTJCLENBQUE7SUFDM0IsK0JBQXVCLENBQUE7QUFDM0IsQ0FBQyxFQUxXLElBQUksS0FBSixJQUFJLFFBS2YiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZW51bSBSb2xlIHtcbiAgICBub25lID0gJ25vbmUnLFxuICAgIHZpc2l0b3IgPSAndmlzaXRvcicsXG4gICAgcGFydGljaXBhbnQgPSAncGFydGljaXBhbnQnLFxuICAgIG1vZGVyYXRvciA9ICdtb2RlcmF0b3InLFxufVxuXG5leHBvcnQgaW50ZXJmYWNlIFJvbGVNb2RpZmljYXRpb24ge1xuICAgIG5pY2s6IHN0cmluZztcbiAgICByb2xlOiBSb2xlO1xuICAgIHJlYXNvbj86IHN0cmluZztcbn1cbiJdfQ==

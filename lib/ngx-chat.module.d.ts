@@ -1,0 +1,32 @@
+import { ModuleWithProviders } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "./components/chat.component";
+import * as i2 from "./components/chat-message/chat-message.component";
+import * as i3 from "./components/chat-message-input/chat-message-input.component";
+import * as i4 from "./components/chat-message-link/chat-message-link.component";
+import * as i5 from "./components/chat-message-list/chat-message-list.component";
+import * as i6 from "./components/chat-message-simple/chat-message-simple.component";
+import * as i7 from "./components/chat-message-text/chat-message-text.component";
+import * as i8 from "./components/chat-window/chat-window.component";
+import * as i9 from "./components/chat-window-list/chat-window-list.component";
+import * as i10 from "./directives/links.directive";
+import * as i11 from "./directives/intersection-observer.directive";
+import * as i12 from "./components/roster-list/roster-list.component";
+import * as i13 from "./components/chat-filedrop/file-drop.component";
+import * as i14 from "./components/chat-window-frame/chat-window-frame.component";
+import * as i15 from "./components/chat-video-window/chat-video-window.component";
+import * as i16 from "./components/chat-avatar/chat-avatar.component";
+import * as i17 from "./components/roster-recipient/roster-recipient.component";
+import * as i18 from "@angular/common";
+import * as i19 from "@angular/common/http";
+import * as i20 from "@angular/forms";
+import * as i21 from "@angular/cdk/text-field";
+import * as i22 from "@angular/router";
+export declare class NgxChatModule {
+    static forRoot(): ModuleWithProviders<NgxChatModule>;
+    private static fileUploadHandlerFactory;
+    private static xmppChatAdapter;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NgxChatModule, never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<NgxChatModule, [typeof i1.ChatComponent, typeof i2.ChatMessageComponent, typeof i3.ChatMessageInputComponent, typeof i4.ChatMessageLinkComponent, typeof i5.ChatMessageListComponent, typeof i6.ChatMessageSimpleComponent, typeof i7.ChatMessageTextComponent, typeof i8.ChatWindowComponent, typeof i9.ChatWindowListComponent, typeof i10.LinksDirective, typeof i11.IntersectionObserverDirective, typeof i12.RosterListComponent, typeof i13.FileDropComponent, typeof i14.ChatWindowFrameComponent, typeof i15.ChatVideoWindowComponent, typeof i16.ChatAvatarComponent, typeof i17.RosterRecipientComponent], [typeof i18.CommonModule, typeof i19.HttpClientModule, typeof i20.FormsModule, typeof i21.TextFieldModule, typeof i22.RouterModule], [typeof i1.ChatComponent, typeof i3.ChatMessageInputComponent, typeof i5.ChatMessageListComponent, typeof i6.ChatMessageSimpleComponent, typeof i13.FileDropComponent, typeof i10.LinksDirective]>;
+    static ɵinj: i0.ɵɵInjectorDeclaration<NgxChatModule>;
+}

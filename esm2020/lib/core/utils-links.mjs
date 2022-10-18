@@ -1,0 +1,5 @@
+export const urlRegex = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+export function extractUrls(message) {
+    return message.match(urlRegex) || [];
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbHMtbGlua3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvbGliL2NvcmUvdXRpbHMtbGlua3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE1BQU0sUUFBUSxHQUFHLHlFQUF5RSxDQUFDO0FBRWxHLE1BQU0sVUFBVSxXQUFXLENBQUMsT0FBZTtJQUN2QyxPQUFPLE9BQU8sQ0FBQyxLQUFLLENBQUMsUUFBUSxDQUFDLElBQUksRUFBRSxDQUFDO0FBQ3pDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgdXJsUmVnZXggPSAvKFxcYihodHRwcz98ZnRwKTpcXC9cXC9bLUEtWjAtOSsmQCNcXC8lPz1+X3whOiwuO10qWy1BLVowLTkrJkAjXFwvJT1+X3xdKS9naW07XG5cbmV4cG9ydCBmdW5jdGlvbiBleHRyYWN0VXJscyhtZXNzYWdlOiBzdHJpbmcpOiBSZWdFeHBNYXRjaEFycmF5IHtcbiAgICByZXR1cm4gbWVzc2FnZS5tYXRjaCh1cmxSZWdleCkgfHwgW107XG59XG4iXX0=

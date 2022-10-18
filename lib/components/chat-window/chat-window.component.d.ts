@@ -1,0 +1,30 @@
+import { OnDestroy, OnInit } from '@angular/core';
+import { ChatContactClickHandler } from '../../hooks/chat-contact-click-handler';
+import { ChatListStateService, ChatWindowState } from '../../services/chat-list-state.service';
+import { ChatService } from '../../services/chat-service';
+import { FileUploadHandler } from '../../hooks/file-upload-handler';
+import { ChatAction } from '../../services/adapters/xmpp/xmpp-chat-adapter.service';
+import * as i0 from "@angular/core";
+export declare class ChatWindowComponent implements OnInit, OnDestroy {
+    readonly chatService: ChatService;
+    private readonly chatListService;
+    readonly fileUploadHandler: FileUploadHandler;
+    readonly contactClickHandler: ChatContactClickHandler;
+    chatWindowState: ChatWindowState;
+    private readonly messageInput;
+    private readonly contactMessageList;
+    private readonly ngDestroy;
+    constructor(chatService: ChatService, chatListService: ChatListStateService, fileUploadHandler: FileUploadHandler, contactClickHandler: ChatContactClickHandler);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    onClickHeader(): void;
+    onClickClose(): void;
+    sendMessage(): void;
+    afterSendMessage(): void;
+    uploadFile(file: File): Promise<void>;
+    onFocus(): void;
+    onActionClick(chatAction: ChatAction<this>): void;
+    onContactClick($event: MouseEvent): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ChatWindowComponent, [null, null, null, { optional: true; }]>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowComponent, "ngx-chat-window", never, { "chatWindowState": "chatWindowState"; }, {}, never, never, false>;
+}
