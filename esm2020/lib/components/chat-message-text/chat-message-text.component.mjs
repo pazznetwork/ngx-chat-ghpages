@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import * as i0 from "@angular/core";
 export class ChatMessageTextComponent {
 }
-ChatMessageTextComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatMessageTextComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-ChatMessageTextComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.6", type: ChatMessageTextComponent, selector: "ngx-chat-message-text", inputs: { text: "text" }, ngImport: i0, template: `{{text}}`, isInline: true, styles: [":host{white-space:pre-wrap}\n"] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatMessageTextComponent, decorators: [{
+ChatMessageTextComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatMessageTextComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+ChatMessageTextComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.7", type: ChatMessageTextComponent, selector: "ngx-chat-message-text", inputs: { text: "text" }, ngImport: i0, template: `{{text}}`, isInline: true, styles: [":host{white-space:pre-wrap}\n"] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatMessageTextComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-chat-message-text', template: `{{text}}`, styles: [":host{white-space:pre-wrap}\n"] }]
         }], propDecorators: { text: [{

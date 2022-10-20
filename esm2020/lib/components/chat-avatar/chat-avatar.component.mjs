@@ -3,9 +3,9 @@ import * as i0 from "@angular/core";
 import * as i1 from "@angular/common";
 export class ChatAvatarComponent {
 }
-ChatAvatarComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatAvatarComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-ChatAvatarComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.6", type: ChatAvatarComponent, selector: "ngx-chat-avatar", inputs: { imageUrl: "imageUrl" }, ngImport: i0, template: "<div class=\"chat-avatar\" [ngStyle]=\"{backgroundImage: 'url(' + imageUrl + ')'}\"></div>\n", styles: [".chat-avatar{border-radius:50%;background-size:cover;background-position:50%;background-repeat:no-repeat;width:100%;height:100%}\n"], dependencies: [{ kind: "directive", type: i1.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatAvatarComponent, decorators: [{
+ChatAvatarComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatAvatarComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+ChatAvatarComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.7", type: ChatAvatarComponent, selector: "ngx-chat-avatar", inputs: { imageUrl: "imageUrl" }, ngImport: i0, template: "<div class=\"chat-avatar\" [ngStyle]=\"{backgroundImage: 'url(' + imageUrl + ')'}\"></div>\n", styles: [".chat-avatar{border-radius:50%;background-size:cover;background-position:50%;background-repeat:no-repeat;width:100%;height:100%}\n"], dependencies: [{ kind: "directive", type: i1.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatAvatarComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-chat-avatar', template: "<div class=\"chat-avatar\" [ngStyle]=\"{backgroundImage: 'url(' + imageUrl + ')'}\"></div>\n", styles: [".chat-avatar{border-radius:50%;background-size:cover;background-position:50%;background-repeat:no-repeat;width:100%;height:100%}\n"] }]
         }], propDecorators: { imageUrl: [{

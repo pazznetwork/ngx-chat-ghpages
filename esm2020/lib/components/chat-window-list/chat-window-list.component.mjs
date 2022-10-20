@@ -10,8 +10,8 @@ export class ChatWindowListComponent {
         this.chatListService = chatListService;
     }
 }
-ChatWindowListComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatWindowListComponent, deps: [{ token: i1.ChatListStateService }], target: i0.ɵɵFactoryTarget.Component });
-ChatWindowListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.6", type: ChatWindowListComponent, selector: "ngx-chat-window-list", inputs: { rosterState: "rosterState" }, ngImport: i0, template: "<div class=\"chat-list\" [@rosterVisibility]=\"rosterState\">\n\n    <ngx-chat-video-window\n            *ngFor=\"let track of (chatListService.openTracks$ | async)\"\n            [track]=\"track\">\n    </ngx-chat-video-window>\n\n    <ngx-chat-window\n            *ngFor=\"let chatWindowState of (chatListService.openChats$ | async)\"\n            [chatWindowState]=\"chatWindowState\"></ngx-chat-window>\n\n</div>\n", styles: ["*{box-sizing:border-box;margin:0;padding:0;font-family:Helvetica,Arial,serif}.chat-list{display:flex;flex-flow:row nowrap;align-items:flex-end;position:fixed;bottom:0;right:16em;z-index:5;pointer-events:none}\n"], dependencies: [{ kind: "directive", type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "component", type: i3.ChatWindowComponent, selector: "ngx-chat-window", inputs: ["chatWindowState"] }, { kind: "component", type: i4.ChatVideoWindowComponent, selector: "ngx-chat-video-window", inputs: ["track"] }, { kind: "pipe", type: i2.AsyncPipe, name: "async" }], animations: [
+ChatWindowListComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatWindowListComponent, deps: [{ token: i1.ChatListStateService }], target: i0.ɵɵFactoryTarget.Component });
+ChatWindowListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.7", type: ChatWindowListComponent, selector: "ngx-chat-window-list", inputs: { rosterState: "rosterState" }, ngImport: i0, template: "<div class=\"chat-list\" [@rosterVisibility]=\"rosterState\">\n\n    <ngx-chat-video-window\n            *ngFor=\"let track of (chatListService.openTracks$ | async)\"\n            [track]=\"track\">\n    </ngx-chat-video-window>\n\n    <ngx-chat-window\n            *ngFor=\"let chatWindowState of (chatListService.openChats$ | async)\"\n            [chatWindowState]=\"chatWindowState\"></ngx-chat-window>\n\n</div>\n", styles: ["*{box-sizing:border-box;margin:0;padding:0;font-family:Helvetica,Arial,serif}.chat-list{display:flex;flex-flow:row nowrap;align-items:flex-end;position:fixed;bottom:0;right:16em;z-index:5;pointer-events:none}\n"], dependencies: [{ kind: "directive", type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "component", type: i3.ChatWindowComponent, selector: "ngx-chat-window", inputs: ["chatWindowState"] }, { kind: "component", type: i4.ChatVideoWindowComponent, selector: "ngx-chat-video-window", inputs: ["track"] }, { kind: "pipe", type: i2.AsyncPipe, name: "async" }], animations: [
         trigger('rosterVisibility', [
             state('hidden', style({
                 right: '1em',
@@ -23,7 +23,7 @@ ChatWindowListComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0"
             transition('shown => hidden', animate('400ms ease'))
         ])
     ] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: ChatWindowListComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatWindowListComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-chat-window-list', animations: [
                         trigger('rosterVisibility', [

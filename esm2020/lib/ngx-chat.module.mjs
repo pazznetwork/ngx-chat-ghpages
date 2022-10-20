@@ -116,8 +116,8 @@ export class NgxChatModule {
         return xmppChatAdapter;
     }
 }
-NgxChatModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: NgxChatModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-NgxChatModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "14.2.6", ngImport: i0, type: NgxChatModule, declarations: [ChatComponent,
+NgxChatModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: NgxChatModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+NgxChatModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "14.2.7", ngImport: i0, type: NgxChatModule, declarations: [ChatComponent,
         ChatMessageComponent,
         ChatMessageInputComponent,
         ChatMessageLinkComponent,
@@ -143,12 +143,12 @@ NgxChatModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: 
         ChatMessageSimpleComponent,
         FileDropComponent,
         LinksDirective] });
-NgxChatModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: NgxChatModule, imports: [CommonModule,
+NgxChatModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: NgxChatModule, imports: [CommonModule,
         HttpClientModule,
         FormsModule,
         TextFieldModule,
         RouterModule] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.6", ngImport: i0, type: NgxChatModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: NgxChatModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [

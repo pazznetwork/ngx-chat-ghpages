@@ -1,6 +1,6 @@
 {
   "name": "@pazznetwork/ngx-chat",
-  "version": "0.14.10",
+  "version": "0.14.12",
   "license": "MIT",
   "keywords": [
     "ngx-chat",
@@ -13,20 +13,21 @@
     "jabber"
   ],
   "peerDependencies": {
-    "@angular/cdk": "14.2.5",
-    "@angular/common": "14.2.6",
-    "@angular/router": "14.2.6",
-    "@angular/core": "14.2.6",
-    "@angular/forms": "^14.2.6",
-    "@types/ltx": "^3.0.0",
-    "@xmpp/client": "^0.9.0"
+    "@angular/cdk": "^14.2.5",
+    "@angular/common": "^14.2.7",
+    "@angular/router": "^14.2.6",
+    "@angular/core": "^14.2.7",
+    "@angular/forms": "^14.2.7",
+    "@angular/animations": "^14.2.6",
+    "@types/ltx": "^3.0.2",
+    "@xmpp/client": "^0.13.1"
   },
+  "typings": "index.d.ts",
   "module": "fesm2015/pazznetwork-ngx-chat.mjs",
   "es2020": "fesm2020/pazznetwork-ngx-chat.mjs",
   "esm2020": "esm2020/pazznetwork-ngx-chat.mjs",
   "fesm2020": "fesm2020/pazznetwork-ngx-chat.mjs",
   "fesm2015": "fesm2015/pazznetwork-ngx-chat.mjs",
-  "typings": "index.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
