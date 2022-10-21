@@ -2295,7 +2295,7 @@ export class Room {
         this.messageStore &#x3D; new MessageStore&lt;RoomMessage&gt;(logService);
     }
 
-    get nick(): string | undefined {
+    get nick(): string {
         return this.occupantJid?.resource;
     }
 

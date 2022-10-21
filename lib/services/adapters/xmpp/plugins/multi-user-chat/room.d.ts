@@ -23,7 +23,7 @@ export declare class Room {
     private readonly occupantsSubject;
     readonly occupants$: import("rxjs").Observable<RoomOccupant[]>;
     constructor(roomJid: JID, logService: LogService);
-    get nick(): string | undefined;
+    get nick(): string;
     set nick(nick: string);
     private _name;
     get name(): string;
