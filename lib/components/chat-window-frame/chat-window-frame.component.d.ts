@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { ChatStyle } from 'src/lib/services/chat-style';
+import { ChatStyle } from '../../services/chat-style';
 import * as i0 from "@angular/core";
 export declare class ChatWindowFrameComponent {
     chatStyle: ChatStyle;

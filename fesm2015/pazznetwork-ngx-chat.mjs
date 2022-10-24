@@ -17,7 +17,6 @@ import * as i2$1 from '@angular/common';
 import { CommonModule } from '@angular/common';
 import * as i1$1 from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { CHAT_STYLE_TOKEN as CHAT_STYLE_TOKEN$1 } from 'src/lib/services/chat-style';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 class FileDropComponent {
@@ -3661,6 +3660,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImpor
  */
 const FILE_UPLOAD_HANDLER_TOKEN = new InjectionToken('ngxChatFileUploadHandler');
 
+const CHAT_STYLE_TOKEN = new InjectionToken('ngxChatStyle');
+
 class ChatWindowFrameComponent {
     constructor(chatStyle) {
         this.chatStyle = chatStyle;
@@ -3668,7 +3669,7 @@ class ChatWindowFrameComponent {
         this.headerClick = new EventEmitter();
     }
 }
-ChatWindowFrameComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatWindowFrameComponent, deps: [{ token: CHAT_STYLE_TOKEN$1, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+ChatWindowFrameComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatWindowFrameComponent, deps: [{ token: CHAT_STYLE_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component });
 ChatWindowFrameComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.7", type: ChatWindowFrameComponent, selector: "ngx-chat-window-frame", outputs: { closeClick: "closeClick", headerClick: "headerClick" }, ngImport: i0, template: "<div class=\"window\" [style.width]=\"chatStyle?.windowFrame?.windowWidth ?? '17em'\">\n\n    <div (click)=\"headerClick.emit()\" class=\"window-header\">\n\n        <ng-content select=\".window-header-content\"></ng-content>\n\n        <div *ngIf=\"closeClick.observers.length > 0\" class=\"window-close\" (click)=\"closeClick.emit()\">\n            &times;\n        </div>\n\n    </div>\n\n    <ng-content select=\".window-content\"></ng-content>\n\n</div>\n", styles: ["@keyframes ngx-chat-message-in{0%{transform:translate(50px);opacity:0}to{transform:none;opacity:1}}@keyframes ngx-chat-message-out{0%{transform:translate(-50px);opacity:0}to{transform:none;opacity:1}}*{box-sizing:border-box;margin:0;padding:0;font-family:Helvetica,Arial,serif}.window{border:1px solid #e1e1e1;border-bottom:none;background:#f5f5f5;margin-left:1em;bottom:0;pointer-events:auto;position:relative}.window-header{display:flex;justify-content:space-between;border-bottom:1px solid #e1e1e1;cursor:pointer;height:2.5em;align-items:center;padding:.25em}.window-header:hover{background-color:#efefef}.window-close{padding:.5em;text-align:right;color:#777}.window-close:hover{color:#000}\n"], dependencies: [{ kind: "directive", type: i2$1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatWindowFrameComponent, decorators: [{
             type: Component,
@@ -3678,7 +3679,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImpor
                         type: Optional
                     }, {
                         type: Inject,
-                        args: [CHAT_STYLE_TOKEN$1]
+                        args: [CHAT_STYLE_TOKEN]
                     }] }];
     }, propDecorators: { closeClick: [{
                 type: Output
@@ -4811,8 +4812,6 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImpor
                     ],
                 }]
         }] });
-
-const CHAT_STYLE_TOKEN = new InjectionToken('ngxChatStyle');
 
 function selectFile(params = { accept: '*', multiple: false }) {
     return new Promise((resolve) => {
