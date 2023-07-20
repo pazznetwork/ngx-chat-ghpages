@@ -22,5 +22,5 @@ export declare class RosterListComponent implements OnInit {
     onClickRecipient(recipient: Recipient): void;
     toggleVisibility(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RosterListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RosterListComponent, "ngx-chat-roster-list", never, { "rosterState": "rosterState"; "contacts": "contacts"; "contactRequestsReceived$": "contactRequestsReceived$"; "contactRequestsSent$": "contactRequestsSent$"; "contactsUnaffiliated$": "contactsUnaffiliated$"; }, { "rosterStateChanged": "rosterStateChanged"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RosterListComponent, "ngx-chat-roster-list", never, { "rosterState": "rosterState"; "contacts": "contacts"; "contactRequestsReceived$": "contactRequestsReceived$"; "contactRequestsSent$": "contactRequestsSent$"; "contactsUnaffiliated$": "contactsUnaffiliated$"; }, { "rosterStateChanged": "rosterStateChanged"; }, never, never, false, never>;
 }

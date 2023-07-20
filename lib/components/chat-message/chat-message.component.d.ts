@@ -30,5 +30,5 @@ export declare class ChatMessageComponent implements OnInit {
     onContactClick(): void;
     getAvatar(): string | undefined;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatMessageComponent, [null, null, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageComponent, "ngx-chat-message", never, { "showAvatars": "showAvatars"; "avatar": "avatar"; "message": "message"; "nick": "nick"; "contact": "contact"; "showMessageReadState": "showMessageReadState"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageComponent, "ngx-chat-message", never, { "showAvatars": "showAvatars"; "avatar": "avatar"; "message": "message"; "nick": "nick"; "contact": "contact"; "showMessageReadState": "showMessageReadState"; }, {}, never, never, false, never>;
 }

@@ -5,5 +5,5 @@ export declare class ChatWindowListComponent {
     rosterState: string;
     constructor(chatListService: ChatListStateService);
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatWindowListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowListComponent, "ngx-chat-window-list", never, { "rosterState": "rosterState"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowListComponent, "ngx-chat-window-list", never, { "rosterState": "rosterState"; }, {}, never, never, false, never>;
 }

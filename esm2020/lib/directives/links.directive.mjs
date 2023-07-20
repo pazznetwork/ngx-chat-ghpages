@@ -48,9 +48,9 @@ export class LinksDirective {
         return parser.protocol + '//' + parser.host + shortenedPathname;
     }
 }
-LinksDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: LinksDirective, deps: [{ token: i0.ComponentFactoryResolver }, { token: i0.ViewContainerRef }], target: i0.ɵɵFactoryTarget.Directive });
-LinksDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.7", type: LinksDirective, selector: "[ngxChatLinks]", inputs: { ngxChatLinks: "ngxChatLinks" }, usesOnChanges: true, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: LinksDirective, decorators: [{
+LinksDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: LinksDirective, deps: [{ token: i0.ComponentFactoryResolver }, { token: i0.ViewContainerRef }], target: i0.ɵɵFactoryTarget.Directive });
+LinksDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "15.2.9", type: LinksDirective, selector: "[ngxChatLinks]", inputs: { ngxChatLinks: "ngxChatLinks" }, usesOnChanges: true, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: LinksDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[ngxChatLinks]'

@@ -9,5 +9,5 @@ export declare class FileDropComponent {
     onDragLeave(event: any): void;
     onDrop(event: any): Promise<void>;
     static ɵfac: i0.ɵɵFactoryDeclaration<FileDropComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FileDropComponent, "ngx-chat-filedrop", never, { "dropMessage": "dropMessage"; "enabled": "enabled"; }, { "fileUpload": "fileUpload"; }, never, ["*"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FileDropComponent, "ngx-chat-filedrop", never, { "dropMessage": "dropMessage"; "enabled": "enabled"; }, { "fileUpload": "fileUpload"; }, never, ["*"], false, never>;
 }

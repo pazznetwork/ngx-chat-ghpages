@@ -7,5 +7,5 @@ export declare class IntersectionObserverDirective implements OnDestroy {
     constructor(el: ElementRef);
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<IntersectionObserverDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<IntersectionObserverDirective, "[ngxChatIntersectionObserver]", never, {}, { "ngxChatIntersectionObserver": "ngxChatIntersectionObserver"; }, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<IntersectionObserverDirective, "[ngxChatIntersectionObserver]", never, {}, { "ngxChatIntersectionObserver": "ngxChatIntersectionObserver"; }, never, never, false, never>;
 }

@@ -16,5 +16,5 @@ export declare class ChatMessageSimpleComponent {
     nick?: string;
     MessageState: typeof MessageState;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatMessageSimpleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageSimpleComponent, "ngx-chat-message-simple", never, { "avatar": "avatar"; "avatarInteractive": "avatarInteractive"; "direction": "direction"; "formattedDate": "formattedDate"; "footerHidden": "footerHidden"; "mediaLink": "mediaLink"; "isImage": "isImage"; "isAudio": "isAudio"; "showImagePlaceholder": "showImagePlaceholder"; "messageState": "messageState"; "nick": "nick"; }, { "avatarClickHandler": "avatarClickHandler"; }, never, ["*"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageSimpleComponent, "ngx-chat-message-simple", never, { "avatar": "avatar"; "avatarInteractive": "avatarInteractive"; "direction": "direction"; "formattedDate": "formattedDate"; "footerHidden": "footerHidden"; "mediaLink": "mediaLink"; "isImage": "isImage"; "isAudio": "isAudio"; "showImagePlaceholder": "showImagePlaceholder"; "messageState": "messageState"; "nick": "nick"; }, { "avatarClickHandler": "avatarClickHandler"; }, never, ["*"], false, never>;
 }

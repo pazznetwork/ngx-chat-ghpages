@@ -9,5 +9,5 @@ export declare class LinksDirective implements OnChanges {
     private transform;
     private shorten;
     static ɵfac: i0.ɵɵFactoryDeclaration<LinksDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<LinksDirective, "[ngxChatLinks]", never, { "ngxChatLinks": "ngxChatLinks"; }, {}, never, never, false>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<LinksDirective, "[ngxChatLinks]", never, { "ngxChatLinks": "ngxChatLinks"; }, {}, never, never, false, never>;
 }

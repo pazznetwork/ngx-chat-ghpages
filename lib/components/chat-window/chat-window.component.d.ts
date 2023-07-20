@@ -26,5 +26,5 @@ export declare class ChatWindowComponent implements OnInit, OnDestroy {
     onActionClick(chatAction: ChatAction<this>): void;
     onContactClick($event: MouseEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatWindowComponent, [null, null, null, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowComponent, "ngx-chat-window", never, { "chatWindowState": "chatWindowState"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowComponent, "ngx-chat-window", never, { "chatWindowState": "chatWindowState"; }, {}, never, never, false, never>;
 }

@@ -62,6 +62,6 @@ export declare class ChatMessageListComponent implements OnInit, OnDestroy, OnCh
     private isNearBottom;
     private isLoadingHistory;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatMessageListComponent, [null, null, null, { optional: true; }, null, null]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageListComponent, "ngx-chat-message-list", never, { "recipient": "recipient"; "showAvatars": "showAvatars"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageListComponent, "ngx-chat-message-list", never, { "recipient": "recipient"; "showAvatars": "showAvatars"; }, {}, never, never, false, never>;
 }
 export {};

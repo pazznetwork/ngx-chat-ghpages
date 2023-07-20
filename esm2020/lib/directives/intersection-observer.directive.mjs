@@ -17,9 +17,9 @@ export class IntersectionObserverDirective {
         this.intersectionObserver.disconnect();
     }
 }
-IntersectionObserverDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: IntersectionObserverDirective, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Directive });
-IntersectionObserverDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "14.2.7", type: IntersectionObserverDirective, selector: "[ngxChatIntersectionObserver]", outputs: { ngxChatIntersectionObserver: "ngxChatIntersectionObserver" }, ngImport: i0 });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: IntersectionObserverDirective, decorators: [{
+IntersectionObserverDirective.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: IntersectionObserverDirective, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Directive });
+IntersectionObserverDirective.ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "15.2.9", type: IntersectionObserverDirective, selector: "[ngxChatIntersectionObserver]", outputs: { ngxChatIntersectionObserver: "ngxChatIntersectionObserver" }, ngImport: i0 });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: IntersectionObserverDirective, decorators: [{
             type: Directive,
             args: [{
                     selector: '[ngxChatIntersectionObserver]',

@@ -13,5 +13,5 @@ export declare class ChatMessageInputComponent implements OnInit {
     onSendMessage($event?: KeyboardEvent): void;
     focus(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatMessageInputComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageInputComponent, "ngx-chat-message-input", never, { "recipient": "recipient"; }, { "messageSent": "messageSent"; }, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageInputComponent, "ngx-chat-message-input", never, { "recipient": "recipient"; }, { "messageSent": "messageSent"; }, never, never, false, never>;
 }

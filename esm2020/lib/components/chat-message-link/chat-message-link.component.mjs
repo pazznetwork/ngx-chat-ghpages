@@ -31,9 +31,9 @@ export class ChatMessageLinkComponent {
         return window.location.protocol + '//' + window.location.host + this.platformLocation.getBaseHrefFromDOM();
     }
 }
-ChatMessageLinkComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatMessageLinkComponent, deps: [{ token: i1.Router }, { token: i2.PlatformLocation }, { token: LINK_OPENER_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component });
-ChatMessageLinkComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.7", type: ChatMessageLinkComponent, selector: "ngx-chat-message-link", ngImport: i0, template: "<a href=\"{{link}}\" target=\"_blank\" rel=\"noopener\" (click)=\"onClick($event)\">{{text}}</a>\n", styles: ["a{color:#198cff;cursor:pointer}a:visited{color:#9a46e8}\n"] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatMessageLinkComponent, decorators: [{
+ChatMessageLinkComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ChatMessageLinkComponent, deps: [{ token: i1.Router }, { token: i2.PlatformLocation }, { token: LINK_OPENER_TOKEN, optional: true }], target: i0.ɵɵFactoryTarget.Component });
+ChatMessageLinkComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: ChatMessageLinkComponent, selector: "ngx-chat-message-link", ngImport: i0, template: "<a href=\"{{link}}\" target=\"_blank\" rel=\"noopener\" (click)=\"onClick($event)\">{{text}}</a>\n", styles: ["a{color:#198cff;cursor:pointer}a:visited{color:#9a46e8}\n"] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ChatMessageLinkComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-chat-message-link', template: "<a href=\"{{link}}\" target=\"_blank\" rel=\"noopener\" (click)=\"onClick($event)\">{{text}}</a>\n", styles: ["a{color:#198cff;cursor:pointer}a:visited{color:#9a46e8}\n"] }]
         }], ctorParameters: function () { return [{ type: i1.Router }, { type: i2.PlatformLocation }, { type: undefined, decorators: [{

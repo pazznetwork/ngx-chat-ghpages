@@ -7,9 +7,9 @@ export class ChatVideoWindowComponent {
         this.track.attach(this.video.nativeElement);
     }
 }
-ChatVideoWindowComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatVideoWindowComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-ChatVideoWindowComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.7", type: ChatVideoWindowComponent, selector: "ngx-chat-video-window", inputs: { track: "track" }, viewQueries: [{ propertyName: "video", first: true, predicate: ["video"], descendants: true }], ngImport: i0, template: "<ngx-chat-window-frame>\n    <video #video autoplay=\"1\"></video>\n</ngx-chat-window-frame>\n", styles: ["video{width:100%}\n"], dependencies: [{ kind: "component", type: i1.ChatWindowFrameComponent, selector: "ngx-chat-window-frame", outputs: ["closeClick", "headerClick"] }] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.7", ngImport: i0, type: ChatVideoWindowComponent, decorators: [{
+ChatVideoWindowComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ChatVideoWindowComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+ChatVideoWindowComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: ChatVideoWindowComponent, selector: "ngx-chat-video-window", inputs: { track: "track" }, viewQueries: [{ propertyName: "video", first: true, predicate: ["video"], descendants: true }], ngImport: i0, template: "<ngx-chat-window-frame>\n    <video #video autoplay=\"1\"></video>\n</ngx-chat-window-frame>\n", styles: ["video{width:100%}\n"], dependencies: [{ kind: "component", type: i1.ChatWindowFrameComponent, selector: "ngx-chat-window-frame", outputs: ["closeClick", "headerClick"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: ChatVideoWindowComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-chat-video-window', template: "<ngx-chat-window-frame>\n    <video #video autoplay=\"1\"></video>\n</ngx-chat-window-frame>\n", styles: ["video{width:100%}\n"] }]
         }], ctorParameters: function () { return []; }, propDecorators: { video: [{

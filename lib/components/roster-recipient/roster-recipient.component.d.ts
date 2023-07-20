@@ -13,5 +13,5 @@ export declare class RosterRecipientComponent implements OnInit {
     constructor(chatService: ChatService);
     ngOnInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<RosterRecipientComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<RosterRecipientComponent, "ngx-chat-roster-recipient", never, { "recipient": "recipient"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<RosterRecipientComponent, "ngx-chat-roster-recipient", never, { "recipient": "recipient"; }, {}, never, never, false, never>;
 }

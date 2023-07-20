@@ -62,5 +62,5 @@ export declare class ChatComponent implements OnInit, OnChanges {
     onRosterStateChanged(state: 'shown' | 'hidden'): void;
     private updateBodyClass;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatComponent, "ngx-chat", never, { "translations": "translations"; "contacts": "contacts"; "contactRequestsReceived$": "contactRequestsReceived$"; "contactRequestsSent$": "contactRequestsSent$"; "contactsUnaffiliated$": "contactsUnaffiliated$"; "userAvatar$": "userAvatar$"; "rosterState": "rosterState"; }, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatComponent, "ngx-chat", never, { "translations": "translations"; "contacts": "contacts"; "contactRequestsReceived$": "contactRequestsReceived$"; "contactRequestsSent$": "contactRequestsSent$"; "contactsUnaffiliated$": "contactsUnaffiliated$"; "userAvatar$": "userAvatar$"; "rosterState": "rosterState"; }, {}, never, never, false, never>;
 }

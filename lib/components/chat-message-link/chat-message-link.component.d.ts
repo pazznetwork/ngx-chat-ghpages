@@ -20,5 +20,5 @@ export declare class ChatMessageLinkComponent {
     private isInApp;
     private appUrl;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatMessageLinkComponent, [null, null, { optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageLinkComponent, "ngx-chat-message-link", never, {}, {}, never, never, false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatMessageLinkComponent, "ngx-chat-message-link", never, {}, {}, never, never, false, never>;
 }

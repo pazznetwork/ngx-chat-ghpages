@@ -7,5 +7,5 @@ export declare class ChatWindowFrameComponent {
     headerClick: EventEmitter<void>;
     constructor(chatStyle: ChatStyle);
     static ɵfac: i0.ɵɵFactoryDeclaration<ChatWindowFrameComponent, [{ optional: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowFrameComponent, "ngx-chat-window-frame", never, {}, { "closeClick": "closeClick"; "headerClick": "headerClick"; }, never, [".window-header-content", ".window-content"], false>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChatWindowFrameComponent, "ngx-chat-window-frame", never, {}, { "closeClick": "closeClick"; "headerClick": "headerClick"; }, never, [".window-header-content", ".window-content"], false, never>;
 }
